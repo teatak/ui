@@ -214,20 +214,20 @@
   padding: 5px;
 }
 .teatak-button-filled {
-  -webkit-box-shadow: 0px 2px 1px -1px #dddddd, 0px 1px 1px 0px #dddddd, 0px 1px 3px 0px #dddddd;
-          box-shadow: 0px 2px 1px -1px #dddddd, 0px 1px 1px 0px #dddddd, 0px 1px 3px 0px #dddddd;
+  -webkit-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .15), 0px 1px 1px 0px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15);
+          box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .15), 0px 1px 1px 0px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15);
   background-color: #f7f7f7;
 }
 .teatak-button-filled:hover {
   background-color: #eaeaea;
-  -webkit-box-shadow: 0px 2px 1px -1px #dddddd, 0px 1px 3px 0px #dddddd, 0px 1px 3px 0px #dddddd;
-          box-shadow: 0px 2px 1px -1px #dddddd, 0px 1px 3px 0px #dddddd, 0px 1px 3px 0px #dddddd;
+  -webkit-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15);
+          box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15);
 }
 .teatak-button-filled:active,
 .teatak-button-filled.clicked {
   background-color: #dddddd;
-  -webkit-box-shadow: 0px 2px 1px -1px #dddddd, 0px 1px 2px 0px #dddddd, 0px 1px 2px 0px #dddddd;
-          box-shadow: 0px 2px 1px -1px #dddddd, 0px 1px 2px 0px #dddddd, 0px 1px 2px 0px #dddddd;
+  -webkit-box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, .15), 0px 0px 2px 0px rgba(0, 0, 0, .15), 0px 0px 2px 0px rgba(0, 0, 0, .15);
+          box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, .15), 0px 0px 2px 0px rgba(0, 0, 0, .15), 0px 0px 2px 0px rgba(0, 0, 0, .15);
 }
 .teatak-button-filled[disabled] {
   color: #A6A6A6;
