@@ -11,7 +11,7 @@
     },
     "scripts": {
         "clean:commonjs": "rimraf lib",
-        "clean:product": "rimraf docs",
+        "clean:product": "rimraf docs/*.js docs/*.css docs/*.txt docs/*.html",
         "clean:es": "rimraf es",
         "watch": "cross-env NODE_ENV=dev webpack --config webpack.config.js --mode=development -w",
         "build:product": "cross-env NODE_ENV=prod webpack --config webpack.config.js --mode=production --progress",
