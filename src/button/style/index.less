@@ -196,22 +196,22 @@
   }
 }
 .@{button-prefix-class}-filled {
-  box-shadow: 0px 2px 1px -1px @grey-3, 
-              0px 1px 1px 0px @grey-3, 
-              0px 1px 3px 0px @grey-3;
+  box-shadow: 0px 2px 1px -1px @shadow, 
+              0px 1px 1px 0px @shadow, 
+              0px 1px 3px 0px @shadow;
   //0px 1px 2px 1px rgb(195 195 195);
   background-color: @grey-1;
   &:hover {
     background-color: @grey-2;
-    box-shadow: 0px 2px 1px -1px @grey-3, 
-                0px 1px 3px 0px @grey-3, 
-                0px 1px 3px 0px @grey-3;
+    box-shadow: 0px 2px 1px -1px @shadow, 
+                0px 1px 3px 0px @shadow, 
+                0px 1px 3px 0px @shadow;
   }
   &:active, &.clicked {
     background-color: @grey-3;
-    box-shadow: 0px 2px 1px -1px @grey-3, 
-                0px 1px 2px 0px @grey-3, 
-                0px 1px 2px 0px @grey-3;
+    box-shadow: 0px 1px 1px -1px @shadow, 
+                0px 0px 2px 0px @shadow, 
+                0px 0px 2px 0px @shadow;
   }
   &[disabled] {
     color: @disable-color;
