@@ -1,0 +1,27 @@
+.teatak-input {
+  font-size: 14px;
+  height: 32px;
+  padding: 0 8px;
+  outline: none;
+  border: solid 1px #1974dc;
+  border-radius: 3px;
+  color: #4e4e4e;
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.teatak-input:focus {
+  -webkit-box-shadow: 0px 0px 0px 3px #dfecfb;
+          box-shadow: 0px 0px 0px 3px #dfecfb;
+}
+
+.examples div {
+    margin-bottom: 16px;
+}
+.examples button {
+    margin-right: 8px;
+}
+.examples {
+    margin-bottom: 16px;
+}

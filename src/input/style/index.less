@@ -1,0 +1,19 @@
+@import "../../style/base";
+
+@input-prefix-class: teatak-input;
+
+.@{input-prefix-class} {
+    font-size: 14px;
+    height: 32px;
+    padding: 0 8px;
+    outline: none;
+    border: solid 1px @primary-color;
+    border-radius: 3px;
+    color: @text-color;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+                box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+                border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    &:focus {
+        box-shadow: 0px 0px 0px 3px @primary-2;
+    }
+}

@@ -6,7 +6,7 @@
 import React,{useState} from "react";
 import PropTypes from "prop-types";
 
-const  Button  = (props) => {
+const Button = (props) => {
 
     const [clicked,setClicked] = useState(false);
 
@@ -40,15 +40,15 @@ const  Button  = (props) => {
         classes += " clicked";
     }
     return <button
-        {...rest}
-        onClick={handleClick}
-        type={htmlType || 'button'}
-        className={classes}
-        style={style}>
-            {startIcon?<span className="start-icon">{startIcon}</span>:null}
-            {props.children}
-            {endIcon?<span className="end-icon">{endIcon}</span>:null}
-        </button>
+    {...rest}
+    onClick={handleClick}
+    type={htmlType || 'button'}
+    className={classes}
+    style={style}>
+        {startIcon?<span className="start-icon">{startIcon}</span>:null}
+        {props.children}
+        {endIcon?<span className="end-icon">{endIcon}</span>:null}
+    </button>
     
 }
 
