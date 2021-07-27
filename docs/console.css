@@ -22,6 +22,10 @@ input::-moz-placeholder {
 input:-ms-input-placeholder {
   color: #929292;
 }
+* {
+  margin: 0;
+  padding: 0;
+}
 body,
 button {
   font-size: 14px;
@@ -33,6 +37,10 @@ button {
 *::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .ui-menu {
@@ -119,18 +127,8 @@ button {
     transform: rotate(360deg);
   }
 }
-html, body {
-  height: auto;
-  width: auto;
-}
-
-article, aside, blockquote, body, button, code, dd, details, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, input, legend, li, menu, nav, ol, p, pre, section, td, textarea, th, ul {
-  margin: 0;
-  padding: 0;
-}
-
 a {
-  color: var(--mainBlue);
+  color: #0366d6;
   text-decoration: none;
 }
 

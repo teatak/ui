@@ -36,16 +36,16 @@
 .teatak-button.teatak-button-size-large svg {
   font-size: 24px;
 }
-.teatak-button.teatak-button-size-large .start-icon {
+.teatak-button.teatak-button-size-large .teatak-button-start-icon {
   margin-right: 4px;
 }
-.teatak-button.teatak-button-size-large .start-icon svg {
+.teatak-button.teatak-button-size-large .teatak-button-start-icon svg {
   font-size: 24px;
 }
-.teatak-button.teatak-button-size-large .end-icon {
+.teatak-button.teatak-button-size-large .teatak-button-end-icon {
   margin-left: 4px;
 }
-.teatak-button.teatak-button-size-large .end-icon svg {
+.teatak-button.teatak-button-size-large .teatak-button-end-icon svg {
   font-size: 24px;
 }
 .teatak-button.teatak-button-size-small {
@@ -57,16 +57,16 @@
 .teatak-button.teatak-button-size-small svg {
   font-size: 16px;
 }
-.teatak-button.teatak-button-size-small .start-icon {
+.teatak-button.teatak-button-size-small .teatak-button-start-icon {
   margin-right: 4px;
 }
-.teatak-button.teatak-button-size-small .start-icon svg {
+.teatak-button.teatak-button-size-small .teatak-button-start-icon svg {
   font-size: 16px;
 }
-.teatak-button.teatak-button-size-small .end-icon {
+.teatak-button.teatak-button-size-small .teatak-button-end-icon {
   margin-left: 4px;
 }
-.teatak-button.teatak-button-size-small .end-icon svg {
+.teatak-button.teatak-button-size-small .teatak-button-end-icon svg {
   font-size: 16px;
 }
 .teatak-button.teatak-button-rounded {
@@ -81,17 +81,17 @@
   border-radius: 12px;
   padding: 4px;
 }
-.teatak-button .start-icon {
+.teatak-button .teatak-button-start-icon {
   margin-right: 4px;
 }
-.teatak-button .start-icon svg {
+.teatak-button .teatak-button-start-icon svg {
   font-size: 20px;
   vertical-align: middle;
 }
-.teatak-button .end-icon {
+.teatak-button .teatak-button-end-icon {
   margin-left: 4px;
 }
-.teatak-button .end-icon svg {
+.teatak-button .teatak-button-end-icon svg {
   font-size: 20px;
   vertical-align: middle;
 }

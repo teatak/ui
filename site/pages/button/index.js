@@ -42,7 +42,7 @@ export default () => <div className="examples">
 
         <div className="examples">
             <div>filled:</div>
-            <Button type="filled" color="primary" startIcon={<Delete/>}>Primary</Button>
+            <Button type="filled" color="primary" startIcon={<AddCircle/>}>Primary</Button>
             <Button type="filled" color="danger" endIcon={<Delete/>}>Danger</Button>
             <Button type="filled"><AddCircle/>Normal</Button>
             <Button type="filled" disabled>Disabled</Button>

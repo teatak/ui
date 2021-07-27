@@ -1,20 +1,35 @@
 import React from 'react'
 import {Input} from "../../../src";
 import "../../../src/input/style";
+
+import {Button} from "../../../src";
+import "../../../src/button/style";
+
 import {
     Delete,
     PhotoCamera,
-    AddCircle
+    AddCircle,
+    Visibility,
+    VisibilityOff
 } from '@material-ui/icons';
 import Markdown from "../../components/markdown"
 import "./index.css"
 
 export default () => {
 
+    const [showPassword, setShowPassword] = React.useState(false);
+
+    const handleShowPassword = () => {
+        setShowPassword(!showPassword);
+    };
+
     return <div>
          <div className="examples">
             <div>default:</div>
-            <Input placeholder="Name"></Input>
+            <Input startIcon={<PhotoCamera/>} size="large" placeholder="Name"></Input>
+            <Input endIcon={<Delete/>} placeholder="Name"></Input>
+            <Input startIcon={<AddCircle/>} endIcon={<Delete/>} size="small" placeholder="Name" ></Input>
+            <Input placeholder="Password" type={showPassword?"text":"password"} defaultValue="Password" endIcon={<a onClick={handleShowPassword}>{showPassword ? <Visibility /> : <VisibilityOff />}</a>}></Input>
         </div>     
         <Markdown children={`
 > color: primary,danger

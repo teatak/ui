@@ -10,8 +10,8 @@ import {
 } from "react-router-dom";
 import {Menu} from "../src";
 import "../src/menu/style";
-import Spinner from "./components/spinner"
 import loadable, {Loading} from "./helper/loadable";
+
 import "./main.css"
 
 const Button = loadable(import(/* webpackChunkName: "button" */"./pages/button"));

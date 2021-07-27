@@ -2,18 +2,105 @@
 
 @input-prefix-class: teatak-input;
 
-.@{input-prefix-class} {
-    font-size: 14px;
-    height: 32px;
-    padding: 0 8px;
-    outline: none;
-    border: solid 1px @primary-color;
-    border-radius: 3px;
+.@{input-prefix-class}-root {
+    display: inline-flex;
+    align-items: center;
     color: @text-color;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-                box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-                border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    &:focus {
-        box-shadow: 0px 0px 0px 3px @primary-2;
+    position: relative;
+    & .@{input-prefix-class}-start-icon {
+        display: inline-flex;
+        position: absolute;
+        margin-left: 7px;
+        line-height: 0;
+        & svg {
+          font-size: 20px;
+        }
+    }
+    & .@{input-prefix-class}-end-icon {
+        display: inline-flex;
+        position: absolute;
+        right: 0;
+        margin-right: 7px;
+        line-height: 0;
+        & svg {
+          font-size: 20px;
+        }
+    }
+    & .@{input-prefix-class} {
+        font-size: 14px;
+        height: 32px;
+        padding: 0 8px;
+        outline: none;
+        border: solid 1px @grey-6;
+        border-radius: 3px;
+        color: @text-color;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+                    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+                    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        &.@{input-prefix-class}-has-start-icon {
+            padding-left: 32px;
+        }
+        &.@{input-prefix-class}-has-end-icon {
+            padding-right: 32px;
+        }
+        &:hover {
+            border: solid 1px @primary-color;
+        }
+        &:focus {
+            border: solid 1px @primary-color;
+            box-shadow: 0px 0px 0px 3px @primary-2;
+        }
+    }
+    &.@{input-prefix-class}-large {
+        & .@{input-prefix-class}-start-icon {
+            margin-left: 9px;
+            & svg {
+              font-size: 24px;
+            }
+        }
+        & .@{input-prefix-class}-end-icon {
+            margin-right: 9px;
+            & svg {
+              font-size: 24px;
+            }
+        }
+        & .@{input-prefix-class} {
+            font-size: 16px;
+            height: 40px;
+            padding: 0 8px;
+            border-radius: 4px;
+            &.@{input-prefix-class}-has-start-icon {
+                padding-left: 40px;
+            }
+            &.@{input-prefix-class}-has-end-icon {
+                padding-right: 40px;
+            }
+        }
+    }
+    &.@{input-prefix-class}-small {
+        & .@{input-prefix-class}-start-icon {
+            margin-left: 5px;
+            & svg {
+              font-size: 16px;
+            }
+        }
+        & .@{input-prefix-class}-end-icon {
+            margin-right: 5px;
+            & svg {
+              font-size: 16px;
+            }
+        }
+        & .@{input-prefix-class} {
+            font-size: 12px;
+            height: 24px;
+            padding: 0 8px;
+            border-radius: 2px;
+            &.@{input-prefix-class}-has-start-icon {
+                padding-left: 24px;
+            }
+            &.@{input-prefix-class}-has-end-icon {
+                padding-right: 24px;
+            }
+        }
     }
 }

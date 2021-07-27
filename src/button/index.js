@@ -20,34 +20,27 @@ const Button = (props) => {
         }
     };
     const {style, htmlType, type, size, className, prefixClass, color, startIcon, endIcon, rounded, ...rest} = props;
-    let classes = prefixClass;
+    
+    const classSize = (size && size !== "default") ? " " + prefixClass + "-size-" + size : "";
+    const classType = type? " " + prefixClass + "-" + type : "";
+    const classColor = (color && color !== "default")? " " + prefixClass + "-color-" + color : "";
+    const classRounded = rounded? " " + prefixClass + "-rounded" : "";
+    const classClicked = clicked? " clicked":""
+
+    let classes = prefixClass + classSize + classType + classColor + classRounded + classClicked;
     if (className) {
         classes += " " + className;
     }
-    if (size && size !== "default") {
-        classes += " " + prefixClass + "-size-" + size;
-    }
-    if (type) {
-        classes += " " + prefixClass + "-" + type;
-    }
-    if (color && color !== "default") {
-        classes += " " + prefixClass + "-color-" + color;
-    }
-    if (rounded) {
-        classes += " " + prefixClass + "-rounded";
-    }
-    if (clicked) {
-        classes += " clicked";
-    }
+
     return <button
     {...rest}
     onClick={handleClick}
     type={htmlType || 'button'}
     className={classes}
     style={style}>
-        {startIcon?<span className="start-icon">{startIcon}</span>:null}
+        {startIcon?<span className={prefixClass+"-start-icon"}>{startIcon}</span>:null}
         {props.children}
-        {endIcon?<span className="end-icon">{endIcon}</span>:null}
+        {endIcon?<span className={prefixClass+"-end-icon"}>{endIcon}</span>:null}
     </button>
     
 }
