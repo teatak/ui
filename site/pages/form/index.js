@@ -5,6 +5,9 @@ import "../../../src/input/style";
 import {Button} from "../../../src";
 import "../../../src/button/style";
 
+import {Form} from "../../../src";
+import "../../../src/form/style";
+
 import {
     Delete,
     PhotoCamera,
@@ -17,20 +20,30 @@ import "./index.css"
 
 export default () => {
 
-    const [showPassword, setShowPassword] = React.useState(false);
-
-    const handleShowPassword = () => {
-        setShowPassword(!showPassword);
+    const onSubmit = (e, errors, values) => {
+        e.preventDefault();
+        console.log(e, errors, values);
     };
-
     return <div>
          <div className="examples">
             <div>default:</div>
-            <Input startIcon={<PhotoCamera/>} size="large" placeholder="Name"></Input>
-            <Input endIcon={<Delete/>} placeholder="Name"></Input>
-            <Input startIcon={<AddCircle/>} endIcon={<Delete/>} size="small" placeholder="Name" ></Input>
-            <Input placeholder="Password" type={showPassword?"text":"password"} defaultValue="Password" endIcon={<a onClick={handleShowPassword}>{showPassword ? <Visibility /> : <VisibilityOff />}</a>}></Input>
-            <Input placeholder="Name" endIcon={<Delete/>} disabled></Input>
+            <Form onSubmit={onSubmit}>
+                <Form.Item
+                    name="name"
+                    tip="您可以使用字母、数字和英文句点"
+                    rules={[
+                        {required: true, message: '请输入用户名!'},
+                        {type: 'string', message: '请输入5-20位有效的真实姓名!', pattern: /^.{5,20}$/},
+                    ]}
+                >
+                    <Input style={{width: "100%"}}/>
+                </Form.Item>
+                <Button
+                    color="primary"
+                    type="filled"
+                    htmlType="submit"
+                >Submit</Button>
+            </Form>
          </div>     
 
         <Markdown children={`

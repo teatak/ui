@@ -7,6 +7,9 @@
     align-items: center;
     color: @text-color;
     position: relative;
+    &.disabled {
+        color: @disable-color;
+    }
     & .@{input-prefix-class}-start-icon {
         display: inline-flex;
         position: absolute;
@@ -42,6 +45,14 @@
         }
         &.@{input-prefix-class}-has-end-icon {
             padding-right: 32px;
+        }
+        &[disabled] {
+            color: @disable-color;
+            background-color: @disable-backgroud-color;
+            border: solid 1px @disable-color;
+            &:hover, &:focus {
+                border: solid 1px @disable-color;
+            }
         }
         &:hover {
             border: solid 1px @primary-color;

@@ -8,17 +8,25 @@ const Input = (props) => {
     const hasStartIcon = startIcon ? " " + prefixClass+ "-has-start-icon" : ""
     const hasEndIcon = endIcon ? " " + prefixClass+ "-has-end-icon" : ""
     const typeString = (type && type === "text" )? "text" : "password";
+    const disabled = props.disabled ? " disabled" : "";
+
     let classes = prefixClass + hasStartIcon + hasEndIcon;
     if (className) {
         classes += " " + className;
     }
-    
-    return <span className={prefixClass + "-root" + classSize}>
+    const handelChange = (e) => {
+        if(props.onChange) {
+            props.onChange(e)
+        }
+    }
+    return <span className={prefixClass + "-root" + classSize + disabled} style={style}>
         {startIcon?<span className={prefixClass+"-start-icon"}>{startIcon}</span>:null}
         <input 
         className={classes}
-        {...rest}     
+        style={style}
         type={typeString} 
+        onChange={handelChange}
+        {...rest}     
         />
         {endIcon?<span className={prefixClass+"-end-icon"}>{endIcon}</span>:null}
     </span>
@@ -33,5 +41,4 @@ Input.defaultProps = {
     prefixClass: "teatak-input",
     type: "text",
 };
-
 export default Input
