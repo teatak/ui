@@ -22,7 +22,6 @@
              let errors = null;
              Object.keys(this.items).map((key) => {
                  let component = this.items[key];
-                 console.log(this.items)
                  if(component.value !== undefined) {
                      values[key] = component.value;
                  } else {
@@ -39,7 +38,7 @@
          }
      };
      static defaultProps = {
-         prefixClass: "teatak-form",
+         prefixClass: "tui-form",
      };
  
      render() {

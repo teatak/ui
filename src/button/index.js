@@ -54,7 +54,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-    prefixClass: "teatak-button",
+    prefixClass: "tui-button",
     type: "default",
 };
 

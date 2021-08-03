@@ -38,7 +38,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-    prefixClass: "teatak-input",
+    prefixClass: "tui-input",
     type: "text",
 };
 export default Input

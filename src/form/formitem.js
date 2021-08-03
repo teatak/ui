@@ -32,7 +32,7 @@ export default class FormItem extends Component {
     }
 
     static defaultProps = {
-        prefixClass: "teatak-form-item",
+        prefixClass: "tui-form-item",
         tip: "",
     };
     validate = () => {

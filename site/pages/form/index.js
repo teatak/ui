@@ -30,13 +30,39 @@ export default () => {
             <Form onSubmit={onSubmit}>
                 <Form.Item
                     name="name"
-                    tip="您可以使用字母、数字和英文句点"
                     rules={[
                         {required: true, message: '请输入用户名!'},
-                        {type: 'string', message: '请输入5-20位有效的真实姓名!', pattern: /^.{5,20}$/},
+                        {type: 'string', message: '请输入5-20位有效的用户名!', pattern: /^.{5,20}$/},
                     ]}
                 >
                     <Input style={{width: "100%"}}/>
+                </Form.Item>
+                <Form.Item
+                    name="name2"
+                    rules={[
+                        {required: true, message: '请输入用户名!'},
+                        {type: 'string', message: '请输入5-20位有效的用户名!', pattern: /^.{5,20}$/},
+                    ]}
+                >
+                    <input style={{width: "100%"}}/>
+                </Form.Item>
+                <Form.Item
+                    name="password"
+                    rules={[
+                        {required: true, message: '请输入密码!'},
+                        {type: 'string', message: '请输入密码5-20位!', pattern: /^.{5,20}$/},
+                    ]}
+                >
+                    <Input type="password" style={{width: "100%"}}/>
+                </Form.Item>
+                <Form.Item
+                    name="password2"
+                    rules={[
+                        {required: true, message: '请输入密码!'},
+                        {type: 'string', message: '请输入密码5-20位!', pattern: /^.{5,20}$/},
+                    ]}
+                >
+                    <Input type="password" disabled style={{width: "100%"}}/>
                 </Form.Item>
                 <Button
                     color="primary"

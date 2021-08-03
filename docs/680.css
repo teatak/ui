@@ -1,4 +1,4 @@
-.teatak-input-root {
+.tui-input-root {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -8,10 +8,10 @@
   color: #4e4e4e;
   position: relative;
 }
-.teatak-input-root.disabled {
+.tui-input-root.disabled {
   color: #A6A6A6;
 }
-.teatak-input-root .teatak-input-start-icon {
+.tui-input-root .tui-input-start-icon {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -19,10 +19,10 @@
   margin-left: 7px;
   line-height: 0;
 }
-.teatak-input-root .teatak-input-start-icon svg {
+.tui-input-root .tui-input-start-icon svg {
   font-size: 20px;
 }
-.teatak-input-root .teatak-input-end-icon {
+.tui-input-root .tui-input-end-icon {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -31,10 +31,10 @@
   margin-right: 7px;
   line-height: 0;
 }
-.teatak-input-root .teatak-input-end-icon svg {
+.tui-input-root .tui-input-end-icon svg {
   font-size: 20px;
 }
-.teatak-input-root .teatak-input {
+.tui-input-root .tui-input {
   font-size: 14px;
   height: 32px;
   padding: 0 8px;
@@ -47,79 +47,79 @@
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
-.teatak-input-root .teatak-input.teatak-input-has-start-icon {
+.tui-input-root .tui-input.tui-input-has-start-icon {
   padding-left: 32px;
 }
-.teatak-input-root .teatak-input.teatak-input-has-end-icon {
+.tui-input-root .tui-input.tui-input-has-end-icon {
   padding-right: 32px;
 }
-.teatak-input-root .teatak-input[disabled] {
+.tui-input-root .tui-input[disabled] {
   color: #A6A6A6;
   background-color: #efefef;
   border: solid 1px #A6A6A6;
 }
-.teatak-input-root .teatak-input[disabled]:hover,
-.teatak-input-root .teatak-input[disabled]:focus {
+.tui-input-root .tui-input[disabled]:hover,
+.tui-input-root .tui-input[disabled]:focus {
   border: solid 1px #A6A6A6;
 }
-.teatak-input-root .teatak-input:hover {
+.tui-input-root .tui-input:hover {
   border: solid 1px #1974dc;
 }
-.teatak-input-root .teatak-input:focus {
+.tui-input-root .tui-input:focus {
   border: solid 1px #1974dc;
   -webkit-box-shadow: 0px 0px 0px 3px #dfecfb;
           box-shadow: 0px 0px 0px 3px #dfecfb;
 }
-.teatak-input-root.teatak-input-large .teatak-input-start-icon {
+.tui-input-root.tui-input-large .tui-input-start-icon {
   margin-left: 9px;
 }
-.teatak-input-root.teatak-input-large .teatak-input-start-icon svg {
+.tui-input-root.tui-input-large .tui-input-start-icon svg {
   font-size: 24px;
 }
-.teatak-input-root.teatak-input-large .teatak-input-end-icon {
+.tui-input-root.tui-input-large .tui-input-end-icon {
   margin-right: 9px;
 }
-.teatak-input-root.teatak-input-large .teatak-input-end-icon svg {
+.tui-input-root.tui-input-large .tui-input-end-icon svg {
   font-size: 24px;
 }
-.teatak-input-root.teatak-input-large .teatak-input {
+.tui-input-root.tui-input-large .tui-input {
   font-size: 16px;
   height: 40px;
   padding: 0 8px;
   border-radius: 4px;
 }
-.teatak-input-root.teatak-input-large .teatak-input.teatak-input-has-start-icon {
+.tui-input-root.tui-input-large .tui-input.tui-input-has-start-icon {
   padding-left: 40px;
 }
-.teatak-input-root.teatak-input-large .teatak-input.teatak-input-has-end-icon {
+.tui-input-root.tui-input-large .tui-input.tui-input-has-end-icon {
   padding-right: 40px;
 }
-.teatak-input-root.teatak-input-small .teatak-input-start-icon {
+.tui-input-root.tui-input-small .tui-input-start-icon {
   margin-left: 5px;
 }
-.teatak-input-root.teatak-input-small .teatak-input-start-icon svg {
+.tui-input-root.tui-input-small .tui-input-start-icon svg {
   font-size: 16px;
 }
-.teatak-input-root.teatak-input-small .teatak-input-end-icon {
+.tui-input-root.tui-input-small .tui-input-end-icon {
   margin-right: 5px;
 }
-.teatak-input-root.teatak-input-small .teatak-input-end-icon svg {
+.tui-input-root.tui-input-small .tui-input-end-icon svg {
   font-size: 16px;
 }
-.teatak-input-root.teatak-input-small .teatak-input {
+.tui-input-root.tui-input-small .tui-input {
   font-size: 12px;
   height: 24px;
   padding: 0 8px;
   border-radius: 2px;
 }
-.teatak-input-root.teatak-input-small .teatak-input.teatak-input-has-start-icon {
+.tui-input-root.tui-input-small .tui-input.tui-input-has-start-icon {
   padding-left: 24px;
 }
-.teatak-input-root.teatak-input-small .teatak-input.teatak-input-has-end-icon {
+.tui-input-root.tui-input-small .tui-input.tui-input-has-end-icon {
   padding-right: 24px;
 }
 
-.teatak-button {
+.tui-button {
   vertical-align: middle;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -144,260 +144,270 @@
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
-.teatak-button svg {
+.tui-button svg {
   font-size: 20px;
   vertical-align: middle;
 }
-.teatak-button.teatak-button-size-large {
+.tui-button.tui-button-size-large {
   border-radius: 4px;
   padding: 0 24px;
   height: 40px;
   font-size: 16px;
 }
-.teatak-button.teatak-button-size-large svg {
+.tui-button.tui-button-size-large svg {
   font-size: 24px;
 }
-.teatak-button.teatak-button-size-large .teatak-button-start-icon {
+.tui-button.tui-button-size-large .tui-button-start-icon {
   margin-right: 4px;
 }
-.teatak-button.teatak-button-size-large .teatak-button-start-icon svg {
+.tui-button.tui-button-size-large .tui-button-start-icon svg {
   font-size: 24px;
 }
-.teatak-button.teatak-button-size-large .teatak-button-end-icon {
+.tui-button.tui-button-size-large .tui-button-end-icon {
   margin-left: 4px;
 }
-.teatak-button.teatak-button-size-large .teatak-button-end-icon svg {
+.tui-button.tui-button-size-large .tui-button-end-icon svg {
   font-size: 24px;
 }
-.teatak-button.teatak-button-size-small {
+.tui-button.tui-button-size-small {
   border-radius: 2px;
   padding: 0 12px;
   height: 24px;
   font-size: 12px;
 }
-.teatak-button.teatak-button-size-small svg {
+.tui-button.tui-button-size-small svg {
   font-size: 16px;
 }
-.teatak-button.teatak-button-size-small .teatak-button-start-icon {
+.tui-button.tui-button-size-small .tui-button-start-icon {
   margin-right: 4px;
 }
-.teatak-button.teatak-button-size-small .teatak-button-start-icon svg {
+.tui-button.tui-button-size-small .tui-button-start-icon svg {
   font-size: 16px;
 }
-.teatak-button.teatak-button-size-small .teatak-button-end-icon {
+.tui-button.tui-button-size-small .tui-button-end-icon {
   margin-left: 4px;
 }
-.teatak-button.teatak-button-size-small .teatak-button-end-icon svg {
+.tui-button.tui-button-size-small .tui-button-end-icon svg {
   font-size: 16px;
 }
-.teatak-button.teatak-button-rounded {
+.tui-button.tui-button-rounded {
   border-radius: 16px;
   padding: 6px;
 }
-.teatak-button.teatak-button-rounded.teatak-button-size-large {
+.tui-button.tui-button-rounded.tui-button-size-large {
   border-radius: 20px;
   padding: 8px;
 }
-.teatak-button.teatak-button-rounded.teatak-button-size-small {
+.tui-button.tui-button-rounded.tui-button-size-small {
   border-radius: 12px;
   padding: 4px;
 }
-.teatak-button .teatak-button-start-icon {
+.tui-button .tui-button-start-icon {
   margin-right: 4px;
 }
-.teatak-button .teatak-button-start-icon svg {
+.tui-button .tui-button-start-icon svg {
   font-size: 20px;
   vertical-align: middle;
 }
-.teatak-button .teatak-button-end-icon {
+.tui-button .tui-button-end-icon {
   margin-left: 4px;
 }
-.teatak-button .teatak-button-end-icon svg {
+.tui-button .tui-button-end-icon svg {
   font-size: 20px;
   vertical-align: middle;
 }
-.teatak-button-default {
+.tui-button-default {
   background-color: transparent;
   color: #4e4e4e;
 }
-.teatak-button-default:hover {
+.tui-button-default:hover {
   background-color: #f7f7f7;
 }
-.teatak-button-default:active,
-.teatak-button-default.clicked {
+.tui-button-default:active,
+.tui-button-default.clicked {
   background-color: #eaeaea;
 }
-.teatak-button-default[disabled] {
+.tui-button-default[disabled] {
   color: #A6A6A6;
   background-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
-.teatak-button-default[disabled]:hover,
-.teatak-button-default[disabled]:focus,
-.teatak-button-default[disabled]:active {
+.tui-button-default[disabled]:hover,
+.tui-button-default[disabled]:focus,
+.tui-button-default[disabled]:active {
   color: #A6A6A6;
   background-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
-.teatak-button-default.teatak-button-color-primary {
+.tui-button-default.tui-button-color-primary {
   color: #1974dc;
 }
-.teatak-button-default.teatak-button-color-primary:hover {
+.tui-button-default.tui-button-color-primary:hover {
   background-color: #f6fafe;
 }
-.teatak-button-default.teatak-button-color-primary:active,
-.teatak-button-default.teatak-button-color-primary.clicked {
+.tui-button-default.tui-button-color-primary:active,
+.tui-button-default.tui-button-color-primary.clicked {
   background-color: #dfecfb;
 }
-.teatak-button-default.teatak-button-color-danger {
+.tui-button-default.tui-button-color-danger {
   color: #dc1919;
 }
-.teatak-button-default.teatak-button-color-danger:hover {
+.tui-button-default.tui-button-color-danger:hover {
   background-color: #fef6f6;
 }
-.teatak-button-default.teatak-button-color-danger:active,
-.teatak-button-default.teatak-button-color-danger.clicked {
+.tui-button-default.tui-button-color-danger:active,
+.tui-button-default.tui-button-color-danger.clicked {
   background-color: #fbdfdf;
 }
-.teatak-button-outlined {
+.tui-button-outlined {
   background-color: transparent;
   color: #4e4e4e;
   border: solid 1px #777777;
   padding: 0 15px;
 }
-.teatak-button-outlined:hover {
+.tui-button-outlined:hover {
   background-color: #f7f7f7;
   border: solid 1px #636363;
 }
-.teatak-button-outlined:active,
-.teatak-button-outlined.clicked {
+.tui-button-outlined:active,
+.tui-button-outlined.clicked {
   background-color: #eaeaea;
   border: solid 1px #4e4e4e;
 }
-.teatak-button-outlined[disabled] {
+.tui-button-outlined[disabled] {
   color: #A6A6A6;
   background-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
   border: solid 1px #A6A6A6;
 }
-.teatak-button-outlined[disabled]:hover,
-.teatak-button-outlined[disabled]:focus,
-.teatak-button-outlined[disabled]:active {
+.tui-button-outlined[disabled]:hover,
+.tui-button-outlined[disabled]:focus,
+.tui-button-outlined[disabled]:active {
   color: #A6A6A6;
   background-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
   border: solid 1px #A6A6A6;
 }
-.teatak-button-outlined.teatak-button-color-primary {
+.tui-button-outlined.tui-button-color-primary {
   color: #1974dc;
   border: solid 1px #1974dc;
 }
-.teatak-button-outlined.teatak-button-color-primary:hover {
+.tui-button-outlined.tui-button-color-primary:hover {
   background-color: #f6fafe;
   border: solid 1px #1561b7;
 }
-.teatak-button-outlined.teatak-button-color-primary:active,
-.teatak-button-outlined.teatak-button-color-primary.clicked {
+.tui-button-outlined.tui-button-color-primary:active,
+.tui-button-outlined.tui-button-color-primary.clicked {
   background-color: #dfecfb;
   border: solid 1px #114d93;
 }
-.teatak-button-outlined.teatak-button-color-danger {
+.tui-button-outlined.tui-button-color-danger {
   color: #dc1919;
   border: solid 1px #dc1919;
 }
-.teatak-button-outlined.teatak-button-color-danger:hover {
+.tui-button-outlined.tui-button-color-danger:hover {
   background-color: #fef6f6;
   border: solid 1px #b71515;
 }
-.teatak-button-outlined.teatak-button-color-danger:active,
-.teatak-button-outlined.teatak-button-color-danger.clicked {
+.tui-button-outlined.tui-button-color-danger:active,
+.tui-button-outlined.tui-button-color-danger.clicked {
   background-color: #fbdfdf;
   border: solid 1px #931111;
 }
-.teatak-button-outlined.teatak-button-size-large {
+.tui-button-outlined.tui-button-size-large {
   padding: 0 23px;
 }
-.teatak-button-outlined.teatak-button-size-small {
+.tui-button-outlined.tui-button-size-small {
   padding: 0 11px;
 }
-.teatak-button-outlined.teatak-button-rounded {
+.tui-button-outlined.tui-button-rounded {
   border-radius: 100px;
   padding: 5px;
 }
-.teatak-button-outlined.teatak-button-rounded.teatak-button-size-large {
+.tui-button-outlined.tui-button-rounded.tui-button-size-large {
   padding: 7px;
 }
-.teatak-button-outlined.teatak-button-rounded.teatak-button-size-small {
+.tui-button-outlined.tui-button-rounded.tui-button-size-small {
   padding: 3px;
 }
-.teatak-button-filled {
+.tui-button-filled {
   -webkit-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .15), 0px 1px 1px 0px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15);
           box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .15), 0px 1px 1px 0px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15);
   background-color: #f7f7f7;
 }
-.teatak-button-filled:hover {
+.tui-button-filled:hover {
   background-color: #eaeaea;
   -webkit-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15);
           box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15);
 }
-.teatak-button-filled:active,
-.teatak-button-filled.clicked {
+.tui-button-filled:active,
+.tui-button-filled.clicked {
   background-color: #dddddd;
   -webkit-box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, .15), 0px 0px 2px 0px rgba(0, 0, 0, .15), 0px 0px 2px 0px rgba(0, 0, 0, .15);
           box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, .15), 0px 0px 2px 0px rgba(0, 0, 0, .15), 0px 0px 2px 0px rgba(0, 0, 0, .15);
 }
-.teatak-button-filled[disabled] {
+.tui-button-filled[disabled] {
   color: #A6A6A6;
   background: #efefef;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
-.teatak-button-filled[disabled]:hover,
-.teatak-button-filled[disabled]:focus,
-.teatak-button-filled[disabled]:active {
+.tui-button-filled[disabled]:hover,
+.tui-button-filled[disabled]:focus,
+.tui-button-filled[disabled]:active {
   color: #A6A6A6;
   background: #efefef;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
-.teatak-button-filled.teatak-button-color-primary {
+.tui-button-filled.tui-button-color-primary {
   border: none;
   background: #1974dc;
   color: #FFF;
 }
-.teatak-button-filled.teatak-button-color-primary:hover {
+.tui-button-filled.tui-button-color-primary:hover {
   background-color: #1561b7;
 }
-.teatak-button-filled.teatak-button-color-primary:active,
-.teatak-button-filled.teatak-button-color-primary.clicked {
+.tui-button-filled.tui-button-color-primary:active,
+.tui-button-filled.tui-button-color-primary.clicked {
   background-color: #114d93;
 }
-.teatak-button-filled.teatak-button-color-danger {
+.tui-button-filled.tui-button-color-danger {
   border: none;
   background: #dc1919;
   color: #FFF;
 }
-.teatak-button-filled.teatak-button-color-danger:hover {
+.tui-button-filled.tui-button-color-danger:hover {
   background-color: #b71515;
 }
-.teatak-button-filled.teatak-button-color-danger:active,
-.teatak-button-filled.teatak-button-color-danger.clicked {
+.tui-button-filled.tui-button-color-danger:active,
+.tui-button-filled.tui-button-color-danger.clicked {
   background-color: #931111;
 }
 
-.teatak-form-item {
+.tui-form-item {
   margin-bottom: 16px;
 }
-.teatak-form-item .teatak-form-item-tip {
+.tui-form-item .tui-form-item-tip {
   font-size: 12px;
   margin: 8px 0 0;
 }
-.teatak-form-item.has-error .teatak-form-item-tip {
+.tui-form-item.has-error .tui-form-item-tip {
   color: #dc1919;
+}
+.tui-form-item.has-error .tui-input-root .tui-input {
+  border: solid 1px #dc1919;
+}
+.tui-form-item.has-error .tui-input-root .tui-input:hover {
+  border: solid 1px #dc1919;
+}
+.tui-form-item.has-error .tui-input-root .tui-input:focus {
+  -webkit-box-shadow: 0px 0px 0px 3px #fbdfdf;
+          box-shadow: 0px 0px 0px 3px #fbdfdf;
 }
 
 .examples {

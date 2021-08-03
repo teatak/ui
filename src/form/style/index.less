@@ -1,6 +1,7 @@
 @import "../../style/base";
 
-@form-item-prefix-class: teatak-form-item;
+@form-item-prefix-class: tui-form-item;
+@input-prefix-class: tui-input;
 
 .@{form-item-prefix-class} {
   margin-bottom: 16px;
@@ -14,6 +15,17 @@
   &.has-error {
     .@{form-item-prefix-class}-tip {
       color: @error-color;
+    }
+    & .@{input-prefix-class}-root {
+      & .@{input-prefix-class} {
+        border: solid 1px @error-color;
+        &:hover {
+          border: solid 1px @error-color;
+        }
+        &:focus {
+          box-shadow: 0px 0px 0px 3px @red-2;
+        }
+      }
     }
   }
 }
