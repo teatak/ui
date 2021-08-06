@@ -20,20 +20,23 @@ const Space = (props) => {
         if(Array.isArray(gap)) {
             gapCss = gap[0]+"px "+ gap[1]+"px"
         } else {
-            gapCss = gap+"px"
+            if(gap.endsWith("px")) {
+                gapCss = gap
+            } else {
+                gapCss = gap+"px"
+            }
         }
     }
     
-
     const gapStyle = {
         gap: gapCss,
         alignItems: alignItems || "center"
     }
 
     return <div className={classes} style={{...gapStyle, ...style}}>
-        {props.children.map((item,index) => {
+        {props.children?props.children.map((item,index) => {
             return <div key={index} className={itemClasses}>{item}</div>
-        } )}
+        } ):null}
     </div>
 }
 

@@ -7,9 +7,10 @@
           align-items: center;
   color: #4e4e4e;
   position: relative;
+  width: 100%;
 }
 .tui-input-root.disabled {
-  color: #A6A6A6;
+  color: #dadada;
 }
 .tui-input-root .tui-input-start-icon {
   display: -webkit-inline-box;
@@ -42,6 +43,7 @@
   border: solid 1px #777777;
   border-radius: 3px;
   color: #4e4e4e;
+  width: 100%;
   -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
@@ -54,21 +56,21 @@
   padding-right: 32px;
 }
 .tui-input-root .tui-input[disabled] {
-  color: #A6A6A6;
-  background-color: #efefef;
-  border: solid 1px #A6A6A6;
+  color: #dadada;
+  background-color: #f1f1f1;
+  border: solid 1px #dadada;
 }
 .tui-input-root .tui-input[disabled]:hover,
 .tui-input-root .tui-input[disabled]:focus {
-  border: solid 1px #A6A6A6;
+  border: solid 1px #dadada;
 }
 .tui-input-root .tui-input:hover {
   border: solid 1px #1974dc;
 }
 .tui-input-root .tui-input:focus {
   border: solid 1px #1974dc;
-  -webkit-box-shadow: 0px 0px 0px 3px #dfecfb;
-          box-shadow: 0px 0px 0px 3px #dfecfb;
+  -webkit-box-shadow: 0px 0px 0px 3px rgba(26, 115, 232, .3);
+          box-shadow: 0px 0px 0px 3px rgba(26, 115, 232, .3);
 }
 .tui-input-root.tui-input-large .tui-input-start-icon {
   margin-left: 9px;
@@ -119,274 +121,21 @@
   padding-right: 24px;
 }
 
-.tui-button {
-  vertical-align: middle;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: pointer;
-  border-radius: 3px;
-  padding: 0 16px;
-  height: 32px;
-  outline: none;
-  border: none;
-  font-size: 14px;
+.tui-icon {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 24px;
+  font-size: 1.5rem;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  color: #4e4e4e;
-  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-}
-.tui-button svg {
-  font-size: 20px;
-  vertical-align: middle;
-}
-.tui-button.tui-button-size-large {
-  border-radius: 4px;
-  padding: 0 24px;
-  height: 40px;
-  font-size: 16px;
-}
-.tui-button.tui-button-size-large svg {
-  font-size: 24px;
-}
-.tui-button.tui-button-size-large .tui-button-start-icon {
-  margin-right: 4px;
-}
-.tui-button.tui-button-size-large .tui-button-start-icon svg {
-  font-size: 24px;
-}
-.tui-button.tui-button-size-large .tui-button-end-icon {
-  margin-left: 4px;
-}
-.tui-button.tui-button-size-large .tui-button-end-icon svg {
-  font-size: 24px;
-}
-.tui-button.tui-button-size-small {
-  border-radius: 2px;
-  padding: 0 12px;
-  height: 24px;
-  font-size: 12px;
-}
-.tui-button.tui-button-size-small svg {
-  font-size: 16px;
-}
-.tui-button.tui-button-size-small .tui-button-start-icon {
-  margin-right: 4px;
-}
-.tui-button.tui-button-size-small .tui-button-start-icon svg {
-  font-size: 16px;
-}
-.tui-button.tui-button-size-small .tui-button-end-icon {
-  margin-left: 4px;
-}
-.tui-button.tui-button-size-small .tui-button-end-icon svg {
-  font-size: 16px;
-}
-.tui-button.tui-button-rounded {
-  border-radius: 16px;
-  padding: 6px;
-}
-.tui-button.tui-button-rounded.tui-button-size-large {
-  border-radius: 20px;
-  padding: 8px;
-}
-.tui-button.tui-button-rounded.tui-button-size-small {
-  border-radius: 12px;
-  padding: 4px;
-}
-.tui-button .tui-button-start-icon {
-  margin-right: 4px;
-}
-.tui-button .tui-button-start-icon svg {
-  font-size: 20px;
-  vertical-align: middle;
-}
-.tui-button .tui-button-end-icon {
-  margin-left: 4px;
-}
-.tui-button .tui-button-end-icon svg {
-  font-size: 20px;
-  vertical-align: middle;
-}
-.tui-button-default {
-  background-color: transparent;
-  color: #4e4e4e;
-}
-.tui-button-default:hover {
-  background-color: #f7f7f7;
-}
-.tui-button-default:active,
-.tui-button-default.clicked {
-  background-color: #eaeaea;
-}
-.tui-button-default[disabled] {
-  color: #A6A6A6;
-  background-color: transparent;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-.tui-button-default[disabled]:hover,
-.tui-button-default[disabled]:focus,
-.tui-button-default[disabled]:active {
-  color: #A6A6A6;
-  background-color: transparent;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-.tui-button-default.tui-button-color-primary {
-  color: #1974dc;
-}
-.tui-button-default.tui-button-color-primary:hover {
-  background-color: #f6fafe;
-}
-.tui-button-default.tui-button-color-primary:active,
-.tui-button-default.tui-button-color-primary.clicked {
-  background-color: #dfecfb;
-}
-.tui-button-default.tui-button-color-danger {
-  color: #dc1919;
-}
-.tui-button-default.tui-button-color-danger:hover {
-  background-color: #fef6f6;
-}
-.tui-button-default.tui-button-color-danger:active,
-.tui-button-default.tui-button-color-danger.clicked {
-  background-color: #fbdfdf;
-}
-.tui-button-outlined {
-  background-color: transparent;
-  color: #4e4e4e;
-  border: solid 1px #777777;
-  padding: 0 15px;
-}
-.tui-button-outlined:hover {
-  background-color: #f7f7f7;
-  border: solid 1px #636363;
-}
-.tui-button-outlined:active,
-.tui-button-outlined.clicked {
-  background-color: #eaeaea;
-  border: solid 1px #4e4e4e;
-}
-.tui-button-outlined[disabled] {
-  color: #A6A6A6;
-  background-color: transparent;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border: solid 1px #A6A6A6;
-}
-.tui-button-outlined[disabled]:hover,
-.tui-button-outlined[disabled]:focus,
-.tui-button-outlined[disabled]:active {
-  color: #A6A6A6;
-  background-color: transparent;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border: solid 1px #A6A6A6;
-}
-.tui-button-outlined.tui-button-color-primary {
-  color: #1974dc;
-  border: solid 1px #1974dc;
-}
-.tui-button-outlined.tui-button-color-primary:hover {
-  background-color: #f6fafe;
-  border: solid 1px #1561b7;
-}
-.tui-button-outlined.tui-button-color-primary:active,
-.tui-button-outlined.tui-button-color-primary.clicked {
-  background-color: #dfecfb;
-  border: solid 1px #114d93;
-}
-.tui-button-outlined.tui-button-color-danger {
-  color: #dc1919;
-  border: solid 1px #dc1919;
-}
-.tui-button-outlined.tui-button-color-danger:hover {
-  background-color: #fef6f6;
-  border: solid 1px #b71515;
-}
-.tui-button-outlined.tui-button-color-danger:active,
-.tui-button-outlined.tui-button-color-danger.clicked {
-  background-color: #fbdfdf;
-  border: solid 1px #931111;
-}
-.tui-button-outlined.tui-button-size-large {
-  padding: 0 23px;
-}
-.tui-button-outlined.tui-button-size-small {
-  padding: 0 11px;
-}
-.tui-button-outlined.tui-button-rounded {
-  border-radius: 100px;
-  padding: 5px;
-}
-.tui-button-outlined.tui-button-rounded.tui-button-size-large {
-  padding: 7px;
-}
-.tui-button-outlined.tui-button-rounded.tui-button-size-small {
-  padding: 3px;
-}
-.tui-button-filled {
-  -webkit-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .15), 0px 1px 1px 0px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15);
-          box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .15), 0px 1px 1px 0px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15);
-  background-color: #f7f7f7;
-}
-.tui-button-filled:hover {
-  background-color: #eaeaea;
-  -webkit-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15);
-          box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15);
-}
-.tui-button-filled:active,
-.tui-button-filled.clicked {
-  background-color: #dddddd;
-  -webkit-box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, .15), 0px 0px 2px 0px rgba(0, 0, 0, .15), 0px 0px 2px 0px rgba(0, 0, 0, .15);
-          box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, .15), 0px 0px 2px 0px rgba(0, 0, 0, .15), 0px 0px 2px 0px rgba(0, 0, 0, .15);
-}
-.tui-button-filled[disabled] {
-  color: #A6A6A6;
-  background: #efefef;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-.tui-button-filled[disabled]:hover,
-.tui-button-filled[disabled]:focus,
-.tui-button-filled[disabled]:active {
-  color: #A6A6A6;
-  background: #efefef;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-.tui-button-filled.tui-button-color-primary {
-  border: none;
-  background: #1974dc;
-  color: #FFF;
-}
-.tui-button-filled.tui-button-color-primary:hover {
-  background-color: #1561b7;
-}
-.tui-button-filled.tui-button-color-primary:active,
-.tui-button-filled.tui-button-color-primary.clicked {
-  background-color: #114d93;
-}
-.tui-button-filled.tui-button-color-danger {
-  border: none;
-  background: #dc1919;
-  color: #FFF;
-}
-.tui-button-filled.tui-button-color-danger:hover {
-  background-color: #b71515;
-}
-.tui-button-filled.tui-button-color-danger:active,
-.tui-button-filled.tui-button-color-danger.clicked {
-  background-color: #931111;
 }
 
 .examples {

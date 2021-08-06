@@ -1,7 +1,35 @@
 @import "../../style/base";
+@import "./mixin.less";
 
 @row-prefix-class: tui-row;
+@col-prefix-class: tui-col;
 
 .@{row-prefix-class} {
-  padding: 8px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  & .@{col-prefix-class} {
+    .make-grid(-span);
+    .make-grid(-xs);
+    @media (min-width: 576px) {
+      //sm
+      .make-grid(-sm);
+    }
+    @media (min-width: 768px) {
+      //md
+      .make-grid(-md);
+    }
+    @media (min-width: 992px) {
+      //lg
+      .make-grid(-lg);
+    }
+    @media (min-width: 1200px) {
+      //xl
+      .make-grid(-xl);
+    }
+    @media (min-width: 1600px) {
+      //xxl
+      .make-grid(-xxl);
+    }
+  }
 }

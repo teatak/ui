@@ -2,7 +2,7 @@ import React from "react"
 
 const Row = (props) => {
 
-    const {style, className, prefixClass, ...rest} = props;
+    const {style, gap, className, prefixClass, ...rest} = props;
 
     let classes = prefixClass 
 
@@ -10,14 +10,38 @@ const Row = (props) => {
         classes += " " + className;
     }
 
-    let flexStyle = {
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "10px"
+    let gapX = 0
+    let gapY = 0
+    let gapStyle = {
+        rowGap: "0px"
     }
+    if(gap) {
+        if(Array.isArray(gap)) {
+            gapX = gap[0]
+            gapY = gap[1]
+        } else {
+            let gapFixed = gap.replace("px","")
+            gapX = gapFixed
+            gapY = gapFixed
+        }
+    }
+    if(gapX != 0) {
+        gapStyle = {
+            marginLeft: "-"+gapX/2+"px",
+            marginRight: "-"+gapX/2+"px",
+            rowGap: gapY+"px"
+        }
+    } else {
+        gapStyle = {
+            rowGap: gapY+"px"
+        }
+    }
+    
 
-    return <div className={classes} style={{...flexStyle, ...style}}>
-        {props.children}
+    return <div className={classes} style={{...gapStyle, ...style}}>
+        {props.children?props.children.map((item,index) => {
+            return <item.type key={index} {...item.props} gap={gapX}></item.type>
+        }):null}
     </div>
 }
 
