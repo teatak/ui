@@ -17,6 +17,8 @@ import "./main.css"
 const Button = loadable(import(/* webpackChunkName: "button" */"./pages/button"));
 const Input = loadable(import(/* webpackChunkName: "input" */"./pages/input"));
 const Form = loadable(import(/* webpackChunkName: "form" */"./pages/form"));
+const Grid = loadable(import(/* webpackChunkName: "form" */"./pages/grid"));
+const Space = loadable(import(/* webpackChunkName: "form" */"./pages/space"));
 
 //import Buttons from "./pages/buttons"
 
@@ -26,16 +28,19 @@ const Root = () => {
             <div className="menu">
                 <Menu>
                     <Menu.Item>
-                        <Loading />
                         <NavLink to="/button">Button</NavLink>
                     </Menu.Item>
                     <Menu.Item>
-                        <Loading />
                         <NavLink to="/input">Input</NavLink>
                     </Menu.Item>
                     <Menu.Item>
-                        <Loading />
                         <NavLink to="/form">Form</NavLink>
+                    </Menu.Item>
+                    <Menu.Item>
+                        <NavLink to="/grid">Grid</NavLink>
+                    </Menu.Item>
+                    <Menu.Item>
+                        <NavLink to="/space">Space</NavLink>
                     </Menu.Item>
                 </Menu>
             </div>
@@ -53,6 +58,14 @@ const Root = () => {
                     <Route strict path="/form">
                         <Helmet title="Form - TeaTak" />
                         <Form/>
+                    </Route>
+                    <Route strict path="/grid">
+                        <Helmet title="Grid - TeaTak" />
+                        <Grid/>
+                    </Route>
+                    <Route strict path="/space">
+                        <Helmet title="Space - TeaTak" />
+                        <Space/>
                     </Route>
                 </Switch>
             </div>

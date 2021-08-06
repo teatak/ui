@@ -1,0 +1,12 @@
+@import '../../config/var.css';
+
+.grid-examples {
+    padding: 8px;
+    & .tui-col {
+        & > div {
+            padding: 8px;
+            background: var(--blue-2);
+            border-radius: 4px;
+        }
+    }
+}
