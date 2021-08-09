@@ -26,11 +26,9 @@ const Button = (props) => {
     const classColor = (color && color !== "default")? " " + prefixClass + "-color-" + color : "";
     const classRounded = rounded? " " + prefixClass + "-rounded" : "";
     const classClicked = clicked? " clicked":""
+    const classNameString = className? className : ""
 
-    let classes = prefixClass + classSize + classType + classColor + classRounded + classClicked;
-    if (className) {
-        classes += " " + className;
-    }
+    const classes = prefixClass + classSize + classType + classColor + classRounded + classClicked + classNameString;
 
     return <button
     {...rest}

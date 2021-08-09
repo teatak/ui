@@ -10,17 +10,14 @@ a:focus {
   -webkit-text-decoration-skip: none;
   text-decoration-skip: none;
 }
-ul {
-  list-style: none;
-  padding: 0;
-}
+
 main {
   display: flex;
   & .menu {
-    width: 200px;
+    flex: 0 0 200px;
     border-right: solid 1px #eee;
-    & ul {
-      margin: 16px;
+    & .tui-menu {
+      padding-top: 16px;
     }
   }
   & .content {

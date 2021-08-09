@@ -26,7 +26,7 @@ const Root = () => {
     return <Router>
         <main>
             <div className="menu">
-                <Menu>
+                <Menu type="vertical">
                     <Menu.Item>
                         <NavLink to="/button">Button</NavLink>
                     </Menu.Item>

@@ -9,11 +9,10 @@ const Input = (props) => {
     const hasEndIcon = endIcon ? " " + prefixClass+ "-has-end-icon" : ""
     const typeString = (type && type === "text" )? "text" : "password";
     const disabled = props.disabled ? " disabled" : "";
+    const classNameString = className? className : ""
 
-    let classes = prefixClass + hasStartIcon + hasEndIcon;
-    if (className) {
-        classes += " " + className;
-    }
+    const classes = prefixClass + hasStartIcon + hasEndIcon + classNameString;
+    
     const handelChange = (e) => {
         if(props.onChange) {
             props.onChange(e)

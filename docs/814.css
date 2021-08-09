@@ -69,8 +69,8 @@
 }
 .tui-input-root .tui-input:focus {
   border: solid 1px #1974dc;
-  -webkit-box-shadow: 0px 0px 0px 3px rgba(26, 115, 232, .3);
-          box-shadow: 0px 0px 0px 3px rgba(26, 115, 232, .3);
+  -webkit-box-shadow: 0px 0px 0px 3px rgba(26, 115, 232, .25);
+          box-shadow: 0px 0px 0px 3px rgba(26, 115, 232, .25);
 }
 .tui-input-root.tui-input-large .tui-input-start-icon {
   margin-left: 9px;

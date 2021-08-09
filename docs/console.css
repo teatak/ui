@@ -44,7 +44,25 @@ a {
 }
 
 .tui-menu {
+  list-style: none;
+  padding: 0;
+}
+.tui-menu .tui-menu-item {
   cursor: pointer;
+}
+.tui-menu .tui-menu-item a {
+  display: block;
+  padding: 8px 16px;
+  color: #4e4e4e;
+  -webkit-transition: all 0.3s cubic-bezier(0.44, 0.9, 0.6, 0.94);
+  transition: all 0.3s cubic-bezier(0.44, 0.9, 0.6, 0.94);
+}
+.tui-menu .tui-menu-item a:hover {
+  color: #1974dc;
+}
+.tui-menu .tui-menu-item a.active {
+  background: rgba(26, 115, 232, .1);
+  color: #1974dc;
 }
 
 .ui-spinner {
@@ -138,11 +156,6 @@ a:focus {
   text-decoration-skip: none;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
-
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -150,12 +163,14 @@ main {
 }
 
 main .menu {
-  width: 200px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 200px;
+          flex: 0 0 200px;
   border-right: solid 1px #eee;
 }
 
-main .menu ul {
-  margin: 16px;
+main .menu .tui-menu {
+  padding-top: 16px;
 }
 
 main .content {

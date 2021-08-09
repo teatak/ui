@@ -3664,11 +3664,11 @@
   color: #4e4e4e;
 }
 .tui-button-default:hover {
-  background-color: rgba(119, 119, 119, .2);
+  background-color: rgba(119, 119, 119, .1);
 }
 .tui-button-default:active,
 .tui-button-default.clicked {
-  background-color: rgba(119, 119, 119, .3);
+  background-color: rgba(119, 119, 119, .25);
 }
 .tui-button-default[disabled] {
   color: #dadada;
@@ -3688,21 +3688,21 @@
   color: #1974dc;
 }
 .tui-button-default.tui-button-color-primary:hover {
-  background-color: rgba(26, 115, 232, .2);
+  background-color: rgba(26, 115, 232, .1);
 }
 .tui-button-default.tui-button-color-primary:active,
 .tui-button-default.tui-button-color-primary.clicked {
-  background-color: rgba(26, 115, 232, .3);
+  background-color: rgba(26, 115, 232, .25);
 }
 .tui-button-default.tui-button-color-danger {
   color: #dc1919;
 }
 .tui-button-default.tui-button-color-danger:hover {
-  background-color: rgba(220, 25, 25, .2);
+  background-color: rgba(220, 25, 25, .1);
 }
 .tui-button-default.tui-button-color-danger:active,
 .tui-button-default.tui-button-color-danger.clicked {
-  background-color: rgba(220, 25, 25, .3);
+  background-color: rgba(220, 25, 25, .25);
 }
 .tui-button-outlined {
   background-color: transparent;
@@ -3711,12 +3711,12 @@
   padding: 0 15px;
 }
 .tui-button-outlined:hover {
-  background-color: rgba(119, 119, 119, .2);
+  background-color: rgba(119, 119, 119, .1);
   border: solid 1px #636363;
 }
 .tui-button-outlined:active,
 .tui-button-outlined.clicked {
-  background-color: rgba(119, 119, 119, .3);
+  background-color: rgba(119, 119, 119, .25);
   border: solid 1px #4e4e4e;
 }
 .tui-button-outlined[disabled] {
@@ -3740,12 +3740,12 @@
   border: solid 1px #1974dc;
 }
 .tui-button-outlined.tui-button-color-primary:hover {
-  background-color: rgba(26, 115, 232, .2);
+  background-color: rgba(26, 115, 232, .1);
   border: solid 1px #1561b7;
 }
 .tui-button-outlined.tui-button-color-primary:active,
 .tui-button-outlined.tui-button-color-primary.clicked {
-  background-color: rgba(26, 115, 232, .3);
+  background-color: rgba(26, 115, 232, .25);
   border: solid 1px #114d93;
 }
 .tui-button-outlined.tui-button-color-danger {
@@ -3753,12 +3753,12 @@
   border: solid 1px #dc1919;
 }
 .tui-button-outlined.tui-button-color-danger:hover {
-  background-color: rgba(220, 25, 25, .2);
+  background-color: rgba(220, 25, 25, .1);
   border: solid 1px #b71515;
 }
 .tui-button-outlined.tui-button-color-danger:active,
 .tui-button-outlined.tui-button-color-danger.clicked {
-  background-color: rgba(220, 25, 25, .3);
+  background-color: rgba(220, 25, 25, .25);
   border: solid 1px #931111;
 }
 .tui-button-outlined.tui-button-size-large {
@@ -3780,10 +3780,10 @@
 .tui-button-filled {
   -webkit-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .15), 0px 1px 1px 0px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15);
           box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .15), 0px 1px 1px 0px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15);
-  background-color: rgba(119, 119, 119, .2);
+  background-color: rgba(119, 119, 119, .1);
 }
 .tui-button-filled:hover {
-  background-color: rgba(119, 119, 119, .3);
+  background-color: rgba(119, 119, 119, .25);
   -webkit-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15);
           box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15), 0px 1px 3px 0px rgba(0, 0, 0, .15);
 }

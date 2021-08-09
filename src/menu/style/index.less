@@ -3,5 +3,22 @@
 @menu-prefix-class: tui-menu;
 
 .@{menu-prefix-class} {
-  cursor: pointer;
+  list-style: none;
+  padding: 0;
+  .@{menu-prefix-class}-item {
+    cursor: pointer;
+    a {
+      display: block;
+      padding: 8px 16px;
+      color: @text-color;
+      transition: all 0.3s cubic-bezier(0.44,0.9,0.6,0.94);
+      &:hover {
+        color: @primary-color;
+      }
+      &.active {
+        background: @primary-1;
+        color: @primary-color;
+      }
+    }
+  }
 }

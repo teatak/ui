@@ -38,15 +38,6 @@ export default () => {
                     <Input style={{width: "100%"}}/>
                 </Form.Item>
                 <Form.Item
-                    name="name2"
-                    rules={[
-                        {required: true, message: '请输入用户名!'},
-                        {type: 'string', message: '请输入5-20位有效的用户名!', pattern: /^.{5,20}$/},
-                    ]}
-                >
-                    <input style={{width: "100%"}}/>
-                </Form.Item>
-                <Form.Item
                     name="password"
                     rules={[
                         {required: true, message: '请输入密码!'},
