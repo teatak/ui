@@ -1,9 +1,13 @@
 import React from 'react'
-import {Space} from "../../../src";
+import {Space,Button} from "../../../src";
 import "../../../src/space/style";
+import "../../../src/button/style";
 
 import Markdown from "../../components/markdown"
 import "./index.css"
+import {
+    Delete,
+} from '@material-ui/icons';
 
 export default () => {
 
@@ -11,10 +15,11 @@ export default () => {
          <div className="space-examples">
             <div>default:</div>
             <Space>
-                <div>Space</div>
-                <div>Space</div>
-                <div>Space</div>
-                <div>Space</div>
+                Text
+                <Button>Button</Button>
+                <Button type="filled" color="primary">Filled</Button>
+                <Button type="outlined" color="primary">Outlined</Button>
+                <Button type="filled" rounded color="danger"><Delete/></Button>
             </Space>
          </div>     
         <Markdown children={`
@@ -25,10 +30,11 @@ import {Space,Row,Col} from "@teatak/ui";
 export default () => <div className="examples">
     <div>default:</div>
     <Space>
-        <div>Space</div>
-        <div>Space</div>
-        <div>Space</div>
-        <div>Space</div>
+        Text
+        <Button>Button</Button>
+        <Button type="filled" color="primary">Filled</Button>
+        <Button type="outlined" color="primary">Outlined</Button>
+        <Button type="filled" rounded color="danger"><Delete/></Button>
     </Space>
 </div>       
 \`\`\`

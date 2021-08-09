@@ -173,8 +173,4 @@
 .space-examples {
     padding: 8px
 }
-.space-examples .tui-space .tui-space-item > div {
-    padding: 8px;
-    background: rgb(235, 244, 255);
-    border-radius: 4px;
-}
+.space-examples .tui-space .tui-space-item > div {}
