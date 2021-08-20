@@ -6,7 +6,6 @@ import "../../../src/col/style";
 import "../../../src/svg/style";
 import "../../../src/space/style";
 
-
 import {Button} from "../../../src";
 import "../../../src/button/style";
 
@@ -14,8 +13,7 @@ import {
     Delete,
     PhotoCamera,
     AddCircle,
-    Visibility,
-    VisibilityOff
+    VisibilityOutlined,
 } from '@material-ui/icons';
 import Markdown from "../../components/markdown"
 import "./index.css"
@@ -50,7 +48,7 @@ export default () => {
                     <Input startIcon={<AddCircle/>} endIcon={<Delete/>} size="small" placeholder="Name" ></Input>
                 </Col> 
                 <Col xs="24" sm="12" lg="6">
-                    <Input placeholder="Password" type={showPassword?"text":"password"} defaultValue="Password" endIcon={<a onClick={handleShowPassword}>{showPassword ? <Visibility /> : <EyeOff />}</a>}></Input>
+                    <Input placeholder="Password" type={showPassword?"text":"password"} defaultValue="Password" endIcon={<a onClick={handleShowPassword}>{showPassword ? <VisibilityOutlined /> : <EyeOff />}</a>}></Input>
                 </Col> 
                 <Col span="24">
                     <Input placeholder="Name" endIcon={<Delete/>} disabled></Input>

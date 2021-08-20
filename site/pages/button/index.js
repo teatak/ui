@@ -16,6 +16,7 @@ import "./index.css"
 
 export default () => {
 
+    document.cookie = "aaa=aaa"
     return <div>
          <div className="examples">
             <div>default:</div>
