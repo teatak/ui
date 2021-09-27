@@ -105,7 +105,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-@media (max-width: 576px) {
+@media (max-width: 575px) {
   .tui-modal-root .tui-modal-wrap .tui-modal-container {
     margin: 0;
     width: 100%;
@@ -135,7 +135,7 @@
   border-top: 1px solid rgba(0, 0, 0, .12);
   border-bottom: 1px solid rgba(0, 0, 0, .12);
 }
-@media (max-width: 576px) {
+@media (max-width: 575px) {
   .tui-modal-root .tui-modal-wrap .tui-modal-container .tui-modal-content {
     max-height: 100vh;
   }
