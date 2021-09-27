@@ -1,0 +1,11 @@
+@import '../../config/var.css';
+
+.space-examples {
+    padding: 8px;
+    & .tui-space {
+        & .tui-space-item {
+            & > div {
+            }
+        }
+    }
+}

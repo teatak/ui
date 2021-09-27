@@ -52,17 +52,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/button/style/index.js":
-/*!***********************************!*\
-  !*** ./src/button/style/index.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_index_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../style/index.less */ \"./src/style/index.less\");\n/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.less */ \"./src/button/style/index.less\");\n\n\n\n//# sourceURL=webpack://@teatak/ui/./src/button/style/index.js?");
-
-/***/ }),
-
 /***/ "./src/grid/style/index.js":
 /*!*********************************!*\
   !*** ./src/grid/style/index.js ***!
@@ -93,17 +82,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://@teatak/ui/./site/pages/button/index.css?");
-
-/***/ }),
-
-/***/ "./src/button/style/index.less":
-/*!*************************************!*\
-  !*** ./src/button/style/index.less ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://@teatak/ui/./src/button/style/index.less?");
 
 /***/ }),
 
