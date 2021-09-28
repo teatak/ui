@@ -1,39 +1,25 @@
-import React,{useRef, useEffect, forwardRef} from 'react'
+import React,{useState, useEffect, forwardRef} from 'react'
 import PropTypes from "prop-types";
 import ReactDOM from 'react-dom';
 
+const getContainer = (container) => {
+    return typeof container === 'function' ? container() : container;
+}
+
 const portal = (props) => {
+    const { children, container, visible = false } = props;
+    const [mountNode, setMountNode] = useState(null);
 
-    const { visible,children } = props;
-
-    const container = useRef()
-    const initRef = useRef(false);
-    
-    if (!initRef.current) {
-        if(visible) {
-            if (!container.current) {
-                container.current = document.createElement('div');
-                const parent = document.body
-                parent.appendChild(container.current)
-            }
-            initRef.current = true;
+    useEffect(() => {
+        if (visible) {
+            let node = getContainer(container) || document.body
+            setMountNode(node);
+        } else {
+            setMountNode(null);
         }
-    }
+    }, [container,visible]);
 
-    useEffect(() => {
-        
-    });
-
-    useEffect(() => {
-        return () => {
-            //remove dom
-            if(container.current) {
-                container.current.parentNode.removeChild(container.current)
-            }
-        };
-    }, []);
-
-    return container.current && visible ? ReactDOM.createPortal(children, container.current) : null;
+    return mountNode ? ReactDOM.createPortal(children, mountNode) : mountNode;
 } 
 
 export default portal

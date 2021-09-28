@@ -10,7 +10,7 @@
   left: 0;
   z-index: 1000;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.45098);
+  background-color: rgba(0, 0, 0, .65);
 }
 .tui-modal-root .tui-modal-fade-enter {
   opacity: 0;

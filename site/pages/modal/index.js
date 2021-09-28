@@ -101,6 +101,8 @@ export default () => <div className="space-examples">
 | onClose   |  | func |  |
 | maxWidth  |  | string |  |
 | width     |  | string |  |
+| transitionClass   |  | string | fade,slide  |
+
         `} />
     </div>
 }
