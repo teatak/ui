@@ -17,8 +17,8 @@ import "./main.css"
 const Button = loadable(import(/* webpackChunkName: "button" */"./pages/button"));
 const Input = loadable(import(/* webpackChunkName: "input" */"./pages/input"));
 const Form = loadable(import(/* webpackChunkName: "form" */"./pages/form"));
-const Grid = loadable(import(/* webpackChunkName: "form" */"./pages/grid"));
-const Space = loadable(import(/* webpackChunkName: "form" */"./pages/space"));
+const Grid = loadable(import(/* webpackChunkName: "grid" */"./pages/grid"));
+const Space = loadable(import(/* webpackChunkName: "space" */"./pages/space"));
 const Modal = loadable(import(/* webpackChunkName: "modal" */"./pages/modal"));
 
 //import Buttons from "./pages/buttons"

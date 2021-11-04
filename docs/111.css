@@ -11,6 +11,7 @@
   display: flex;
 }
 
-.examples {
-    padding: 16px;
+.space-examples {
+    padding: 8px
 }
+.space-examples .tui-space .tui-space-item > div {}
