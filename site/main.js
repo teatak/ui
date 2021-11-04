@@ -14,12 +14,12 @@ import loadable, {Loading} from "./helper/loadable";
 
 import "./main.css"
 
-const Button = loadable(import(/* webpackChunkName: "button" */"./pages/button"));
-const Input = loadable(import(/* webpackChunkName: "input" */"./pages/input"));
-const Form = loadable(import(/* webpackChunkName: "form" */"./pages/form"));
-const Grid = loadable(import(/* webpackChunkName: "grid" */"./pages/grid"));
-const Space = loadable(import(/* webpackChunkName: "space" */"./pages/space"));
-const Modal = loadable(import(/* webpackChunkName: "modal" */"./pages/modal"));
+const Button = loadable(import("./pages/button"));
+const Input = loadable(import("./pages/input"));
+const Form = loadable(import("./pages/form"));
+const Grid = loadable(import("./pages/grid"));
+const Space = loadable(import("./pages/space"));
+const Modal = loadable(import("./pages/modal"));
 
 //import Buttons from "./pages/buttons"
 
