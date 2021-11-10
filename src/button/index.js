@@ -27,7 +27,6 @@ const Button = (props) => {
     const classRounded = rounded? " " + prefixClass + "-rounded" : "";
     const classClicked = clicked? " clicked":""
     const classNameString = className? className : ""
-
     const classes = prefixClass + classSize + classType + classColor + classRounded + classClicked + classNameString;
 
     return <button
