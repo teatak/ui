@@ -16,7 +16,6 @@ import "./index.css"
 
 export default () => {
 
-    document.cookie = "aaa=aaa"
     return <div>
          <div className="examples">
             <div>default:</div>
@@ -29,6 +28,7 @@ export default () => {
         </div>     
         <Markdown children={`
 > color: primary,danger
+
 \`\`\`javascript
 import React from "react";
 import {Button} from "@teatak/ui";
@@ -44,9 +44,9 @@ export default () => <div className="examples">
     <Button color="danger" startIcon={<Delete/>}>Danger</Button>
     <Button><AddCircle/>Normal</Button>
     <Button disabled>Disabled</Button>
-</div>    
+</div> 
 \`\`\`
-        `} />
+    `} />
 
         <div className="examples">
             <div>filled:</div>
