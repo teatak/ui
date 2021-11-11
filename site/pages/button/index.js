@@ -111,7 +111,7 @@ export default () => <div className="examples">
         `} />
 
         <div className="examples">
-            <div>rounded:</div>
+            <div>rounded: </div>
             <Space>
                 <Button type="filled" size="large" rounded color="danger"><PhotoCamera/></Button>
                 <Button type="default" rounded color="primary"><PhotoCamera/></Button>
