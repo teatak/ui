@@ -29,7 +29,7 @@ export default () => {
         <Markdown children={`
 > color: primary,danger
 
-\`\`\`javascript
+~~~javascript
 import React from "react";
 import {Button} from "@teatak/ui";
 import {
@@ -45,7 +45,7 @@ export default () => <div className="examples">
     <Button><AddCircle/>Normal</Button>
     <Button disabled>Disabled</Button>
 </div> 
-\`\`\`
+~~~
     `} />
 
         <div className="examples">
@@ -60,7 +60,7 @@ export default () => <div className="examples">
         <Markdown children={`
 > type="filled"
 
-\`\`\`javascript
+~~~javascript
 import React from "react";
 import {Button} from "@teatak/ui";
 import {
@@ -76,7 +76,7 @@ export default () => <div className="examples">
     <Button type="filled">Normal</Button>
     <Button type="filled" disabled>Disabled</Button>
 </div>      
-\`\`\`
+~~~
         `} />
 
         <div className="examples">
@@ -91,7 +91,7 @@ export default () => <div className="examples">
         <Markdown children={`
 > type="outlined"
 
-\`\`\`javascript
+~~~javascript
 import React from "react";
 import {Button} from "@teatak/ui";
 import {
@@ -107,11 +107,11 @@ export default () => <div className="examples">
     <Button type="outlined">Normal</Button>
     <Button type="outlined" disabled>Disabled</Button>
 </div>      
-\`\`\`
+~~~
         `} />
 
         <div className="examples">
-            <div>rounded: </div>
+            <div>rounded:</div>
             <Space>
                 <Button type="filled" size="large" rounded color="danger"><PhotoCamera/></Button>
                 <Button type="default" rounded color="primary"><PhotoCamera/></Button>
