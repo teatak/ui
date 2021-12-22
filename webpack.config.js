@@ -56,7 +56,7 @@ module.exports = {
                         postcssOptions:{
                             plugins: {
                                 'postcss-import': {},
-                                'postcss-cssnext': {},
+                                'postcss-nested': {},
                             }
                         }}
                     }
@@ -71,7 +71,7 @@ module.exports = {
                         postcssOptions:{
                             plugins: {
                                 'postcss-import': {},
-                                'postcss-cssnext': {},
+                                'postcss-nested': {},
                             }
                         }}
                     },

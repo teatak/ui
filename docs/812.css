@@ -1,10 +1,6 @@
 .tui-input-root {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   color: #4e4e4e;
   position: relative;
   width: 100%;
@@ -13,8 +9,6 @@
   color: #dadada;
 }
 .tui-input-root .tui-input-start-icon {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   position: absolute;
   margin-left: 7px;
@@ -24,8 +18,6 @@
   font-size: 20px;
 }
 .tui-input-root .tui-input-end-icon {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   position: absolute;
   right: 0;
@@ -44,10 +36,7 @@
   border-radius: 3px;
   color: #4e4e4e;
   width: 100%;
-  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .tui-input-root .tui-input.tui-input-has-start-icon {
   padding-left: 32px;
@@ -69,8 +58,7 @@
 }
 .tui-input-root .tui-input:focus {
   border: solid 1px #1974dc;
-  -webkit-box-shadow: 0px 0px 0px 3px rgba(26, 115, 232, .25);
-          box-shadow: 0px 0px 0px 3px rgba(26, 115, 232, .25);
+  box-shadow: 0px 0px 0px 3px rgba(26, 115, 232, 0.25);
 }
 .tui-input-root.tui-input-large .tui-input-start-icon {
   margin-left: 9px;
@@ -138,8 +126,7 @@
   border: solid 1px #dc1919;
 }
 .tui-form-item.has-error .tui-input-root .tui-input:focus {
-  -webkit-box-shadow: 0px 0px 0px 3px rgba(220, 25, 25, .25);
-          box-shadow: 0px 0px 0px 3px rgba(220, 25, 25, .25);
+  box-shadow: 0px 0px 0px 3px rgba(220, 25, 25, 0.25);
 }
 
 .examples {

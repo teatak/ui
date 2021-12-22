@@ -6,9 +6,38 @@ input:-moz-placeholder  { color:@text-color-secondary;}
 input::-moz-placeholder { color:@text-color-secondary;}
 input:-ms-input-placeholder  { color:@text-color-secondary;}
 
+// theme.less
+.light-variable {
+  --color: red;
+  --background-color: red;
+}
+
+.dark-variable {
+  --color: #fff;
+  --background-color: #000;
+}
+
+// 方法一和方法二可混用
+// 方法一：
+// css媒体特性 使用媒体查询来判断用户是否将系统的主题设置为亮色或暗色。
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//       .dark-variable;
+//   }
+// }
+// @media (prefers-color-scheme: light) {
+//   :root {
+//       .light-variable;
+//   }
+// }
+
 * {
   margin: 0;
   padding: 0;
+}
+
+:root { 
+  .light-variable;
 }
 
 body, button {
