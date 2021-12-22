@@ -14,6 +14,8 @@ import loadable, {Loading} from "./helper/loadable";
 
 import "./main.css"
 
+//const Button = lazy(() => import('./pages/button'));
+
 const Button = loadable(import("./pages/button"));
 const Input = loadable(import("./pages/input"));
 const Form = loadable(import("./pages/form"));
