@@ -5,6 +5,7 @@
 
 import React,{useState} from "react";
 import PropTypes from "prop-types";
+import classnames from 'classnames';
 
 const Button = (props) => {
 
@@ -28,7 +29,7 @@ const Button = (props) => {
     const classClicked = clicked? " clicked":""
     const classNameString = className? className : ""
 
-    const classes = prefixClass + classSize + classType + classColor + classRounded + classClicked + classNameString;
+    const classes = classnames(prefixClass , classSize ,classType ,classColor , classRounded , classClicked , classNameString);
 
     return <button
     {...rest}
