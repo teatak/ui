@@ -8,7 +8,7 @@ import Markdown from "../../components/markdown"
 import "./index.css"
 import {
     Delete,
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 
 export default () => {
     

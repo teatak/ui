@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import loadable from "@loadable/component";
-import Spinner from "../components/spinner";
 import NProgress from "nprogress"
+import Spinner from "../components/spinner";
 
 const useComponentWillMount = (func) => {
     const willMount = useRef(true)
@@ -10,7 +9,7 @@ const useComponentWillMount = (func) => {
 }
 const useComponentDidMount = func => useEffect(func, []);
 
-export const Loading = () => {
+const Progress = () => {
     useComponentWillMount(() => {
         NProgress.set(0.3);
     });
@@ -22,8 +21,7 @@ export const Loading = () => {
     });
     return null
 }
-export default (loader) => {
-    return loadable(() => loader,{
-        fallback: <Loading />
-    })
-}
+
+const Loading = () => <div className="content-page"><Spinner /></div>
+
+export { Progress, Loading }

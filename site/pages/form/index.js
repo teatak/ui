@@ -14,7 +14,7 @@ import {
     AddCircle,
     Visibility,
     VisibilityOff
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 import Markdown from "../../components/markdown"
 import "./index.css"
 

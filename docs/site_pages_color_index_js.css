@@ -1,0 +1,27 @@
+.tui-space {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tui-space .tui-space-item {
+  display: flex;
+}
+
+.colors div {
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.colors div:hover {
+  transform: scale(1.05);
+}
+.colors div:first-child {
+  border-radius: 6px 6px 0 0;
+}
+.colors div:last-child {
+  border-radius: 0 0 6px 6px;
+}
+.colors .reverse {
+  color: var(--color-bg-2);
+}
+

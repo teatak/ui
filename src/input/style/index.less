@@ -1,15 +1,13 @@
-@import "../../style/base";
-
 @input-prefix-class: tui-input;
 
 .@{input-prefix-class}-root {
     display: inline-flex;
     align-items: center;
-    color: @text-color;
+    color: var(--color-text-2);
     position: relative;
     width: 100%;
     &.disabled {
-        color: @disable-color;
+        color: rgb(var(--gray-2));
     }
     & .@{input-prefix-class}-start-icon {
         display: inline-flex;
@@ -35,9 +33,9 @@
         height: 32px;
         padding: 0 8px;
         outline: none;
-        border: solid 1px @grey-6;
+        border: solid 1px rgb(var(--gray-6));
         border-radius: 3px;
-        color: @text-color;
+        color: var(--color-text-2);
         width: 100%;
         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
                     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
@@ -49,19 +47,19 @@
             padding-right: 32px;
         }
         &[disabled] {
-            color: @disable-color;
-            background-color: @disable-backgroud-color;
-            border: solid 1px @disable-color;
+            color: rgb(var(--gray-2));
+            background-color: rgb(var(--gray-1));
+            border: solid 1px rgb(var(--gray-2));
             &:hover, &:focus {
-                border: solid 1px @disable-color;
+                border: solid 1px rgb(var(--gray-2));
             }
         }
         &:hover {
-            border: solid 1px @primary-color;
+            border: solid 1px rgb(var(--blue-2));
         }
         &:focus {
-            border: solid 1px @primary-color;
-            box-shadow: 0px 0px 0px 3px @primary-2;
+            border: solid 1px rgb(var(--blue-6));;
+            box-shadow: 0px 0px 0px 3px rgb(var(--blue-2));;
         }
     }
     &.@{input-prefix-class}-large {

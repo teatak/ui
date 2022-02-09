@@ -1,60 +1,99 @@
-/**
- * Created by yanggang on 2018/12/22.
- */
-
-
-import React,{useState} from "react";
-import PropTypes from "prop-types";
-import classnames from 'classnames';
+import React, { useEffect, useState, useRef } from 'react'
+import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
 const Button = (props) => {
+  const timerRef = useRef(null)
 
-    const [clicked,setClicked] = useState(false);
+  useEffect(() => {
+    return () => clearTimeout(timerRef.current)
+  }, [])
 
-    const handleClick = (e) => {
-        setClicked(true);
-        setTimeout(() => {
-            setClicked(false);
-        },200);
-        if(props.onClick) {
-            props.onClick(e);
-        }
-    };
-    const {style, htmlType, type, size, className, prefixClass, color, startIcon, endIcon, rounded, ...rest} = props;
-    
-    const classSize = (size && size !== "default") ? " " + prefixClass + "-size-" + size : "";
-    const classType = type? " " + prefixClass + "-" + type : "";
-    const classColor = (color && color !== "default")? " " + prefixClass + "-color-" + color : "";
-    const classRounded = rounded? " " + prefixClass + "-rounded" : "";
-    const classClicked = clicked? " clicked":""
-    const classNameString = className? className : ""
+  const [clicked, setClicked] = useState(false)
 
-    const classes = classnames(prefixClass , classSize ,classType ,classColor , classRounded , classClicked , classNameString);
+  const handleClick = (e) => {
+    setClicked(true)
+    if (props.onClick) {
+      props.onClick(e)
+    }
+    timerRef.current = setTimeout(() => {
+      setClicked(false)
+    }, 200)
+  }
 
-    return <button
-    {...rest}
-    onClick={handleClick}
-    type={htmlType || 'button'}
-    className={classes}
-    style={style}>
-        {startIcon?<span className={prefixClass+"-start-icon"}>{startIcon}</span>:null}
-        {props.children}
-        {endIcon?<span className={prefixClass+"-end-icon"}>{endIcon}</span>:null}
+  const {
+    style,
+    long,
+    rounded,
+    htmlType,
+    type,
+    size,
+    className,
+    prefixClass,
+    color,
+    startIcon,
+    endIcon,
+    ...rest
+  } = props
+
+  const classNames = classnames(
+    prefixClass,
+    `${prefixClass}-${type}`,
+    `${prefixClass}-size-${size}`,
+    `${prefixClass}-color-${color}`,
+    {
+      [`${prefixClass}-long`]: long,
+      [`${prefixClass}-rounded`]: rounded,
+      [`clicked`]: clicked,
+    },
+    className,
+  )
+
+  return (
+    <button
+      {...rest}
+      onClick={handleClick}
+      type={htmlType || 'button'}
+      className={classNames}
+      style={style}
+    >
+      {startIcon ? (
+        <span className={prefixClass + '-start-icon'}>{startIcon}</span>
+      ) : null}
+      <span>{props.children}</span>
+      {endIcon ? (
+        <span className={prefixClass + '-end-icon'}>{endIcon}</span>
+      ) : null}
     </button>
-    
+  )
 }
 
 Button.propTypes = {
-    type: PropTypes.oneOf(['filled','outlined','default']),
-    rounded: PropTypes.bool,
-    color: PropTypes.oneOf(['primary','default','danger']),
-    size: PropTypes.oneOf(['large', 'default', 'small']),
-    htmlType: PropTypes.oneOf(['submit', 'button', 'reset']),
-};
+  type: PropTypes.oneOf(['filled', 'outlined', 'text']), //类型
+  long: PropTypes.bool, //长按钮
+  rounded: PropTypes.bool, //圆角按钮
+  color: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'secondary',
+      'success',
+      'error',
+      'info',
+      'warning',
+    ]),
+    PropTypes.string,
+  ]), //颜色
+  size: PropTypes.oneOf(['large', 'default', 'small']), //大小
+  htmlType: PropTypes.oneOf(['submit', 'button', 'reset']), //类型
+}
 
 Button.defaultProps = {
-    prefixClass: "tui-button",
-    type: "default",
-};
+  prefixClass: 'tui-button',
+  long: false,
+  rounded: false,
+  type: 'text',
+  size: 'default',
+  color: 'primary',
+}
 
 export default Button

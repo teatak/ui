@@ -1,20 +1,16 @@
 import React from 'react'
-import {Input,Svg,Space,Row,Col} from "../../../src";
+import {Input,Svg,Row,Col} from "../../../src";
 import "../../../src/input/style";
 import "../../../src/row/style";
 import "../../../src/col/style";
 import "../../../src/svg/style";
-import "../../../src/space/style";
-
-import {Button} from "../../../src";
-import "../../../src/button/style";
 
 import {
     Delete,
     PhotoCamera,
     AddCircle,
     VisibilityOutlined,
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 import Markdown from "../../components/markdown"
 import "./index.css"
 

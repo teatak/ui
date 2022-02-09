@@ -1,0 +1,271 @@
+.tui-space {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tui-space .tui-space-item {
+  display: flex;
+}
+
+.tui-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: var(--border-radius-medium);
+  padding: 0 16px;
+  height: 32px;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  user-select: none;
+  color: var(--color-text-2);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.tui-button svg {
+  font-size: 20px;
+  vertical-align: middle;
+}
+.tui-button.tui-button-size-large {
+  border-radius: var(--border-radius-large);
+  padding: 0 24px;
+  height: 40px;
+  font-size: 16px;
+}
+.tui-button.tui-button-size-large svg {
+  font-size: 24px;
+}
+.tui-button.tui-button-size-large .tui-button-start-icon {
+  margin-right: 4px;
+}
+.tui-button.tui-button-size-large .tui-button-start-icon svg {
+  font-size: 24px;
+}
+.tui-button.tui-button-size-large .tui-button-end-icon {
+  margin-left: 4px;
+}
+.tui-button.tui-button-size-large .tui-button-end-icon svg {
+  font-size: 24px;
+}
+.tui-button.tui-button-size-small {
+  border-radius: var(--border-radius-small);
+  padding: 0 12px;
+  height: 24px;
+  font-size: 12px;
+}
+.tui-button.tui-button-size-small svg {
+  font-size: 16px;
+}
+.tui-button.tui-button-size-small .tui-button-start-icon {
+  margin-right: 4px;
+}
+.tui-button.tui-button-size-small .tui-button-start-icon svg {
+  font-size: 16px;
+}
+.tui-button.tui-button-size-small .tui-button-end-icon {
+  margin-left: 4px;
+}
+.tui-button.tui-button-size-small .tui-button-end-icon svg {
+  font-size: 16px;
+}
+.tui-button.tui-button-rounded {
+  border-radius: 16px;
+  padding: 6px;
+}
+.tui-button.tui-button-rounded.tui-button-size-large {
+  border-radius: 20px;
+  padding: 8px;
+}
+.tui-button.tui-button-rounded.tui-button-size-small {
+  border-radius: 12px;
+  padding: 4px;
+}
+.tui-button .tui-button-start-icon {
+  margin-right: 4px;
+}
+.tui-button .tui-button-start-icon svg {
+  font-size: 20px;
+  vertical-align: middle;
+}
+.tui-button .tui-button-end-icon {
+  margin-left: 4px;
+}
+.tui-button .tui-button-end-icon svg {
+  font-size: 20px;
+  vertical-align: middle;
+}
+.tui-button-text {
+  background-color: transparent;
+  color: rgb(var(--primary-6));
+}
+.tui-button-text:hover {
+  background-color: var(--color-primary-light-1);
+}
+.tui-button-text:active,
+.tui-button-text.clicked {
+  background-color: var(--color-primary-light-2);
+}
+.tui-button-text.tui-button-color-primary,
+.tui-button-text.tui-button-color-info {
+  color: rgb(var(--primary-6));
+}
+.tui-button-text.tui-button-color-primary:hover,
+.tui-button-text.tui-button-color-info:hover {
+  background-color: var(--color-primary-light-1);
+}
+.tui-button-text.tui-button-color-primary:active,
+.tui-button-text.tui-button-color-info:active,
+.tui-button-text.tui-button-color-primary.clicked,
+.tui-button-text.tui-button-color-info.clicked {
+  background-color: var(--color-primary-light-2);
+}
+.tui-button-text.tui-button-color-secondary {
+  color: var(--color-text-2);
+}
+.tui-button-text.tui-button-color-secondary:hover {
+  background-color: var(--color-secondary);
+}
+.tui-button-text.tui-button-color-secondary:active,
+.tui-button-text.tui-button-color-secondary.clicked {
+  background-color: var(--color-secondary-hover);
+}
+.tui-button-text.tui-button-color-error {
+  color: rgb(var(--red-6));
+}
+.tui-button-text.tui-button-color-error:hover {
+  background-color: var(--color-error-light-1);
+}
+.tui-button-text.tui-button-color-error:active,
+.tui-button-text.tui-button-color-error.clicked {
+  background-color: var(--color-error-light-2);
+}
+.tui-button-text.tui-button-color-success {
+  color: rgb(var(--green-6));
+}
+.tui-button-text.tui-button-color-success:hover {
+  background-color: var(--color-success-light-1);
+}
+.tui-button-text.tui-button-color-success:active,
+.tui-button-text.tui-button-color-success.clicked {
+  background-color: var(--color-success-light-2);
+}
+.tui-button-text.tui-button-color-warning {
+  color: rgb(var(--orange-6));
+}
+.tui-button-text.tui-button-color-warning:hover {
+  background-color: var(--color-warning-light-1);
+}
+.tui-button-text.tui-button-color-warning:active,
+.tui-button-text.tui-button-color-warning.clicked {
+  background-color: var(--color-warning-light-2);
+}
+.tui-button-text[disabled] {
+  color: rgb(var(--gray-4));
+  background-color: transparent;
+  box-shadow: none;
+}
+.tui-button-text[disabled]:hover,
+.tui-button-text[disabled]:focus,
+.tui-button-text[disabled]:active {
+  color: rgb(var(--gray-4));
+  background-color: transparent;
+  box-shadow: none;
+}
+.tui-button-filled {
+  background-color: transparent;
+  color: rgb(var(--primary-6));
+  background-color: var(--color-secondary);
+  box-shadow: 0px 2px 1px -1px var(--color-shadow), 0px 1px 1px 0px var(--color-shadow), 0px 1px 3px 0px var(--color-shadow);
+}
+.tui-button-filled:hover {
+  background-color: var(--color-secondary-hover);
+  box-shadow: 0px 2px 1px -1px var(--color-shadow), 0px 1px 3px 0px var(--color-shadow), 0px 1px 3px 0px var(--color-shadow);
+}
+.tui-button-filled:active,
+.tui-button-filled.clicked {
+  background-color: var(--color-secondary-active);
+  box-shadow: 0px 1px 1px -1px var(--color-shadow), 0px 0px 2px 0px var(--color-shadow), 0px 0px 2px 0px var(--color-shadow);
+}
+.tui-button-filled.tui-button-color-primary,
+.tui-button-filled.tui-button-color-info {
+  color: rgb(var(--primary-6));
+}
+.tui-button-filled.tui-button-color-primary:hover,
+.tui-button-filled.tui-button-color-info:hover {
+  background-color: rgb(var(--primary-1));
+}
+.tui-button-filled.tui-button-color-primary:active,
+.tui-button-filled.tui-button-color-info:active,
+.tui-button-filled.tui-button-color-primary.clicked,
+.tui-button-filled.tui-button-color-info.clicked {
+  background-color: rgb(var(--primary-2));
+}
+.tui-button-filled.tui-button-color-secondary {
+  color: var(--color-text-2);
+}
+.tui-button-filled.tui-button-color-secondary:hover {
+  background-color: rgb(var(--gray-1));
+}
+.tui-button-filled.tui-button-color-secondary:active,
+.tui-button-filled.tui-button-color-secondary.clicked {
+  background-color: rgb(var(--gray-3));
+}
+.tui-button-filled.tui-button-color-error {
+  color: rgb(var(--red-6));
+}
+.tui-button-filled.tui-button-color-error:hover {
+  background-color: rgb(var(--red-1));
+}
+.tui-button-filled.tui-button-color-error:active,
+.tui-button-filled.tui-button-color-error.clicked {
+  background-color: rgb(var(--red-2));
+}
+.tui-button-filled.tui-button-color-success {
+  color: rgb(var(--green-6));
+}
+.tui-button-filled.tui-button-color-success:hover {
+  background-color: rgb(var(--green-1));
+}
+.tui-button-filled.tui-button-color-success:active,
+.tui-button-filled.tui-button-color-success.clicked {
+  background-color: rgb(var(--green-2));
+}
+.tui-button-filled.tui-button-color-success {
+  color: rgb(var(--green-6));
+}
+.tui-button-filled.tui-button-color-success:hover {
+  background-color: rgb(var(--green-1));
+}
+.tui-button-filled.tui-button-color-success:active,
+.tui-button-filled.tui-button-color-success.clicked {
+  background-color: rgb(var(--green-2));
+}
+.tui-button-filled.tui-button-color-warning {
+  color: rgb(var(--orange-6));
+}
+.tui-button-filled.tui-button-color-warning:hover {
+  background-color: rgb(var(--orange-1));
+}
+.tui-button-filled.tui-button-color-warning:active,
+.tui-button-filled.tui-button-color-warning.clicked {
+  background-color: rgb(var(--orange-2));
+}
+.tui-button-filled[disabled] {
+  color: rgb(var(--gray-4));
+  background-color: transparent;
+  box-shadow: none;
+}
+.tui-button-filled[disabled]:hover,
+.tui-button-filled[disabled]:focus,
+.tui-button-filled[disabled]:active {
+  color: rgb(var(--gray-4));
+  background-color: transparent;
+  box-shadow: none;
+}
+
+
+
+.space-examples {
+    padding: 8px;
+}
+    .space-examples .tui-space .tui-space-item > div {
+            }

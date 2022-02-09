@@ -1,5 +1,3 @@
-@import "../../style/base";
-
 @modal-prefix-class: tui-modal;
 .@{modal-prefix-class}-root {
   list-style: none;
@@ -12,7 +10,7 @@
     left: 0;
     z-index: 1000;
     height: 100%;
-    background-color: @maskShadow;
+    background-color: var(--color-mask-bg);
   }
   .@{modal-prefix-class}-fade-enter {
     opacity: 0;

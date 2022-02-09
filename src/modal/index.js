@@ -1,16 +1,13 @@
-import React,{useRef, useState, useEffect} from 'react'
-import PropTypes from "prop-types";
+import React, { useRef, useState, useEffect } from 'react'
 import Portal from '../util/portal';
 import classNames from 'classnames'
-import Button from '../button'
-import '../button/style'
 import { CSSTransition } from 'react-transition-group';
 import Title from './title'
 import Content from './content'
 import Actions from './actions'
 
 const modal = (props) => {
-    const {style, className, keyboard, prefixClass, transitionClass, visible, title, footer, onClose, ...rest} = props;
+    const { style, className, keyboard, prefixClass, transitionClass, visible, title, footer, onClose, ...rest } = props;
 
     const timeout = 225
     const [animatedVisible, setAnimatedVisible] = useState(visible);
@@ -20,7 +17,7 @@ const modal = (props) => {
         if (visible) {
             document.body.style.overflow = "hidden";
             setPortalVisible(true)
-            setTimeout(() => {setAnimatedVisible(true)},0);
+            setTimeout(() => { setAnimatedVisible(true) }, 0);
         } else {
             setAnimatedVisible(false)
         }
@@ -30,7 +27,7 @@ const modal = (props) => {
         setPortalVisible(false)
         document.body.style.overflow = null;
     }
-    
+
     const wrapperRef = useRef();
     const contentRef = useRef();
 
@@ -40,7 +37,7 @@ const modal = (props) => {
         }
     }
     const onInternalClose = (e) => {
-        if(onClose){
+        if (onClose) {
             onClose(e)
         }
     }
@@ -74,7 +71,7 @@ const modal = (props) => {
                 timeout={timeout}
                 classNames={`${prefixClass}-${transitionClass}`}
                 onEntered={() => {
-                    if(wrapperRef.current) {
+                    if (wrapperRef.current) {
                         wrapperRef.current.focus()
                     }
                 }}
@@ -87,11 +84,11 @@ const modal = (props) => {
                     onKeyDown={onWrapperKeyDown}
                     onClick={onWrapperClick}
                 >
-                    <div 
+                    <div
                         className={`${prefixClass}-container`}
                         style={
-                            style?.maxWidth?{maxWidth:style.maxWidth}:{}.
-                            style?.width?{width:style.width}:{}
+                            style?.maxWidth ? { maxWidth: style.maxWidth } : {}.
+                                style?.width ? { width: style.width } : {}
                         }
                         ref={contentRef}
                     >
@@ -101,7 +98,7 @@ const modal = (props) => {
             </CSSTransition>
         </div>
     </Portal>
-} 
+}
 
 modal.propTypes = {
 };
