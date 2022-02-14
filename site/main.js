@@ -13,7 +13,7 @@ import '../src/menu/style'
 import { Progress, Loading } from './helper/loading'
 import loadable from '@loadable/component'
 
-import './main.css'
+import './main.less'
 
 const Color = loadable(() => import('./pages/color'), fallback)
 const Input = loadable(() => import('./pages/input'), fallback)

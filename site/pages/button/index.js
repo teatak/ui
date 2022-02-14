@@ -11,7 +11,7 @@ import './index.css'
 
 export default () => {
   return (
-    <div>
+    <div className="page">
       <h1>Button</h1>
       <h2>color:</h2>
       <div className="examples">
@@ -182,7 +182,7 @@ export default () => <div className="examples" style={{width:"300px"}}>
         `}
       />
 
-      <div className="examples" style={{ width: '300px' }}>
+      <div className="examples">
         <Space gap={[8, 16]}>
           <Button size="large">Large</Button>
           <Button>Default</Button>

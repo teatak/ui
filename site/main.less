@@ -15,38 +15,43 @@ main {
   display: flex;
   & .menu {
     flex: 0 0 200px;
-    border-right: solid 1px #eee;
+    border-right: solid 1px var(--color-border-2);
     & .tui-menu {
       padding-top: 16px;
     }
   }
   & .content {
-    margin: 16px;
+    display: flex;
+    justify-content: center;
     flex: auto;
+    margin: 0 24px;
     position: relative;
+    & .page {
+      width: 100%;
+      max-width: 1100px;
+    }
     & h1 {
-      margin: 16px 0;
+      margin: 24px 0;
       padding: 0;
       font-size: 36px;
       font-weight: 800;
-      line-height: 45px;
     }
     & h2 {
       font-size: 20px;
       font-weight: 700;
-      margin: 16px 0;
+      margin: 24px 0;
     }
   }
 }
 .examples {
   border-radius: 10px;
-  margin: 16px 0;
-  padding: 16px;
-  border: solid 1px var(--color-border);
-  background: var(--color-bg-2)
+  margin: 24px 0;
+  padding: 48px;
+  border: solid 1px var(--color-border-2);
+  background: var(--color-background-1);
 }
 .markdown {
-  margin: 16px 0;
+  margin: 24px 0;
   & blockquote {
     padding: 20px 45px 20px 26px;
     background-color: rgb(var(--yellow-2));

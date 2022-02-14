@@ -6,22 +6,31 @@
   display: flex;
 }
 
-.colors div {
+.color-page .colors div {
   padding: 16px;
   text-align: center;
   cursor: pointer;
   transition: transform 0.2s;
 }
-.colors div:hover {
+.color-page .colors div:hover {
   transform: scale(1.05);
 }
-.colors div:first-child {
+.color-page .colors div:first-child {
   border-radius: 6px 6px 0 0;
 }
-.colors div:last-child {
+.color-page .colors div:last-child {
   border-radius: 0 0 6px 6px;
 }
-.colors .reverse {
-  color: var(--color-bg-2);
+.color-page .colors .reverse {
+  color: var(--color-background-2);
+}
+.color-page .bgs > div > div {
+  padding: 16px;
+  border: solid 1px var(--color-border-2);
+  border-radius: 6px;
+}
+.color-page .borders > div > div {
+  padding: 16px;
+  border-radius: 6px;
 }
 

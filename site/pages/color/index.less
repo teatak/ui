@@ -1,20 +1,35 @@
-.colors {
-  & div {
-    padding: 16px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform .2s;
-    &:hover {
-      transform: scale(1.05);
+.color-page {
+  & .colors {
+    & div {
+      padding: 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform .2s;
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:first-child {
+        border-radius: 6px 6px 0 0;
+      }
+      &:last-child {
+        border-radius:  0 0 6px 6px;
+      }
     }
-    &:first-child {
-      border-radius: 6px 6px 0 0;
-    }
-    &:last-child {
-      border-radius:  0 0 6px 6px;
+    & .reverse {
+      color: var(--color-background-2);
     }
   }
-  & .reverse {
-    color: var(--color-bg-2);
+  & .bgs {
+    & > div > div {
+      padding: 16px;
+      border: solid 1px var(--color-border-2);
+      border-radius: 6px;
+    }
+  }
+  & .borders {
+    & > div > div {
+      padding: 16px;
+      border-radius: 6px;
+    }
   }
 }
