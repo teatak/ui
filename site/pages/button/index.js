@@ -124,10 +124,10 @@ export default () => <div className="examples">
       <div className="examples">
         <Space>
           <Button type="filled" circle size="large" color="error"><PhotoCamera /></Button>
-          <Button type="text" circle color="primary"><PhotoCamera /></Button>
-          <Button type="outlined" circle size="large" color="primary"><PhotoCamera /></Button>
+          <Button type="filled" circle color="primary"><PhotoCamera /></Button>
+          <Button circle size="large" color="primary"><PhotoCamera /></Button>
           <Button type="outlined" circle color="secondary"><PhotoCamera /></Button>
-          <Button type="outlined" circle size="small" color="error"><PhotoCamera /></Button>
+          <Button type="outlined" rounded size="small" color="error"><PhotoCamera /></Button>
           <Button type="outlined" rounded color="error" startIcon={<Delete />}>Danger</Button>
           <Button type="text" rounded>Normal</Button>
           <Button rounded disabled>Disabled</Button>

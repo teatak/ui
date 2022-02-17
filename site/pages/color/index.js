@@ -4,7 +4,6 @@ import '../../../src/space/style'
 import { Row, Col } from '../../../src'
 import '../../../src/row/style'
 import '../../../src/col/style'
-import Markdown from '../../components/markdown'
 import './index.less'
 
 const Color = (props) => {
