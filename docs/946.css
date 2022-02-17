@@ -6,6 +6,461 @@
   display: flex;
 }
 
-.examples {
-    padding: 16px;
+.tui-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: var(--border-radius-medium);
+  padding: 0 16px;
+  height: 32px;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  user-select: none;
+  color: var(--color-text-2);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
+.tui-button svg {
+  font-size: 20px;
+  vertical-align: middle;
+}
+.tui-button.tui-button-size-large {
+  border-radius: var(--border-radius-large);
+  padding: 0 24px;
+  height: 40px;
+  font-size: 16px;
+}
+.tui-button.tui-button-size-large svg {
+  font-size: 24px;
+}
+.tui-button.tui-button-size-large .tui-button-start-icon {
+  margin-right: 4px;
+}
+.tui-button.tui-button-size-large .tui-button-start-icon svg {
+  font-size: 24px;
+}
+.tui-button.tui-button-size-large .tui-button-end-icon {
+  margin-left: 4px;
+}
+.tui-button.tui-button-size-large .tui-button-end-icon svg {
+  font-size: 24px;
+}
+.tui-button.tui-button-size-small {
+  border-radius: var(--border-radius-small);
+  padding: 0 12px;
+  height: 24px;
+  font-size: 12px;
+}
+.tui-button.tui-button-size-small svg {
+  font-size: 16px;
+}
+.tui-button.tui-button-size-small .tui-button-start-icon {
+  margin-right: 4px;
+}
+.tui-button.tui-button-size-small .tui-button-start-icon svg {
+  font-size: 16px;
+}
+.tui-button.tui-button-size-small .tui-button-end-icon {
+  margin-left: 4px;
+}
+.tui-button.tui-button-size-small .tui-button-end-icon svg {
+  font-size: 16px;
+}
+.tui-button.tui-button-long {
+  width: 100%;
+}
+.tui-button.tui-button-rounded {
+  border-radius: 16px;
+}
+.tui-button.tui-button-rounded.tui-button-size-large {
+  border-radius: 20px;
+}
+.tui-button.tui-button-rounded.tui-button-size-small {
+  border-radius: 12px;
+}
+.tui-button.tui-button-circle {
+  border-radius: 16px;
+  padding: 6px;
+}
+.tui-button.tui-button-circle.tui-button-size-large {
+  border-radius: 20px;
+  padding: 8px;
+}
+.tui-button.tui-button-circle.tui-button-size-small {
+  border-radius: 12px;
+  padding: 4px;
+}
+.tui-button.tui-button-outlined {
+  padding: 0 15px;
+}
+.tui-button.tui-button-outlined.tui-button-size-large {
+  padding: 0 23px;
+}
+.tui-button.tui-button-outlined.tui-button-size-small {
+  padding: 0 11px;
+}
+.tui-button.tui-button-outlined.tui-button-circle {
+  border-radius: 16px;
+  padding: 5px;
+}
+.tui-button.tui-button-outlined.tui-button-circle.tui-button-size-large {
+  border-radius: 20px;
+  padding: 7px;
+}
+.tui-button.tui-button-outlined.tui-button-circle.tui-button-size-small {
+  border-radius: 12px;
+  padding: 3px;
+}
+.tui-button .tui-button-start-icon {
+  margin-right: 4px;
+}
+.tui-button .tui-button-start-icon svg {
+  font-size: 20px;
+  vertical-align: middle;
+}
+.tui-button .tui-button-end-icon {
+  margin-left: 4px;
+}
+.tui-button .tui-button-end-icon svg {
+  font-size: 20px;
+  vertical-align: middle;
+}
+.tui-button-text:not(disabled) {
+  background-color: transparent;
+  color: rgb(var(--primary-6));
+  box-shadow: none;
+}
+.tui-button-text:not(disabled):hover {
+  background-color: var(--color-primary-1);
+  box-shadow: none;
+}
+.tui-button-text:not(disabled):active,
+.tui-button-text:not(disabled).clicked {
+  background-color: var(--color-primary-2);
+  box-shadow: none;
+}
+.tui-button-text:not(disabled):disabled {
+  color: rgb(var(--grey-5));
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+.tui-button-text:not(disabled):disabled:hover,
+.tui-button-text:not(disabled):disabled:focus,
+.tui-button-text:not(disabled):disabled:active {
+  color: rgb(var(--grey-5));
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+.tui-button-text.tui-button-color-primary {
+  color: rgb(var(--primary-6));
+  border: none;
+  background-color: transparent;
+}
+.tui-button-text.tui-button-color-primary:hover {
+  border: none;
+  background-color: var(--color-primary-1);
+}
+.tui-button-text.tui-button-color-primary:active,
+.tui-button-text.tui-button-color-primary.clicked {
+  border: none;
+  background-color: var(--color-primary-2);
+}
+.tui-button-text.tui-button-color-info {
+  color: rgb(var(--primary-6));
+  border: none;
+  background-color: transparent;
+}
+.tui-button-text.tui-button-color-info:hover {
+  border: none;
+  background-color: var(--color-primary-1);
+}
+.tui-button-text.tui-button-color-info:active,
+.tui-button-text.tui-button-color-info.clicked {
+  border: none;
+  background-color: var(--color-primary-2);
+}
+.tui-button-text.tui-button-color-secondary {
+  color: rgb(var(--grey-8));
+  border: none;
+  background-color: transparent;
+}
+.tui-button-text.tui-button-color-secondary:hover {
+  border: none;
+  background-color: var(--color-secondary-1);
+}
+.tui-button-text.tui-button-color-secondary:active,
+.tui-button-text.tui-button-color-secondary.clicked {
+  border: none;
+  background-color: var(--color-secondary-2);
+}
+.tui-button-text.tui-button-color-success {
+  color: rgb(var(--green-6));
+  border: none;
+  background-color: transparent;
+}
+.tui-button-text.tui-button-color-success:hover {
+  border: none;
+  background-color: var(--color-success-1);
+}
+.tui-button-text.tui-button-color-success:active,
+.tui-button-text.tui-button-color-success.clicked {
+  border: none;
+  background-color: var(--color-success-2);
+}
+.tui-button-text.tui-button-color-error {
+  color: rgb(var(--red-6));
+  border: none;
+  background-color: transparent;
+}
+.tui-button-text.tui-button-color-error:hover {
+  border: none;
+  background-color: var(--color-error-1);
+}
+.tui-button-text.tui-button-color-error:active,
+.tui-button-text.tui-button-color-error.clicked {
+  border: none;
+  background-color: var(--color-error-2);
+}
+.tui-button-text.tui-button-color-warning {
+  color: rgb(var(--orange-6));
+  border: none;
+  background-color: transparent;
+}
+.tui-button-text.tui-button-color-warning:hover {
+  border: none;
+  background-color: var(--color-warning-1);
+}
+.tui-button-text.tui-button-color-warning:active,
+.tui-button-text.tui-button-color-warning.clicked {
+  border: none;
+  background-color: var(--color-warning-2);
+}
+.tui-button-filled:not(disabled) {
+  background-color: rgb(var(--primary-6));
+  color: #fff;
+  box-shadow: none;
+}
+.tui-button-filled:not(disabled):hover {
+  background-color: rgb(var(--primary-5));
+  box-shadow: var(--btn-box-shadow);
+}
+.tui-button-filled:not(disabled):active,
+.tui-button-filled:not(disabled).clicked {
+  background-color: rgb(var(--primary-7));
+  box-shadow: var(--btn-box-shadow);
+}
+.tui-button-filled:not(disabled):disabled {
+  color: rgb(var(--grey-5));
+  background-color: rgb(var(--grey-2));
+  box-shadow: none;
+  border: none;
+}
+.tui-button-filled:not(disabled):disabled:hover,
+.tui-button-filled:not(disabled):disabled:focus,
+.tui-button-filled:not(disabled):disabled:active {
+  color: rgb(var(--grey-5));
+  background-color: rgb(var(--grey-2));
+  box-shadow: none;
+  border: none;
+}
+.tui-button-filled.tui-button-color-primary {
+  color: #fff;
+  border: none;
+  background-color: rgb(var(--primary-6));
+}
+.tui-button-filled.tui-button-color-primary:hover {
+  border: none;
+  background-color: rgb(var(--primary-5));
+}
+.tui-button-filled.tui-button-color-primary:active,
+.tui-button-filled.tui-button-color-primary.clicked {
+  border: none;
+  background-color: rgb(var(--primary-7));
+}
+.tui-button-filled.tui-button-color-info {
+  color: #fff;
+  border: none;
+  background-color: rgb(var(--primary-6));
+}
+.tui-button-filled.tui-button-color-info:hover {
+  border: none;
+  background-color: rgb(var(--primary-5));
+}
+.tui-button-filled.tui-button-color-info:active,
+.tui-button-filled.tui-button-color-info.clicked {
+  border: none;
+  background-color: rgb(var(--primary-7));
+}
+.tui-button-filled.tui-button-color-secondary {
+  color: rgb(var(--grey-8));
+  border: none;
+  background-color: rgb(var(--grey-3));
+}
+.tui-button-filled.tui-button-color-secondary:hover {
+  border: none;
+  background-color: rgb(var(--grey-4));
+}
+.tui-button-filled.tui-button-color-secondary:active,
+.tui-button-filled.tui-button-color-secondary.clicked {
+  border: none;
+  background-color: rgb(var(--grey-5));
+}
+.tui-button-filled.tui-button-color-success {
+  color: #fff;
+  border: none;
+  background-color: rgb(var(--green-6));
+}
+.tui-button-filled.tui-button-color-success:hover {
+  border: none;
+  background-color: rgb(var(--green-5));
+}
+.tui-button-filled.tui-button-color-success:active,
+.tui-button-filled.tui-button-color-success.clicked {
+  border: none;
+  background-color: rgb(var(--green-7));
+}
+.tui-button-filled.tui-button-color-error {
+  color: #fff;
+  border: none;
+  background-color: rgb(var(--red-6));
+}
+.tui-button-filled.tui-button-color-error:hover {
+  border: none;
+  background-color: rgb(var(--red-5));
+}
+.tui-button-filled.tui-button-color-error:active,
+.tui-button-filled.tui-button-color-error.clicked {
+  border: none;
+  background-color: rgb(var(--red-7));
+}
+.tui-button-filled.tui-button-color-warning {
+  color: #fff;
+  border: none;
+  background-color: rgb(var(--orange-6));
+}
+.tui-button-filled.tui-button-color-warning:hover {
+  border: none;
+  background-color: rgb(var(--orange-5));
+}
+.tui-button-filled.tui-button-color-warning:active,
+.tui-button-filled.tui-button-color-warning.clicked {
+  border: none;
+  background-color: rgb(var(--orange-6));
+}
+.tui-button-outlined:not(disabled) {
+  background-color: transparent;
+  color: rgb(var(--primary-6));
+  box-shadow: none;
+}
+.tui-button-outlined:not(disabled):hover {
+  background-color: var(--color-primary-1);
+  box-shadow: none;
+}
+.tui-button-outlined:not(disabled):active,
+.tui-button-outlined:not(disabled).clicked {
+  background-color: var(--color-primary-2);
+  box-shadow: none;
+}
+.tui-button-outlined:not(disabled):disabled {
+  color: rgb(var(--grey-5));
+  background-color: transparent;
+  box-shadow: none;
+  border: solid 1px rgb(var(--grey-4));
+}
+.tui-button-outlined:not(disabled):disabled:hover,
+.tui-button-outlined:not(disabled):disabled:focus,
+.tui-button-outlined:not(disabled):disabled:active {
+  color: rgb(var(--grey-5));
+  background-color: transparent;
+  box-shadow: none;
+  border: solid 1px rgb(var(--grey-4));
+}
+.tui-button-outlined.tui-button-color-primary {
+  color: rgb(var(--primary-6));
+  border: solid 1px rgb(var(--primary-4));
+  background-color: transparent;
+}
+.tui-button-outlined.tui-button-color-primary:hover {
+  border: solid 1px rgb(var(--primary-5));
+  background-color: var(--color-primary-1);
+}
+.tui-button-outlined.tui-button-color-primary:active,
+.tui-button-outlined.tui-button-color-primary.clicked {
+  border: solid 1px rgb(var(--primary-6));
+  background-color: var(--color-primary-2);
+}
+.tui-button-outlined.tui-button-color-info {
+  color: rgb(var(--primary-6));
+  border: solid 1px rgb(var(--primary-4));
+  background-color: transparent;
+}
+.tui-button-outlined.tui-button-color-info:hover {
+  border: solid 1px rgb(var(--primary-5));
+  background-color: var(--color-primary-1);
+}
+.tui-button-outlined.tui-button-color-info:active,
+.tui-button-outlined.tui-button-color-info.clicked {
+  border: solid 1px rgb(var(--primary-6));
+  background-color: var(--color-primary-2);
+}
+.tui-button-outlined.tui-button-color-secondary {
+  color: rgb(var(--grey-8));
+  border: solid 1px rgb(var(--grey-5));
+  background-color: transparent;
+}
+.tui-button-outlined.tui-button-color-secondary:hover {
+  border: solid 1px rgb(var(--grey-6));
+  background-color: var(--color-secondary-1);
+}
+.tui-button-outlined.tui-button-color-secondary:active,
+.tui-button-outlined.tui-button-color-secondary.clicked {
+  border: solid 1px rgb(var(--grey-7));
+  background-color: var(--color-secondary-2);
+}
+.tui-button-outlined.tui-button-color-success {
+  color: rgb(var(--green-6));
+  border: solid 1px rgb(var(--green-4));
+  background-color: transparent;
+}
+.tui-button-outlined.tui-button-color-success:hover {
+  border: solid 1px rgb(var(--green-5));
+  background-color: var(--color-success-1);
+}
+.tui-button-outlined.tui-button-color-success:active,
+.tui-button-outlined.tui-button-color-success.clicked {
+  border: solid 1px rgb(var(--green-6));
+  background-color: var(--color-success-2);
+}
+.tui-button-outlined.tui-button-color-error {
+  color: rgb(var(--red-6));
+  border: solid 1px rgb(var(--red-4));
+  background-color: transparent;
+}
+.tui-button-outlined.tui-button-color-error:hover {
+  border: solid 1px rgb(var(--red-5));
+  background-color: var(--color-error-1);
+}
+.tui-button-outlined.tui-button-color-error:active,
+.tui-button-outlined.tui-button-color-error.clicked {
+  border: solid 1px rgb(var(--red-6));
+  background-color: var(--color-error-2);
+}
+.tui-button-outlined.tui-button-color-warning {
+  color: rgb(var(--orange-6));
+  border: solid 1px rgb(var(--orange-4));
+  background-color: transparent;
+}
+.tui-button-outlined.tui-button-color-warning:hover {
+  border: solid 1px rgb(var(--orange-5));
+  background-color: var(--color-warning-1);
+}
+.tui-button-outlined.tui-button-color-warning:active,
+.tui-button-outlined.tui-button-color-warning.clicked {
+  border: solid 1px rgb(var(--orange-6));
+  background-color: var(--color-warning-2);
+}
+
+
