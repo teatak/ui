@@ -1,6 +1,6 @@
 {
     "name": "@teatak/ui",
-    "version": "1.2.25",
+    "version": "1.2.26",
     "description": "teatak ui",
     "license": "MPL-2.0",
     "main": "lib/index.js",
@@ -18,7 +18,7 @@
         "build:commonjs": "babel src/ --out-dir lib/ --plugins @babel/plugin-transform-modules-commonjs --copy-files --ignore **/__tests__,**/__mocks__",
         "build:es": "babel src/ --out-dir es/ --copy-files --ignore **/__tests__,**/__mocks__",
         "build": "npm-run-all clean:* --parallel build:*",
-        "prepack": "npm version patch && npm run build"
+        "prepack": "npm run build"
     },
     "devDependencies": {
         "@babel/cli": "^7.14.5",
@@ -35,7 +35,6 @@
         "async-validator": "^3.5.2",
         "babel-loader": "^8.2.2",
         "babel-plugin-import": "^1.13.3",
-        "classnames": "^2.3.1",
         "cross-env": "^7.0.3",
         "css-loader": "^5.2.0",
         "html-webpack-plugin": "^5.3.1",
@@ -67,5 +66,8 @@
     "peerDependencies": {
         "react": ">=16.9.0",
         "react-dom": ">=16.9.0"
+    },
+    "dependencies": {
+        "classnames": "^2.3.1"
     }
 }
