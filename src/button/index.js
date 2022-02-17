@@ -21,20 +21,7 @@ const Button = (props) => {
     }, 200)
   }
 
-  const {
-    style,
-    long,
-    rounded,
-    htmlType,
-    type,
-    size,
-    className,
-    prefixClass,
-    color,
-    startIcon,
-    endIcon,
-    ...rest
-  } = props
+  const { style, long, rounded, circle, htmlType, type, size, className, prefixClass, color, startIcon, endIcon, ...rest } = props
 
   const classNames = classnames(
     prefixClass,
@@ -44,6 +31,7 @@ const Button = (props) => {
     {
       [`${prefixClass}-long`]: long,
       [`${prefixClass}-rounded`]: rounded,
+      [`${prefixClass}-circle`]: circle,
       [`clicked`]: clicked,
     },
     className,
@@ -57,13 +45,9 @@ const Button = (props) => {
       className={classNames}
       style={style}
     >
-      {startIcon ? (
-        <span className={prefixClass + '-start-icon'}>{startIcon}</span>
-      ) : null}
+      {startIcon ? <span className={prefixClass + '-start-icon'}>{startIcon}</span> : null}
       <span>{props.children}</span>
-      {endIcon ? (
-        <span className={prefixClass + '-end-icon'}>{endIcon}</span>
-      ) : null}
+      {endIcon ? <span className={prefixClass + '-end-icon'}>{endIcon}</span> : null}
     </button>
   )
 }
@@ -72,18 +56,12 @@ Button.propTypes = {
   type: PropTypes.oneOf(['filled', 'outlined', 'text']), //类型
   long: PropTypes.bool, //长按钮
   rounded: PropTypes.bool, //圆角按钮
+  circle: PropTypes.bool, //圆形按钮
   color: PropTypes.oneOfType([
-    PropTypes.oneOf([
-      'primary',
-      'secondary',
-      'success',
-      'error',
-      'info',
-      'warning',
-    ]),
+    PropTypes.oneOf(['primary', 'secondary', 'success', 'error', 'info', 'warning']),
     PropTypes.string,
   ]), //颜色
-  size: PropTypes.oneOf(['large', 'default', 'small']), //大小
+  size: PropTypes.oneOf(['large', 'medium', 'small']), //大小
   htmlType: PropTypes.oneOf(['submit', 'button', 'reset']), //类型
 }
 
@@ -91,6 +69,7 @@ Button.defaultProps = {
   prefixClass: 'tui-button',
   long: false,
   rounded: false,
+  circle: false,
   type: 'text',
   size: 'default',
   color: 'primary',

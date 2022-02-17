@@ -59,7 +59,7 @@
   };
 
   this.colorPalette = function(color, index) {
-    var isLight = index <= 6;
+    var isLight = index < 6;
     var hsv = tinycolor(color).toHsv();
     var i = isLight ? lightColorCount + 1 - index : index - lightColorCount - 1;
     if(index == 6 || index === undefined) {
