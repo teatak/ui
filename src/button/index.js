@@ -71,7 +71,7 @@ Button.defaultProps = {
   rounded: false,
   circle: false,
   type: 'text',
-  size: 'default',
+  size: 'medium',
   color: 'primary',
 }
 
