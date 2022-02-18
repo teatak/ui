@@ -1,9 +1,0 @@
-.tui-space {
-  display: flex;
-  flex-wrap: wrap;
-}
-.tui-space .tui-space-item {
-  display: flex;
-}
-
-
