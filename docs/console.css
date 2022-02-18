@@ -147,7 +147,7 @@
   --color-foreground-3: rgb(var(--grey-8));
   --color-foreground-4: rgb(var(--grey-7));
   --color-background-1: #fff;
-  --color-background-2: rgb(var(--grey-1));
+  --color-background-2: #fff;
   --color-background-3: rgb(var(--grey-2));
   --color-background-4: rgb(var(--grey-3));
   --color-border-1: rgba(0, 0, 0, 0.2);
@@ -342,7 +342,7 @@
   --color-foreground-3: rgb(var(--grey-8));
   --color-foreground-4: rgb(var(--grey-7));
   --color-background-1: #fff;
-  --color-background-2: rgb(var(--grey-1));
+  --color-background-2: #fff;
   --color-background-3: rgb(var(--grey-2));
   --color-background-4: rgb(var(--grey-3));
   --color-border-1: rgba(0, 0, 0, 0.2);
@@ -709,7 +709,7 @@
     --color-foreground-3: rgb(var(--grey-8));
     --color-foreground-4: rgb(var(--grey-7));
     --color-background-1: #fff;
-    --color-background-2: rgb(var(--grey-1));
+    --color-background-2: #fff;
     --color-background-3: rgb(var(--grey-2));
     --color-background-4: rgb(var(--grey-3));
     --color-border-1: rgba(0, 0, 0, 0.2);
