@@ -14,9 +14,9 @@ const Input = (props) => {
 
     const classes = prefixClass + hasStartIcon + hasEndIcon + classNameString;
 
-    const handelChange = (e) => {
+    const handleChange = (e) => {
         if (props.onChange) {
-            props.onChange(e.target.value)
+            props.onChange(e.target.value, e)
         }
     }
     return <span className={prefixClass + "-root" + classSize + disabled} style={style}>
@@ -25,7 +25,7 @@ const Input = (props) => {
             className={classes}
             style={style}
             type={typeString}
-            onChange={handelChange}
+            onChange={handleChange}
             {...rest}
         />
         {endIcon ? <span className={prefixClass + "-end-icon"}>{endIcon}</span> : null}
