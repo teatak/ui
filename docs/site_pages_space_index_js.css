@@ -1,0 +1,15 @@
+.tui-space {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tui-space .tui-space-item {
+  display: flex;
+}
+
+
+
+.space-examples {
+    padding: 8px;
+}
+    .space-examples .tui-space .tui-space-item > div {
+            }
