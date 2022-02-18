@@ -14,9 +14,10 @@ const Input = (props) => {
 
     const classes = prefixClass + hasStartIcon + hasEndIcon + classNameString;
 
-    const handleChange = (e) => {
+    const handleChange = (newValue) => {
+        console.log(newValue)
         if (props.onChange) {
-            props.onChange(e.target.value, e)
+            props.onChange(newValue)
         }
     }
     return <span className={prefixClass + "-root" + classSize + disabled} style={style}>
@@ -25,7 +26,9 @@ const Input = (props) => {
             className={classes}
             style={style}
             type={typeString}
-            onChange={handleChange}
+            onChange={(e) => {
+                handleChange(e.target.value)
+            }}
             {...rest}
         />
         {endIcon ? <span className={prefixClass + "-end-icon"}>{endIcon}</span> : null}
