@@ -3,11 +3,11 @@
 .@{input-prefix-class}-root {
   display: inline-flex;
   align-items: center;
-  color: var(--color-text-2);
+  color: var(--color-foreground-1);
   position: relative;
   width: 100%;
   &.disabled {
-    color: rgb(var(--grey-2));
+    color: rgb(var(--grey-5));
   }
   & .@{input-prefix-class}-start-icon {
     display: inline-flex;
@@ -33,9 +33,10 @@
     height: 32px;
     padding: 0 8px;
     outline: none;
-    border: solid 1px rgb(var(--grey-6));
-    border-radius: 3px;
-    color: var(--color-text-2);
+    border: solid 1px var(--color-border-3);
+    border-radius: var(--border-radius-medium);
+    color: var(--color-foreground-1);
+    background: var(--color-fill-2);
     width: 100%;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
       box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
@@ -47,23 +48,27 @@
       padding-right: 32px;
     }
     &[disabled] {
-      color: rgb(var(--grey-2));
-      background-color: rgb(var(--grey-1));
-      border: solid 1px rgb(var(--grey-2));
+      color: rgb(var(--grey-5));
+      background: rbg(var(--grey-2));
+      border: solid 1px rgb(var(--grey-3));
       &:hover,
       &:focus {
-        border: solid 1px rgb(var(--grey-2));
+        color: rgb(var(--grey-5));
+        background: rbg(var(--grey-2));
+        border: solid 1px rgb(var(--grey-3));
       }
     }
     &:hover {
-      border: solid 1px rgb(var(--blue-2));
+      border: solid 1px rgb(var(--primary-5));
+      background: var(--color-fill-3);
     }
     &:focus {
-      border: solid 1px rgb(var(--blue-6));
-      box-shadow: 0px 0px 0px 3px rgb(var(--blue-2));
+      border: solid 1px rgb(var(--primary-6));
+      background: var(--color-fill-2);
+      box-shadow: 0px 0px 0px 3px var(--color-primary-1);
     }
   }
-  &.@{input-prefix-class}-large {
+  &.@{input-prefix-class}-size-large {
     & .@{input-prefix-class}-start-icon {
       margin-left: 9px;
       & svg {
@@ -80,7 +85,7 @@
       font-size: 16px;
       height: 40px;
       padding: 0 8px;
-      border-radius: 4px;
+      border-radius: var(--border-radius-large);
       &.@{input-prefix-class}-has-start-icon {
         padding-left: 40px;
       }
@@ -89,7 +94,7 @@
       }
     }
   }
-  &.@{input-prefix-class}-small {
+  &.@{input-prefix-class}-size-small {
     & .@{input-prefix-class}-start-icon {
       margin-left: 5px;
       & svg {
@@ -106,7 +111,7 @@
       font-size: 12px;
       height: 24px;
       padding: 0 8px;
-      border-radius: 2px;
+      border-radius: var(--border-radius-small);
       &.@{input-prefix-class}-has-start-icon {
         padding-left: 24px;
       }
