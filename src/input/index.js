@@ -5,14 +5,7 @@ import classnames from 'classnames'
 const Input = (props) => {
 
     const { addon, style, disabled, className, prefixClass, size, startIcon, endIcon, type, ...rest } = props;
-
-    // const hasStartIcon = startIcon ? " " + prefixClass + "-has-start-icon" : ""
-    // const hasEndIcon = endIcon ? " " + prefixClass + "-has-end-icon" : ""
     const typeString = (type && type === "text") ? "text" : "password";
-    // const disabled = disabled ? " disabled" : "";
-    // const classNameString = className ? className : ""
-
-    // const classes = prefixClass + hasStartIcon + hasEndIcon + classNameString;
 
     const classNamesRoot = classnames(
         `${prefixClass}-root`,
