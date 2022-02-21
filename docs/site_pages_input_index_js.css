@@ -30,7 +30,7 @@
 .tui-input-root .tui-input {
   font-size: 14px;
   height: 32px;
-  padding: 0 8px;
+  padding: 0 12px;
   outline: none;
   border: solid 1px var(--color-border-3);
   border-radius: var(--border-radius-medium);
@@ -78,9 +78,9 @@
   font-size: 24px;
 }
 .tui-input-root.tui-input-size-large .tui-input {
-  font-size: 16px;
+  font-size: 14px;
   height: 40px;
-  padding: 0 8px;
+  padding: 0 16px;
   border-radius: var(--border-radius-large);
 }
 .tui-input-root.tui-input-size-large .tui-input.tui-input-has-start-icon {

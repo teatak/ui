@@ -146,6 +146,10 @@
   --color-foreground-2: rgb(var(--grey-9));
   --color-foreground-3: rgb(var(--grey-8));
   --color-foreground-4: rgb(var(--grey-7));
+  --color-fill-1: rgb(var(--grey-1));
+  --color-fill-2: rgb(var(--grey-2));
+  --color-fill-3: rgb(var(--grey-3));
+  --color-fill-4: rgb(var(--grey-4));
   --color-background-1: #fff;
   --color-background-2: #fff;
   --color-background-3: rgb(var(--grey-2));
@@ -341,6 +345,10 @@
   --color-foreground-2: rgb(var(--grey-9));
   --color-foreground-3: rgb(var(--grey-8));
   --color-foreground-4: rgb(var(--grey-7));
+  --color-fill-1: rgb(var(--grey-1));
+  --color-fill-2: rgb(var(--grey-2));
+  --color-fill-3: rgb(var(--grey-3));
+  --color-fill-4: rgb(var(--grey-4));
   --color-background-1: #fff;
   --color-background-2: #fff;
   --color-background-3: rgb(var(--grey-2));
@@ -524,6 +532,10 @@
   --color-foreground-2: rgba(255, 255, 255, 0.7);
   --color-foreground-3: rgba(255, 255, 255, 0.5);
   --color-foreground-4: rgba(255, 255, 255, 0.3);
+  --color-fill-1: hsla(0, 0%, 100%, 0.04);
+  --color-fill-2: hsla(0, 0%, 100%, 0.08);
+  --color-fill-3: hsla(0, 0%, 100%, 0.12);
+  --color-fill-4: hsla(0, 0%, 100%, 0.16);
   --color-background-1: #16181a;
   --color-background-2: #232324;
   --color-background-3: #2a2a2b;
@@ -708,6 +720,10 @@
     --color-foreground-2: rgb(var(--grey-9));
     --color-foreground-3: rgb(var(--grey-8));
     --color-foreground-4: rgb(var(--grey-7));
+    --color-fill-1: rgb(var(--grey-1));
+    --color-fill-2: rgb(var(--grey-2));
+    --color-fill-3: rgb(var(--grey-3));
+    --color-fill-4: rgb(var(--grey-4));
     --color-background-1: #fff;
     --color-background-2: #fff;
     --color-background-3: rgb(var(--grey-2));
@@ -893,6 +909,10 @@
     --color-foreground-2: rgba(255, 255, 255, 0.7);
     --color-foreground-3: rgba(255, 255, 255, 0.5);
     --color-foreground-4: rgba(255, 255, 255, 0.3);
+    --color-fill-1: hsla(0, 0%, 100%, 0.04);
+    --color-fill-2: hsla(0, 0%, 100%, 0.08);
+    --color-fill-3: hsla(0, 0%, 100%, 0.12);
+    --color-fill-4: hsla(0, 0%, 100%, 0.16);
     --color-background-1: #16181a;
     --color-background-2: #232324;
     --color-background-3: #2a2a2b;
