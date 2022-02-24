@@ -243,22 +243,6 @@
 .tui-button.tui-button-outlined.tui-button-size-mini {
   padding: var(--size-button-outlined-padding-mini);
 }
-.tui-button.tui-button-outlined.tui-button-circle {
-  border-radius: 16px;
-  padding: 5px;
-}
-.tui-button.tui-button-outlined.tui-button-circle.tui-button-size-large {
-  border-radius: 18px;
-  padding: 5px;
-}
-.tui-button.tui-button-outlined.tui-button-circle.tui-button-size-small {
-  border-radius: 14px;
-  padding: 5px;
-}
-.tui-button.tui-button-outlined.tui-button-circle.tui-button-size-mini {
-  border-radius: 12px;
-  padding: 4px;
-}
 .tui-button-text:not(disabled) {
   background-color: transparent;
   color: rgb(var(--primary-6));
