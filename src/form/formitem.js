@@ -7,7 +7,7 @@ import classnames from "classnames"
 import PropTypes from "prop-types"
 import Schema from "async-validator"
 
-import FormContext from "./formcontext"
+import FormContext from "../formcontext"
 import { Row, Col } from "../grid"
 import "../grid/style"
 

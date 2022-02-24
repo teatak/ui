@@ -6,7 +6,7 @@ import React, { useState, useMemo } from "react"
 import PropTypes from "prop-types"
 import classnames from "classnames"
 import FormItem from "./formitem"
-import FormContext from "./formcontext"
+import FormContext from "../formcontext"
 
 const Form = (props) => {
     const { style, requiredSymbol, size, className, prefixClass, labelAlign, labelCol, wrapperCol, layout, onSubmit, ...rest } = props
