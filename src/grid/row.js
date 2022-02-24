@@ -1,13 +1,16 @@
-import React from 'react'
+import React from "react"
+import PropTypes from "prop-types"
+import classnames from "classnames"
 
 const Row = (props) => {
-  const { style, gap, className, prefixClass, ...rest } = props
+  const { style, gap, className, prefixClass, align, justify, ...rest } = props
 
-  let classes = prefixClass
-
-  if (className) {
-    classes += ' ' + className
-  }
+  const classNames = classnames(
+    prefixClass,
+    `${prefixClass}-align-${align}`,
+    `${prefixClass}-justify-${justify}`,
+    className,
+  )
 
   let gapX = 0
   let gapY = 0
@@ -37,7 +40,7 @@ const Row = (props) => {
   }
 
   return (
-    <div className={classes} style={{ ...gapStyle, ...style }}>
+    <div className={classNames} style={{ ...gapStyle, ...style }}>
       {React.Children.map(props.children, (item, index) => {
         return <item.type key={index} {...item.props} gap={gapX}></item.type>
       })}
@@ -45,8 +48,15 @@ const Row = (props) => {
   )
 }
 
+Row.propTypes = {
+  align: PropTypes.oneOf(['start', 'center', 'end']), //align
+  justify: PropTypes.oneOf(['start', 'center', 'end', 'space-between', 'space-around']), //justify
+}
+
 Row.defaultProps = {
-  prefixClass: 'tui-row',
+  prefixClass: "tui-row",
+  align: "start",
+  justify: "start"
 }
 
 export default Row

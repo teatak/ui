@@ -6,7 +6,30 @@
 .@{row-prefix-class} {
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
+  &.@{row-prefix-class}-align-start {
+    align-items: flex-start;
+  }
+  &.@{row-prefix-class}-align-center {
+    align-items: center;
+  }
+  &.@{row-prefix-class}-align-end {
+    align-items: flex-end;
+  }
+  &.@{row-prefix-class}-justify-start {
+    justify-content: flex-start;
+  }
+  &.@{row-prefix-class}-justify-center {
+    justify-content: center;
+  }
+  &.@{row-prefix-class}-justify-end {
+    justify-content: flex-end;
+  }
+  &.@{row-prefix-class}-justify-space-around {
+    justify-content: space-around;
+  }
+  &.@{row-prefix-class}-justify-space-between {
+    justify-content: space-between;
+  }
   & .@{col-prefix-class} {
     .make-grid(-span);
     .make-grid(-xs);

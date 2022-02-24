@@ -31,6 +31,7 @@ export default () => {
     };
 
     return <div className="page">
+        <h1>Input</h1>
         <h2>size</h2>
         <div className="examples">
             <Row gap="16px">

@@ -1,15 +1,18 @@
-import React, { useState } from "react"
-import PropTypes from "prop-types";
-import classnames from 'classnames'
+import React, { useContext } from "react"
+import PropTypes from "prop-types"
+import classnames from "classnames"
+import FormContext from "../form/formcontext"
 
 const Input = (props) => {
 
-    const { addon, style, disabled, className, prefixClass, size, startIcon, endIcon, type, ...rest } = props;
-    const typeString = (type && type === "text") ? "text" : "password";
+    const { size: ctxSize } = useContext(FormContext);
+
+    const { addon, style, disabled, className, prefixClass, size, startIcon, endIcon, type, onChange, ...rest } = props
+    const typeString = (type && type === "text") ? "text" : "password"
 
     const classNamesRoot = classnames(
         `${prefixClass}-root`,
-        `${prefixClass}-size-${size}`,
+        `${prefixClass}-size-${size || ctxSize || "medium"}`,
         {
             [`disabled`]: disabled
         }
@@ -24,9 +27,9 @@ const Input = (props) => {
         className,
     )
 
-    const handleChange = (newValue, e) => {
-        if (props.onChange) {
-            props.onChange(newValue, e)
+    const handleChange = (e, newValue) => {
+        if (onChange) {
+            onChange(e, newValue)
         }
     }
     return <span className={classNamesRoot} style={style}>
@@ -36,7 +39,7 @@ const Input = (props) => {
             style={style}
             type={typeString}
             onChange={(e) => {
-                handleChange(e.target.value, e)
+                handleChange(e, e.target.value)
             }}
             disabled={disabled}
             {...rest}
@@ -48,12 +51,12 @@ const Input = (props) => {
 Input.propTypes = {
     type: PropTypes.oneOf(['text', 'password']),
     size: PropTypes.oneOf(['large', 'medium', 'small']),
-};
+}
 
 Input.defaultProps = {
     prefixClass: "tui-input",
     type: "text",
-    size: "medium",
     disabled: false,
-};
+}
+
 export default Input

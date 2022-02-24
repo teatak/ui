@@ -32,7 +32,7 @@
   height: 32px;
   padding: 0 12px;
   outline: none;
-  border: solid 1px var(--color-border-3);
+  border: solid 1px transparent;
   border-radius: var(--border-radius-small);
   color: var(--color-foreground-1);
   background: var(--color-fill-2);

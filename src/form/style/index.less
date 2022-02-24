@@ -1,27 +1,115 @@
+@form-prefix-class: tui-form;
 @form-item-prefix-class: tui-form-item;
 @input-prefix-class: tui-input;
 
-.@{form-item-prefix-class} {
-  margin-bottom: 16px;
-  .@{form-item-prefix-class}-control {
-
-  }
-  .@{form-item-prefix-class}-tip {
-    font-size: 12px;
-    margin: 8px 0 0;
-  }
-  &.has-error {
-    .@{form-item-prefix-class}-tip {
-      color: rgb(var(--red-6));
-    }
-    & .@{input-prefix-class}-root {
-      & .@{input-prefix-class} {
-        border: solid 1px rgb(var(--red-6));
-        &:hover {
-          border: solid 1px rgb(var(--red-6));
+.@{form-prefix-class} {
+  display: flex;
+  flex-direction: column;
+  //size
+  &.@{form-prefix-class}-size-medium {
+    & .@{form-item-prefix-class}-label {
+      & label {
+        line-height: 32px;
+      }
+      &.@{form-item-prefix-class}-label-right {
+        & label {
+          padding-right: 16px;
         }
-        &:focus {
-          box-shadow: 0px 0px 0px 3px rgb(var(--red-2));;
+      }
+    }
+  }
+  &.@{form-prefix-class}-size-large {
+    & .@{form-item-prefix-class}-label {
+      & label {
+        line-height: 40px;
+      }
+      &.@{form-item-prefix-class}-label-right {
+        & label {
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+  &.@{form-prefix-class}-size-small {
+    & .@{form-item-prefix-class}-label {
+      & label {
+        line-height: 24px;
+      }
+      &.@{form-item-prefix-class}-label-right {
+        & label {
+          padding-right: 12px;
+        }
+      }
+    }
+  }
+  &.@{form-prefix-class}-layout-inline {
+    flex-flow: row wrap;
+    & .@{form-item-prefix-class} {
+      display: flex;
+      margin-bottom: 8px;
+      margin-right: 4px;
+      & .@{form-item-prefix-class}-label {
+        padding: 0 4px;
+      }
+      &.@{form-item-prefix-class}-has-error {
+        // margin-bottom: 0px;
+        .@{form-item-prefix-class}-tip {
+          position: relative;
+        }
+      }
+    }
+  }
+  & .@{form-item-prefix-class} {
+    margin-bottom: 20px;
+    & .@{form-item-prefix-class}-label {
+      &.@{form-item-prefix-class}-label-left {
+        text-align: left;
+      }
+      &.@{form-item-prefix-class}-label-right {
+        text-align: right;
+      }
+      &.@{form-item-prefix-class}-label-ceter {
+        text-align: center;
+      }
+      & label.@{form-item-prefix-class}-required::before {
+        display: inline-block;
+        margin-right: 4px;
+        color: rgb(var(--red-5));
+        font-size: 14px;
+        font-family: SimSun, sans-serif;
+        line-height: 1;
+        content: "*";
+      }
+    }
+    & .@{form-item-prefix-class}-control {
+      padding: 0;
+    }
+    & .@{form-item-prefix-class}-tip {
+      font-size: 12px;
+      height: 12px;
+      line-height: 12px;
+      margin: 4px 0;
+    }
+    &.@{form-item-prefix-class}-has-error {
+      // margin-bottom: 0px;
+      .@{form-item-prefix-class}-tip {
+        position: absolute;
+        color: rgb(var(--red-5));
+      }
+      //input error
+      & .@{input-prefix-class}-root {
+        & .@{input-prefix-class} {
+          border: solid 1px transparent;
+          background: var(--color-error-1);
+          &:hover {
+            border: solid 1px rgb(var(--red-5));
+            background: var(--color-error-2);
+          }
+          &:focus {
+            border: solid 1px rgb(var(--red-6));
+            background: var(--color-error-1);
+            box-shadow: 0px 0px 0px 3px var(--color-error-2);
+          }
         }
       }
     }

@@ -3,14 +3,14 @@ import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 /* Use `…/dist/cjs/…` if you’re not in ESM! */
-import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 const components = {
   code({ node, inline, className, children, ...props }) {
     const match = /language-(\w+)/.exec(className || '')
     return !inline && match ? (
       <SyntaxHighlighter
-        style={coldarkDark}
+        style={vscDarkPlus}
         language={match[1]}
         PreTag="div"
         children={String(children).replace(/\n$/, '')}

@@ -1,9 +1,12 @@
-import React, { useEffect, useState, useRef } from 'react'
-import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import React, { useEffect, useState, useRef, useContext } from "react"
+import PropTypes from "prop-types"
+import classnames from "classnames"
+import FormContext from "../form/formcontext"
 
 const Button = (props) => {
   const timerRef = useRef(null)
+
+  const { size: ctxSize } = useContext(FormContext);
 
   useEffect(() => {
     return () => clearTimeout(timerRef.current)
@@ -21,12 +24,15 @@ const Button = (props) => {
     }, 200)
   }
 
-  const { style, long, rounded, circle, htmlType, type, size, className, prefixClass, color, startIcon, endIcon, ...rest } = props
+  const {
+    style, long, rounded, circle, htmlType, type, size,
+    className, prefixClass, color, startIcon, endIcon, ...rest
+  } = props
 
   const classNames = classnames(
     prefixClass,
     `${prefixClass}-${type}`,
-    `${prefixClass}-size-${size}`,
+    `${prefixClass}-size-${size || ctxSize || "medium"}`,
     `${prefixClass}-color-${color}`,
     {
       [`${prefixClass}-long`]: long,
@@ -71,7 +77,6 @@ Button.defaultProps = {
   rounded: false,
   circle: false,
   type: 'text',
-  size: 'medium',
   color: 'primary',
 }
 

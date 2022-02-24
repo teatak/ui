@@ -10,8 +10,11 @@ a:focus {
 }
 main {
   display: flex;
+  width: 100%;
   & .menu {
-    flex: 0 0 200px;
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
     color: var(--color-foreground-2);
     background: var(--color-background-2);
     border-right: solid 1px var(--color-border-2);
@@ -20,13 +23,15 @@ main {
     }
   }
   & .content {
-    display: flex;
-    justify-content: center;
-    flex: auto;
-    margin: 0 24px;
+    overflow: hidden;
     position: relative;
-    & .page {
+    flex: 1;
+    min-width: 600px;
+    & .content-page {
+      position: relative;
       width: 100%;
+      margin: 0 auto;
+      padding: 0 32px;
       max-width: 1100px;
     }
     & h1 {

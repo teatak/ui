@@ -1,5 +1,5 @@
 import React from 'react'
-import {Row,Col} from "../../../src";
+import { Row, Col } from "../../../src";
 import "../../../src/row/style";
 import "../../../src/col/style";
 import "../../../src/svg/style";
@@ -10,26 +10,26 @@ import "./index.css"
 export default () => {
 
     return <div>
-         <div className="grid-examples">
-            <div>default:</div>
-            <Row gap="16px">
+        <h1>Grid</h1>
+        <div className="examples grid-examples">
+            <Row gap={[8, 16]}>
                 <Col xs="24" sm="12" lg="6">
                     <div>xs="24" sm="12" lg="6"</div>
                 </Col>
                 <Col xs="24" sm="12" lg="6">
                     <div>xs="24" sm="12" lg="6"</div>
-                </Col> 
+                </Col>
                 <Col xs="24" sm="12" lg="6">
                     <div>xs="24" sm="12" lg="6"</div>
-                </Col> 
+                </Col>
                 <Col xs="24" sm="12" lg="6">
                     <div>xs="24" sm="12" lg="6"</div>
-                </Col> 
+                </Col>
                 <Col span="24">
-                    <div>xs="24" sm="12" lg="6"</div>
+                    <div>span="24"</div>
                 </Col>
             </Row>
-         </div>     
+        </div>
         <Markdown children={`
 \`\`\`javascript
 import React from "react";
@@ -37,7 +37,7 @@ import {Space,Row,Col} from "@teatak/ui";
 
 export default () => <div className="examples">
     <div>default:</div>
-    <Row gap="16px">
+    <Row gap={[8, 16]}>
         <Col xs="24" sm="12" lg="6">
             <div>xs="24" sm="12" lg="6"</div>
         </Col>
@@ -51,7 +51,7 @@ export default () => <div className="examples">
             <div>xs="24" sm="12" lg="6"</div>
         </Col> 
         <Col span="24">
-            <div>xs="24" sm="12" lg="6"</div>
+            <div>span="24"</div>
         </Col>
     </Row>
 </div>       
@@ -61,14 +61,29 @@ export default () => <div className="examples">
         <Markdown children={`
 ## API
 
+### Row
+
 | Property  | Description | Type | Default |
 | --------- | ------- | ------- | ------- |
-| type      | can be set to 'filled','outlined','default' | string | default |
-| size      | can be set to small large or default | string | default |
-| rounded   | rounded | boolean | false |
-| disabled  | disabled state of button	 | boolean | false |
-| htmlType  | htmlType | string | button |
-| onClick   | set the handler to handle click event	| (event) => void | - |
+| gap       | number or array | number,object,array | 0 |
+| align     | PropTypes.oneOf(['start', 'center', 'end']) | string | start |
+| justify   | PropTypes.oneOf(['start', 'center', 'end', 'space-between', 'space-around']) | string | start |
+
+### Col
+
+| Property  | Description | Type | Default |
+| --------- | ------- | ------- | ------- |
+| offset	| The number of cells to offset Col from the left   | number | 0 |	
+| pull	    | The number of cells that raster is moved to the left  | number | 0 |	
+| push	    | The number of cells that raster is moved to the right | number | 0 |	
+| span      | Raster number of cells to occupy | number | - |
+| xs        | screen < 576px | number | - |
+| sm        | screen ≥ 576px | number | - |
+| md        | screen ≥ 768px | number | - |
+| lg        | screen ≥ 992px | number | - |
+| xl        | screen ≥ 1200px | number | - |
+| xxl       | screen ≥ 1600px | number | - |
+
         `} />
     </div>
 }

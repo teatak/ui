@@ -32,7 +32,7 @@
   height: 32px;
   padding: 0 12px;
   outline: none;
-  border: solid 1px var(--color-border-3);
+  border: solid 1px transparent;
   border-radius: var(--border-radius-small);
   color: var(--color-foreground-1);
   background: var(--color-fill-2);
@@ -571,24 +571,96 @@
   background-color: var(--color-warning-2);
 }
 
-.tui-form-item {
-  margin-bottom: 16px;
+.tui-form {
+  display: flex;
+  flex-direction: column;
 }
-.tui-form-item .tui-form-item-tip {
+.tui-form.tui-form-size-medium .tui-form-item-label label {
+  line-height: 32px;
+}
+.tui-form.tui-form-size-medium .tui-form-item-label.tui-form-item-label-right label {
+  padding-right: 16px;
+}
+.tui-form.tui-form-size-large .tui-form-item-label label {
+  line-height: 40px;
+}
+.tui-form.tui-form-size-large .tui-form-item-label.tui-form-item-label-right label {
+  padding-right: 20px;
+}
+.tui-form.tui-form-size-small .tui-form-item-label label {
+  line-height: 24px;
+}
+.tui-form.tui-form-size-small .tui-form-item-label.tui-form-item-label-right label {
+  padding-right: 12px;
+}
+.tui-form.tui-form-layout-inline {
+  flex-flow: row wrap;
+}
+.tui-form.tui-form-layout-inline .tui-form-item {
+  display: flex;
+  margin-bottom: 8px;
+  margin-right: 4px;
+}
+.tui-form.tui-form-layout-inline .tui-form-item .tui-form-item-label {
+  padding: 0 4px;
+}
+.tui-form.tui-form-layout-inline .tui-form-item.tui-form-item-has-error .tui-form-item-tip {
+  position: relative;
+}
+.tui-form .tui-form-item {
+  margin-bottom: 20px;
+}
+.tui-form .tui-form-item .tui-form-item-label.tui-form-item-label-left {
+  text-align: left;
+}
+.tui-form .tui-form-item .tui-form-item-label.tui-form-item-label-right {
+  text-align: right;
+}
+.tui-form .tui-form-item .tui-form-item-label.tui-form-item-label-ceter {
+  text-align: center;
+}
+.tui-form .tui-form-item .tui-form-item-label label.tui-form-item-required::before {
+  display: inline-block;
+  margin-right: 4px;
+  color: rgb(var(--red-5));
+  font-size: 14px;
+  font-family: SimSun, sans-serif;
+  line-height: 1;
+  content: "*";
+}
+.tui-form .tui-form-item .tui-form-item-control {
+  padding: 0;
+}
+.tui-form .tui-form-item .tui-form-item-tip {
   font-size: 12px;
-  margin: 8px 0 0;
+  height: 12px;
+  line-height: 12px;
+  margin: 4px 0;
 }
-.tui-form-item.has-error .tui-form-item-tip {
-  color: rgb(var(--red-6));
+.tui-form .tui-form-item.tui-form-item-has-error .tui-form-item-tip {
+  position: absolute;
+  color: rgb(var(--red-5));
 }
-.tui-form-item.has-error .tui-input-root .tui-input {
+.tui-form .tui-form-item.tui-form-item-has-error .tui-input-root .tui-input {
+  border: solid 1px transparent;
+  background: var(--color-error-1);
+}
+.tui-form .tui-form-item.tui-form-item-has-error .tui-input-root .tui-input:hover {
+  border: solid 1px rgb(var(--red-5));
+  background: var(--color-error-2);
+}
+.tui-form .tui-form-item.tui-form-item-has-error .tui-input-root .tui-input:focus {
   border: solid 1px rgb(var(--red-6));
+  background: var(--color-error-1);
+  box-shadow: 0px 0px 0px 3px var(--color-error-2);
 }
-.tui-form-item.has-error .tui-input-root .tui-input:hover {
-  border: solid 1px rgb(var(--red-6));
+
+.tui-space {
+  display: flex;
+  flex-wrap: wrap;
 }
-.tui-form-item.has-error .tui-input-root .tui-input:focus {
-  box-shadow: 0px 0px 0px 3px rgb(var(--red-2));
+.tui-space .tui-space-item {
+  display: flex;
 }
 
 .examples {

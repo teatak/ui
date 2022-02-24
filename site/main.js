@@ -57,37 +57,39 @@ const Root = () => {
           </Menu>
         </div>
         <div className="content">
-          <Switch>
-            <Redirect exact path="/" to="/Button" />
-            <Route strict path="/color">
-              <Helmet title="Color - TeaTak" />
-              <Color />
-            </Route>
-            <Route strict path="/button">
-              <Helmet title="Button - TeaTak" />
-              <Button />
-            </Route>
-            <Route strict path="/input">
-              <Helmet title="Input - TeaTak" />
-              <Input />
-            </Route>
-            <Route strict path="/form">
-              <Helmet title="Form - TeaTak" />
-              <Form />
-            </Route>
-            <Route strict path="/grid">
-              <Helmet title="Grid - TeaTak" />
-              <Grid />
-            </Route>
-            <Route strict path="/space">
-              <Helmet title="Space - TeaTak" />
-              <Space />
-            </Route>
-            <Route strict path="/modal">
-              <Helmet title="Modal - TeaTak" />
-              <Modal />
-            </Route>
-          </Switch>
+          <div className='content-page'>
+            <Switch>
+              <Redirect exact path="/" to="/Button" />
+              <Route strict path="/color">
+                <Helmet title="Color - TeaTak" />
+                <Color />
+              </Route>
+              <Route strict path="/button">
+                <Helmet title="Button - TeaTak" />
+                <Button />
+              </Route>
+              <Route strict path="/input">
+                <Helmet title="Input - TeaTak" />
+                <Input />
+              </Route>
+              <Route strict path="/form">
+                <Helmet title="Form - TeaTak" />
+                <Form />
+              </Route>
+              <Route strict path="/grid">
+                <Helmet title="Grid - TeaTak" />
+                <Grid />
+              </Route>
+              <Route strict path="/space">
+                <Helmet title="Space - TeaTak" />
+                <Space />
+              </Route>
+              <Route strict path="/modal">
+                <Helmet title="Modal - TeaTak" />
+                <Modal />
+              </Route>
+            </Switch>
+          </div>
         </div>
       </main>
     </Router>

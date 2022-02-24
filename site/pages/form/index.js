@@ -1,12 +1,9 @@
-import React from 'react'
-import {Input} from "../../../src";
+import React, { useState } from 'react'
+import { Input, Button, Form, Space } from "../../../src";
 import "../../../src/input/style";
-
-import {Button} from "../../../src";
 import "../../../src/button/style";
-
-import {Form} from "../../../src";
 import "../../../src/form/style";
+import "../../../src/space/style";
 
 import {
     Delete,
@@ -21,47 +18,141 @@ import "./index.css"
 export default () => {
 
     const onSubmit = (e, errors, values) => {
-        e.preventDefault();
-        console.log(e, errors, values);
+        if (errors) {
+            console.error(errors)
+        } else {
+            console.log(values)
+        }
     };
+
+    const [layout, setLayout] = useState("horizontal")
+    const [size, setSize] = useState("medium")
+
     return <div>
-         <div className="examples">
-            <div>default:</div>
-            <Form onSubmit={onSubmit}>
+        <h1>Form</h1>
+        <h2>Layout</h2>
+        <div className="examples">
+            <Form
+                layout={layout}
+                labelAlign="left"
+                style={layout === 'inline' ? { width: '100%' } : { maxWidth: 600 }}
+            >
                 <Form.Item
-                    name="name"
-                    rules={[
-                        {required: true, message: '请输入用户名!'},
-                        {type: 'string', message: '请输入5-20位有效的用户名!', pattern: /^.{5,20}$/},
-                    ]}
+                    label="Layout"
                 >
-                    <Input style={{width: "100%"}}/>
+                    <Space>
+                        <Button type="outlined" onClick={() => {
+                            setLayout("horizontal")
+                        }} disabled={layout === "horizontal"}>horizontal</Button>
+                        <Button type="outlined" onClick={() => {
+                            setLayout("vertical")
+                        }} disabled={layout === "vertical"}>vertical</Button>
+                        <Button type="outlined" onClick={() => {
+                            setLayout("inline")
+                        }} disabled={layout === "inline"}>inline</Button>
+                    </Space>
                 </Form.Item>
                 <Form.Item
-                    name="password"
-                    rules={[
-                        {required: true, message: '请输入密码!'},
-                        {type: 'string', message: '请输入密码5-20位!', pattern: /^.{5,20}$/},
-                    ]}
+                    label="Name"
+                    field="name_1"
                 >
-                    <Input type="password" style={{width: "100%"}}/>
+                    <Input defaultValue="name" style={{ width: "100%" }} />
                 </Form.Item>
                 <Form.Item
-                    name="password2"
-                    rules={[
-                        {required: true, message: '请输入密码!'},
-                        {type: 'string', message: '请输入密码5-20位!', pattern: /^.{5,20}$/},
-                    ]}
+                    label="Password"
+                    field="password_1"
                 >
-                    <Input type="password" disabled style={{width: "100%"}}/>
+                    <Input type="password" style={{ width: "100%" }} />
                 </Form.Item>
-                <Button
-                    color="primary"
-                    type="filled"
-                    htmlType="submit"
-                >Submit</Button>
+                <Form.Item>
+                    <Button
+                        color="primary"
+                        type="filled"
+                        htmlType="submit"
+                    >Submit</Button>
+                </Form.Item>
             </Form>
-         </div>     
+        </div>
+        <h2>Size</h2>
+        <div className="examples">
+            <Form
+                size={size}
+                style={{ maxWidth: 600 }}
+            >
+                <Form.Item
+                    label="Size"
+                >
+                    <Space>
+                        <Button type="outlined" onClick={() => {
+                            setSize("large")
+                        }} disabled={size === "large"} >large</Button>
+                        <Button type="outlined" onClick={() => {
+                            setSize("medium")
+                        }} disabled={size === "medium"} >medium</Button>
+                        <Button type="outlined" onClick={() => {
+                            setSize("small")
+                        }} disabled={size === "small"} >small</Button>
+                    </Space>
+                </Form.Item>
+                <Form.Item
+                    label="Name"
+                    field="name_2"
+                >
+                    <Input style={{ width: "100%" }} />
+                </Form.Item>
+                <Form.Item
+                    label="Password"
+                    field="password_2"
+                >
+                    <Input type="password" style={{ width: "100%" }} />
+                </Form.Item>
+                <Form.Item>
+                    <Button
+                        color="primary"
+                        type="filled"
+                        htmlType="submit"
+                    >Submit</Button>
+                </Form.Item>
+            </Form>
+        </div>
+        <h2>Submit</h2>
+        <div className="examples">
+            <Form
+                layout={layout}
+                size={size}
+                onSubmit={onSubmit}
+                requiredSymbol={false}
+                style={{ maxWidth: 600 }}
+            >
+                <Form.Item
+                    label="Name"
+                    field="name"
+                    rules={[
+                        { required: true, message: '请输入用户名!' },
+                        { type: 'string', message: '请输入5-20位有效的用户名!', pattern: /^.{5,20}$/ },
+                    ]}
+                >
+                    <Input style={{ width: "100%" }} />
+                </Form.Item>
+                <Form.Item
+                    label="Password"
+                    field="password"
+                    rules={[
+                        { required: true, message: '请输入密码!' },
+                        { type: 'string', message: '请输入密码5-20位!', pattern: /^.{5,20}$/ },
+                    ]}
+                >
+                    <Input type="password" style={{ width: "100%" }} />
+                </Form.Item>
+                <Form.Item>
+                    <Button
+                        color="primary"
+                        type="filled"
+                        htmlType="submit"
+                    >Submit</Button>
+                </Form.Item>
+            </Form>
+        </div>
 
         <Markdown children={`
 > color: primary,danger
