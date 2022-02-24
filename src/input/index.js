@@ -22,7 +22,7 @@ const Input = (props) => {
         prefixClass,
         {
             [`${prefixClass}-has-start-icon`]: startIcon,
-            [`${prefixClass}--has-end-icon`]: endIcon,
+            [`${prefixClass}-has-end-icon`]: endIcon,
         },
         className,
     )
@@ -50,7 +50,7 @@ const Input = (props) => {
 
 Input.propTypes = {
     type: PropTypes.oneOf(['text', 'password']),
-    size: PropTypes.oneOf(['large', 'medium', 'small']),
+    size: PropTypes.oneOf(['large', 'medium', 'small', 'mini']),
 }
 
 Input.defaultProps = {

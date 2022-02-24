@@ -67,7 +67,7 @@ Button.propTypes = {
     PropTypes.oneOf(['primary', 'secondary', 'success', 'error', 'info', 'warning']),
     PropTypes.string,
   ]), //颜色
-  size: PropTypes.oneOf(['large', 'medium', 'small']), //大小
+  size: PropTypes.oneOf(['large', 'medium', 'small', 'mini']), //大小
   htmlType: PropTypes.oneOf(['submit', 'button', 'reset']), //类型
 }
 

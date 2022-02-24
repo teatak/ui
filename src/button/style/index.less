@@ -8,8 +8,8 @@
   align-items: center;
   cursor: pointer;
   border-radius: var(--border-radius-medium);
-  padding: 0 16px;
-  height: 32px;
+  padding: var(--size-button-padding-medium);
+  height: var(--size-medium);
   outline: none;
   border: none;
   font-size: 14px;
@@ -22,45 +22,66 @@
     font-size: 20px;
     vertical-align: middle;
   }
+  & .@{button-prefix-class}-start-icon {
+    margin-right: 4px;
+  }
+  & .@{button-prefix-class}-end-icon {
+    margin-left: 4px;
+  }
   &.@{button-prefix-class}-size-large {
     border-radius: var(--border-radius-large);
-    padding: 0 24px;
-    height: 40px;
+    padding: var(--size-button-padding-large);
+    height: var(--size-large);
     font-size: 16px;
     & svg {
-      font-size: 24px;
+      font-size: 22px;
     }
     & .@{button-prefix-class}-start-icon {
       margin-right: 4px;
-      & svg {
-        font-size: 24px;
-      }
     }
     & .@{button-prefix-class}-end-icon {
       margin-left: 4px;
-      & svg {
-        font-size: 24px;
-      }
     }
   }
   &.@{button-prefix-class}-size-small {
     border-radius: var(--border-radius-small);
-    padding: 0 12px;
-    height: 24px;
+    padding: var(--size-button-padding-small);
+    height: var(--size-small);
     font-size: 12px;
     & svg {
       font-size: 16px;
     }
     & .@{button-prefix-class}-start-icon {
-      margin-right: 4px;
+      margin-right: 3px;
       & svg {
         font-size: 16px;
       }
     }
     & .@{button-prefix-class}-end-icon {
-      margin-left: 4px;
+      margin-left: 3px;
       & svg {
         font-size: 16px;
+      }
+    }
+  }
+  &.@{button-prefix-class}-size-mini {
+    border-radius: var(--border-radius-small);
+    padding: var(--size-button-padding-mini);
+    height: var(--size-mini);
+    font-size: 12px;
+    & svg {
+      font-size: 14px;
+    }
+    & .@{button-prefix-class}-start-icon {
+      margin-right: 2px;
+      & svg {
+        font-size: 14px;
+      }
+    }
+    & .@{button-prefix-class}-end-icon {
+      margin-left: 2px;
+      & svg {
+        font-size: 14px;
       }
     }
   }
@@ -70,58 +91,60 @@
   &.@{button-prefix-class}-rounded {
     border-radius: 16px;
     &.@{button-prefix-class}-size-large {
-      border-radius: 20px;
+      border-radius: 18px;
     }
     &.@{button-prefix-class}-size-small {
+      border-radius: 14px;
+    }
+    &.@{button-prefix-class}-size-mini {
       border-radius: 12px;
     }
   }
   &.@{button-prefix-class}-circle {
-    border-radius: 16px;
-    padding: 6px;
+    border-radius: 50%;
+    width: var(--size-medium);
+    height: var(--size-medium);
+    padding: 0;
     &.@{button-prefix-class}-size-large {
-      border-radius: 20px;
-      padding: 8px;
+      width: var(--size-large);
+      height: var(--size-large);
     }
     &.@{button-prefix-class}-size-small {
-      border-radius: 12px;
-      padding: 4px;
+      width: var(--size-small);
+      height: var(--size-small);
+    }
+    &.@{button-prefix-class}-size-mini {
+      width: var(--size-mini);
+      height: var(--size-mini);
     }
   }
   //outline
   &.@{button-prefix-class}-outlined {
-    padding: 0 15px;
+    padding: var(--size-button-outlined-padding-medium);
     &.@{button-prefix-class}-size-large {
-      padding: 0 23px;
+      padding: var(--size-button-outlined-padding-large);
     }
     &.@{button-prefix-class}-size-small {
-      padding: 0 11px;
+      padding: var(--size-button-outlined-padding-small);
+    }
+    &.@{button-prefix-class}-size-mini {
+      padding: var(--size-button-outlined-padding-mini);
     }
     &.@{button-prefix-class}-circle {
       border-radius: 16px;
       padding: 5px;
       &.@{button-prefix-class}-size-large {
-        border-radius: 20px;
-        padding: 7px;
+        border-radius: 18px;
+        padding: 5px;
       }
       &.@{button-prefix-class}-size-small {
-        border-radius: 12px;
-        padding: 3px;
+        border-radius: 14px;
+        padding: 5px;
       }
-    }
-  }
-  & .@{button-prefix-class}-start-icon {
-    margin-right: 4px;
-    & svg {
-      font-size: 20px;
-      vertical-align: middle;
-    }
-  }
-  & .@{button-prefix-class}-end-icon {
-    margin-left: 4px;
-    & svg {
-      font-size: 20px;
-      vertical-align: middle;
+      &.@{button-prefix-class}-size-mini {
+        border-radius: 12px;
+        padding: 4px;
+      }
     }
   }
 }

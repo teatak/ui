@@ -9,7 +9,7 @@
   &.@{form-prefix-class}-size-medium {
     & .@{form-item-prefix-class}-label {
       & label {
-        line-height: 32px;
+        line-height: var(--size-medium);
       }
       &.@{form-item-prefix-class}-label-right {
         & label {
@@ -21,7 +21,7 @@
   &.@{form-prefix-class}-size-large {
     & .@{form-item-prefix-class}-label {
       & label {
-        line-height: 40px;
+        line-height: var(--size-large);
       }
       &.@{form-item-prefix-class}-label-right {
         & label {
@@ -33,11 +33,23 @@
   &.@{form-prefix-class}-size-small {
     & .@{form-item-prefix-class}-label {
       & label {
-        line-height: 24px;
+        line-height: var(--size-small);
       }
       &.@{form-item-prefix-class}-label-right {
         & label {
           padding-right: 12px;
+        }
+      }
+    }
+  }
+  &.@{form-prefix-class}-size-mini {
+    & .@{form-item-prefix-class}-label {
+      & label {
+        line-height: var(--size-mini);
+      }
+      &.@{form-item-prefix-class}-label-right {
+        & label {
+          padding-right: 10px;
         }
       }
     }

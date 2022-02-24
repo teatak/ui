@@ -92,6 +92,9 @@ export default () => {
                         <Button type="outlined" onClick={() => {
                             setSize("small")
                         }} disabled={size === "small"} >small</Button>
+                        <Button type="outlined" onClick={() => {
+                            setSize("mini")
+                        }} disabled={size === "mini"} >mini</Button>
                     </Space>
                 </Form.Item>
                 <Form.Item

@@ -122,8 +122,8 @@
   align-items: center;
   cursor: pointer;
   border-radius: var(--border-radius-medium);
-  padding: 0 16px;
-  height: 32px;
+  padding: var(--size-button-padding-medium);
+  height: var(--size-medium);
   outline: none;
   border: none;
   font-size: 14px;
@@ -135,47 +135,68 @@
   font-size: 20px;
   vertical-align: middle;
 }
+.tui-button .tui-button-start-icon {
+  margin-right: 4px;
+}
+.tui-button .tui-button-end-icon {
+  margin-left: 4px;
+}
 .tui-button.tui-button-size-large {
   border-radius: var(--border-radius-large);
-  padding: 0 24px;
-  height: 40px;
+  padding: var(--size-button-padding-large);
+  height: var(--size-large);
   font-size: 16px;
 }
 .tui-button.tui-button-size-large svg {
-  font-size: 24px;
+  font-size: 22px;
 }
 .tui-button.tui-button-size-large .tui-button-start-icon {
   margin-right: 4px;
 }
-.tui-button.tui-button-size-large .tui-button-start-icon svg {
-  font-size: 24px;
-}
 .tui-button.tui-button-size-large .tui-button-end-icon {
   margin-left: 4px;
 }
-.tui-button.tui-button-size-large .tui-button-end-icon svg {
-  font-size: 24px;
-}
 .tui-button.tui-button-size-small {
   border-radius: var(--border-radius-small);
-  padding: 0 12px;
-  height: 24px;
+  padding: var(--size-button-padding-small);
+  height: var(--size-small);
   font-size: 12px;
 }
 .tui-button.tui-button-size-small svg {
   font-size: 16px;
 }
 .tui-button.tui-button-size-small .tui-button-start-icon {
-  margin-right: 4px;
+  margin-right: 3px;
 }
 .tui-button.tui-button-size-small .tui-button-start-icon svg {
   font-size: 16px;
 }
 .tui-button.tui-button-size-small .tui-button-end-icon {
-  margin-left: 4px;
+  margin-left: 3px;
 }
 .tui-button.tui-button-size-small .tui-button-end-icon svg {
   font-size: 16px;
+}
+.tui-button.tui-button-size-mini {
+  border-radius: var(--border-radius-small);
+  padding: var(--size-button-padding-mini);
+  height: var(--size-mini);
+  font-size: 12px;
+}
+.tui-button.tui-button-size-mini svg {
+  font-size: 14px;
+}
+.tui-button.tui-button-size-mini .tui-button-start-icon {
+  margin-right: 2px;
+}
+.tui-button.tui-button-size-mini .tui-button-start-icon svg {
+  font-size: 14px;
+}
+.tui-button.tui-button-size-mini .tui-button-end-icon {
+  margin-left: 2px;
+}
+.tui-button.tui-button-size-mini .tui-button-end-icon svg {
+  font-size: 14px;
 }
 .tui-button.tui-button-long {
   width: 100%;
@@ -184,57 +205,59 @@
   border-radius: 16px;
 }
 .tui-button.tui-button-rounded.tui-button-size-large {
-  border-radius: 20px;
+  border-radius: 18px;
 }
 .tui-button.tui-button-rounded.tui-button-size-small {
+  border-radius: 14px;
+}
+.tui-button.tui-button-rounded.tui-button-size-mini {
   border-radius: 12px;
 }
 .tui-button.tui-button-circle {
-  border-radius: 16px;
-  padding: 6px;
+  border-radius: 50%;
+  width: var(--size-medium);
+  height: var(--size-medium);
+  padding: 0;
 }
 .tui-button.tui-button-circle.tui-button-size-large {
-  border-radius: 20px;
-  padding: 8px;
+  width: var(--size-large);
+  height: var(--size-large);
 }
 .tui-button.tui-button-circle.tui-button-size-small {
-  border-radius: 12px;
-  padding: 4px;
+  width: var(--size-small);
+  height: var(--size-small);
+}
+.tui-button.tui-button-circle.tui-button-size-mini {
+  width: var(--size-mini);
+  height: var(--size-mini);
 }
 .tui-button.tui-button-outlined {
-  padding: 0 15px;
+  padding: var(--size-button-outlined-padding-medium);
 }
 .tui-button.tui-button-outlined.tui-button-size-large {
-  padding: 0 23px;
+  padding: var(--size-button-outlined-padding-large);
 }
 .tui-button.tui-button-outlined.tui-button-size-small {
-  padding: 0 11px;
+  padding: var(--size-button-outlined-padding-small);
+}
+.tui-button.tui-button-outlined.tui-button-size-mini {
+  padding: var(--size-button-outlined-padding-mini);
 }
 .tui-button.tui-button-outlined.tui-button-circle {
   border-radius: 16px;
   padding: 5px;
 }
 .tui-button.tui-button-outlined.tui-button-circle.tui-button-size-large {
-  border-radius: 20px;
-  padding: 7px;
+  border-radius: 18px;
+  padding: 5px;
 }
 .tui-button.tui-button-outlined.tui-button-circle.tui-button-size-small {
+  border-radius: 14px;
+  padding: 5px;
+}
+.tui-button.tui-button-outlined.tui-button-circle.tui-button-size-mini {
   border-radius: 12px;
-  padding: 3px;
-}
-.tui-button .tui-button-start-icon {
-  margin-right: 4px;
-}
-.tui-button .tui-button-start-icon svg {
-  font-size: 20px;
-  vertical-align: middle;
-}
-.tui-button .tui-button-end-icon {
-  margin-left: 4px;
-}
-.tui-button .tui-button-end-icon svg {
-  font-size: 20px;
-  vertical-align: middle;
+  padding: 4px;
 }
 .tui-button-text:not(disabled) {
   background-color: transparent;

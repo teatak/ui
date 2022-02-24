@@ -39,10 +39,10 @@ export default () => {
                     <Input startIcon={<PhotoCamera />} size="large" placeholder="Name"></Input>
                 </Col>
                 <Col xs="24" sm="12" lg="6">
-                    <Input endIcon={<Delete />} placeholder="Name"></Input>
+                    <Input placeholder="Name"></Input>
                 </Col>
                 <Col xs="24" sm="12" lg="6">
-                    <Input startIcon={<AddCircle />} endIcon={<Delete />} size="small" placeholder="Name" ></Input>
+                    <Input endIcon={<Delete />} size="small" placeholder="Name" ></Input>
                 </Col>
                 <Col xs="24" sm="12" lg="6">
                     <Input
@@ -55,6 +55,9 @@ export default () => {
                             }</a>
                         }>
                     </Input>
+                </Col>
+                <Col xs="24" sm="12" lg="6">
+                    <Input endIcon={<Delete />} size="mini" placeholder="Name" ></Input>
                 </Col>
                 <Col span="24">
                     <Input placeholder="Name" endIcon={<Delete />} disabled></Input>
