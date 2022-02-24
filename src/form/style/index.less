@@ -54,14 +54,41 @@
       }
     }
   }
+  &.@{form-prefix-class}-layout-vertical {
+    & .@{form-item-prefix-class} {
+      display: block;
+      & .@{form-item-prefix-class}-label,
+      & .@{form-item-prefix-class}-wrapper {
+        display: block;
+        flex: auto;
+        max-width: 100%;
+      }
+      & .@{form-item-prefix-class}-label {
+        text-align: left !important;
+        & label {
+          padding-right: 0;
+        }
+      }
+    }
+  }
   &.@{form-prefix-class}-layout-inline {
     flex-flow: row wrap;
     & .@{form-item-prefix-class} {
       display: flex;
       margin-bottom: 8px;
       margin-right: 4px;
+      & .@{form-item-prefix-class}-label,
+      & .@{form-item-prefix-class}-wrapper {
+        display: block;
+        flex: auto;
+        max-width: 100%;
+      }
       & .@{form-item-prefix-class}-label {
         padding: 0 4px;
+        text-align: left !important;
+        & label {
+          padding-right: 0;
+        }
       }
       &.@{form-item-prefix-class}-has-error {
         // margin-bottom: 0px;

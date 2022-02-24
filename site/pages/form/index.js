@@ -135,7 +135,7 @@ export default () => {
                         { type: 'string', message: '请输入5-20位有效的用户名!', pattern: /^.{5,20}$/ },
                     ]}
                 >
-                    <Input value="nameaa" defaultValue="name" style={{ width: "100%" }} />
+                    <Input defaultValue="name" style={{ width: "100%" }} />
                 </Form.Item>
                 <Form.Item
                     label="Password"
@@ -146,6 +146,16 @@ export default () => {
                     ]}
                 >
                     <Input type="password" style={{ width: "100%" }} />
+                </Form.Item>
+                <Form.Item
+                    label="Password2"
+                    field="password2"
+                    rules={[
+                        { required: true, message: '请输入密码!' },
+                        { type: 'string', message: '请输入密码5-20位!', pattern: /^.{5,20}$/ },
+                    ]}
+                >
+                    <input style={{ width: "100%" }} />
                 </Form.Item>
                 <Form.Item>
                     <Button

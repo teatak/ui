@@ -6,9 +6,6 @@ const Col = (props) => {
 
     let classes = prefixClass
 
-    if (className) {
-        classes += " " + className
-    }
     if (pull) {
         classes += " " + prefixClass + "-pull-" + pull
     }
@@ -40,6 +37,9 @@ const Col = (props) => {
         classes += " " + prefixClass + "-xxl-" + xxl
     }
 
+    if (className) {
+        classes += " " + className
+    }
 
     let gapStyle = gap === 0 ? {} : {
         padding: "0 " + gap / 2 + "px"

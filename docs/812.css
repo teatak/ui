@@ -633,6 +633,21 @@
 .tui-form.tui-form-size-mini .tui-form-item-label.tui-form-item-label-right label {
   padding-right: 10px;
 }
+.tui-form.tui-form-layout-vertical .tui-form-item {
+  display: block;
+}
+.tui-form.tui-form-layout-vertical .tui-form-item .tui-form-item-label,
+.tui-form.tui-form-layout-vertical .tui-form-item .tui-form-item-wrapper {
+  display: block;
+  flex: auto;
+  max-width: 100%;
+}
+.tui-form.tui-form-layout-vertical .tui-form-item .tui-form-item-label {
+  text-align: left !important;
+}
+.tui-form.tui-form-layout-vertical .tui-form-item .tui-form-item-label label {
+  padding-right: 0;
+}
 .tui-form.tui-form-layout-inline {
   flex-flow: row wrap;
 }
@@ -641,8 +656,18 @@
   margin-bottom: 8px;
   margin-right: 4px;
 }
+.tui-form.tui-form-layout-inline .tui-form-item .tui-form-item-label,
+.tui-form.tui-form-layout-inline .tui-form-item .tui-form-item-wrapper {
+  display: block;
+  flex: auto;
+  max-width: 100%;
+}
 .tui-form.tui-form-layout-inline .tui-form-item .tui-form-item-label {
   padding: 0 4px;
+  text-align: left !important;
+}
+.tui-form.tui-form-layout-inline .tui-form-item .tui-form-item-label label {
+  padding-right: 0;
 }
 .tui-form.tui-form-layout-inline .tui-form-item.tui-form-item-has-error .tui-form-item-tip {
   position: relative;

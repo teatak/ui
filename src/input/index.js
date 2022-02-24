@@ -7,8 +7,8 @@ const Input = (props) => {
 
     const { size: ctxSize } = useContext(FormContext);
 
-    const { addon, style, disabled, className, prefixClass, size, startIcon, endIcon, type, defaultValue, onChange, ...rest } = props
-    const [value, setValue] = useState(props.value || props.defaultValue || "")
+    const { addon, style, disabled, className, prefixClass, size, startIcon, endIcon, type, onChange, ...rest } = props
+    // const [value, setValue] = useState(props.value || props.defaultValue || "")
 
     const typeString = (type && type === "text") ? "text" : "password"
 
@@ -30,7 +30,7 @@ const Input = (props) => {
     )
 
     const handleChange = (e, newValue) => {
-        setValue(newValue)
+        // setValue(newValue)
         if (onChange) {
             onChange(e, newValue)
         }
@@ -42,12 +42,11 @@ const Input = (props) => {
             style={style}
             type={typeString}
             {...rest}
-            value={value}
+            // value={value}
             onChange={(e) => {
                 handleChange(e, e.target.value)
             }}
             disabled={disabled}
-
         />
         {endIcon ? <span className={prefixClass + "-end-icon"}>{endIcon}</span> : null}
     </span>

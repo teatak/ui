@@ -38,7 +38,6 @@ const FormItem = (props) => {
     })()
 
     const validate = (fieldValue) => {
-
         return () => {
             let messages = null;
             if (props.rules) {
@@ -91,10 +90,6 @@ const FormItem = (props) => {
         className,
     )
 
-    const labelDivClassNames = classnames(
-        `${prefixClass}-label`,
-    )
-
     const labelColClassNames = classnames(
         `${prefixClass}-label`,
         `${prefixClass}-label-${labelAlign}`,
@@ -110,27 +105,15 @@ const FormItem = (props) => {
         return null;
     }
 
-
-
-    return layout === "horizontal" ? <Row className={classNames} style={style}>
-        <Col className={labelColClassNames} {...labelCol}>
+    return <Row className={classNames} style={style}>
+        <Col  {...labelCol} className={labelColClassNames}>
             {label ? <label className={requiredSymbol && required ? `${prefixClass}-required` : null} htmlFor={field ? field + "_input" : null} >{label}</label> : null}
         </Col>
-        <Col className={wrapperClassNames} {...wrapperCol}>
-            <component.type {...component.props} id={field + "_input"} value={value} onChange={handelChange} />
+        <Col  {...wrapperCol} className={wrapperClassNames}>
+            <component.type {...component.props} id={field + "_input"} onChange={handelChange} />
             {tip ? <div className={`${prefixClass}-tip`}>{tip}</div> : null}
         </Col>
-    </Row> :
-        <div className={classNames} style={style}>
-            <div className={labelDivClassNames} >
-                {label ? <label className={requiredSymbol && required ? `${prefixClass}-required` : null} htmlFor={field ? field + "_input" : null} >{label}</label> : null}
-            </div>
-            <div className={wrapperClassNames} >
-                <component.type {...component.props} id={field + "_input"} value={value} onChange={handelChange} />
-                {tip ? <div className={`${prefixClass}-tip`}>{tip}</div> : null}
-            </div>
-        </div>
-
+    </Row>
 }
 
 FormItem.propTypes = {
