@@ -133,6 +133,9 @@
 .tui-button.tui-button-outlined.tui-button-size-mini {
   padding: var(--size-button-outlined-padding-mini);
 }
+.tui-button.tui-button-outlined.tui-button-circle {
+  padding: 0;
+}
 .tui-button-text:not(disabled) {
   background-color: transparent;
   color: rgb(var(--primary-6));

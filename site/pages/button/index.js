@@ -128,6 +128,7 @@ export default () => <div className="examples">
           <Button type="filled" circle size="small" color="success"><PhotoCamera /></Button>
           <Button type="filled" circle size="mini" color="warning"><PhotoCamera /></Button>
           <Button circle size="large" color="primary"><PhotoCamera /></Button>
+          <Button type="outlined" size="large" circle color="warning"><PhotoCamera /></Button>
           <Button type="outlined" circle color="secondary"><PhotoCamera /></Button>
           <Button type="outlined" rounded size="small" color="error"><PhotoCamera /></Button>
           <Button type="outlined" rounded color="error" startIcon={<Delete />}>Danger</Button>
