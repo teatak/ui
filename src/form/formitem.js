@@ -2,7 +2,7 @@
  * Created by yanggang on 2018/12/26.
  * form item
  */
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import classnames from "classnames"
 import PropTypes from "prop-types"
 import Schema from "async-validator"
@@ -14,8 +14,7 @@ import "../grid/style"
 const FormItem = (props) => {
     const formContext = useContext(FormContext)
     const { label, field, className, children, prefixClass, style, onChange, ...rest } = props
-
-    const [value, setValue] = useState(props.value || props.defaultValue || "")
+    const [value, setValue] = useState(children.props.value || children.props.defaultValue)
     const [hasError, setHasError] = useState(props.hasError)
     const [tip, setTip] = useState(props.tip)
 
@@ -77,6 +76,7 @@ const FormItem = (props) => {
 
     const handelChange = (e, value) => {
         const v = validate(e.target.value)
+        setValue(e.target.value)
         formContext.setItem(field, { formItem: { validate: v }, value: e.target.value });
         if (onChange) {
             onChange(e, value)
@@ -110,12 +110,14 @@ const FormItem = (props) => {
         return null;
     }
 
+
+
     return layout === "horizontal" ? <Row className={classNames} style={style}>
         <Col className={labelColClassNames} {...labelCol}>
             {label ? <label className={requiredSymbol && required ? `${prefixClass}-required` : null} htmlFor={field ? field + "_input" : null} >{label}</label> : null}
         </Col>
         <Col className={wrapperClassNames} {...wrapperCol}>
-            <component.type {...component.props} id={field + "_input"} onChange={handelChange} />
+            <component.type {...component.props} id={field + "_input"} value={value} onChange={handelChange} />
             {tip ? <div className={`${prefixClass}-tip`}>{tip}</div> : null}
         </Col>
     </Row> :
@@ -124,7 +126,7 @@ const FormItem = (props) => {
                 {label ? <label className={requiredSymbol && required ? `${prefixClass}-required` : null} htmlFor={field ? field + "_input" : null} >{label}</label> : null}
             </div>
             <div className={wrapperClassNames} >
-                <component.type {...component.props} id={field + "_input"} onChange={handelChange} />
+                <component.type {...component.props} id={field + "_input"} value={value} onChange={handelChange} />
                 {tip ? <div className={`${prefixClass}-tip`}>{tip}</div> : null}
             </div>
         </div>

@@ -37,7 +37,8 @@ const Form = (props) => {
                 if (component.value !== undefined) {
                     values[key] = component.value
                 } else {
-                    console.error("The component " + component.control + " missing value")
+                    values[key] = ""
+                    //console.error("The component " + component.control + " missing value")
                 }
                 let err = component.formItem.validate()
                 if (err) {

@@ -5,7 +5,7 @@
   & .tui-col {
     & > div {
       padding: 16px;
-      background: rgb(var(--blue-2));
+      background: var(--color-primary-4);
       border-radius: 4px;
     }
   }
