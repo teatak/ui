@@ -13,7 +13,7 @@ import "../grid/style"
 
 const FormItem = (props) => {
     const formContext = useContext(FormContext)
-    const { label, field, className, children, prefixClass, onChange, ...rest } = props
+    const { label, field, className, children, prefixClass, style, onChange, ...rest } = props
 
     const [value, setValue] = useState(props.value || props.defaultValue || "")
     const [hasError, setHasError] = useState(props.hasError)
@@ -110,7 +110,7 @@ const FormItem = (props) => {
         return null;
     }
 
-    return layout === "horizontal" ? <Row className={classNames}>
+    return layout === "horizontal" ? <Row className={classNames} style={style}>
         <Col className={labelColClassNames} {...labelCol}>
             {label ? <label className={requiredSymbol && required ? `${prefixClass}-required` : null} htmlFor={field ? field + "_input" : null} >{label}</label> : null}
         </Col>
@@ -119,7 +119,7 @@ const FormItem = (props) => {
             {tip ? <div className={`${prefixClass}-tip`}>{tip}</div> : null}
         </Col>
     </Row> :
-        <div className={classNames}>
+        <div className={classNames} style={style}>
             <div className={labelDivClassNames} >
                 {label ? <label className={requiredSymbol && required ? `${prefixClass}-required` : null} htmlFor={field ? field + "_input" : null} >{label}</label> : null}
             </div>
