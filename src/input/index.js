@@ -1,14 +1,13 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, forwardRef } from "react"
 import PropTypes from "prop-types"
 import classnames from "classnames"
 import FormContext from "../formcontext"
 
-const Input = (props) => {
+const Input = forwardRef((props, ref) => {
 
     const { size: ctxSize } = useContext(FormContext);
 
     const { addon, style, disabled, className, prefixClass, size, startIcon, endIcon, type, onChange, ...rest } = props
-    // const [value, setValue] = useState(props.value || props.defaultValue || "")
 
     const typeString = (type && type === "text") ? "text" : "password"
 
@@ -41,6 +40,7 @@ const Input = (props) => {
             className={classNames}
             style={style}
             type={typeString}
+            ref={ref}
             {...rest}
             // value={value}
             onChange={(e) => {
@@ -50,7 +50,7 @@ const Input = (props) => {
         />
         {endIcon ? <span className={prefixClass + "-end-icon"}>{endIcon}</span> : null}
     </span>
-}
+})
 
 Input.propTypes = {
     type: PropTypes.oneOf(['text', 'password']),

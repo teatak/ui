@@ -25,6 +25,7 @@ export default () => {
         }
     };
 
+    const [value, serValue] = useState("")
     const [layout, setLayout] = useState("horizontal")
     const [size, setSize] = useState("medium")
 
@@ -56,7 +57,7 @@ export default () => {
                     label="Name"
                     field="name_1"
                 >
-                    <Input defaultValue="name" style={{ width: "100%" }} />
+                    <Input style={{ width: "100%" }} />
                 </Form.Item>
                 <Form.Item
                     label="Password"
@@ -65,11 +66,18 @@ export default () => {
                     <Input type="password" style={{ width: "100%" }} />
                 </Form.Item>
                 <Form.Item>
-                    <Button
-                        color="primary"
-                        type="filled"
-                        htmlType="submit"
-                    >Submit</Button>
+                    <Space>
+                        <Button
+                            color="primary"
+                            type="filled"
+                            htmlType="submit"
+                        >Submit</Button>
+                        <Button
+                            color="primary"
+                            type="outlined"
+                            htmlType="reset"
+                        >Reset</Button>
+                    </Space>
                 </Form.Item>
             </Form>
         </div>
@@ -135,7 +143,7 @@ export default () => {
                         { type: 'string', message: '请输入5-20位有效的用户名!', pattern: /^.{5,20}$/ },
                     ]}
                 >
-                    <Input defaultValue="name" style={{ width: "100%" }} />
+                    <Input defaultValue={value} style={{ width: "100%" }} />
                 </Form.Item>
                 <Form.Item
                     label="Password"
@@ -158,11 +166,21 @@ export default () => {
                     <input style={{ width: "100%" }} />
                 </Form.Item>
                 <Form.Item>
-                    <Button
-                        color="primary"
-                        type="filled"
-                        htmlType="submit"
-                    >Submit</Button>
+                    <Space>
+                        <Button
+                            color="primary"
+                            type="filled"
+                            htmlType="submit"
+                        >Submit</Button>
+                        <Button
+                            color="primary"
+                            type="outlined"
+                            onClick={() => {
+                                serValue("bob")
+                            }}
+                        >Fill</Button>
+                    </Space>
+
                 </Form.Item>
             </Form>
         </div>

@@ -3,6 +3,7 @@
  * form item
  */
 import React, { useEffect, useState, useContext, useRef } from "react";
+import { isForwardRef } from "react-is"
 import classnames from "classnames"
 import PropTypes from "prop-types"
 import Schema from "async-validator"
@@ -13,8 +14,10 @@ import "../grid/style"
 
 const FormItem = (props) => {
     const formContext = useContext(FormContext)
+
+    const inputRef = useRef(null)
     const { label, field, className, children, prefixClass, style, onChange, ...rest } = props
-    const [value, setValue] = useState(children.props.value || children.props.defaultValue)
+    const [value, setValue] = useState(field ? children.props.value || children.props.defaultValue : undefined)
     const [hasError, setHasError] = useState(props.hasError)
     const [tip, setTip] = useState(props.tip)
 
@@ -66,9 +69,12 @@ const FormItem = (props) => {
         }
 
     }
+
     useEffect(() => {
         if (field) {
-            formContext.setItem(field, { formItem: { validate: validate(value) }, value: value })
+            let v = value || children.props.value
+            setValue(v)
+            formContext.setItem(field, { formItem: { validate: validate(v) }, value: v })
         }
     }, [props])
 
@@ -98,20 +104,30 @@ const FormItem = (props) => {
     const wrapperClassNames = classnames(
         `${prefixClass}-wrapper`,
     )
+
     const component = children;
 
+    let isArray = false
+    let isForward = isForwardRef(component)
+    console.log(isForward)
     if (Array.isArray(component)) {
-        console.error("Form.Item can only accept a single child");
-        return null;
+        isArray = true
     }
 
     return <Row className={classNames} style={style}>
-        <Col  {...labelCol} className={labelColClassNames}>
+        <Col {...labelCol} className={labelColClassNames}>
             {label ? <label className={requiredSymbol && required ? `${prefixClass}-required` : null} htmlFor={field ? field + "_input" : null} >{label}</label> : null}
         </Col>
-        <Col  {...wrapperCol} className={wrapperClassNames}>
-            <component.type {...component.props} id={field + "_input"} onChange={handelChange} />
-            {tip ? <div className={`${prefixClass}-tip`}>{tip}</div> : null}
+        <Col {...wrapperCol} className={wrapperClassNames}>
+            {isArray ?
+                children :
+                <>
+                    {isForward ? <component.type {...component.props} id={field + "_input"} ref={inputRef} onChange={handelChange} />
+                        : <component.type {...component.props} id={field + "_input"} onChange={handelChange} />
+                    }
+                    {tip ? <div className={`${prefixClass}-tip`}>{tip}</div> : null}
+                </>
+            }
         </Col>
     </Row>
 }
