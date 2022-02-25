@@ -54,7 +54,7 @@ const Input = forwardRef((props, ref) => {
 
 Input.propTypes = {
     type: PropTypes.oneOf(['text', 'password']),
-    size: PropTypes.oneOf(['large', 'medium', 'small', 'mini']),
+    size: PropTypes.oneOf(['large', 'medium', 'small', 'tiny']),
 }
 
 Input.defaultProps = {

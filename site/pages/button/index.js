@@ -23,7 +23,7 @@ export default () => {
         <Space>
           <Button type="outlined" color="primary" size="large" startIcon={<AddCircle />}>Primary</Button>
           <Button type="outlined" color="secondary" size="small" endIcon={<AddCircle />}>Secondary</Button>
-          <Button type="filled" color="success" size="mini" startIcon={<AddCircle />}>Success</Button>
+          <Button type="filled" color="success" size="tiny" startIcon={<AddCircle />}>Success</Button>
           <Button type="filled" color="error" endIcon={<Delete />}>Error</Button>
           <Button color="info">Info</Button>
           <Button color="warning">Warning</Button>
@@ -126,7 +126,7 @@ export default () => <div className="examples">
           <Button type="filled" circle size="large" color="error"><PhotoCamera /></Button>
           <Button type="filled" circle color="primary"><PhotoCamera /></Button>
           <Button type="filled" circle size="small" color="success"><PhotoCamera /></Button>
-          <Button type="filled" circle size="mini" color="warning"><PhotoCamera /></Button>
+          <Button type="filled" circle size="tiny" color="warning"><PhotoCamera /></Button>
           <Button circle size="large" color="primary"><PhotoCamera /></Button>
           <Button type="outlined" size="large" circle color="warning"><PhotoCamera /></Button>
           <Button type="outlined" circle color="secondary"><PhotoCamera /></Button>
@@ -169,15 +169,15 @@ export default () => <div className="examples">
           <Button size="large">Large</Button>
           <Button>Medium</Button>
           <Button size="small">Small</Button>
-          <Button size="mini">Mini</Button>
+          <Button size="tiny">Tiny</Button>
           <Button type="filled" rounded size="large">Large</Button>
           <Button type="filled" rounded>Medium</Button>
           <Button type="filled" rounded size="small">Small</Button>
-          <Button type="filled" rounded size="mini">Mini</Button>
+          <Button type="filled" rounded size="tiny">Tiny</Button>
           <Button type="outlined" size="large">Large</Button>
           <Button type="outlined">Medium</Button>
           <Button type="outlined" size="small">Small</Button>
-          <Button type="outlined" size="mini">Mini</Button>
+          <Button type="outlined" size="tiny">Tiny</Button>
         </Space>
       </div>
       <Markdown
@@ -255,7 +255,7 @@ export default () => <div>
 | --------- | ------- | ------- | ------- |
 | type      | PropTypes.oneOf(['filled', 'outlined', 'text']) | string | text |
 | color     | PropTypes.oneOf(['primary','secondary','success','error','info','warning']) | string | primary |
-| size      | PropTypes.oneOf(['large', 'medium', 'small', 'mini']) | string | medium |
+| size      | PropTypes.oneOf(['large', 'medium', 'small', 'tiny']) | string | medium |
 | long      | long button    | boolean | false |
 | circle    | circle button  | boolean | false |
 | rounded   | rounded button | boolean | false |

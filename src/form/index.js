@@ -37,7 +37,7 @@ const Form = (props) => {
                 if (component.value !== undefined) {
                     values[key] = component.value
                 } else {
-                    values[key] = ""
+                    values[key] = undefined
                     //console.error("The component " + component.control + " missing value")
                 }
                 let err = component.formItem.validate()
@@ -67,7 +67,7 @@ Form.Item = FormItem
 
 Form.propTypes = {
     layout: PropTypes.oneOf(['horizontal', 'vertical', 'inline']), //布局
-    size: PropTypes.oneOf(['large', 'medium', 'small', 'mini']), //大小
+    size: PropTypes.oneOf(['large', 'medium', 'small', 'tiny']), //大小
     labelAlign: PropTypes.oneOf(['left', 'right', 'center']), //label对齐
     requiredSymbol: PropTypes.bool, //是否显示*
 }

@@ -78,7 +78,7 @@
   font-size: 22px;
 }
 .tui-input-root.tui-input-size-large .tui-input {
-  font-size: 16px;
+  font-size: 14px;
   height: var(--size-large);
   padding: 0 16px;
   border-radius: var(--border-radius-small);
@@ -113,28 +113,28 @@
 .tui-input-root.tui-input-size-small .tui-input.tui-input-has-end-icon {
   padding-right: 28px;
 }
-.tui-input-root.tui-input-size-mini .tui-input-start-icon {
+.tui-input-root.tui-input-size-tiny .tui-input-start-icon {
   margin-left: 6px;
 }
-.tui-input-root.tui-input-size-mini .tui-input-start-icon svg {
+.tui-input-root.tui-input-size-tiny .tui-input-start-icon svg {
   font-size: 14px;
 }
-.tui-input-root.tui-input-size-mini .tui-input-end-icon {
+.tui-input-root.tui-input-size-tiny .tui-input-end-icon {
   margin-right: 6px;
 }
-.tui-input-root.tui-input-size-mini .tui-input-end-icon svg {
+.tui-input-root.tui-input-size-tiny .tui-input-end-icon svg {
   font-size: 14px;
 }
-.tui-input-root.tui-input-size-mini .tui-input {
+.tui-input-root.tui-input-size-tiny .tui-input {
   font-size: 12px;
-  height: var(--size-mini);
+  height: var(--size-tiny);
   padding: 0 6px;
   border-radius: var(--border-radius-small);
 }
-.tui-input-root.tui-input-size-mini .tui-input.tui-input-has-start-icon {
+.tui-input-root.tui-input-size-tiny .tui-input.tui-input-has-start-icon {
   padding-left: 24px;
 }
-.tui-input-root.tui-input-size-mini .tui-input.tui-input-has-end-icon {
+.tui-input-root.tui-input-size-tiny .tui-input.tui-input-has-end-icon {
   padding-right: 24px;
 }
 
@@ -167,7 +167,7 @@
   border-radius: var(--border-radius-large);
   padding: var(--size-button-padding-large);
   height: var(--size-large);
-  font-size: 16px;
+  font-size: 14px;
 }
 .tui-button.tui-button-size-large svg {
   font-size: 22px;
@@ -199,25 +199,25 @@
 .tui-button.tui-button-size-small .tui-button-end-icon svg {
   font-size: 16px;
 }
-.tui-button.tui-button-size-mini {
+.tui-button.tui-button-size-tiny {
   border-radius: var(--border-radius-small);
-  padding: var(--size-button-padding-mini);
-  height: var(--size-mini);
+  padding: var(--size-button-padding-tiny);
+  height: var(--size-tiny);
   font-size: 12px;
 }
-.tui-button.tui-button-size-mini svg {
+.tui-button.tui-button-size-tiny svg {
   font-size: 14px;
 }
-.tui-button.tui-button-size-mini .tui-button-start-icon {
+.tui-button.tui-button-size-tiny .tui-button-start-icon {
   margin-right: 2px;
 }
-.tui-button.tui-button-size-mini .tui-button-start-icon svg {
+.tui-button.tui-button-size-tiny .tui-button-start-icon svg {
   font-size: 14px;
 }
-.tui-button.tui-button-size-mini .tui-button-end-icon {
+.tui-button.tui-button-size-tiny .tui-button-end-icon {
   margin-left: 2px;
 }
-.tui-button.tui-button-size-mini .tui-button-end-icon svg {
+.tui-button.tui-button-size-tiny .tui-button-end-icon svg {
   font-size: 14px;
 }
 .tui-button.tui-button-long {
@@ -232,7 +232,7 @@
 .tui-button.tui-button-rounded.tui-button-size-small {
   border-radius: 14px;
 }
-.tui-button.tui-button-rounded.tui-button-size-mini {
+.tui-button.tui-button-rounded.tui-button-size-tiny {
   border-radius: 12px;
 }
 .tui-button.tui-button-circle {
@@ -249,9 +249,9 @@
   width: var(--size-small);
   height: var(--size-small);
 }
-.tui-button.tui-button-circle.tui-button-size-mini {
-  width: var(--size-mini);
-  height: var(--size-mini);
+.tui-button.tui-button-circle.tui-button-size-tiny {
+  width: var(--size-tiny);
+  height: var(--size-tiny);
 }
 .tui-button.tui-button-outlined {
   padding: var(--size-button-outlined-padding-medium);
@@ -262,8 +262,8 @@
 .tui-button.tui-button-outlined.tui-button-size-small {
   padding: var(--size-button-outlined-padding-small);
 }
-.tui-button.tui-button-outlined.tui-button-size-mini {
-  padding: var(--size-button-outlined-padding-mini);
+.tui-button.tui-button-outlined.tui-button-size-tiny {
+  padding: var(--size-button-outlined-padding-tiny);
 }
 .tui-button.tui-button-outlined.tui-button-circle {
   padding: 0;
@@ -627,10 +627,10 @@
 .tui-form.tui-form-size-small .tui-form-item-label.tui-form-item-label-right label {
   padding-right: 12px;
 }
-.tui-form.tui-form-size-mini .tui-form-item-label label {
-  line-height: var(--size-mini);
+.tui-form.tui-form-size-tiny .tui-form-item-label label {
+  line-height: var(--size-tiny);
 }
-.tui-form.tui-form-size-mini .tui-form-item-label.tui-form-item-label-right label {
+.tui-form.tui-form-size-tiny .tui-form-item-label.tui-form-item-label-right label {
   padding-right: 10px;
 }
 .tui-form.tui-form-layout-vertical .tui-form-item {

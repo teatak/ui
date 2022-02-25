@@ -14,7 +14,7 @@ import "../grid/style"
 
 const FormItem = (props) => {
     const formContext = useContext(FormContext)
-
+    const mounted = useRef();
     const inputRef = useRef(null)
     const { label, field, className, children, prefixClass, style, onChange, ...rest } = props
     const [value, setValue] = useState(field ? children.props.value || children.props.defaultValue : undefined)
@@ -24,7 +24,6 @@ const FormItem = (props) => {
     const labelAlign = props.labelAlign || formContext.labelAlign
     const labelCol = props.labelCol || formContext.labelCol
     const wrapperCol = props.wrapperCol || formContext.wrapperCol
-    const layout = formContext.layout
     const requiredSymbol = props.requiredSymbol || formContext.requiredSymbol
 
     const required = (() => {
@@ -71,11 +70,19 @@ const FormItem = (props) => {
     }
 
     useEffect(() => {
-        if (field) {
-            let v = value || children.props.value || children.props.defaultValue
-            setValue(v)
-            formContext.setItem(field, { formItem: { validate: validate(v) }, value: v })
+        if (mounted.current === false) {
+            mounted.current = true;
+            if (field) {
+                formContext.setItem(field, { formItem: { validate: validate(value) }, value: value })
+            }
+        } else {
+            if (field) {
+                let v = value || children.props.value || children.props.defaultValue
+                setValue(v)
+                formContext.setItem(field, { formItem: { validate: validate(v) }, value: v })
+            }
         }
+
     }, [props])
 
 
@@ -109,7 +116,6 @@ const FormItem = (props) => {
 
     let isArray = false
     let isForward = isForwardRef(component)
-    console.log(isForward)
     if (Array.isArray(component)) {
         isArray = true
     }

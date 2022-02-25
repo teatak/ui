@@ -57,7 +57,7 @@ export default () => {
                     </Input>
                 </Col>
                 <Col xs="24" sm="12" lg="6">
-                    <Input endIcon={<Delete />} size="mini" placeholder="Name" ></Input>
+                    <Input endIcon={<Delete />} size="tiny" placeholder="Name" ></Input>
                 </Col>
                 <Col span="24">
                     <Input placeholder="Name" endIcon={<Delete />} disabled></Input>

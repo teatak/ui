@@ -194,15 +194,15 @@
   --size-large: 36px;
   --size-medium: 32px;
   --size-small: 28px;
-  --size-mini: 24px;
+  --size-tiny: 24px;
   --size-button-padding-large: 0 20px;
   --size-button-padding-medium: 0 16px;
   --size-button-padding-small: 0 12px;
-  --size-button-padding-mini: 0 8px;
+  --size-button-padding-tiny: 0 8px;
   --size-button-outlined-padding-large: 0 19px;
   --size-button-outlined-padding-medium: 0 15px;
   --size-button-outlined-padding-small: 0 11px;
-  --size-button-outlined-padding-mini: 0 7px;
+  --size-button-outlined-padding-tiny: 0 7px;
   --btn-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2),
     0 1px 3px 1px rgba(0, 0, 0, 0.1);
   --box-shadow-1: 0 -1px 4px 0 rgba(0, 0, 0, 0.06),

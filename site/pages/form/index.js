@@ -18,11 +18,7 @@ import "./index.css"
 export default () => {
 
     const onSubmit = (e, errors, values) => {
-        if (errors) {
-            console.error(errors)
-        } else {
-            console.log(values)
-        }
+        console.log(errors, values)
     };
 
     const [value, serValue] = useState("")
@@ -101,8 +97,8 @@ export default () => {
                             setSize("small")
                         }} disabled={size === "small"} >small</Button>
                         <Button type="outlined" onClick={() => {
-                            setSize("mini")
-                        }} disabled={size === "mini"} >mini</Button>
+                            setSize("tiny")
+                        }} disabled={size === "tiny"} >tiny</Button>
                     </Space>
                 </Form.Item>
                 <Form.Item
