@@ -72,7 +72,7 @@ const FormItem = (props) => {
 
     useEffect(() => {
         if (field) {
-            let v = value || children.props.value
+            let v = value || children.props.value || children.props.defaultValue
             setValue(v)
             formContext.setItem(field, { formItem: { validate: validate(v) }, value: v })
         }
