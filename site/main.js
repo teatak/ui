@@ -17,6 +17,7 @@ import './main.less'
 
 const Color = loadable(() => import('./pages/color'), fallback)
 const Input = loadable(() => import('./pages/input'), fallback)
+const Select = loadable(() => import('./pages/select'), fallback)
 const Button = loadable(() => import('./pages/button'), fallback)
 const Form = loadable(() => import('./pages/form'), fallback)
 const Grid = loadable(() => import('./pages/grid'), fallback)
@@ -41,6 +42,9 @@ const Root = () => {
             </Menu.Item>
             <Menu.Item>
               <NavLink to="/input">Input</NavLink>
+            </Menu.Item>
+            <Menu.Item>
+              <NavLink to="/select">Select</NavLink>
             </Menu.Item>
             <Menu.Item>
               <NavLink to="/form">Form</NavLink>
@@ -71,6 +75,10 @@ const Root = () => {
               <Route strict path="/input">
                 <Helmet title="Input - TeaTak" />
                 <Input />
+              </Route>
+              <Route strict path="/select">
+                <Helmet title="Select - TeaTak" />
+                <Select />
               </Route>
               <Route strict path="/form">
                 <Helmet title="Form - TeaTak" />

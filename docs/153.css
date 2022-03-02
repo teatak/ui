@@ -71,7 +71,7 @@
   border-radius: 4px;
   box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
   z-index: 1000;
-  background: #fff;
+  background: var(--color-background-2);
   max-width: 600px;
   width: calc(100% - 64px);
   margin: 32px;
@@ -102,8 +102,8 @@
   overflow-y: auto;
 }
 .tui-modal-root .tui-modal-wrap .tui-modal-container .tui-modal-content.tui-modal-dividers {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: solid 1px var(--color-border-2);
+  border-bottom: solid 1px var(--color-border-2);
 }
 @media (max-width: 575px) {
   .tui-modal-root .tui-modal-wrap .tui-modal-container .tui-modal-content {

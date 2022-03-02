@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Modal,Button,Space} from "../../../src";
+import { Modal, Button, Space } from "../../../src";
 import "../../../src/modal/style";
 import "../../../src/button/style";
 import "../../../src/space/style";
@@ -7,55 +7,56 @@ import "../../../src/space/style";
 import Markdown from "../../components/markdown"
 import "./index.css"
 import {
-    Delete,
+  Delete,
 } from '@mui/icons-material';
 
 export default () => {
-    
-    const [isModalVisible, setIsModalVisible] = useState(false);
 
-    const showModal = () => {
-        setIsModalVisible(true);
-      };
-    
-      const handleClose = () => {
-        setIsModalVisible(false);
-      };
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
-    return <div>
-         <div className="space-examples">
-            <div>default:</div>
-            <Button type="outlined" onClick={showModal}>Open Modal</Button>
-            <Modal 
-              visible={isModalVisible}
-              onClose={handleClose}
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleClose = () => {
+    setIsModalVisible(false);
+  };
+
+  return <div>
+    <div className="space-examples">
+      <div>default:</div>
+      <Button type="outlined" onClick={showModal}>Open Modal</Button>
+      <Modal
+        visible={isModalVisible}
+        onClose={handleClose}
+      >
+        <Modal.Title>
+          Title
+        </Modal.Title>
+        <Modal.Content dividers>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+        </Modal.Content>
+        <Modal.Actions>
+          <Space>
+            <Button type="outlined" color="primary" onClick={handleClose}>
+              Return
+            </Button>
+            <Button type="filled" color="primary">
+              Submit
+            </Button>
+            <Button
+              type="filled"
+              color="secondary"
             >
-              <Modal.Title>
-                Title
-              </Modal.Title>
-              <Modal.Content dividers>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-              </Modal.Content>
-              <Modal.Actions>
-                <Space>
-                  <Button type="outlined" color="primary" onClick={handleClose}>
-                    Return
-                  </Button>
-                  <Button type="filled" color="primary">
-                    Submit
-                  </Button>
-                  <Button
-                    type="default"
-                  >
-                    Click
-                  </Button>
-                </Space>
-              </Modal.Actions>
-            </Modal>
-         </div>     
-        <Markdown children={`
+              Click
+            </Button>
+          </Space>
+        </Modal.Actions>
+      </Modal>
+    </div>
+    <Markdown children={`
 \`\`\`javascript
 export default () => <div className="space-examples">
   <div>default:</div>
@@ -92,7 +93,7 @@ export default () => <div className="space-examples">
 \`\`\`
         `} />
 
-        <Markdown children={`
+    <Markdown children={`
 ## API
 
 | Property  | Description | Type | Default |
@@ -104,5 +105,5 @@ export default () => <div className="space-examples">
 | transitionClass   |  | string | fade,slide  |
 
         `} />
-    </div>
+  </div>
 }

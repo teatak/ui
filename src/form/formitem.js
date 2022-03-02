@@ -3,7 +3,6 @@
  * form item
  */
 import React, { useEffect, useState, useContext, useRef } from "react";
-import { isForwardRef } from "react-is"
 import classnames from "classnames"
 import PropTypes from "prop-types"
 import Schema from "async-validator"
@@ -15,8 +14,8 @@ import "../grid/style"
 const FormItem = (props) => {
     const formContext = useContext(FormContext)
     const mounted = useRef();
-    const inputRef = useRef(null)
-    const { label, field, className, children, prefixClass, style, onChange, ...rest } = props
+    const changed = useRef();
+    const { label, field, className, children, prefixClass, style, noStyle, onChange, ...rest } = props
     const [value, setValue] = useState(field ? children.props.value || children.props.defaultValue : undefined)
     const [hasError, setHasError] = useState(props.hasError)
     const [tip, setTip] = useState(props.tip)
@@ -77,7 +76,12 @@ const FormItem = (props) => {
             }
         } else {
             if (field) {
-                let v = value || children.props.value || children.props.defaultValue
+                let v = ""
+                if (changed.current) {
+                    v = value
+                } else {
+                    v = children.props.value || children.props.defaultValue
+                }
                 setValue(v)
                 formContext.setItem(field, { formItem: { validate: validate(v) }, value: v })
             }
@@ -87,6 +91,7 @@ const FormItem = (props) => {
 
 
     const handelChange = (e, value) => {
+        changed.current = true;
         const v = validate(e.target.value)
         setValue(e.target.value)
         formContext.setItem(field, { formItem: { validate: v }, value: e.target.value });
@@ -114,36 +119,39 @@ const FormItem = (props) => {
 
     const component = children;
 
-    let isArray = false
-    let isForward = isForwardRef(component)
-    if (Array.isArray(component)) {
-        isArray = true
-    }
+    // let isArray = false
+    // let isForward = isForwardRef(component)
+    // if (Array.isArray(component)) {
+    //     isArray = true
+    // }
 
-    return <Row className={classNames} style={style}>
-        <Col {...labelCol} className={labelColClassNames}>
-            {label ? <label className={requiredSymbol && required ? `${prefixClass}-required` : null} htmlFor={field ? field + "_input" : null} >{label}</label> : null}
-        </Col>
-        <Col {...wrapperCol} className={wrapperClassNames}>
-            {isArray ?
-                children :
-                <>
-                    {isForward ? <component.type {...component.props} id={field + "_input"} ref={inputRef} onChange={handelChange} />
-                        : <component.type {...component.props} id={field + "_input"} onChange={handelChange} />
-                    }
-                    {tip ? <div className={`${prefixClass}-tip`}>{tip}</div> : null}
-                </>
-            }
-        </Col>
-    </Row>
+    if (noStyle) {
+        return <>
+            {field ? <component.type {...component.props} id={field + "_input"} onChange={handelChange} /> : children}
+            {tip ? <div className={`${prefixClass}-tip`}>{tip}</div> : null}
+        </>
+
+    } else {
+        return <Row className={classNames} style={style}>
+            <Col {...labelCol} className={labelColClassNames}>
+                {label ? <label className={requiredSymbol && required ? `${prefixClass}-required` : null} htmlFor={field ? field + "_input" : null} >{label}</label> : null}
+            </Col>
+            <Col {...wrapperCol} className={wrapperClassNames}>
+                {field ? <component.type {...component.props} id={field + "_input"} onChange={handelChange} /> : children}
+                {tip ? <div className={`${prefixClass}-tip`}>{tip}</div> : null}
+            </Col>
+        </Row>
+    }
 }
 
 FormItem.propTypes = {
     labelAlign: PropTypes.oneOf(['left', 'right', 'center']), //label对齐
+    noStyle: PropTypes.bool,
 }
 
 FormItem.defaultProps = {
     prefixClass: "tui-form-item",
+    noStyle: false,
 }
 
 export default FormItem

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { Input, Button, Form, Space } from "../../../src";
+import { Input, Button, Form, Space, Select } from "../../../src";
 import "../../../src/input/style";
+import "../../../src/select/style";
 import "../../../src/button/style";
 import "../../../src/form/style";
 import "../../../src/space/style";
@@ -25,9 +26,17 @@ export default () => {
     const [layout, setLayout] = useState("horizontal")
     const [size, setSize] = useState("medium")
 
+    function randomString(length) {
+        var str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var result = '';
+        for (var i = length; i > 0; --i)
+            result += str[Math.floor(Math.random() * str.length)];
+        return result;
+    }
+
     return <div>
         <h1>Form</h1>
-        <h2>Layout</h2>
+        {/* <h2>Layout</h2>
         <div className="examples">
             <Form
                 layout={layout}
@@ -121,7 +130,7 @@ export default () => {
                     >Submit</Button>
                 </Form.Item>
             </Form>
-        </div>
+        </div> */}
         <h2>Submit</h2>
         <div className="examples">
             <Form
@@ -131,6 +140,21 @@ export default () => {
                 requiredSymbol={false}
                 style={{ maxWidth: 600 }}
             >
+                <Form.Item
+                    label="Layout"
+                >
+                    <Space>
+                        <Button type="outlined" onClick={() => {
+                            setLayout("horizontal")
+                        }} disabled={layout === "horizontal"}>horizontal</Button>
+                        <Button type="outlined" onClick={() => {
+                            setLayout("vertical")
+                        }} disabled={layout === "vertical"}>vertical</Button>
+                        <Button type="outlined" onClick={() => {
+                            setLayout("inline")
+                        }} disabled={layout === "inline"}>inline</Button>
+                    </Space>
+                </Form.Item>
                 <Form.Item
                     label="Name"
                     field="name"
@@ -152,14 +176,16 @@ export default () => {
                     <Input type="password" style={{ width: "100%" }} />
                 </Form.Item>
                 <Form.Item
-                    label="Password2"
-                    field="password2"
+                    label="City"
+                    field="city"
                     rules={[
-                        { required: true, message: '请输入密码!' },
-                        { type: 'string', message: '请输入密码5-20位!', pattern: /^.{5,20}$/ },
+                        { required: true, message: '请输入城市!' },
                     ]}
                 >
-                    <input style={{ width: "100%" }} />
+                    <Select defaultValue="">
+                        <Select.Option value="beijing"  >Beijing</Select.Option>
+                        <Select.Option value="shanghai"  >Shanghai</Select.Option>
+                    </Select>
                 </Form.Item>
                 <Form.Item>
                     <Space>
@@ -172,7 +198,8 @@ export default () => {
                             color="primary"
                             type="outlined"
                             onClick={() => {
-                                serValue("bob")
+
+                                serValue(randomString(5))
                             }}
                         >Fill</Button>
                     </Space>
