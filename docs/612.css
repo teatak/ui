@@ -1,21 +1,21 @@
 .tui-select {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
   font-size: 14px;
   height: var(--size-medium);
-  padding: 0 12px;
+  padding: 0 10px;
   outline: none;
   border: solid 1px transparent;
   border-radius: var(--border-radius-small);
   color: var(--color-foreground-1);
-  background-color: var(--color-fill-2);
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0iIzU4NjA2OSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNC40MjcgOS40MjdsMy4zOTYgMy4zOTZhLjI1MS4yNTEgMCAwMC4zNTQgMGwzLjM5Ni0zLjM5NkEuMjUuMjUgMCAwMDExLjM5NiA5SDQuNjA0YS4yNS4yNSAwIDAwLS4xNzcuNDI3ek00LjQyMyA2LjQ3TDcuODIgMy4wNzJhLjI1LjI1IDAgMDEuMzU0IDBMMTEuNTcgNi40N2EuMjUuMjUgMCAwMS0uMTc3LjQyN0g0LjZhLjI1LjI1IDAgMDEtLjE3Ny0uNDI3eiIgLz48L3N2Zz4=);
-  background-repeat: no-repeat;
-  background-position: right 4px center;
+  background: var(--color-fill-3);
   max-width: 100%;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  padding-right: 24px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  position: relative;
 }
 .tui-select[disabled] {
   color: rgb(var(--grey-5));
@@ -30,33 +30,95 @@
 }
 .tui-select:hover {
   border: solid 1px rgb(var(--primary-5));
-  background-color: var(--color-fill-3);
+  background: var(--color-fill-3);
 }
-.tui-select:focus {
+.tui-select.tui-select-focused {
   border: solid 1px rgb(var(--primary-6));
-  background-color: var(--color-fill-2);
+  background: var(--color-fill-2);
   box-shadow: 0px 0px 0px 3px var(--color-primary-2);
+}
+.tui-select.disabled {
+  color: rgb(var(--grey-5));
+}
+.tui-select .tui-select-suffix {
+  margin-left: 10px;
 }
 .tui-select.tui-select-size-large {
   font-size: 14px;
   height: var(--size-large);
-  padding: 0 16px;
+  padding: 0 12px;
   border-radius: var(--border-radius-small);
-  padding-right: 28px;
+}
+.tui-select.tui-select-size-large .tui-select-suffix {
+  margin-left: 12px;
 }
 .tui-select.tui-select-size-small {
   font-size: 12px;
   height: var(--size-small);
   padding: 0 8px;
   border-radius: var(--border-radius-small);
-  padding-right: 20px;
+}
+.tui-select.tui-select-size-small .tui-select-suffix {
+  margin-left: 8px;
 }
 .tui-select.tui-select-size-tiny {
   font-size: 12px;
   height: var(--size-tiny);
   padding: 0 6px;
   border-radius: var(--border-radius-small);
-  padding-right: 20px;
+}
+.tui-select.tui-select-size-tiny .tui-select-suffix {
+  margin-left: 6px;
+}
+.tui-select .tui-select-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0;
+  width: 12px;
+  margin-top: 4px;
+  color: var(--color-foreground-1);
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.tui-select .tui-select-arrow::before {
+  position: absolute;
+  width: 6px;
+  height: 1.5px;
+  background-color: currentcolor;
+  border-radius: 2px;
+  transform: rotate(-45deg) translate(2.5px);
+  transition: background-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  content: "";
+}
+.tui-select .tui-select-arrow::after {
+  position: absolute;
+  width: 6px;
+  height: 1.5px;
+  background-color: currentcolor;
+  border-radius: 2px;
+  transform: rotate(45deg) translate(-2.5px);
+  transition: background-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  content: "";
+}
+.tui-select.tui-select-open .tui-select-arrow {
+  transform: translateY(-4px);
+}
+.tui-select.tui-select-open .tui-select-arrow::before {
+  transform: rotate(45deg) translate(2.5px);
+}
+.tui-select.tui-select-open .tui-select-arrow::after {
+  transform: rotate(-45deg) translate(-2.5px);
+}
+.tui-select-options {
+  cursor: pointer;
+  list-style: none;
+  margin: 6px 0;
+}
+.tui-select-options li {
+  padding: 8px 16px;
+}
+.tui-select-options li:hover {
+  background: var(--color-fill-4);
 }
 
 .tui-space {

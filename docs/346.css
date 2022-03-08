@@ -1,33 +1,33 @@
-.tui-input-wrapper {
+.tui-input-root {
   display: inline-flex;
   align-items: center;
   color: var(--color-foreground-1);
   position: relative;
   width: 100%;
 }
-.tui-input-wrapper.disabled {
+.tui-input-root.disabled {
   color: rgb(var(--grey-5));
 }
-.tui-input-wrapper .tui-input-start-icon {
+.tui-input-root .tui-input-start-icon {
   display: inline-flex;
   position: absolute;
   margin-left: 7px;
   line-height: 0;
 }
-.tui-input-wrapper .tui-input-start-icon svg {
+.tui-input-root .tui-input-start-icon svg {
   font-size: 20px;
 }
-.tui-input-wrapper .tui-input-end-icon {
+.tui-input-root .tui-input-end-icon {
   display: inline-flex;
   position: absolute;
   right: 0;
   margin-right: 7px;
   line-height: 0;
 }
-.tui-input-wrapper .tui-input-end-icon svg {
+.tui-input-root .tui-input-end-icon svg {
   font-size: 20px;
 }
-.tui-input-wrapper .tui-input {
+.tui-input-root .tui-input {
   font-size: 14px;
   height: var(--size-medium);
   padding: 0 12px;
@@ -35,121 +35,121 @@
   border: solid 1px transparent;
   border-radius: var(--border-radius-small);
   color: var(--color-foreground-1);
-  background: var(--color-fill-2);
+  background: var(--color-fill-3);
   width: 100%;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
-.tui-input-wrapper .tui-input:-webkit-autofill {
+.tui-input-root .tui-input:-webkit-autofill {
   -webkit-text-fill-color: var(--color-foreground-1);
-  box-shadow: inset 0 0 0 32px var(--color-fill-2) !important;
-  border: solid 1px var(--color-fill-2);
+  box-shadow: inset 0 0 0 32px var(--color-fill-3) !important;
+  border: solid 1px var(--color-fill-3);
 }
-.tui-input-wrapper .tui-input:-webkit-autofill:hover {
+.tui-input-root .tui-input:-webkit-autofill:hover {
   border: solid 1px rgb(var(--primary-5));
   background: var(--color-fill-3);
   box-shadow: inset 0 0 0 32px var(--color-fill-3) !important;
 }
-.tui-input-wrapper .tui-input:-webkit-autofill:focus {
+.tui-input-root .tui-input:-webkit-autofill:focus {
   border: solid 1px rgb(var(--primary-6));
   background: var(--color-fill-2);
   box-shadow: 0px 0px 0px 3px var(--color-primary-2), inset 0 0 0 32px var(--color-fill-2) !important;
 }
-.tui-input-wrapper .tui-input.tui-input-has-start-icon {
+.tui-input-root .tui-input.tui-input-has-start-icon {
   padding-left: 32px;
 }
-.tui-input-wrapper .tui-input.tui-input-has-end-icon {
+.tui-input-root .tui-input.tui-input-has-end-icon {
   padding-right: 32px;
 }
-.tui-input-wrapper .tui-input[disabled] {
+.tui-input-root .tui-input[disabled] {
   color: rgb(var(--grey-5));
   background: rbg(var(--grey-2));
   border: solid 1px rgb(var(--grey-3));
 }
-.tui-input-wrapper .tui-input[disabled]:hover,
-.tui-input-wrapper .tui-input[disabled]:focus {
+.tui-input-root .tui-input[disabled]:hover,
+.tui-input-root .tui-input[disabled]:focus {
   color: rgb(var(--grey-5));
   background: rbg(var(--grey-2));
   border: solid 1px rgb(var(--grey-3));
 }
-.tui-input-wrapper .tui-input:hover {
+.tui-input-root .tui-input:hover {
   border: solid 1px rgb(var(--primary-5));
   background: var(--color-fill-3);
 }
-.tui-input-wrapper .tui-input:focus {
+.tui-input-root .tui-input:focus {
   border: solid 1px rgb(var(--primary-6));
   background: var(--color-fill-2);
   box-shadow: 0px 0px 0px 3px var(--color-primary-2);
 }
-.tui-input-wrapper.tui-input-size-large .tui-input-start-icon {
+.tui-input-root.tui-input-size-large .tui-input-start-icon {
   margin-left: 8px;
 }
-.tui-input-wrapper.tui-input-size-large .tui-input-start-icon svg {
+.tui-input-root.tui-input-size-large .tui-input-start-icon svg {
   font-size: 22px;
 }
-.tui-input-wrapper.tui-input-size-large .tui-input-end-icon {
+.tui-input-root.tui-input-size-large .tui-input-end-icon {
   margin-right: 8px;
 }
-.tui-input-wrapper.tui-input-size-large .tui-input-end-icon svg {
+.tui-input-root.tui-input-size-large .tui-input-end-icon svg {
   font-size: 22px;
 }
-.tui-input-wrapper.tui-input-size-large .tui-input {
+.tui-input-root.tui-input-size-large .tui-input {
   font-size: 14px;
   height: var(--size-large);
   padding: 0 16px;
   border-radius: var(--border-radius-small);
 }
-.tui-input-wrapper.tui-input-size-large .tui-input.tui-input-has-start-icon {
+.tui-input-root.tui-input-size-large .tui-input.tui-input-has-start-icon {
   padding-left: 36px;
 }
-.tui-input-wrapper.tui-input-size-large .tui-input.tui-input-has-end-icon {
+.tui-input-root.tui-input-size-large .tui-input.tui-input-has-end-icon {
   padding-right: 36px;
 }
-.tui-input-wrapper.tui-input-size-small .tui-input-start-icon {
+.tui-input-root.tui-input-size-small .tui-input-start-icon {
   margin-left: 7px;
 }
-.tui-input-wrapper.tui-input-size-small .tui-input-start-icon svg {
+.tui-input-root.tui-input-size-small .tui-input-start-icon svg {
   font-size: 16px;
 }
-.tui-input-wrapper.tui-input-size-small .tui-input-end-icon {
+.tui-input-root.tui-input-size-small .tui-input-end-icon {
   margin-right: 7px;
 }
-.tui-input-wrapper.tui-input-size-small .tui-input-end-icon svg {
+.tui-input-root.tui-input-size-small .tui-input-end-icon svg {
   font-size: 16px;
 }
-.tui-input-wrapper.tui-input-size-small .tui-input {
+.tui-input-root.tui-input-size-small .tui-input {
   font-size: 12px;
   height: var(--size-small);
   padding: 0 8px;
   border-radius: var(--border-radius-small);
 }
-.tui-input-wrapper.tui-input-size-small .tui-input.tui-input-has-start-icon {
+.tui-input-root.tui-input-size-small .tui-input.tui-input-has-start-icon {
   padding-left: 28px;
 }
-.tui-input-wrapper.tui-input-size-small .tui-input.tui-input-has-end-icon {
+.tui-input-root.tui-input-size-small .tui-input.tui-input-has-end-icon {
   padding-right: 28px;
 }
-.tui-input-wrapper.tui-input-size-tiny .tui-input-start-icon {
+.tui-input-root.tui-input-size-tiny .tui-input-start-icon {
   margin-left: 6px;
 }
-.tui-input-wrapper.tui-input-size-tiny .tui-input-start-icon svg {
+.tui-input-root.tui-input-size-tiny .tui-input-start-icon svg {
   font-size: 14px;
 }
-.tui-input-wrapper.tui-input-size-tiny .tui-input-end-icon {
+.tui-input-root.tui-input-size-tiny .tui-input-end-icon {
   margin-right: 6px;
 }
-.tui-input-wrapper.tui-input-size-tiny .tui-input-end-icon svg {
+.tui-input-root.tui-input-size-tiny .tui-input-end-icon svg {
   font-size: 14px;
 }
-.tui-input-wrapper.tui-input-size-tiny .tui-input {
+.tui-input-root.tui-input-size-tiny .tui-input {
   font-size: 12px;
   height: var(--size-tiny);
   padding: 0 6px;
   border-radius: var(--border-radius-small);
 }
-.tui-input-wrapper.tui-input-size-tiny .tui-input.tui-input-has-start-icon {
+.tui-input-root.tui-input-size-tiny .tui-input.tui-input-has-start-icon {
   padding-left: 24px;
 }
-.tui-input-wrapper.tui-input-size-tiny .tui-input.tui-input-has-end-icon {
+.tui-input-root.tui-input-size-tiny .tui-input.tui-input-has-end-icon {
   padding-right: 24px;
 }
 

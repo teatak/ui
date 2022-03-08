@@ -1,33 +1,33 @@
-.tui-input-wrapper {
+.tui-input-root {
   display: inline-flex;
   align-items: center;
   color: var(--color-foreground-1);
   position: relative;
   width: 100%;
 }
-.tui-input-wrapper.disabled {
+.tui-input-root.disabled {
   color: rgb(var(--grey-5));
 }
-.tui-input-wrapper .tui-input-start-icon {
+.tui-input-root .tui-input-start-icon {
   display: inline-flex;
   position: absolute;
   margin-left: 7px;
   line-height: 0;
 }
-.tui-input-wrapper .tui-input-start-icon svg {
+.tui-input-root .tui-input-start-icon svg {
   font-size: 20px;
 }
-.tui-input-wrapper .tui-input-end-icon {
+.tui-input-root .tui-input-end-icon {
   display: inline-flex;
   position: absolute;
   right: 0;
   margin-right: 7px;
   line-height: 0;
 }
-.tui-input-wrapper .tui-input-end-icon svg {
+.tui-input-root .tui-input-end-icon svg {
   font-size: 20px;
 }
-.tui-input-wrapper .tui-input {
+.tui-input-root .tui-input {
   font-size: 14px;
   height: var(--size-medium);
   padding: 0 12px;
@@ -35,142 +35,142 @@
   border: solid 1px transparent;
   border-radius: var(--border-radius-small);
   color: var(--color-foreground-1);
-  background: var(--color-fill-2);
+  background: var(--color-fill-3);
   width: 100%;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
-.tui-input-wrapper .tui-input:-webkit-autofill {
+.tui-input-root .tui-input:-webkit-autofill {
   -webkit-text-fill-color: var(--color-foreground-1);
-  box-shadow: inset 0 0 0 32px var(--color-fill-2) !important;
-  border: solid 1px var(--color-fill-2);
+  box-shadow: inset 0 0 0 32px var(--color-fill-3) !important;
+  border: solid 1px var(--color-fill-3);
 }
-.tui-input-wrapper .tui-input:-webkit-autofill:hover {
+.tui-input-root .tui-input:-webkit-autofill:hover {
   border: solid 1px rgb(var(--primary-5));
   background: var(--color-fill-3);
   box-shadow: inset 0 0 0 32px var(--color-fill-3) !important;
 }
-.tui-input-wrapper .tui-input:-webkit-autofill:focus {
+.tui-input-root .tui-input:-webkit-autofill:focus {
   border: solid 1px rgb(var(--primary-6));
   background: var(--color-fill-2);
   box-shadow: 0px 0px 0px 3px var(--color-primary-2), inset 0 0 0 32px var(--color-fill-2) !important;
 }
-.tui-input-wrapper .tui-input.tui-input-has-start-icon {
+.tui-input-root .tui-input.tui-input-has-start-icon {
   padding-left: 32px;
 }
-.tui-input-wrapper .tui-input.tui-input-has-end-icon {
+.tui-input-root .tui-input.tui-input-has-end-icon {
   padding-right: 32px;
 }
-.tui-input-wrapper .tui-input[disabled] {
+.tui-input-root .tui-input[disabled] {
   color: rgb(var(--grey-5));
   background: rbg(var(--grey-2));
   border: solid 1px rgb(var(--grey-3));
 }
-.tui-input-wrapper .tui-input[disabled]:hover,
-.tui-input-wrapper .tui-input[disabled]:focus {
+.tui-input-root .tui-input[disabled]:hover,
+.tui-input-root .tui-input[disabled]:focus {
   color: rgb(var(--grey-5));
   background: rbg(var(--grey-2));
   border: solid 1px rgb(var(--grey-3));
 }
-.tui-input-wrapper .tui-input:hover {
+.tui-input-root .tui-input:hover {
   border: solid 1px rgb(var(--primary-5));
   background: var(--color-fill-3);
 }
-.tui-input-wrapper .tui-input:focus {
+.tui-input-root .tui-input:focus {
   border: solid 1px rgb(var(--primary-6));
   background: var(--color-fill-2);
   box-shadow: 0px 0px 0px 3px var(--color-primary-2);
 }
-.tui-input-wrapper.tui-input-size-large .tui-input-start-icon {
+.tui-input-root.tui-input-size-large .tui-input-start-icon {
   margin-left: 8px;
 }
-.tui-input-wrapper.tui-input-size-large .tui-input-start-icon svg {
+.tui-input-root.tui-input-size-large .tui-input-start-icon svg {
   font-size: 22px;
 }
-.tui-input-wrapper.tui-input-size-large .tui-input-end-icon {
+.tui-input-root.tui-input-size-large .tui-input-end-icon {
   margin-right: 8px;
 }
-.tui-input-wrapper.tui-input-size-large .tui-input-end-icon svg {
+.tui-input-root.tui-input-size-large .tui-input-end-icon svg {
   font-size: 22px;
 }
-.tui-input-wrapper.tui-input-size-large .tui-input {
+.tui-input-root.tui-input-size-large .tui-input {
   font-size: 14px;
   height: var(--size-large);
   padding: 0 16px;
   border-radius: var(--border-radius-small);
 }
-.tui-input-wrapper.tui-input-size-large .tui-input.tui-input-has-start-icon {
+.tui-input-root.tui-input-size-large .tui-input.tui-input-has-start-icon {
   padding-left: 36px;
 }
-.tui-input-wrapper.tui-input-size-large .tui-input.tui-input-has-end-icon {
+.tui-input-root.tui-input-size-large .tui-input.tui-input-has-end-icon {
   padding-right: 36px;
 }
-.tui-input-wrapper.tui-input-size-small .tui-input-start-icon {
+.tui-input-root.tui-input-size-small .tui-input-start-icon {
   margin-left: 7px;
 }
-.tui-input-wrapper.tui-input-size-small .tui-input-start-icon svg {
+.tui-input-root.tui-input-size-small .tui-input-start-icon svg {
   font-size: 16px;
 }
-.tui-input-wrapper.tui-input-size-small .tui-input-end-icon {
+.tui-input-root.tui-input-size-small .tui-input-end-icon {
   margin-right: 7px;
 }
-.tui-input-wrapper.tui-input-size-small .tui-input-end-icon svg {
+.tui-input-root.tui-input-size-small .tui-input-end-icon svg {
   font-size: 16px;
 }
-.tui-input-wrapper.tui-input-size-small .tui-input {
+.tui-input-root.tui-input-size-small .tui-input {
   font-size: 12px;
   height: var(--size-small);
   padding: 0 8px;
   border-radius: var(--border-radius-small);
 }
-.tui-input-wrapper.tui-input-size-small .tui-input.tui-input-has-start-icon {
+.tui-input-root.tui-input-size-small .tui-input.tui-input-has-start-icon {
   padding-left: 28px;
 }
-.tui-input-wrapper.tui-input-size-small .tui-input.tui-input-has-end-icon {
+.tui-input-root.tui-input-size-small .tui-input.tui-input-has-end-icon {
   padding-right: 28px;
 }
-.tui-input-wrapper.tui-input-size-tiny .tui-input-start-icon {
+.tui-input-root.tui-input-size-tiny .tui-input-start-icon {
   margin-left: 6px;
 }
-.tui-input-wrapper.tui-input-size-tiny .tui-input-start-icon svg {
+.tui-input-root.tui-input-size-tiny .tui-input-start-icon svg {
   font-size: 14px;
 }
-.tui-input-wrapper.tui-input-size-tiny .tui-input-end-icon {
+.tui-input-root.tui-input-size-tiny .tui-input-end-icon {
   margin-right: 6px;
 }
-.tui-input-wrapper.tui-input-size-tiny .tui-input-end-icon svg {
+.tui-input-root.tui-input-size-tiny .tui-input-end-icon svg {
   font-size: 14px;
 }
-.tui-input-wrapper.tui-input-size-tiny .tui-input {
+.tui-input-root.tui-input-size-tiny .tui-input {
   font-size: 12px;
   height: var(--size-tiny);
   padding: 0 6px;
   border-radius: var(--border-radius-small);
 }
-.tui-input-wrapper.tui-input-size-tiny .tui-input.tui-input-has-start-icon {
+.tui-input-root.tui-input-size-tiny .tui-input.tui-input-has-start-icon {
   padding-left: 24px;
 }
-.tui-input-wrapper.tui-input-size-tiny .tui-input.tui-input-has-end-icon {
+.tui-input-root.tui-input-size-tiny .tui-input.tui-input-has-end-icon {
   padding-right: 24px;
 }
 
 .tui-select {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
   font-size: 14px;
   height: var(--size-medium);
-  padding: 0 12px;
+  padding: 0 10px;
   outline: none;
   border: solid 1px transparent;
   border-radius: var(--border-radius-small);
   color: var(--color-foreground-1);
-  background-color: var(--color-fill-2);
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0iIzU4NjA2OSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNC40MjcgOS40MjdsMy4zOTYgMy4zOTZhLjI1MS4yNTEgMCAwMC4zNTQgMGwzLjM5Ni0zLjM5NkEuMjUuMjUgMCAwMDExLjM5NiA5SDQuNjA0YS4yNS4yNSAwIDAwLS4xNzcuNDI3ek00LjQyMyA2LjQ3TDcuODIgMy4wNzJhLjI1LjI1IDAgMDEuMzU0IDBMMTEuNTcgNi40N2EuMjUuMjUgMCAwMS0uMTc3LjQyN0g0LjZhLjI1LjI1IDAgMDEtLjE3Ny0uNDI3eiIgLz48L3N2Zz4=);
-  background-repeat: no-repeat;
-  background-position: right 4px center;
+  background: var(--color-fill-3);
   max-width: 100%;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  padding-right: 24px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  position: relative;
 }
 .tui-select[disabled] {
   color: rgb(var(--grey-5));
@@ -185,33 +185,95 @@
 }
 .tui-select:hover {
   border: solid 1px rgb(var(--primary-5));
-  background-color: var(--color-fill-3);
+  background: var(--color-fill-3);
 }
-.tui-select:focus {
+.tui-select.tui-select-focused {
   border: solid 1px rgb(var(--primary-6));
-  background-color: var(--color-fill-2);
+  background: var(--color-fill-2);
   box-shadow: 0px 0px 0px 3px var(--color-primary-2);
+}
+.tui-select.disabled {
+  color: rgb(var(--grey-5));
+}
+.tui-select .tui-select-suffix {
+  margin-left: 10px;
 }
 .tui-select.tui-select-size-large {
   font-size: 14px;
   height: var(--size-large);
-  padding: 0 16px;
+  padding: 0 12px;
   border-radius: var(--border-radius-small);
-  padding-right: 28px;
+}
+.tui-select.tui-select-size-large .tui-select-suffix {
+  margin-left: 12px;
 }
 .tui-select.tui-select-size-small {
   font-size: 12px;
   height: var(--size-small);
   padding: 0 8px;
   border-radius: var(--border-radius-small);
-  padding-right: 20px;
+}
+.tui-select.tui-select-size-small .tui-select-suffix {
+  margin-left: 8px;
 }
 .tui-select.tui-select-size-tiny {
   font-size: 12px;
   height: var(--size-tiny);
   padding: 0 6px;
   border-radius: var(--border-radius-small);
-  padding-right: 20px;
+}
+.tui-select.tui-select-size-tiny .tui-select-suffix {
+  margin-left: 6px;
+}
+.tui-select .tui-select-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0;
+  width: 12px;
+  margin-top: 4px;
+  color: var(--color-foreground-1);
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.tui-select .tui-select-arrow::before {
+  position: absolute;
+  width: 6px;
+  height: 1.5px;
+  background-color: currentcolor;
+  border-radius: 2px;
+  transform: rotate(-45deg) translate(2.5px);
+  transition: background-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  content: "";
+}
+.tui-select .tui-select-arrow::after {
+  position: absolute;
+  width: 6px;
+  height: 1.5px;
+  background-color: currentcolor;
+  border-radius: 2px;
+  transform: rotate(45deg) translate(-2.5px);
+  transition: background-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  content: "";
+}
+.tui-select.tui-select-open .tui-select-arrow {
+  transform: translateY(-4px);
+}
+.tui-select.tui-select-open .tui-select-arrow::before {
+  transform: rotate(45deg) translate(2.5px);
+}
+.tui-select.tui-select-open .tui-select-arrow::after {
+  transform: rotate(-45deg) translate(-2.5px);
+}
+.tui-select-options {
+  cursor: pointer;
+  list-style: none;
+  margin: 6px 0;
+}
+.tui-select-options li {
+  padding: 8px 16px;
+}
+.tui-select-options li:hover {
+  background: var(--color-fill-4);
 }
 
 .tui-button {
@@ -349,7 +411,8 @@
   color: rgb(var(--primary-6));
   box-shadow: none;
 }
-.tui-button-text:not(disabled):hover {
+.tui-button-text:not(disabled):hover,
+.tui-button-text:not(disabled):focus {
   background-color: var(--color-primary-1);
   box-shadow: none;
 }
@@ -377,7 +440,8 @@
   border: none;
   background-color: transparent;
 }
-.tui-button-text.tui-button-color-primary:hover {
+.tui-button-text.tui-button-color-primary:hover,
+.tui-button-text.tui-button-color-primary:focus {
   border: none;
   background-color: var(--color-primary-1);
 }
@@ -391,7 +455,8 @@
   border: none;
   background-color: transparent;
 }
-.tui-button-text.tui-button-color-info:hover {
+.tui-button-text.tui-button-color-info:hover,
+.tui-button-text.tui-button-color-info:focus {
   border: none;
   background-color: var(--color-primary-1);
 }
@@ -405,7 +470,8 @@
   border: none;
   background-color: transparent;
 }
-.tui-button-text.tui-button-color-secondary:hover {
+.tui-button-text.tui-button-color-secondary:hover,
+.tui-button-text.tui-button-color-secondary:focus {
   border: none;
   background-color: var(--color-secondary-1);
 }
@@ -419,7 +485,8 @@
   border: none;
   background-color: transparent;
 }
-.tui-button-text.tui-button-color-success:hover {
+.tui-button-text.tui-button-color-success:hover,
+.tui-button-text.tui-button-color-success:focus {
   border: none;
   background-color: var(--color-success-1);
 }
@@ -433,7 +500,8 @@
   border: none;
   background-color: transparent;
 }
-.tui-button-text.tui-button-color-error:hover {
+.tui-button-text.tui-button-color-error:hover,
+.tui-button-text.tui-button-color-error:focus {
   border: none;
   background-color: var(--color-error-1);
 }
@@ -447,7 +515,8 @@
   border: none;
   background-color: transparent;
 }
-.tui-button-text.tui-button-color-warning:hover {
+.tui-button-text.tui-button-color-warning:hover,
+.tui-button-text.tui-button-color-warning:focus {
   border: none;
   background-color: var(--color-warning-1);
 }
@@ -461,14 +530,15 @@
   color: #fff;
   box-shadow: none;
 }
-.tui-button-filled:not(disabled):hover {
+.tui-button-filled:not(disabled):hover,
+.tui-button-filled:not(disabled):focus {
   background-color: rgb(var(--primary-5));
-  box-shadow: var(--btn-box-shadow);
+  box-shadow: var(--box-shadow-btn);
 }
 .tui-button-filled:not(disabled):active,
 .tui-button-filled:not(disabled).clicked {
   background-color: rgb(var(--primary-7));
-  box-shadow: var(--btn-box-shadow);
+  box-shadow: var(--box-shadow-btn);
 }
 .tui-button-filled:not(disabled):disabled {
   color: rgb(var(--grey-5));
@@ -489,7 +559,8 @@
   border: none;
   background-color: rgb(var(--primary-6));
 }
-.tui-button-filled.tui-button-color-primary:hover {
+.tui-button-filled.tui-button-color-primary:hover,
+.tui-button-filled.tui-button-color-primary:focus {
   border: none;
   background-color: rgb(var(--primary-5));
 }
@@ -503,7 +574,8 @@
   border: none;
   background-color: rgb(var(--primary-6));
 }
-.tui-button-filled.tui-button-color-info:hover {
+.tui-button-filled.tui-button-color-info:hover,
+.tui-button-filled.tui-button-color-info:focus {
   border: none;
   background-color: rgb(var(--primary-5));
 }
@@ -517,7 +589,8 @@
   border: none;
   background-color: rgb(var(--grey-3));
 }
-.tui-button-filled.tui-button-color-secondary:hover {
+.tui-button-filled.tui-button-color-secondary:hover,
+.tui-button-filled.tui-button-color-secondary:focus {
   border: none;
   background-color: rgb(var(--grey-4));
 }
@@ -531,7 +604,8 @@
   border: none;
   background-color: rgb(var(--green-6));
 }
-.tui-button-filled.tui-button-color-success:hover {
+.tui-button-filled.tui-button-color-success:hover,
+.tui-button-filled.tui-button-color-success:focus {
   border: none;
   background-color: rgb(var(--green-5));
 }
@@ -545,7 +619,8 @@
   border: none;
   background-color: rgb(var(--red-6));
 }
-.tui-button-filled.tui-button-color-error:hover {
+.tui-button-filled.tui-button-color-error:hover,
+.tui-button-filled.tui-button-color-error:focus {
   border: none;
   background-color: rgb(var(--red-5));
 }
@@ -559,7 +634,8 @@
   border: none;
   background-color: rgb(var(--orange-6));
 }
-.tui-button-filled.tui-button-color-warning:hover {
+.tui-button-filled.tui-button-color-warning:hover,
+.tui-button-filled.tui-button-color-warning:focus {
   border: none;
   background-color: rgb(var(--orange-5));
 }
@@ -573,7 +649,8 @@
   color: rgb(var(--primary-6));
   box-shadow: none;
 }
-.tui-button-outlined:not(disabled):hover {
+.tui-button-outlined:not(disabled):hover,
+.tui-button-outlined:not(disabled):focus {
   background-color: var(--color-primary-1);
   box-shadow: none;
 }
@@ -601,7 +678,8 @@
   border: solid 1px rgb(var(--primary-5));
   background-color: transparent;
 }
-.tui-button-outlined.tui-button-color-primary:hover {
+.tui-button-outlined.tui-button-color-primary:hover,
+.tui-button-outlined.tui-button-color-primary:focus {
   border: solid 1px rgb(var(--primary-6));
   background-color: var(--color-primary-1);
 }
@@ -615,7 +693,8 @@
   border: solid 1px rgb(var(--primary-5));
   background-color: transparent;
 }
-.tui-button-outlined.tui-button-color-info:hover {
+.tui-button-outlined.tui-button-color-info:hover,
+.tui-button-outlined.tui-button-color-info:focus {
   border: solid 1px rgb(var(--primary-6));
   background-color: var(--color-primary-1);
 }
@@ -629,7 +708,8 @@
   border: solid 1px rgb(var(--grey-5));
   background-color: transparent;
 }
-.tui-button-outlined.tui-button-color-secondary:hover {
+.tui-button-outlined.tui-button-color-secondary:hover,
+.tui-button-outlined.tui-button-color-secondary:focus {
   border: solid 1px rgb(var(--grey-6));
   background-color: var(--color-secondary-1);
 }
@@ -643,7 +723,8 @@
   border: solid 1px rgb(var(--green-5));
   background-color: transparent;
 }
-.tui-button-outlined.tui-button-color-success:hover {
+.tui-button-outlined.tui-button-color-success:hover,
+.tui-button-outlined.tui-button-color-success:focus {
   border: solid 1px rgb(var(--green-6));
   background-color: var(--color-success-1);
 }
@@ -657,7 +738,8 @@
   border: solid 1px rgb(var(--red-5));
   background-color: transparent;
 }
-.tui-button-outlined.tui-button-color-error:hover {
+.tui-button-outlined.tui-button-color-error:hover,
+.tui-button-outlined.tui-button-color-error:focus {
   border: solid 1px rgb(var(--red-6));
   background-color: var(--color-error-1);
 }
@@ -671,7 +753,8 @@
   border: solid 1px rgb(var(--orange-5));
   background-color: transparent;
 }
-.tui-button-outlined.tui-button-color-warning:hover {
+.tui-button-outlined.tui-button-color-warning:hover,
+.tui-button-outlined.tui-button-color-warning:focus {
   border: solid 1px rgb(var(--orange-6));
   background-color: var(--color-warning-1);
 }
@@ -793,8 +876,8 @@
 }
 .tui-form .tui-form-item.tui-form-item-has-error .tui-input:-webkit-autofill:hover {
   border: solid 1px rgb(var(--red-5));
-  background: var(--color-error-2);
-  box-shadow: inset 0 0 0 32px var(--color-error-2) !important;
+  background: var(--color-error-1);
+  box-shadow: inset 0 0 0 32px var(--color-error-1) !important;
 }
 .tui-form .tui-form-item.tui-form-item-has-error .tui-input:-webkit-autofill:focus {
   border: solid 1px rgb(var(--red-6));
@@ -803,7 +886,7 @@
 }
 .tui-form .tui-form-item.tui-form-item-has-error .tui-input:hover {
   border: solid 1px rgb(var(--red-5));
-  background: var(--color-error-2);
+  background: var(--color-error-1);
 }
 .tui-form .tui-form-item.tui-form-item-has-error .tui-input:focus {
   border: solid 1px rgb(var(--red-6));
@@ -816,7 +899,7 @@
 }
 .tui-form .tui-form-item.tui-form-item-has-error .tui-select:hover {
   border: solid 1px rgb(var(--red-5));
-  background: var(--color-error-2);
+  background: var(--color-error-1);
 }
 .tui-form .tui-form-item.tui-form-item-has-error .tui-select:focus {
   border: solid 1px rgb(var(--red-6));
@@ -832,6 +915,4 @@
   display: flex;
 }
 
-.examples {
-    padding: 16px;
-}
+
