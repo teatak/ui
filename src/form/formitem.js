@@ -15,7 +15,7 @@ const FormItem = (props) => {
     const formContext = useContext(FormContext)
     const mounted = useRef();
     const changed = useRef();
-    const { label, field, className, children, prefixClass, style, noStyle, onChange, ...rest } = props
+    const { label, field, htmlFor, className, children, prefixClass, style, noStyle, showErrorTip, onChange, ...rest } = props
     const [value, setValue] = useState(field ? children.props.value || children.props.defaultValue : undefined)
     const [hasError, setHasError] = useState(props.hasError)
     const [tip, setTip] = useState(props.tip)
@@ -55,12 +55,18 @@ const FormItem = (props) => {
                             messages.push(errors);
                             setHasError(true)
                             setTip(errors[0].message)
+                            if (showErrorTip) {
+                                showErrorTip(true, errors[0].message)
+                            }
                         }
                     });
                 }
                 if (!messages) {
                     setHasError(false)
                     setTip("")
+                    if (showErrorTip) {
+                        showErrorTip(false, "")
+                    }
                 }
             }
             return messages;
@@ -75,6 +81,12 @@ const FormItem = (props) => {
                 formContext.setItem(field, { formItem: { validate: validate(value) }, value: value })
             }
         } else {
+            if (props.hasError !== undefined) {
+                setHasError(props.hasError)
+            }
+            if (props.tip !== undefined) {
+                setTip(props.tip)
+            }
             if (field) {
                 let v = ""
                 if (changed.current) {
@@ -119,6 +131,12 @@ const FormItem = (props) => {
 
     const component = children;
 
+    if (field) {
+        React.Children.only(props.children)
+    }
+
+    const _htmlFor = (htmlFor || field)
+
     // let isArray = false
     // let isForward = isForwardRef(component)
     // if (Array.isArray(component)) {
@@ -128,13 +146,18 @@ const FormItem = (props) => {
     if (noStyle) {
         return <>
             {field ? <component.type {...component.props} id={field + "_input"} onChange={handelChange} /> : children}
-            {tip ? <div className={`${prefixClass}-tip`}>{tip}</div> : null}
+            {/* {tip ? <div className={`${prefixClass}-tip`}>{tip}</div> : null} */}
         </>
-
     } else {
+        const labelComponent = label ?
+            (typeof label === "string" ?
+                <label className={requiredSymbol && required ? `${prefixClass}-required` : null} htmlFor={_htmlFor ? _htmlFor + "_input" : null} >{label}</label>
+                : label
+            )
+            : null
         return <Row className={classNames} style={style}>
             <Col {...labelCol} className={labelColClassNames}>
-                {label ? <label className={requiredSymbol && required ? `${prefixClass}-required` : null} htmlFor={field ? field + "_input" : null} >{label}</label> : null}
+                {labelComponent}
             </Col>
             <Col {...wrapperCol} className={wrapperClassNames}>
                 {field ? <component.type {...component.props} id={field + "_input"} onChange={handelChange} /> : children}

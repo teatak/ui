@@ -67,6 +67,21 @@ export default () => {
           <div style={{ border: `solid 4px var(--color-border-4)` }}>--color-border-4</div>
         </Col>
       </Row>
+      <h2>Fill:</h2>
+      <Row gap="16px" className="bgs">
+        <Col xs="24" sm="12" lg="6">
+          <div style={{ background: `var(--color-fill-1)` }}>--color-fill-1</div>
+        </Col>
+        <Col xs="24" sm="12" lg="6">
+          <div style={{ background: `var(--color-fill-2)` }}>--color-fill-2</div>
+        </Col>
+        <Col xs="24" sm="12" lg="6">
+          <div style={{ background: `var(--color-fill-3)` }}>--color-fill-3</div>
+        </Col>
+        <Col xs="24" sm="12" lg="6">
+          <div style={{ background: `var(--color-fill-4)` }}>--color-fill-4</div>
+        </Col>
+      </Row>
       <h2>Color:</h2>
       <Row gap="16px">
         <Col xs="24" sm="12" lg="6">

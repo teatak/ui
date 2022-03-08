@@ -11,8 +11,8 @@ const Input = forwardRef((props, ref) => {
 
     const typeString = (type && type === "text") ? "text" : "password"
 
-    const classNamesWrapper = classnames(
-        `${prefixClass}-wrapper`,
+    const classNamesRoot = classnames(
+        `${prefixClass}-root`,
         `${prefixClass}-size-${size || ctxSize || "medium"}`,
         {
             [`disabled`]: disabled
@@ -34,7 +34,7 @@ const Input = forwardRef((props, ref) => {
             onChange(e, newValue)
         }
     }
-    return <span className={classNamesWrapper} style={style}>
+    return <span className={classNamesRoot} style={style}>
         {startIcon ? <span className={prefixClass + "-start-icon"}>{startIcon}</span> : null}
         <input
             className={classNames}

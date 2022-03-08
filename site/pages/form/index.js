@@ -11,7 +11,8 @@ import {
     PhotoCamera,
     AddCircle,
     Visibility,
-    VisibilityOff
+    VisibilityOff,
+    SettingsPhone
 } from '@mui/icons-material';
 import Markdown from "../../components/markdown"
 import "./index.css"
@@ -22,9 +23,13 @@ export default () => {
         console.log(errors, values)
     };
 
-    const [value, serValue] = useState("")
+    const [value, setValue] = useState(undefined)
     const [layout, setLayout] = useState("horizontal")
     const [size, setSize] = useState("medium")
+
+    const [tip, setTip] = useState("")
+    const [hasError, setHasError] = useState(false)
+
 
     function randomString(length) {
         var str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -177,15 +182,34 @@ export default () => {
                 </Form.Item>
                 <Form.Item
                     label="City"
-                    field="city"
-                    rules={[
-                        { required: true, message: '请输入城市!' },
-                    ]}
+                    htmlFor="city"
+                    tip={tip}
+                    hasError={hasError}
                 >
-                    <Select defaultValue="">
-                        <Select.Option value="beijing"  >Beijing</Select.Option>
-                        <Select.Option value="shanghai"  >Shanghai</Select.Option>
-                    </Select>
+                    <Space>
+                        <Form.Item
+                            noStyle
+                            field="city"
+                            rules={[
+                                { required: true, message: '请输入城市!' },
+                            ]}
+                            showErrorTip={(hasError, tip) => {
+                                setHasError(hasError)
+                                setTip(tip)
+                            }}
+                        >
+                            <Select defaultValue="">
+                                <Select.Option value="beijing"  >Beijing</Select.Option>
+                                <Select.Option value="shanghai"  >Shanghai</Select.Option>
+                            </Select>
+                        </Form.Item>
+                        <Form.Item
+                            noStyle
+                            field="cityName"
+                        >
+                            <Input defaultValue={value} style={{ width: "100%" }} />
+                        </Form.Item>
+                    </Space>
                 </Form.Item>
                 <Form.Item>
                     <Space>
@@ -198,8 +222,7 @@ export default () => {
                             color="primary"
                             type="outlined"
                             onClick={() => {
-
-                                serValue(randomString(5))
+                                setValue(randomString(5))
                             }}
                         >Fill</Button>
                     </Space>
@@ -228,14 +251,28 @@ export default () => <div className="examples">
         <Markdown children={`
 ## API
 
+### Form
+
 | Property  | Description | Type | Default |
 | --------- | ------- | ------- | ------- |
-| type      | can be set to 'filled','outlined','default' | string | default |
-| size      | can be set to small large or default | string | default |
-| rounded   | rounded | boolean | false |
-| disabled  | disabled state of button	 | boolean | false |
-| htmlType  | htmlType | string | button |
-| onClick   | set the handler to handle click event	| (event) => void | - |
+| layout    | PropTypes.oneOf(['horizontal', 'vertical', 'inline']) | string | horizontal |
+| size      | PropTypes.oneOf(['large', 'medium', 'small', 'tiny']) | string | medium |
+| labelAlign | PropTypes.oneOf(['left', 'right', 'center']) | string | right |
+| requiredSymbol | show * | boolean | true |
+| labelCol   | label col config   | object | { span: 5 } |
+| wrapperCol | wrapper col config | object | { span: 19 } |
+
+### Form.Item
+
+| Property  | Description | Type | Default |
+| --------- | ------- | ------- | ------- |
+| label | label name | string | - |
+| field | field | string | - |
+| showErrorTip | showErrorTip={(hasError, tip)} | (event) => void | - |
+| htmlFor | html for | string | - |
+| noStyle | no style | boolean | false |
+| onChange | showErrorTip={(e, newValue)} | (event) => void | - |
+
         `} />
     </div>
 }

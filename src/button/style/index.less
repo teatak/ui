@@ -140,7 +140,8 @@
     background-color: ~"@{btn-@{type}-color-bg}";
     color: ~"@{btn-@{type}-color}";
     box-shadow: ~"@{btn-@{type}-shadow}";
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: ~"@{btn-@{type}-color-bg-hover}";
       box-shadow: ~"@{btn-@{type}-shadow-hover}";
     }
@@ -171,7 +172,8 @@
       color: ~"@{btn-@{type}-@{status}-color}";
       border: ~"@{btn-@{type}-@{status}-border}";
       background-color: ~"@{btn-@{type}-@{status}-color-bg}";
-      &:hover {
+      &:hover,
+      &:focus {
         border: ~"@{btn-@{type}-@{status}-border-hover}";
         background-color: ~"@{btn-@{type}-@{status}-color-bg-hover}";
       }

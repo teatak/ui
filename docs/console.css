@@ -146,6 +146,7 @@
   --color-foreground-2: rgb(var(--grey-9));
   --color-foreground-3: rgb(var(--grey-8));
   --color-foreground-4: rgb(var(--grey-7));
+  --color-foreground-tooltip: #fff;
   --color-fill-1: rgb(var(--grey-1));
   --color-fill-2: rgb(var(--grey-2));
   --color-fill-3: rgb(var(--grey-3));
@@ -154,6 +155,8 @@
   --color-background-2: #fff;
   --color-background-3: rgb(var(--grey-2));
   --color-background-4: rgb(var(--grey-3));
+  --color-background-popup: #fff;
+  --color-background-tooltip: #333333;
   --color-border-1: rgba(0, 0, 0, 0.2);
   --color-border-2: rgba(0, 0, 0, 0.14);
   --color-border-3: rgba(0, 0, 0, 0.1);
@@ -204,13 +207,20 @@
   --size-button-outlined-padding-medium: 0 15px;
   --size-button-outlined-padding-small: 0 11px;
   --size-button-outlined-padding-tiny: 0 7px;
-  --btn-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2),
-    0 1px 3px 1px rgba(0, 0, 0, 0.1);
   --box-shadow-1: 0 -1px 4px 0 rgba(0, 0, 0, 0.06),
     0 1px 4px 0 rgba(0, 0, 0, 0.1);
   --box-shadow-2: 0 -1px 4px 0 rgba(0, 0, 0, 0.06),
     0 2px 12px 0 rgba(0, 0, 0, 0.1);
   --box-shadow-3: 0 1px 8px rgba(0, 0, 0, 0.06);
+  --box-shadow-btn: 0 1px 2px 0 rgba(0, 0, 0, 0.2),
+    0 1px 3px 1px rgba(0, 0, 0, 0.1);
+  --box-shadow-popup: 0 -1px 4px 0 rgba(0, 0, 0, 0.06),
+    0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  --box-shadow-popup-down: 0 -1px 4px 0 rgba(0, 0, 0, 0.06),
+    0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  --box-shadow-popup-up: 0 1px 4px 0 rgba(0, 0, 0, 0.06),
+    0 -2px 12px 0 rgba(0, 0, 0, 0.1);
+  --box-shadow-popup-arrow: 2px 2px 8px 0 rgba(0, 0, 0, 0.1);
 }
 [data-color-mode="light"][data-light-theme*="light"] {
   color-scheme: light;
@@ -358,6 +368,7 @@
   --color-foreground-2: rgb(var(--grey-9));
   --color-foreground-3: rgb(var(--grey-8));
   --color-foreground-4: rgb(var(--grey-7));
+  --color-foreground-tooltip: #fff;
   --color-fill-1: rgb(var(--grey-1));
   --color-fill-2: rgb(var(--grey-2));
   --color-fill-3: rgb(var(--grey-3));
@@ -366,6 +377,8 @@
   --color-background-2: #fff;
   --color-background-3: rgb(var(--grey-2));
   --color-background-4: rgb(var(--grey-3));
+  --color-background-popup: #fff;
+  --color-background-tooltip: #333333;
   --color-border-1: rgba(0, 0, 0, 0.2);
   --color-border-2: rgba(0, 0, 0, 0.14);
   --color-border-3: rgba(0, 0, 0, 0.1);
@@ -542,22 +555,25 @@
   --primary-8: var(--blue-8);
   --primary-9: var(--blue-9);
   --primary-10: var(--blue-10);
-  --color-foreground-1: rgba(255, 255, 255, 0.9);
-  --color-foreground-2: rgba(255, 255, 255, 0.7);
-  --color-foreground-3: rgba(255, 255, 255, 0.5);
-  --color-foreground-4: rgba(255, 255, 255, 0.3);
-  --color-fill-1: hsla(0, 0%, 100%, 0.04);
-  --color-fill-2: hsla(0, 0%, 100%, 0.08);
-  --color-fill-3: hsla(0, 0%, 100%, 0.12);
-  --color-fill-4: hsla(0, 0%, 100%, 0.16);
-  --color-background-1: #16181a;
-  --color-background-2: #232324;
-  --color-background-3: #2a2a2b;
-  --color-background-4: #313132;
-  --color-border-1: rgba(255, 255, 255, 0.2);
-  --color-border-2: rgba(255, 255, 255, 0.14);
-  --color-border-3: rgba(255, 255, 255, 0.1);
-  --color-border-4: rgba(255, 255, 255, 0.08);
+  --color-foreground-1: #e8e8e8;
+  --color-foreground-2: #bbbbbb;
+  --color-foreground-3: #8b8b8b;
+  --color-foreground-4: #5d5d5d;
+  --color-foreground-tooltip: #fff;
+  --color-fill-1: #2c2c2c;
+  --color-fill-2: #343434;
+  --color-fill-3: #3f3f3f;
+  --color-fill-4: #464646;
+  --color-background-1: #161616;
+  --color-background-2: #232323;
+  --color-background-3: #2a2a2a;
+  --color-background-4: #313131;
+  --color-background-popup: #333333;
+  --color-background-tooltip: #333333;
+  --color-border-1: #4d4d4d;
+  --color-border-2: #464646;
+  --color-border-3: #414141;
+  --color-border-4: #353535;
   --color-primary-1: rgba(var(--primary-6), 0.3);
   --color-primary-2: rgba(var(--primary-6), 0.4);
   --color-primary-3: rgba(var(--primary-6), 0.5);
@@ -735,6 +751,7 @@
     --color-foreground-2: rgb(var(--grey-9));
     --color-foreground-3: rgb(var(--grey-8));
     --color-foreground-4: rgb(var(--grey-7));
+    --color-foreground-tooltip: #fff;
     --color-fill-1: rgb(var(--grey-1));
     --color-fill-2: rgb(var(--grey-2));
     --color-fill-3: rgb(var(--grey-3));
@@ -743,6 +760,8 @@
     --color-background-2: #fff;
     --color-background-3: rgb(var(--grey-2));
     --color-background-4: rgb(var(--grey-3));
+    --color-background-popup: #fff;
+    --color-background-tooltip: #333333;
     --color-border-1: rgba(0, 0, 0, 0.2);
     --color-border-2: rgba(0, 0, 0, 0.14);
     --color-border-3: rgba(0, 0, 0, 0.1);
@@ -921,22 +940,25 @@
     --primary-8: var(--blue-8);
     --primary-9: var(--blue-9);
     --primary-10: var(--blue-10);
-    --color-foreground-1: rgba(255, 255, 255, 0.9);
-    --color-foreground-2: rgba(255, 255, 255, 0.7);
-    --color-foreground-3: rgba(255, 255, 255, 0.5);
-    --color-foreground-4: rgba(255, 255, 255, 0.3);
-    --color-fill-1: hsla(0, 0%, 100%, 0.04);
-    --color-fill-2: hsla(0, 0%, 100%, 0.08);
-    --color-fill-3: hsla(0, 0%, 100%, 0.12);
-    --color-fill-4: hsla(0, 0%, 100%, 0.16);
-    --color-background-1: #16181a;
-    --color-background-2: #232324;
-    --color-background-3: #2a2a2b;
-    --color-background-4: #313132;
-    --color-border-1: rgba(255, 255, 255, 0.2);
-    --color-border-2: rgba(255, 255, 255, 0.14);
-    --color-border-3: rgba(255, 255, 255, 0.1);
-    --color-border-4: rgba(255, 255, 255, 0.08);
+    --color-foreground-1: #e8e8e8;
+    --color-foreground-2: #bbbbbb;
+    --color-foreground-3: #8b8b8b;
+    --color-foreground-4: #5d5d5d;
+    --color-foreground-tooltip: #fff;
+    --color-fill-1: #2c2c2c;
+    --color-fill-2: #343434;
+    --color-fill-3: #3f3f3f;
+    --color-fill-4: #464646;
+    --color-background-1: #161616;
+    --color-background-2: #232323;
+    --color-background-3: #2a2a2a;
+    --color-background-4: #313131;
+    --color-background-popup: #333333;
+    --color-background-tooltip: #333333;
+    --color-border-1: #4d4d4d;
+    --color-border-2: #464646;
+    --color-border-3: #414141;
+    --color-border-4: #353535;
     --color-primary-1: rgba(var(--primary-6), 0.3);
     --color-primary-2: rgba(var(--primary-6), 0.4);
     --color-primary-3: rgba(var(--primary-6), 0.5);
@@ -970,7 +992,7 @@
 }
 body {
   font-size: 14px;
-  color: var(--color-foreground-2);
+  color: var(--color-foreground-1);
   background: var(--color-background-1);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
@@ -986,6 +1008,30 @@ button {
 a {
   cursor: pointer;
   text-decoration: none;
+}
+
+.tui-popup-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-background-popup);
+  border: solid 1px var(--color-fill-3);
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--box-shadow-down);
+}
+.tui-popup-root.tui-popup-fade-enter {
+  opacity: 0;
+  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1), transform 225ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.tui-popup-root.tui-popup-fade-enter.tui-popup-fade-enter-active {
+  opacity: 1;
+}
+.tui-popup-root.tui-popup-fade-exit {
+  opacity: 1;
+  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1), transform 225ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.tui-popup-root.tui-popup-fade-exit.tui-popup-fade-exit-active {
+  opacity: 0;
 }
 
 .tui-row {
@@ -3893,15 +3939,15 @@ a {
 .tui-menu .tui-menu-item a {
   display: block;
   padding: 8px 16px;
-  color: rgb(var(--primary-2));
+  color: var(--color-foreground-2);
   transition: all 0.3s cubic-bezier(0.44, 0.9, 0.6, 0.94);
 }
 .tui-menu .tui-menu-item a:hover {
-  color: rgb(var(--primary-2));
+  color: rgb(var(--primary-6));
 }
 .tui-menu .tui-menu-item a.active {
-  background: rgb(var(--primary-2));
-  color: rgb(var(--primary-2));
+  background: var(--color-primary-2);
+  color: rgb(var(--primary-6));
 }
 
 
@@ -3996,6 +4042,9 @@ main {
   width: 100%;
 }
 main .menu {
+  position: sticky;
+  top: 0;
+  height: 100vh;
   width: 200px;
   min-width: 200px;
   max-width: 200px;

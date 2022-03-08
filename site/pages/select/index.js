@@ -14,17 +14,16 @@ import "./index.css"
 
 
 export default () => {
-
     return <div className="page">
         <h1>Input</h1>
         <h2>size</h2>
         <div className="examples">
             <Space>
                 <Select defaultValue="beijing" size="large">
-                    <Select.Option value="beijing" disabled >Beijing</Select.Option>
+                    <Select.Option value="beijing" >Beijing</Select.Option>
                     <Select.Option value="shanghai"  >Shanghai</Select.Option>
                 </Select>
-                <Select defaultValue="beijing">
+                {/* <Select defaultValue="beijing">
                     <Select.Option value="beijing"  >Beijing</Select.Option>
                     <Select.Option value="shanghai"  >Shanghai</Select.Option>
                 </Select>
@@ -35,7 +34,7 @@ export default () => {
                 <Select defaultValue="beijing" size="tiny">
                     <Select.Option value="beijing"  >Beijing</Select.Option>
                     <Select.Option value="shanghai"  >Shanghai</Select.Option>
-                </Select>
+                </Select> */}
             </Space>
 
         </div>

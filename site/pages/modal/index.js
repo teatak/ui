@@ -22,9 +22,9 @@ export default () => {
     setIsModalVisible(false);
   };
 
-  return <div>
-    <div className="space-examples">
-      <div>default:</div>
+  return <div className="page">
+    <h1>Modal</h1>
+    <div className="examples">
       <Button type="outlined" onClick={showModal}>Open Modal</Button>
       <Modal
         visible={isModalVisible}
@@ -58,38 +58,41 @@ export default () => {
     </div>
     <Markdown children={`
 \`\`\`javascript
-export default () => <div className="space-examples">
-  <div>default:</div>
-  <Button type="outlined" onClick={showModal}>Open Modal</Button>
-  <Modal 
-    visible={isModalVisible}
-    onClose={handleClose}
-  >
-    <Modal.Title>
-      Title
-    </Modal.Title>
-    <Modal.Content dividers>
-      <p>Some contents...</p>
-      <p>Some contents...</p>
-      <p>Some contents...</p>
-    </Modal.Content>
-    <Modal.Actions>
-      <Space>
-        <Button type="outlined" color="primary" onClick={handleClose}>
-          Return
-        </Button>
-        <Button type="filled" color="primary">
-          Submit
-        </Button>
-        <Button
-          type="default"
-        >
-          Click
-        </Button>
-      </Space>
-    </Modal.Actions>
-  </Modal>
-</div>        
+export default () => <div className="page">
+  <h1>Modal</h1>
+  <div className="examples">
+    <Button type="outlined" onClick={showModal}>Open Modal</Button>
+    <Modal
+      visible={isModalVisible}
+      onClose={handleClose}
+    >
+      <Modal.Title>
+        Title
+      </Modal.Title>
+      <Modal.Content dividers>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal.Content>
+      <Modal.Actions>
+        <Space>
+          <Button type="outlined" color="primary" onClick={handleClose}>
+            Return
+          </Button>
+          <Button type="filled" color="primary">
+            Submit
+          </Button>
+          <Button
+            type="filled"
+            color="secondary"
+          >
+            Click
+          </Button>
+        </Space>
+      </Modal.Actions>
+    </Modal>
+  </div>    
+</div>
 \`\`\`
         `} />
 
@@ -98,11 +101,6 @@ export default () => <div className="space-examples">
 
 | Property  | Description | Type | Default |
 | --------- | ------- | ------- | ------- |
-| visible   |  | bool | false |
-| onClose   |  | func |  |
-| maxWidth  |  | string |  |
-| width     |  | string |  |
-| transitionClass   |  | string | fade,slide  |
 
         `} />
   </div>

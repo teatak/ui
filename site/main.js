@@ -23,6 +23,7 @@ const Form = loadable(() => import('./pages/form'), fallback)
 const Grid = loadable(() => import('./pages/grid'), fallback)
 const Space = loadable(() => import('./pages/space'), fallback)
 const Modal = loadable(() => import('./pages/modal'), fallback)
+const Trigger = loadable(() => import('./pages/trigger'), fallback)
 
 const fallback = {
   fallback: <Progress />,
@@ -57,6 +58,9 @@ const Root = () => {
             </Menu.Item>
             <Menu.Item>
               <NavLink to="/modal">Modal</NavLink>
+            </Menu.Item>
+            <Menu.Item>
+              <NavLink to="/trigger">Trigger</NavLink>
             </Menu.Item>
           </Menu>
         </div>
@@ -95,6 +99,10 @@ const Root = () => {
               <Route strict path="/modal">
                 <Helmet title="Modal - TeaTak" />
                 <Modal />
+              </Route>
+              <Route strict path="/trigger">
+                <Helmet title="Trigger - TeaTak" />
+                <Trigger />
               </Route>
             </Switch>
           </div>

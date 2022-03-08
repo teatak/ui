@@ -1,0 +1,26 @@
+@popup-prefix-class: tui-popup;
+.@{popup-prefix-class}-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-background-popup);
+  border: solid 1px var(--color-fill-3);
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--box-shadow-down);
+  &.@{popup-prefix-class}-fade-enter {
+    opacity: 0;
+    transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1),
+      transform 225ms cubic-bezier(0.4, 0, 0.2, 1);
+    &.@{popup-prefix-class}-fade-enter-active {
+      opacity: 1;
+    }
+  }
+  &.@{popup-prefix-class}-fade-exit {
+    opacity: 1;
+    transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1),
+      transform 225ms cubic-bezier(0.4, 0, 0.2, 1);
+    &.@{popup-prefix-class}-fade-exit-active {
+      opacity: 0;
+    }
+  }
+}

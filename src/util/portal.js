@@ -1,4 +1,4 @@
-import React,{useState, useEffect, forwardRef} from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from "prop-types";
 import ReactDOM from 'react-dom';
 
@@ -17,9 +17,9 @@ const portal = (props) => {
         } else {
             setMountNode(null);
         }
-    }, [container,visible]);
+    }, [container, visible]);
 
     return mountNode ? ReactDOM.createPortal(children, mountNode) : mountNode;
-} 
+}
 
 export default portal

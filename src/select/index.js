@@ -1,59 +1,118 @@
-import React, { forwardRef, useContext, useState } from "react"
+import React, { forwardRef, useContext, useRef, useState } from "react"
 import PropTypes from "prop-types"
 import classnames from "classnames"
 import FormContext from "../formcontext"
+import Popup from "../popup"
+import "../popup/style"
+// import Portal from '../util/portal';
 
 const Option = forwardRef((props, ref) => {
     const { children, ...rest } = props
-    return <option {...rest}>{children}</option>
+    return <li {...rest}>{children}</li>
 })
 
 const Select = forwardRef((props, ref) => {
 
+    const selectRef = ref || useRef()
+
     const { size: ctxSize } = useContext(FormContext);
     const { style, disabled, className, prefixClass, size, onChange, ...rest } = props
+    const [value, setValue] = useState()
+    const [focused, setFocused] = useState(false)
+    const [portalVisible, setPortalVisible] = useState(false)
 
-    const [focused, setFocused] = useState(props.focused)
-
+    console.log(focused)
     const classNames = classnames(
-        prefixClass,
+        `${prefixClass}`,
         `${prefixClass}-size-${size || ctxSize || "medium"}`,
         {
+            [`${prefixClass}-open`]: portalVisible,
             [`${prefixClass}-focused`]: focused,
-            [`disabled`]: disabled,
+            [`disabled`]: disabled
         },
-        className,
+        className
     )
 
     const handleChange = (e, newValue) => {
-        // setValue(newValue)
         if (onChange) {
             onChange(e, newValue)
         }
     }
 
-    return <div
-        tabIndex={0}
-        className={classNames}
-        ref={ref}
-        {...rest}
-        // value={value}
-        onKeyPress={(e) => {
-            console.log(e)
-        }}
-        onFocus={(e) => {
-            setFocused(true)
-        }}
-        onBlur={(e) => {
-            setFocused(false)
-        }}
-        onChange={(e) => {
-            handleChange(e, e.target.value)
-        }}
-        disabled={disabled}
-    >
+    const toggle = () => {
+        setPortalVisible(!portalVisible)
+    }
+
+    const close = () => {
+        setFocused(false)
+        setPortalVisible(false)
+    }
+
+    const down = () => {
+    }
+
+    const up = () => {
+    }
+
+    const options = <ul className={`${prefixClass}-options`}>
         {props.children}
-    </div>
+    </ul>
+
+    return <Popup
+        content={options}
+        visible={portalVisible}
+        onChange={(v) => {
+            setPortalVisible(v)
+        }}
+    >
+        <span
+            tabIndex={0}
+            className={classNames}
+            {...rest}
+            ref={selectRef}
+            onKeyDown={(e) => {
+                console.log(e.key)
+                switch (e.key) {
+                    case "Enter":
+                        toggle()
+                        break
+                    case "Escape":
+                    case "Tab":
+                        close()
+                        break
+                    case "ArrowDown":
+                        //down
+                        down()
+                        e.stopPropagation()
+                        e.preventDefault()
+                        break
+                    case "ArrowUp":
+                        //up
+                        up()
+                        e.stopPropagation()
+                        e.preventDefault()
+                        break
+                }
+            }}
+            onFocus={(e) => {
+                setFocused(true)
+            }}
+            onBlur={(e) => {
+                //e.preventDefault()
+                //setFocused(false)
+            }}
+            onChange={(e) => {
+                handleChange(e, e.target.value)
+            }}
+            disabled={disabled}
+        >
+            {value}
+            <div className={`${prefixClass}-suffix`}>
+                <i className={`${prefixClass}-arrow`} />
+            </div>
+        </span>
+    </Popup>
+
 })
 
 Select.propTypes = {

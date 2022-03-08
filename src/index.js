@@ -7,5 +7,6 @@ export { default as Row } from './row';
 export { default as Col } from './col';
 export { default as Space } from './space';
 export { default as Modal } from './modal';
+export { default as Trigger } from './trigger';
 export { default as Svg } from './svg';
 

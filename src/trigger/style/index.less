@@ -1,0 +1,155 @@
+@trigger-prefix-class: tui-trigger;
+.@{trigger-prefix-class} {
+  position: absolute;
+  & .@{trigger-prefix-class}-inner {
+    background-color: var(--color-background-popup);
+    border-radius: var(--border-radius-medium);
+    padding: 8px 12px;
+  }
+  & .@{trigger-prefix-class}-arrow {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 16px;
+    overflow: hidden;
+    background: 0 0;
+    pointer-events: none;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 8px;
+      height: 8px;
+      margin: auto;
+      content: "";
+      border-radius: 0 0 2px;
+      pointer-events: none;
+      box-sizing: border-box;
+    }
+  }
+  &.@{trigger-prefix-class}-bottom {
+    padding-top: 8px;
+    & .@{trigger-prefix-class}-inner {
+      box-shadow: var(--box-shadow-popup-down);
+    }
+    & .@{trigger-prefix-class}-arrow {
+      top: -7px;
+      left: calc(50% - 10px);
+      &::before {
+        background-color: var(--color-background-popup);
+        box-shadow: var(--box-shadow-popup-arrow);
+        transform: translateY(8px) rotate(-135deg);
+      }
+    }
+  }
+  &.@{trigger-prefix-class}-bottomLeft {
+    padding-top: 8px;
+    & .@{trigger-prefix-class}-inner {
+      box-shadow: var(--box-shadow-popup-down);
+    }
+    & .@{trigger-prefix-class}-arrow {
+      top: -7px;
+      left: 16px;
+      &::before {
+        background-color: var(--color-background-popup);
+        box-shadow: var(--box-shadow-popup-arrow);
+        transform: translateY(8px) rotate(-135deg);
+      }
+    }
+  }
+  &.@{trigger-prefix-class}-bottomRight {
+    padding-top: 8px;
+    & .@{trigger-prefix-class}-inner {
+      box-shadow: var(--box-shadow-popup-down);
+    }
+    & .@{trigger-prefix-class}-arrow {
+      top: -7px;
+      right: 16px;
+      &::before {
+        background-color: var(--color-background-popup);
+        box-shadow: var(--box-shadow-popup-arrow);
+        transform: translateY(8px) rotate(-135deg);
+      }
+    }
+  }
+  &.@{trigger-prefix-class}-top {
+    padding-bottom: 8px;
+    & .@{trigger-prefix-class}-inner {
+      box-shadow: var(--box-shadow-popup-up);
+    }
+    & .@{trigger-prefix-class}-arrow {
+      bottom: -7px;
+      left: calc(50% - 10px);
+      &::before {
+        background-color: var(--color-background-popup);
+        box-shadow: var(--box-shadow-popup-arrow);
+        transform: translateY(-8px) rotate(45deg);
+      }
+    }
+  }
+  &.@{trigger-prefix-class}-topLeft {
+    padding-bottom: 8px;
+    & .@{trigger-prefix-class}-inner {
+      box-shadow: var(--box-shadow-popup-up);
+    }
+    & .@{trigger-prefix-class}-arrow {
+      bottom: -7px;
+      left: 16px;
+      &::before {
+        background-color: var(--color-background-popup);
+        box-shadow: var(--box-shadow-popup-arrow);
+        transform: translateY(-8px) rotate(45deg);
+      }
+    }
+  }
+  &.@{trigger-prefix-class}-topRight {
+    padding-bottom: 8px;
+    & .@{trigger-prefix-class}-inner {
+      box-shadow: var(--box-shadow-popup-up);
+    }
+    & .@{trigger-prefix-class}-arrow {
+      bottom: -7px;
+      right: 16px;
+      &::before {
+        background-color: var(--color-background-popup);
+        box-shadow: var(--box-shadow-popup-arrow);
+        transform: translateY(-8px) rotate(45deg);
+      }
+    }
+  }
+  //no arrow disable padding
+  &.@{trigger-prefix-class}-no-arrow {
+    padding: 0;
+  }
+  //tooltip
+  &.@{trigger-prefix-class}-tooltip {
+    color: var(--color-foreground-tooltip);
+    & .@{trigger-prefix-class}-inner {
+      background-color: var(--color-background-tooltip);
+      border: solid 1px var(--color-fill-3);
+    }
+    & .@{trigger-prefix-class}-arrow {
+      &::before {
+        background-color: var(--color-background-tooltip);
+        border: solid 1px var(--color-fill-3);
+      }
+    }
+  }
+  &.@{trigger-prefix-class}-fade-enter {
+    opacity: 0;
+    transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1),
+      transform 225ms cubic-bezier(0.4, 0, 0.2, 1);
+    &.@{trigger-prefix-class}-fade-enter-active {
+      opacity: 1;
+    }
+  }
+  &.@{trigger-prefix-class}-fade-exit {
+    opacity: 1;
+    transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1),
+      transform 225ms cubic-bezier(0.4, 0, 0.2, 1);
+    &.@{trigger-prefix-class}-fade-exit-active {
+      opacity: 0;
+    }
+  }
+}

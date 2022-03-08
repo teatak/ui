@@ -1,5 +1,5 @@
 import React from 'react'
-import {Space,Button} from "../../../src";
+import { Space, Button } from "../../../src";
 import "../../../src/space/style";
 import "../../../src/button/style";
 
@@ -11,32 +11,34 @@ import {
 
 export default () => {
 
-    return <div>
-         <div className="space-examples">
-            <div>default:</div>
+    return <div className="page">
+        <h1>Space</h1>
+        <div className="examples">
             <Space>
                 Text
                 <Button>Button</Button>
                 <Button type="filled" color="primary">Filled</Button>
                 <Button type="outlined" color="primary">Outlined</Button>
-                <Button type="filled" rounded color="danger"><Delete/></Button>
+                <Button type="filled" rounded color="danger"><Delete /></Button>
             </Space>
-         </div>     
+        </div>
         <Markdown children={`
 \`\`\`javascript
 import React from "react";
 import {Space,Row,Col} from "@teatak/ui";
 
-export default () => <div className="examples">
-    <div>default:</div>
-    <Space>
-        Text
-        <Button>Button</Button>
-        <Button type="filled" color="primary">Filled</Button>
-        <Button type="outlined" color="primary">Outlined</Button>
-        <Button type="filled" rounded color="danger"><Delete/></Button>
-    </Space>
-</div>       
+export default () => <div className="page">
+    <h1>Space</h1>
+    <div className="examples">
+        <Space>
+            Text
+            <Button>Button</Button>
+            <Button type="filled" color="primary">Filled</Button>
+            <Button type="outlined" color="primary">Outlined</Button>
+            <Button type="filled" rounded color="danger"><Delete /></Button>
+        </Space>
+    </div>
+</div> 
 \`\`\`
         `} />
 
@@ -45,12 +47,6 @@ export default () => <div className="examples">
 
 | Property  | Description | Type | Default |
 | --------- | ------- | ------- | ------- |
-| type      | can be set to 'filled','outlined','default' | string | default |
-| size      | can be set to small large or default | string | default |
-| rounded   | rounded | boolean | false |
-| disabled  | disabled state of button	 | boolean | false |
-| htmlType  | htmlType | string | button |
-| onClick   | set the handler to handle click event	| (event) => void | - |
         `} />
     </div>
 }
