@@ -15,6 +15,10 @@ import loadable from '@loadable/component'
 
 import './main.less'
 
+const fallback = {
+  fallback: <Progress />,
+}
+
 const Color = loadable(() => import('./pages/color'), fallback)
 const Input = loadable(() => import('./pages/input'), fallback)
 const Select = loadable(() => import('./pages/select'), fallback)
@@ -24,10 +28,6 @@ const Grid = loadable(() => import('./pages/grid'), fallback)
 const Space = loadable(() => import('./pages/space'), fallback)
 const Modal = loadable(() => import('./pages/modal'), fallback)
 const Trigger = loadable(() => import('./pages/trigger'), fallback)
-
-const fallback = {
-  fallback: <Progress />,
-}
 
 const Root = () => {
   return (
