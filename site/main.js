@@ -67,7 +67,7 @@ const Root = () => {
         <div className="content">
           <div className='content-page'>
             <Switch>
-              <Redirect exact path="/" to="/Button" />
+              <Redirect exact path="/" to="/button" />
               <Route strict path="/color">
                 <Helmet title="Color - TeaTak" />
                 <Color />
