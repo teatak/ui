@@ -104,7 +104,13 @@ const Trigger = (props) => {
     }
 
     const handleClickOutSide = (e) => {
-        toggle(false)
+        if (
+            (triggerRef.current && !triggerRef.current.contains(e.target))
+            &&
+            (portalRef.current && !portalRef.current.contains(e.target))
+        ) {
+            toggle(false)
+        }
     }
 
     useEffect(() => {
@@ -138,7 +144,6 @@ const Trigger = (props) => {
     if (!tooltip && action === "click") {
         if (!children.props.onClick) {
             newChildProps.onClick = (e) => {
-                e.stopPropagation()
                 toggle(!portalVisible)
             }
         }
@@ -146,15 +151,12 @@ const Trigger = (props) => {
 
     if (tooltip || action === "hover") {
         newChildProps.onMouseEnter = (e) => {
-            e.stopPropagation()
             toggle(true)
         }
         newChildProps.onMouseLeave = (e) => {
-            e.stopPropagation()
             toggle(false)
         }
     }
-
 
     newChildProps.ref = triggerRef
     const trigger = React.cloneElement(children, newChildProps)
@@ -179,7 +181,7 @@ const Trigger = (props) => {
             unmountOnExit
         >
             <div className={classNames} ref={portalRef} onClick={(e) => {
-                e.stopPropagation()
+                //e.stopPropagation()
             }} style={popupStyle}>
                 {arrow ? <div className={`${prefixClass}-arrow`} style={arrowStyle}></div>
                     : null}

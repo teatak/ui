@@ -15,22 +15,44 @@ export default () => {
     const [visible, setVisible] = useState(false)
     return <div className="page">
         <h1>Trigger</h1>
-        <h2>visible onVisibleChange</h2>
+        <h2>position</h2>
         <div className="examples">
             <Space>
-                <Button type="outlined" onClick={(e) => {
-                    e.stopPropagation()
-                    setVisible(!visible)
-                }}>click to trigger</Button>
                 <Trigger
-                    visible={visible}
-                    position="topLeft"
-                    content={<div>content</div>}
-                    onVisibleChange={(v) => {
-                        setVisible(v)
-                    }}
+                    position="top"
+                    content={<div>this is content</div>}
                 >
-                    <Button rounded type="outlined">click</Button>
+                    <Button rounded type="outlined">top</Button>
+                </Trigger>
+                <Trigger
+                    position="topLeft"
+                    content={<div>this is content</div>}
+                >
+                    <Button rounded type="outlined">topLeft</Button>
+                </Trigger>
+                <Trigger
+                    position="topRight"
+                    content={<div>this is content</div>}
+                >
+                    <Button rounded type="outlined">topRight</Button>
+                </Trigger>
+                <Trigger
+                    position="bottom"
+                    content={<div>this is content</div>}
+                >
+                    <Button rounded type="outlined">bottom</Button>
+                </Trigger>
+                <Trigger
+                    position="bottomLeft"
+                    content={<div>this is content</div>}
+                >
+                    <Button rounded type="outlined">bottomLeft</Button>
+                </Trigger>
+                <Trigger
+                    position="bottomRight"
+                    content={<div>this is content</div>}
+                >
+                    <Button rounded type="outlined">bottomRight</Button>
                 </Trigger>
             </Space>
         </div>
@@ -40,6 +62,7 @@ export default () => {
     const [visible, setVisible] = useState(false)
     return <div className="page">
         <h1>Trigger</h1>
+        <h2>position</h2>
         <div className="examples">
             <Space>
                 <Button type="outlined" onClick={(e) => {
@@ -48,6 +71,7 @@ export default () => {
                 }}>click to trigger</Button>
                 <Trigger
                     visible={visible}
+                    position="topLeft"
                     content={<div>content</div>}
                     onVisibleChange={(v) => {
                         setVisible(v)
