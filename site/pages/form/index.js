@@ -98,7 +98,7 @@ export default () => {
                         { type: 'string', message: '请输入5-20位有效的用户名!', pattern: /^.{5,20}$/ },
                     ]}
                 >
-                    <input defaultValue={value} style={{ height: "32px" }} />
+                    <Input defaultValue={value} />
                 </Form.Item>
                 <Form.Item
                     label="Password"
