@@ -1,0 +1,432 @@
+.tui-input-root {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-foreground-1);
+  position: relative;
+  width: 100%;
+}
+.tui-input-root.disabled {
+  color: rgb(var(--grey-5));
+}
+.tui-input-root .tui-input-start-icon {
+  display: inline-flex;
+  position: absolute;
+  margin-left: 7px;
+  line-height: 0;
+}
+.tui-input-root .tui-input-start-icon svg {
+  font-size: 20px;
+}
+.tui-input-root .tui-input-end-icon {
+  display: inline-flex;
+  position: absolute;
+  right: 0;
+  margin-right: 7px;
+  line-height: 0;
+}
+.tui-input-root .tui-input-end-icon svg {
+  font-size: 20px;
+}
+.tui-input-root .tui-input {
+  font-size: 14px;
+  height: var(--size-medium);
+  padding: 0 12px;
+  outline: none;
+  border: solid 1px transparent;
+  border-radius: var(--border-radius-small);
+  color: var(--color-foreground-1);
+  background: var(--color-fill-3);
+  width: 100%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.tui-input-root .tui-input:-webkit-autofill {
+  -webkit-text-fill-color: var(--color-foreground-1);
+  box-shadow: inset 0 0 0 32px var(--color-fill-3) !important;
+  border: solid 1px var(--color-fill-3);
+}
+.tui-input-root .tui-input:-webkit-autofill:hover {
+  border: solid 1px rgb(var(--primary-5));
+  background: var(--color-fill-3);
+  box-shadow: inset 0 0 0 32px var(--color-fill-3) !important;
+}
+.tui-input-root .tui-input:-webkit-autofill:focus {
+  border: solid 1px rgb(var(--primary-6));
+  background: var(--color-fill-2);
+  box-shadow: 0px 0px 0px 3px var(--color-primary-2), inset 0 0 0 32px var(--color-fill-2) !important;
+}
+.tui-input-root .tui-input.tui-input-has-start-icon {
+  padding-left: 32px;
+}
+.tui-input-root .tui-input.tui-input-has-end-icon {
+  padding-right: 32px;
+}
+.tui-input-root .tui-input[disabled] {
+  color: rgb(var(--grey-5));
+  background: rgb(var(--grey-3));
+  border: solid 1px rgb(var(--grey-3));
+}
+.tui-input-root .tui-input[disabled]:hover,
+.tui-input-root .tui-input[disabled]:focus {
+  color: rgb(var(--grey-5));
+  background: rgb(var(--grey-3));
+  border: solid 1px rgb(var(--grey-3));
+}
+.tui-input-root .tui-input:hover {
+  border: solid 1px rgb(var(--primary-5));
+  background: var(--color-fill-3);
+}
+.tui-input-root .tui-input:focus {
+  border: solid 1px rgb(var(--primary-6));
+  background: var(--color-fill-2);
+  box-shadow: 0px 0px 0px 3px var(--color-primary-2);
+}
+.tui-input-root.tui-input-size-large .tui-input-start-icon {
+  margin-left: 8px;
+}
+.tui-input-root.tui-input-size-large .tui-input-start-icon svg {
+  font-size: 22px;
+}
+.tui-input-root.tui-input-size-large .tui-input-end-icon {
+  margin-right: 8px;
+}
+.tui-input-root.tui-input-size-large .tui-input-end-icon svg {
+  font-size: 22px;
+}
+.tui-input-root.tui-input-size-large .tui-input {
+  font-size: 14px;
+  height: var(--size-large);
+  padding: 0 16px;
+  border-radius: var(--border-radius-small);
+}
+.tui-input-root.tui-input-size-large .tui-input.tui-input-has-start-icon {
+  padding-left: 36px;
+}
+.tui-input-root.tui-input-size-large .tui-input.tui-input-has-end-icon {
+  padding-right: 36px;
+}
+.tui-input-root.tui-input-size-small .tui-input-start-icon {
+  margin-left: 7px;
+}
+.tui-input-root.tui-input-size-small .tui-input-start-icon svg {
+  font-size: 16px;
+}
+.tui-input-root.tui-input-size-small .tui-input-end-icon {
+  margin-right: 7px;
+}
+.tui-input-root.tui-input-size-small .tui-input-end-icon svg {
+  font-size: 16px;
+}
+.tui-input-root.tui-input-size-small .tui-input {
+  font-size: 12px;
+  height: var(--size-small);
+  padding: 0 8px;
+  border-radius: var(--border-radius-small);
+}
+.tui-input-root.tui-input-size-small .tui-input.tui-input-has-start-icon {
+  padding-left: 28px;
+}
+.tui-input-root.tui-input-size-small .tui-input.tui-input-has-end-icon {
+  padding-right: 28px;
+}
+.tui-input-root.tui-input-size-tiny .tui-input-start-icon {
+  margin-left: 6px;
+}
+.tui-input-root.tui-input-size-tiny .tui-input-start-icon svg {
+  font-size: 14px;
+}
+.tui-input-root.tui-input-size-tiny .tui-input-end-icon {
+  margin-right: 6px;
+}
+.tui-input-root.tui-input-size-tiny .tui-input-end-icon svg {
+  font-size: 14px;
+}
+.tui-input-root.tui-input-size-tiny .tui-input {
+  font-size: 12px;
+  height: var(--size-tiny);
+  padding: 0 6px;
+  border-radius: var(--border-radius-small);
+}
+.tui-input-root.tui-input-size-tiny .tui-input.tui-input-has-start-icon {
+  padding-left: 24px;
+}
+.tui-input-root.tui-input-size-tiny .tui-input.tui-input-has-end-icon {
+  padding-right: 24px;
+}
+
+.tui-check {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.tui-check > input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+.tui-check .tui-check-inner {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-fill-3);
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-background-2);
+  transition: all 0.3s;
+}
+.tui-check .tui-check-inner::before {
+  position: absolute;
+  display: table;
+  top: 5px;
+  left: 1px;
+  width: 10px;
+  height: 2px;
+  background: var(--color-background-2);
+  transform: scale(0);
+  opacity: 0;
+  content: " ";
+  transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+}
+.tui-check .tui-check-inner::after {
+  position: absolute;
+  top: 1px;
+  left: -1px;
+  display: table;
+  width: 4px;
+  height: 8px;
+  border: 2px solid var(--color-background-2);
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(45deg) scale(0);
+  transform-origin: bottom right;
+  opacity: 0;
+  transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+  content: " ";
+}
+.tui-check .tui-check-text {
+  margin-left: 8px;
+}
+.tui-check:hover .tui-check-inner {
+  border-color: var(--color-fill-4);
+}
+.tui-check.tui-check-indeterminate .tui-check-inner {
+  border: 2px solid rgb(var(--primary-6));
+  background: rgb(var(--primary-6));
+}
+.tui-check.tui-check-indeterminate .tui-check-inner::before {
+  transform: scale(1);
+  opacity: 1;
+}
+.tui-check.tui-check-indeterminate .tui-check-inner::after {
+  opacity: 0;
+}
+.tui-check.tui-check-checked .tui-check-inner {
+  border: 2px solid rgb(var(--primary-6));
+  background: rgb(var(--primary-6));
+}
+.tui-check.tui-check-checked .tui-check-inner::before {
+  opacity: 0;
+}
+.tui-check.tui-check-checked .tui-check-inner::after {
+  transform: rotate(45deg) scale(1);
+  opacity: 1;
+}
+.tui-check.tui-check-disabled {
+  cursor: default;
+}
+.tui-check.tui-check-disabled .tui-check-inner {
+  border: 2px solid rgb(var(--grey-4));
+}
+.tui-check.tui-check-disabled.tui-check-indeterminate .tui-check-inner {
+  border: 2px solid rgb(var(--grey-4));
+  background: rgb(var(--grey-4));
+}
+.tui-check.tui-check-disabled.tui-check-indeterminate .tui-check-inner::before {
+  transform: scale(1);
+  opacity: 1;
+}
+.tui-check.tui-check-disabled.tui-check-indeterminate .tui-check-inner::after {
+  opacity: 0;
+}
+.tui-check.tui-check-disabled.tui-check-checked .tui-check-inner {
+  border: 2px solid rgb(var(--grey-4));
+  background: rgb(var(--grey-4));
+}
+.tui-check.tui-check-disabled.tui-check-checked .tui-check-inner::before {
+  opacity: 0;
+}
+.tui-check.tui-check-disabled.tui-check-checked .tui-check-inner::after {
+  transform: rotate(45deg) scale(1);
+  opacity: 1;
+}
+.tui-check.tui-check-disabled:hover .tui-check-inner {
+  border: 2px solid rgb(var(--grey-4));
+}
+.tui-check.tui-check-disabled .tui-check-text {
+  color: rgb(var(--grey-4));
+}
+.tui-check-group.tui-check-group-direction-horizontal > .tui-check {
+  margin-right: 16px;
+}
+.tui-check-group.tui-check-group-direction-vertical > .tui-check {
+  display: flex;
+  margin-right: 0;
+  line-height: 32px;
+}
+
+.tui-form {
+  display: flex;
+  flex-direction: column;
+}
+.tui-form.tui-form-size-medium .tui-form-item-label,
+.tui-form.tui-form-size-medium .tui-form-item-wrapper {
+  min-height: var(--size-medium);
+  line-height: var(--size-medium);
+}
+.tui-form.tui-form-size-medium .tui-form-item-label.tui-form-item-label-right label {
+  padding-right: 16px;
+}
+.tui-form.tui-form-size-large .tui-form-item-label,
+.tui-form.tui-form-size-large .tui-form-item-wrapper {
+  min-height: var(--size-large);
+  line-height: var(--size-large);
+}
+.tui-form.tui-form-size-large .tui-form-item-label.tui-form-item-label-right label {
+  padding-right: 20px;
+}
+.tui-form.tui-form-size-small .tui-form-item-label,
+.tui-form.tui-form-size-small .tui-form-item-wrapper {
+  min-height: var(--size-small);
+  line-height: var(--size-small);
+}
+.tui-form.tui-form-size-small .tui-form-item-label.tui-form-item-label-right label {
+  padding-right: 12px;
+}
+.tui-form.tui-form-size-tiny .tui-form-item-label,
+.tui-form.tui-form-size-tiny .tui-form-item-wrapper {
+  min-height: var(--size-tiny);
+  line-height: var(--size-tiny);
+}
+.tui-form.tui-form-size-tiny .tui-form-item-label.tui-form-item-label-right label {
+  padding-right: 10px;
+}
+.tui-form.tui-form-layout-vertical .tui-form-item {
+  display: block;
+}
+.tui-form.tui-form-layout-vertical .tui-form-item .tui-form-item-label,
+.tui-form.tui-form-layout-vertical .tui-form-item .tui-form-item-wrapper {
+  display: block;
+  flex: auto;
+  max-width: 100%;
+}
+.tui-form.tui-form-layout-vertical .tui-form-item .tui-form-item-label {
+  text-align: left !important;
+}
+.tui-form.tui-form-layout-vertical .tui-form-item .tui-form-item-label label {
+  padding-right: 0;
+}
+.tui-form.tui-form-layout-inline {
+  flex-flow: row wrap;
+}
+.tui-form.tui-form-layout-inline .tui-form-item {
+  display: flex;
+  margin-bottom: 8px;
+  margin-right: 4px;
+}
+.tui-form.tui-form-layout-inline .tui-form-item .tui-form-item-label,
+.tui-form.tui-form-layout-inline .tui-form-item .tui-form-item-wrapper {
+  display: block;
+  flex: auto;
+  max-width: 100%;
+}
+.tui-form.tui-form-layout-inline .tui-form-item .tui-form-item-label {
+  padding: 0 4px;
+  text-align: left !important;
+}
+.tui-form.tui-form-layout-inline .tui-form-item .tui-form-item-label label {
+  padding-right: 0;
+}
+.tui-form.tui-form-layout-inline .tui-form-item.tui-form-item-has-error .tui-form-item-tip {
+  position: relative;
+}
+.tui-form .tui-form-item {
+  margin-bottom: 20px;
+}
+.tui-form .tui-form-item .tui-form-item-label.tui-form-item-label-left {
+  text-align: left;
+}
+.tui-form .tui-form-item .tui-form-item-label.tui-form-item-label-right {
+  text-align: right;
+}
+.tui-form .tui-form-item .tui-form-item-label.tui-form-item-label-ceter {
+  text-align: center;
+}
+.tui-form .tui-form-item .tui-form-item-label label.tui-form-item-required::before {
+  display: inline-block;
+  margin-right: 4px;
+  color: rgb(var(--red-5));
+  font-size: 14px;
+  font-family: SimSun, sans-serif;
+  line-height: 1;
+  content: "*";
+}
+.tui-form .tui-form-item .tui-form-item-control {
+  padding: 0;
+}
+.tui-form .tui-form-item .tui-form-item-tip {
+  font-size: 12px;
+  height: 12px;
+  line-height: 12px;
+  margin: 4px 0;
+}
+.tui-form .tui-form-item.tui-form-item-has-error .tui-form-item-tip {
+  position: absolute;
+  color: rgb(var(--red-5));
+}
+.tui-form .tui-form-item.tui-form-item-has-error .tui-input {
+  border: solid 1px transparent;
+  background: var(--color-error-1);
+}
+.tui-form .tui-form-item.tui-form-item-has-error .tui-input:-webkit-autofill {
+  -webkit-text-fill-color: var(--color-foreground-1);
+  border: solid 1px var(--color-error-1);
+  box-shadow: inset 0 0 0 32px var(--color-error-1) !important;
+}
+.tui-form .tui-form-item.tui-form-item-has-error .tui-input:-webkit-autofill:hover {
+  border: solid 1px rgb(var(--red-5));
+  background: var(--color-error-1);
+  box-shadow: inset 0 0 0 32px var(--color-error-1) !important;
+}
+.tui-form .tui-form-item.tui-form-item-has-error .tui-input:-webkit-autofill:focus {
+  border: solid 1px rgb(var(--red-6));
+  background: var(--color-error-1);
+  box-shadow: 0px 0px 0px 3px var(--color-error-2), inset 0 0 0 32px var(--color-error-1) !important;
+}
+.tui-form .tui-form-item.tui-form-item-has-error .tui-input:hover {
+  border: solid 1px rgb(var(--red-5));
+  background: var(--color-error-1);
+}
+.tui-form .tui-form-item.tui-form-item-has-error .tui-input:focus {
+  border: solid 1px rgb(var(--red-6));
+  background: var(--color-error-1);
+  box-shadow: 0px 0px 0px 3px var(--color-error-2);
+}
+.tui-form .tui-form-item.tui-form-item-has-error .tui-select {
+  border: solid 1px transparent;
+  background: var(--color-error-1);
+}
+.tui-form .tui-form-item.tui-form-item-has-error .tui-select:hover {
+  border: solid 1px rgb(var(--red-5));
+  background: var(--color-error-1);
+}
+.tui-form .tui-form-item.tui-form-item-has-error .tui-select:focus {
+  border: solid 1px rgb(var(--red-6));
+  background: var(--color-error-1);
+  box-shadow: 0px 0px 0px 3px var(--color-error-2);
+}
+
+

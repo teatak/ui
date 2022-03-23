@@ -28,10 +28,9 @@ const Input = forwardRef((props, ref) => {
         className,
     )
 
-    const handleChange = (e, newValue) => {
-        // setValue(newValue)
+    const handleChange = (e) => {
         if (onChange) {
-            onChange(e, newValue)
+            onChange(e.target.value)
         }
     }
     return <span className={classNamesRoot} style={style}>
@@ -44,7 +43,7 @@ const Input = forwardRef((props, ref) => {
             {...rest}
             // value={value}
             onChange={(e) => {
-                handleChange(e, e.target.value)
+                handleChange(e)
             }}
             disabled={disabled}
         />

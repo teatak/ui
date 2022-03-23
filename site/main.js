@@ -19,6 +19,7 @@ const fallback = {
   fallback: <Progress />,
 }
 
+const Demo = loadable(() => import('./pages/demo'), fallback)
 const Color = loadable(() => import('./pages/color'), fallback)
 const Input = loadable(() => import('./pages/input'), fallback)
 const Select = loadable(() => import('./pages/select'), fallback)
@@ -68,6 +69,10 @@ const Root = () => {
           <div className='content-page'>
             <Switch>
               <Redirect exact path="/" to="/button" />
+              <Route strict path="/demo">
+                <Helmet title="Demo - TeaTak" />
+                <Demo />
+              </Route>
               <Route strict path="/color">
                 <Helmet title="Color - TeaTak" />
                 <Color />

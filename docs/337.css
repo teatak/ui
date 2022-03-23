@@ -221,6 +221,7 @@
   --box-shadow-popup-up: 0 -1px 4px 0 rgba(0, 0, 0, 0.06),
     0 2px 12px 0 rgba(0, 0, 0, 0.1);
   --box-shadow-popup-arrow: 1px 1px 8px 0px rgba(0, 0, 0, 0.1);
+  --box-shadow-select-trigger: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 [data-color-mode="light"][data-light-theme*="light"] {
   color-scheme: light;
@@ -1000,4 +1001,15 @@
   flex-shrink: 0;
   user-select: none;
 }
+
+
+
+.grid-examples {
+  padding: 8px;
+}
+  .grid-examples .tui-col > div {
+      padding: 16px;
+      background: var(--color-primary-4);
+      border-radius: 4px;
+    }
 

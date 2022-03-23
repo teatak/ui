@@ -1,0 +1,147 @@
+@check-prefix-class: tui-check;
+
+.@{check-prefix-class} {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  & > input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+  }
+  & .@{check-prefix-class}-inner {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--color-fill-3);
+    border-radius: var(--border-radius-small);
+    background-color: var(--color-background-2);
+    transition: all 0.3s;
+    &::before {
+      position: absolute;
+      display: table;
+      top: 5px;
+      left: 1px;
+      width: 10px;
+      height: 2px;
+      background: var(--color-background-2);
+      transform: scale(0);
+      opacity: 0;
+      content: " ";
+      transition: all .2s cubic-bezier(.12,.4,.29,1.46);
+    }
+    &::after {
+      position: absolute;
+      top: 1px;
+      left: -1px;
+      display: table;
+      width: 4px;
+      height: 8px;
+      border: 2px solid var(--color-background-2);
+      border-top: 0;
+      border-left: 0;
+      transform: rotate(45deg) scale(0);
+      transform-origin: bottom right;
+      opacity: 0;
+      transition: all .2s cubic-bezier(.12,.4,.29,1.46);
+      content: " ";
+    }
+  }
+  & .@{check-prefix-class}-text{
+    margin-left: 8px;
+  }
+  &:hover {
+    & .@{check-prefix-class}-inner {
+      border-color: var(--color-fill-4);
+    }
+  }
+  &.@{check-prefix-class}-indeterminate {
+    & .@{check-prefix-class}-inner {
+        border: 2px solid rgb(var(--primary-6));
+        background: rgb(var(--primary-6));
+        &::before {
+          transform: scale(1);
+          opacity: 1;
+        }
+        &::after {
+          opacity: 0;
+        }
+    }
+  }
+  &.@{check-prefix-class}-checked {
+    & .@{check-prefix-class}-inner {
+        border: 2px solid rgb(var(--primary-6));
+        background: rgb(var(--primary-6));
+        &::before {
+          opacity: 0;
+        }
+        &::after {
+          transform: rotate(45deg) scale(1);
+          opacity: 1;
+        }
+    }
+  }
+  &.@{check-prefix-class}-disabled {
+    cursor: default;
+    & .@{check-prefix-class}-inner {
+      border: 2px solid rgb(var(--grey-4));
+    } 
+    &.@{check-prefix-class}-indeterminate {
+      & .@{check-prefix-class}-inner {
+          border: 2px solid rgb(var(--grey-4));
+          background: rgb(var(--grey-4));
+          &::before {
+            transform: scale(1);
+            opacity: 1;
+          }
+          &::after {
+            opacity: 0;
+          }
+      }
+    }
+    &.@{check-prefix-class}-checked {
+      & .@{check-prefix-class}-inner {
+          border: 2px solid rgb(var(--grey-4));
+          background: rgb(var(--grey-4));
+          &::before {
+            opacity: 0;
+          }
+          &::after {
+            transform: rotate(45deg) scale(1);
+            opacity: 1;
+          }
+      }
+    }
+    &:hover {
+      & .@{check-prefix-class}-inner {
+        border: 2px solid rgb(var(--grey-4));
+      }
+    }
+    & .@{check-prefix-class}-text {
+      color: rgb(var(--grey-4));
+    }
+  }
+}
+
+
+//group
+.@{check-prefix-class}-group {
+  &.@{check-prefix-class}-group-direction-horizontal {
+    & > .@{check-prefix-class} {
+      margin-right: 16px;
+    }
+  }
+  &.@{check-prefix-class}-group-direction-vertical {
+    & > .@{check-prefix-class} {
+      display: flex;
+      margin-right: 0;
+      line-height: 32px;
+    }
+  }
+}

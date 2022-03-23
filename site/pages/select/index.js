@@ -1,7 +1,10 @@
-import React from 'react'
-import { Select, Space } from "../../../src";
+import React, { useState } from 'react'
+import { Select, Space, Row, Col, Button } from "../../../src";
 import "../../../src/select/style";
 import "../../../src/space/style";
+import "../../../src/row/style";
+import "../../../src/col/style";
+import "../../../src/button/style";
 
 import {
     Delete,
@@ -14,78 +17,128 @@ import "./index.css"
 
 
 export default () => {
+    const [options, setOptions] = useState(['Beijing', 'Shanghai', 'Guangzhou', 'Disabled'])
     return <div className="page">
-        <h1>Input</h1>
-        <h2>size</h2>
-        <div className="examples">
-            <Space>
-                <Select defaultValue="beijing" size="large">
-                    <Select.Option value="beijing" >Beijing</Select.Option>
-                    <Select.Option value="shanghai"  >Shanghai</Select.Option>
-                </Select>
-                {/* <Select defaultValue="beijing">
-                    <Select.Option value="beijing"  >Beijing</Select.Option>
-                    <Select.Option value="shanghai"  >Shanghai</Select.Option>
-                </Select>
-                <Select defaultValue="beijing" size="small">
-                    <Select.Option value="beijing"  >Beijing</Select.Option>
-                    <Select.Option value="shanghai"  >Shanghai</Select.Option>
-                </Select>
-                <Select defaultValue="beijing" size="tiny">
-                    <Select.Option value="beijing"  >Beijing</Select.Option>
-                    <Select.Option value="shanghai"  >Shanghai</Select.Option>
-                </Select> */}
-            </Space>
-
+        <h1>Select</h1>
+        <h2>Basic</h2>
+        <div className="examples" >
+            <Row gap="16px" style={{ width: 500 }}>
+                <Col xs="24" sm="12" lg="12">
+                    <Select placeholder="Select City" defaultValue="Shanghai" >
+                        {options.map((option, index) => (
+                            <Select.Option key={option} disabled={index === 3} value={option} name={index + ". " + option}>
+                                {option}
+                            </Select.Option>
+                        ))}
+                    </Select>
+                </Col>
+                <Col xs="24" sm="12" lg="12">
+                    <Select placeholder="Select City" disabled value="Beijing">
+                        {options.map((option, index) => (
+                            <Select.Option key={option} disabled={index === 3} value={option}>
+                                {option}
+                            </Select.Option>
+                        ))}
+                    </Select>
+                </Col>
+            </Row>
         </div>
-
         <Markdown children={`
-> size: 'large', 'medium', 'small'
 \`\`\`javascript
-import React from "react";
-import { Button, Row, Col} from "@teatak/ui";
-import {
-Delete,
-PhotoCamera,
-AddCircle,
-VisibilityOutlined,
-} from '@mui/icons-material';
 export default () => {
-
-const [showPassword, setShowPassword] = React.useState(false);
-
-const handleShowPassword = () => {
-    setShowPassword(!showPassword);
-};
-
-return <div className="examples">
-    <Row gap="16px">
-        <Col xs="24" sm="12" lg="6">
-            <Input startIcon={<PhotoCamera />} size="large" placeholder="Name"></Input>
-        </Col>
-        <Col xs="24" sm="12" lg="6">
-            <Input endIcon={<Delete />} placeholder="Name"></Input>
-        </Col>
-        <Col xs="24" sm="12" lg="6">
-            <Input startIcon={<AddCircle />} endIcon={<Delete />} size="small" placeholder="Name" ></Input>
-        </Col>
-        <Col xs="24" sm="12" lg="6">
-            <Input
-                placeholder="Password"
-                type={showPassword ? "text" : "password"}
-                defaultValue="Password"
-                endIcon={
-                    <a onClick={handleShowPassword}>{
-                        showPassword ? <VisibilityOutlined /> : <EyeOff />
-                    }</a>
-                }>
-            </Input>
-        </Col>
-        <Col span="24">
-            <Input placeholder="Name" endIcon={<Delete />} disabled></Input>
-        </Col>
-    </Row>
-</div>
+    const options = ['Beijing', 'Shanghai', 'Guangzhou', 'Disabled'];
+    return <div className="page">
+        <div className="examples" >
+            <Row gap="16px" style={{ width: 500 }}>
+                <Col xs="24" sm="12" lg="12">
+                    <Select placeholder="Select City" defaultValue="Shanghai" >
+                        {options.map((option, index) => (
+                            <Select.Option key={option} disabled={index === 3} value={option} name={index + ". " + option}>
+                                {option}
+                            </Select.Option>
+                        ))}
+                    </Select>
+                </Col>
+                <Col xs="24" sm="12" lg="12">
+                    <Select placeholder="Select City" disabled value="Beijing">
+                        {options.map((option, index) => (
+                            <Select.Option key={option} disabled={index === 3} value={option}>
+                                {option}
+                            </Select.Option>
+                        ))}
+                    </Select>
+                </Col>
+            </Row>
+        </div>
+    </div>
+}
+\`\`\`
+`} />
+        <h2>Multi</h2>
+        <div className="examples">
+            <Row gap="16px" style={{ width: 500 }}>
+                <Col span="24">
+                    <Select placeholder="Select City" multi defaultValue={["Disabled"]}>
+                        {options.map((option, index) => (
+                            <Select.Option key={option} disabled={index === 3} value={option}>
+                                {option}
+                            </Select.Option>
+                        ))}
+                    </Select>
+                </Col>
+            </Row>
+        </div>
+        <Markdown children={`
+\`\`\`javascript
+export default () => {
+    const options = ['Beijing', 'Shanghai', 'Guangzhou', 'Disabled'];
+    return <div className="examples">
+        <Row gap="16px">
+            <Col span="24">
+                <Select placeholder="Select City" multi defaultValue={["Disabled"]}>
+                    {options.map((option, index) => (
+                        <Select.Option key={option} disabled={index === 3} value={option}>
+                            {option}
+                        </Select.Option>
+                    ))}
+                </Select>
+            </Col>
+        </Row>
+    </div>
+}
+\`\`\`
+    `} />
+        <h2>No Border</h2>
+        <div className="examples" >
+            <Row gap="16px">
+                <Col xs="24" sm="12" lg="6">
+                    <Select placeholder="Select City" noBorder>
+                        {options.map((option, index) => (
+                            <Select.Option key={option} disabled={index === 3} value={option}>
+                                {option}
+                            </Select.Option>
+                        ))}
+                    </Select>
+                </Col>
+            </Row>
+        </div>
+        <Markdown children={`
+\`\`\`javascript
+export default () => {
+    const options = ['Beijing', 'Shanghai', 'Guangzhou', 'Disabled'];
+    return <div className="examples">
+        <Row gap="16px">
+            <Col xs="24" sm="12" lg="6">
+                <Select placeholder="Select City" multi noBorder size="small">
+                    {options.map((option, index) => (
+                        <Select.Option key={option} disabled={index === 3} value={option}>
+                            {option}
+                        </Select.Option>
+                    ))}
+                </Select>
+            </Col>
+        </Row>
+    </div>
 }
 \`\`\`
     `} />

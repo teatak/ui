@@ -18,7 +18,7 @@ module.exports = {
             title: 'UI - TeaTak',
             hash: true,
             inject: false,
-            publicPath: env == "dev"?"":"",
+            publicPath: env == "dev" ? "" : "",
             filename: '../docs/index.html',
             template: 'site/index.html'
         }),
@@ -31,18 +31,22 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.svg$/,
+                use: ['@svgr/webpack'],
+            },
+            {
                 test: /\.m?js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env','@babel/preset-react'],
+                        presets: ['@babel/preset-env', '@babel/preset-react'],
                         plugins: [
                             '@babel/plugin-proposal-class-properties',
                             '@babel/plugin-syntax-dynamic-import',
                             '@babel/transform-runtime',
-                            ['import', {libraryName: 'antd', style: true},'antd'],
-                            ['import', {libraryName: '@teatak/ui', style: true},'@teatak/ui']
+                            ['import', { libraryName: 'antd', style: true }, 'antd'],
+                            ['import', { libraryName: '@teatak/ui', style: true }, '@teatak/ui']
                         ]
                     }
                 }
@@ -52,13 +56,15 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     { loader: 'css-loader', options: { importLoaders: 1 } },
-                    { loader: 'postcss-loader', options: {
-                        postcssOptions:{
-                            plugins: {
-                                'postcss-import': {},
-                                'postcss-nested': {},
+                    {
+                        loader: 'postcss-loader', options: {
+                            postcssOptions: {
+                                plugins: {
+                                    'postcss-import': {},
+                                    'postcss-nested': {},
+                                }
                             }
-                        }}
+                        }
                     }
                 ]
             },
@@ -67,18 +73,22 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     { loader: 'css-loader', options: { importLoaders: 1 } },
-                    { loader: 'postcss-loader', options: {
-                        postcssOptions:{
-                            plugins: {
-                                'postcss-import': {},
-                                'postcss-nested': {},
+                    {
+                        loader: 'postcss-loader', options: {
+                            postcssOptions: {
+                                plugins: {
+                                    'postcss-import': {},
+                                    'postcss-nested': {},
+                                }
                             }
-                        }}
+                        }
                     },
-                    { loader: "less-loader", options: {
-                        lessOptions: {
-                            javascriptEnabled: true
-                        }}
+                    {
+                        loader: "less-loader", options: {
+                            lessOptions: {
+                                javascriptEnabled: true
+                            }
+                        }
                     }
                 ]
             }

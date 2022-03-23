@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
-import { Input, Button, Form, Space, Select } from "../../../src";
+import { Input, Button, Form, Space, Select, Check, Row, Col } from "../../../src";
 import "../../../src/input/style";
 import "../../../src/select/style";
 import "../../../src/button/style";
+import "../../../src/check/style";
 import "../../../src/form/style";
 import "../../../src/space/style";
+import "../../../src/row/style";
+import "../../../src/col/style";
+
+const CheckGroup = Check.Group
 
 import {
     Delete,
@@ -39,103 +44,28 @@ export default () => {
         return result;
     }
 
+    const options = [
+        {
+            label: 'Option 1',
+            value: '1',
+        },
+        {
+            label: 'Option 2',
+            value: '2',
+            disabled: true,
+        },
+        {
+            label: 'Option 3',
+            value: '3',
+        },
+        {
+            label: 'Option 4',
+            value: '4',
+        },
+    ];
+
     return <div>
         <h1>Form</h1>
-        {/* <h2>Layout</h2>
-        <div className="examples">
-            <Form
-                layout={layout}
-                labelAlign="left"
-                style={layout === 'inline' ? { width: '100%' } : { maxWidth: 600 }}
-            >
-                <Form.Item
-                    label="Layout"
-                >
-                    <Space>
-                        <Button type="outlined" onClick={() => {
-                            setLayout("horizontal")
-                        }} disabled={layout === "horizontal"}>horizontal</Button>
-                        <Button type="outlined" onClick={() => {
-                            setLayout("vertical")
-                        }} disabled={layout === "vertical"}>vertical</Button>
-                        <Button type="outlined" onClick={() => {
-                            setLayout("inline")
-                        }} disabled={layout === "inline"}>inline</Button>
-                    </Space>
-                </Form.Item>
-                <Form.Item
-                    label="Name"
-                    field="name_1"
-                >
-                    <Input style={{ width: "100%" }} />
-                </Form.Item>
-                <Form.Item
-                    label="Password"
-                    field="password_1"
-                >
-                    <Input type="password" style={{ width: "100%" }} />
-                </Form.Item>
-                <Form.Item>
-                    <Space>
-                        <Button
-                            color="primary"
-                            type="filled"
-                            htmlType="submit"
-                        >Submit</Button>
-                        <Button
-                            color="primary"
-                            type="outlined"
-                            htmlType="reset"
-                        >Reset</Button>
-                    </Space>
-                </Form.Item>
-            </Form>
-        </div>
-        <h2>Size</h2>
-        <div className="examples">
-            <Form
-                size={size}
-                style={{ maxWidth: 600 }}
-            >
-                <Form.Item
-                    label="Size"
-                >
-                    <Space>
-                        <Button type="outlined" onClick={() => {
-                            setSize("large")
-                        }} disabled={size === "large"} >large</Button>
-                        <Button type="outlined" onClick={() => {
-                            setSize("medium")
-                        }} disabled={size === "medium"} >medium</Button>
-                        <Button type="outlined" onClick={() => {
-                            setSize("small")
-                        }} disabled={size === "small"} >small</Button>
-                        <Button type="outlined" onClick={() => {
-                            setSize("tiny")
-                        }} disabled={size === "tiny"} >tiny</Button>
-                    </Space>
-                </Form.Item>
-                <Form.Item
-                    label="Name"
-                    field="name_2"
-                >
-                    <Input style={{ width: "100%" }} />
-                </Form.Item>
-                <Form.Item
-                    label="Password"
-                    field="password_2"
-                >
-                    <Input type="password" style={{ width: "100%" }} />
-                </Form.Item>
-                <Form.Item>
-                    <Button
-                        color="primary"
-                        type="filled"
-                        htmlType="submit"
-                    >Submit</Button>
-                </Form.Item>
-            </Form>
-        </div> */}
         <h2>Submit</h2>
         <div className="examples">
             <Form
@@ -198,9 +128,10 @@ export default () => {
                                 setTip(tip)
                             }}
                         >
-                            <Select defaultValue="">
+                            <Select defaultValue={["beijing"]} multi >
                                 <Select.Option value="beijing"  >Beijing</Select.Option>
                                 <Select.Option value="shanghai"  >Shanghai</Select.Option>
+                                <Select.Option value="shenzhen"  >Shenzhen</Select.Option>
                             </Select>
                         </Form.Item>
                         <Form.Item
@@ -210,6 +141,51 @@ export default () => {
                             <Input defaultValue={value} style={{ width: "100%" }} />
                         </Form.Item>
                     </Space>
+                </Form.Item>
+                <Form.Item
+                    label="Option"
+                    field="option"
+                    rules={[
+                        { required: true, message: '请最少选一项!' },
+                    ]}
+                >
+                    <CheckGroup
+                        onChange={(newValue) => {
+                            console.log(newValue)
+                        }}
+                        defaultValue={["1"]}
+                    >
+                        <Row gap={[8, 8]}>
+                            {options.map((option) => {
+                                const label = option.label
+                                const checkValue = option.value
+                                return (
+                                    <Col span={6} key={checkValue}>
+                                        <Check
+                                            disabled={option.disabled}
+                                            value={checkValue}
+                                        >
+                                            {label}
+                                        </Check>
+                                    </Col>
+                                );
+                            })}
+                        </Row>
+                    </CheckGroup>
+                </Form.Item>
+                <Form.Item
+                    label="Check"
+                    field="check"
+                    triggerPropName='checked'
+                    rules={[
+                        {
+                            validator: (_, value) =>
+                                value ? Promise.resolve() : Promise.reject(new Error('请勾选我同意协议')),
+                        },
+                    ]}
+                >
+                    <Check defaultChecked={true}
+                    >我同意协议<a href='#'>协议</a></Check>
                 </Form.Item>
                 <Form.Item>
                     <Space>
@@ -230,7 +206,6 @@ export default () => {
                 </Form.Item>
             </Form>
         </div>
-
         <Markdown children={`
 > color: primary,danger
 \`\`\`javascript
