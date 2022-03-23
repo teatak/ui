@@ -4,6 +4,7 @@
   color: var(--color-foreground-1);
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 .tui-input-root.disabled {
   color: rgb(var(--grey-5));
@@ -285,6 +286,7 @@
 .tui-form.tui-form-size-medium .tui-form-item-label,
 .tui-form.tui-form-size-medium .tui-form-item-wrapper {
   min-height: var(--size-medium);
+  background: red;
 }
 .tui-form.tui-form-size-medium .tui-form-item-label.tui-form-item-label-right label {
   padding-right: 16px;

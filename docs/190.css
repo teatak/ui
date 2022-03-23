@@ -4,6 +4,7 @@
   color: var(--color-foreground-1);
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 .tui-input-root.disabled {
   color: rgb(var(--grey-5));
