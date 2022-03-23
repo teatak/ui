@@ -386,6 +386,7 @@
 }
 .tui-form .tui-form-item.tui-form-item-has-error .tui-form-item-tip {
   position: absolute;
+  background: blue;
   color: rgb(var(--red-5));
 }
 .tui-form .tui-form-item.tui-form-item-has-error .tui-input {
