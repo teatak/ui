@@ -4,7 +4,6 @@
   color: var(--color-foreground-1);
   position: relative;
   width: 100%;
-  background: red;
 }
 .tui-input-root.disabled {
   color: rgb(var(--grey-5));
@@ -286,7 +285,6 @@
 .tui-form.tui-form-size-medium .tui-form-item-label,
 .tui-form.tui-form-size-medium .tui-form-item-wrapper {
   min-height: var(--size-medium);
-  line-height: var(--size-medium);
 }
 .tui-form.tui-form-size-medium .tui-form-item-label.tui-form-item-label-right label {
   padding-right: 16px;
@@ -294,7 +292,6 @@
 .tui-form.tui-form-size-large .tui-form-item-label,
 .tui-form.tui-form-size-large .tui-form-item-wrapper {
   min-height: var(--size-large);
-  line-height: var(--size-large);
 }
 .tui-form.tui-form-size-large .tui-form-item-label.tui-form-item-label-right label {
   padding-right: 20px;
@@ -302,7 +299,6 @@
 .tui-form.tui-form-size-small .tui-form-item-label,
 .tui-form.tui-form-size-small .tui-form-item-wrapper {
   min-height: var(--size-small);
-  line-height: var(--size-small);
 }
 .tui-form.tui-form-size-small .tui-form-item-label.tui-form-item-label-right label {
   padding-right: 12px;
@@ -310,7 +306,6 @@
 .tui-form.tui-form-size-tiny .tui-form-item-label,
 .tui-form.tui-form-size-tiny .tui-form-item-wrapper {
   min-height: var(--size-tiny);
-  line-height: var(--size-tiny);
 }
 .tui-form.tui-form-size-tiny .tui-form-item-label.tui-form-item-label-right label {
   padding-right: 10px;
@@ -386,7 +381,6 @@
 }
 .tui-form .tui-form-item.tui-form-item-has-error .tui-form-item-tip {
   position: absolute;
-  background: blue;
   color: rgb(var(--red-5));
 }
 .tui-form .tui-form-item.tui-form-item-has-error .tui-input {
