@@ -72,7 +72,7 @@ export default () => {
                 layout={layout}
                 size={size}
                 onSubmit={onSubmit}
-                requiredSymbol={false}
+                // requiredSymbol={false}
                 style={{ maxWidth: 600 }}
             >
                 <Form.Item
@@ -115,6 +115,9 @@ export default () => {
                     htmlFor="city"
                     tip={tip}
                     hasError={hasError}
+                    rules={[
+                        { required: true },
+                    ]}
                 >
                     <Space>
                         <Form.Item
@@ -178,6 +181,7 @@ export default () => {
                     field="check"
                     triggerPropName='checked'
                     rules={[
+                        { required: true },
                         {
                             validator: (_, value) =>
                                 value ? Promise.resolve() : Promise.reject(new Error('请勾选我同意协议')),
