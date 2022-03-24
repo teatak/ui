@@ -154,8 +154,9 @@ const FormItem = (props) => {
             } else {
                 if (isArray(component.props.children)) {
                     const childrenDom = React.Children.map(component.props.children, (child, i) => {
+                        const childDisabled = 'disabled' in child.props ? child.disabled : formContext.disabled;
                         const key = (isObject(child) && child.key) || i;
-                        const childProps = !isUndefined(disabled) ? { key, disabled } : { key };
+                        const childProps = !isUndefined(childDisabled) ? { key, disabled } : { key };
                         return isObject(child) ? cloneElement(child, childProps) : child;
                     });
                     return <component.type disabled={disabled} id={field + "_input"} {...mergeProps} >

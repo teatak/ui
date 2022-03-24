@@ -22,7 +22,7 @@ const Check = forwardRef((props, ref) => {
 
     useEffect(() => {
         if (value) {
-            context.registerValue(value);
+            context.registerValue(value, disabled);
         }
         return () => {
             if (value) {
@@ -49,7 +49,7 @@ const Check = forwardRef((props, ref) => {
         onChange && onChange(e.target.checked)
     }
 
-    return <label className={classNames}>
+    return <label className={classNames} style={style}>
         <input
             value={value}
             disabled={!!disabled}

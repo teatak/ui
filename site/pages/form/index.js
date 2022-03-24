@@ -81,13 +81,13 @@ export default () => {
                     label="Layout"
                 >
                     <Space>
-                        <Button type="outlined" onClick={() => {
+                        <Button type="filled" color="secondary" onClick={() => {
                             setLayout("horizontal")
                         }} disabled={layout === "horizontal"}>horizontal</Button>
-                        <Button type="outlined" onClick={() => {
+                        <Button type="filled" color="secondary" onClick={() => {
                             setLayout("vertical")
                         }} disabled={layout === "vertical"}>vertical</Button>
-                        <Button type="outlined" onClick={() => {
+                        <Button type="filled" color="secondary" onClick={() => {
                             setLayout("inline")
                         }} disabled={layout === "inline"}>inline</Button>
                     </Space>
@@ -96,16 +96,16 @@ export default () => {
                     label="Size"
                 >
                     <Space>
-                        <Button type="outlined" onClick={() => {
+                        <Button type="filled" color="secondary" onClick={() => {
                             setSize("large")
                         }} disabled={size === "large"}>large</Button>
-                        <Button type="outlined" onClick={() => {
+                        <Button type="filled" color="secondary" onClick={() => {
                             setSize("medium")
                         }} disabled={size === "medium"}>medium</Button>
-                        <Button type="outlined" onClick={() => {
+                        <Button type="filled" color="secondary" onClick={() => {
                             setSize("small")
                         }} disabled={size === "small"}>small</Button>
-                        <Button type="outlined" onClick={() => {
+                        <Button type="filled" color="secondary" onClick={() => {
                             setSize("tiny")
                         }} disabled={size === "tiny"}>tiny</Button>
                     </Space>
@@ -177,7 +177,7 @@ export default () => {
                         onChange={(newValue) => {
                             console.log(newValue)
                         }}
-                        defaultValue={["2"]}
+                        defaultValue={["1", "2"]}
                     >
                         <Row gap={[8, 8]}>
                             {options.map((option) => {
@@ -290,6 +290,7 @@ export default () => <div className="examples">
 | size      | PropTypes.oneOf(['large', 'medium', 'small', 'tiny']) | string | medium |
 | labelAlign | PropTypes.oneOf(['left', 'right', 'center']) | string | right |
 | requiredSymbol | show * | boolean | true |
+| disabled | disabled | boolean | false |
 | labelCol   | label col config   | object | { span: 5 } |
 | wrapperCol | wrapper col config | object | { span: 19 } |
 
@@ -302,8 +303,9 @@ export default () => <div className="examples">
 | showErrorTip | showErrorTip={(hasError, tip)} | (event) => void | - |
 | htmlFor | html for | string | - |
 | noStyle | no style | boolean | false |
-| onChange | showErrorTip={(e, newValue)} | (event) => void | - |
-
+| onChange| onChange | (newValue) => void | - |
+| trigger | default trigger | (event) => void | onChange |
+| triggerPropName | default trigger prop name | string | value |
         `} />
     </div>
 }

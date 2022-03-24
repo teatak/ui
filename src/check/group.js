@@ -41,25 +41,44 @@ const Group = (props) => {
             setValue(newVal);
             props.onChange &&
                 props.onChange(
-                    newVal.filter((v) => allOptionValues.indexOf(v) > -1),
+                    newVal.filter((v) => allOptionValues.findIndex((o) => { return o.value == v }) > -1),
                     e
                 );
         },
         [value, props.onChange, allOptionValues]
     );
 
-    const indeterminate = value.length > 0 ? value.length != allOptionValues.length : false
-    const checkedAll = value.length > 0 ? value.length == allOptionValues.length : false
+    //去掉所有项目中被禁止的项
+    const allOptionValuesFilter = allOptionValues.filter((o) => !o.disabled)
+    //去掉所选项目中被禁止的项
+    const valueFilter = value.filter((v) => allOptionValues.findIndex((o) => { return !o.disabled && o.value == v }) > -1)
+
+    const indeterminate = valueFilter.length > 0 ? valueFilter.length != allOptionValuesFilter.length : false
+    const checkedAll = valueFilter.length > 0 ? valueFilter.length == allOptionValuesFilter.length : false
 
     return (
         <span className={classNames} style={style}>
             {checkAll ? <Check disabled={disabled} indeterminate={indeterminate} checked={checkedAll} onChange={(check) => {
                 if (check) {
-                    setValue(allOptionValues)
-                    props.onChange && props.onChange(allOptionValues, e);
+                    const newVal = value.slice();
+                    allOptionValues.filter((o) => !o.disabled).forEach((o) => {
+                        //add if not find
+                        if (newVal.findIndex((v) => v == o.value) === -1) {
+                            newVal.push(o.value)
+                        }
+                    })
+                    setValue(newVal)
+                    props.onChange && props.onChange(newVal, check);
                 } else {
-                    setValue([])
-                    props.onChange && props.onChange([], e);
+                    const newVal = value.slice();
+                    allOptionValues.filter((o) => !o.disabled).forEach((o) => {
+                        //remove if not find
+                        if (newVal.findIndex((v) => v == o.value) > -1) {
+                            newVal.splice(newVal.indexOf(o.value), 1);
+                        }
+                    })
+                    setValue(newVal)
+                    props.onChange && props.onChange(newVal, check);
                 }
             }}>{checkAll}</Check> : null}
             <CheckGroupContext.Provider
@@ -68,14 +87,14 @@ const Group = (props) => {
                     value: value,
                     onChange: onChange,
                     disabled,
-                    registerValue: (value) => {
+                    registerValue: (value, disabled) => {
                         setAllOptionValues((allOptionValues) => {
-                            return Array.from(new Set([...allOptionValues, value]));
+                            return Array.from(new Set([...allOptionValues, { value, disabled }]));
                         });
                     },
                     unRegisterValue: (value) => {
                         setAllOptionValues((allOptionValues) => {
-                            return allOptionValues.filter((x) => x !== value);
+                            return allOptionValues.filter((x) => x.value !== value);
                         });
                     },
                 }}

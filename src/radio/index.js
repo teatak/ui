@@ -13,7 +13,6 @@ const Radio = forwardRef((props, ref) => {
         mergeProps.disabled = !!(context.disabled || props.disabled);
     }
 
-
     const { style, className, prefixClass, value, disabled, onChange, group, children, ...rest } = mergeProps
 
     const [checked, setChecked] = useMergeState(false, {
@@ -21,16 +20,16 @@ const Radio = forwardRef((props, ref) => {
         defaultValue: mergeProps.defaultChecked,
     })
 
-    useEffect(() => {
-        // if (value) {
-        //     context.registerValue(value);
-        // }
-        // return () => {
-        //     if (value) {
-        //         context.unRegisterValue(value);
-        //     }
-        // };
-    }, [value]);
+    // useEffect(() => {
+    //     if (value) {
+    //         context.registerValue(value);
+    //     }
+    //     return () => {
+    //         if (value) {
+    //             context.unRegisterValue(value);
+    //         }
+    //     };
+    // }, [value]);
 
     const classNames = classnames(
         prefixClass,
@@ -49,7 +48,7 @@ const Radio = forwardRef((props, ref) => {
         onChange && onChange(e.target.checked)
     }
 
-    return <label className={classNames}>
+    return <label className={classNames} style={style}>
         <input
             value={value}
             disabled={!!disabled}
