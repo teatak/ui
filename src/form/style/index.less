@@ -8,7 +8,12 @@
   flex-direction: column;
   //size
   &.@{form-prefix-class}-size-medium {
-    & .@{form-item-prefix-class}-label,
+    & .@{form-item-prefix-class}-label {
+      & label {
+        min-height: var(--size-medium);
+        line-height: var(--size-medium);
+      }
+    }
     & .@{form-item-prefix-class}-wrapper {
       min-height: var(--size-medium);
       line-height: var(--size-medium);
@@ -22,7 +27,12 @@
     }
   }
   &.@{form-prefix-class}-size-large {
-    & .@{form-item-prefix-class}-label,
+    & .@{form-item-prefix-class}-label {
+      & label {
+        min-height: var(--size-large);
+        line-height: var(--size-large);
+      }
+    }
     & .@{form-item-prefix-class}-wrapper {
       min-height: var(--size-large);
       line-height: var(--size-large);
@@ -36,7 +46,12 @@
     }
   }
   &.@{form-prefix-class}-size-small {
-    & .@{form-item-prefix-class}-label,
+    & .@{form-item-prefix-class}-label {
+      & label {
+        min-height: var(--size-small);
+        line-height: var(--size-small);
+      }
+    }
     & .@{form-item-prefix-class}-wrapper {
       min-height: var(--size-small);
       line-height: var(--size-small);
@@ -50,7 +65,12 @@
     }
   }
   &.@{form-prefix-class}-size-tiny {
-    & .@{form-item-prefix-class}-label,
+    & .@{form-item-prefix-class}-label {
+      & label {
+        min-height: var(--size-tiny);
+        line-height: var(--size-tiny);
+      }
+    }
     & .@{form-item-prefix-class}-wrapper {
       min-height: var(--size-tiny);
       line-height: var(--size-tiny);

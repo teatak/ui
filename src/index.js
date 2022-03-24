@@ -9,4 +9,5 @@ export { default as Space } from './space';
 export { default as Modal } from './modal';
 export { default as Trigger } from './trigger';
 export { default as Check } from './check';
+export { default as Radio } from './radio';
 export { default as Svg } from './svg';

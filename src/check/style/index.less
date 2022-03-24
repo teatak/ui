@@ -91,6 +91,7 @@
     cursor: default;
     & .@{check-prefix-class}-inner {
       border: 2px solid rgb(var(--grey-4));
+      background: rgb(var(--grey-3));
     } 
     &.@{check-prefix-class}-indeterminate {
       & .@{check-prefix-class}-inner {
@@ -106,9 +107,14 @@
       }
     }
     &.@{check-prefix-class}-checked {
+      &:hover {
+        & .@{check-prefix-class}-inner {
+          border: 2px solid transparent;
+        }
+      }
       & .@{check-prefix-class}-inner {
-          border: 2px solid rgb(var(--grey-4));
-          background: rgb(var(--grey-4));
+        border: 2px solid transparent;
+        background: var(--color-primary-3);
           &::before {
             opacity: 0;
           }

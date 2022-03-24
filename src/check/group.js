@@ -6,9 +6,9 @@ import { isArray, isObject } from "../util/is"
 
 export const CheckGroupContext = createContext({
     disabled: false,
-    isCheckGroup: false,
-    checkGroupValue: [],
-    onGroupChange: () => { },
+    isGroup: false,
+    value: [],
+    onChange: () => { },
     registerValue: () => { },
     unRegisterValue: () => { },
 });
@@ -19,7 +19,7 @@ const Group = (props) => {
         value: 'value' in props ? props.value || [] : undefined,
     });
     const [allOptionValues, setAllOptionValues] = useState([]);
-    const { disabled, options, style, className, error, children, prefixClass, direction = 'horizontal' } = props;
+    const { disabled, options, style, className, error, children, prefixClass, checkAll, direction = 'horizontal' } = props;
 
     const classNames = classnames(
         `${prefixClass}-group`,
@@ -47,13 +47,26 @@ const Group = (props) => {
         },
         [value, props.onChange, allOptionValues]
     );
+
+    const indeterminate = value.length > 0 ? value.length != allOptionValues.length : false
+    const checkedAll = value.length > 0 ? value.length == allOptionValues.length : false
+
     return (
         <span className={classNames} style={style}>
+            {checkAll ? <Check disabled={disabled} indeterminate={indeterminate} checked={checkedAll} onChange={(check) => {
+                if (check) {
+                    setValue(allOptionValues)
+                    props.onChange && props.onChange(allOptionValues, e);
+                } else {
+                    setValue([])
+                    props.onChange && props.onChange([], e);
+                }
+            }}>{checkAll}</Check> : null}
             <CheckGroupContext.Provider
                 value={{
-                    isCheckGroup: true,
-                    checkGroupValue: value,
-                    onGroupChange: onChange,
+                    isGroup: true,
+                    value: value,
+                    onChange: onChange,
                     disabled,
                     registerValue: (value) => {
                         setAllOptionValues((allOptionValues) => {

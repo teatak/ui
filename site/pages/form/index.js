@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
-import { Input, Button, Form, Space, Select, Check, Row, Col } from "../../../src";
+import { Input, Button, Form, Space, Select, Check, Radio, Row, Col } from "../../../src";
 import "../../../src/input/style";
 import "../../../src/select/style";
 import "../../../src/button/style";
 import "../../../src/check/style";
+import "../../../src/radio/style";
 import "../../../src/form/style";
 import "../../../src/space/style";
 import "../../../src/row/style";
 import "../../../src/col/style";
 
 const CheckGroup = Check.Group
+const RadioGroup = Radio.Group
 
 import {
     Delete,
@@ -72,7 +74,7 @@ export default () => {
                 layout={layout}
                 size={size}
                 onSubmit={onSubmit}
-                // requiredSymbol={false}
+                requiredSymbol={true}
                 style={{ maxWidth: 600 }}
             >
                 <Form.Item
@@ -88,6 +90,24 @@ export default () => {
                         <Button type="outlined" onClick={() => {
                             setLayout("inline")
                         }} disabled={layout === "inline"}>inline</Button>
+                    </Space>
+                </Form.Item>
+                <Form.Item
+                    label="Size"
+                >
+                    <Space>
+                        <Button type="outlined" onClick={() => {
+                            setSize("large")
+                        }} disabled={size === "large"}>large</Button>
+                        <Button type="outlined" onClick={() => {
+                            setSize("medium")
+                        }} disabled={size === "medium"}>medium</Button>
+                        <Button type="outlined" onClick={() => {
+                            setSize("small")
+                        }} disabled={size === "small"}>small</Button>
+                        <Button type="outlined" onClick={() => {
+                            setSize("tiny")
+                        }} disabled={size === "tiny"}>tiny</Button>
                     </Space>
                 </Form.Item>
                 <Form.Item
@@ -132,9 +152,9 @@ export default () => {
                             }}
                         >
                             <Select defaultValue={["beijing"]} multi >
-                                <Select.Option value="beijing"  >Beijing</Select.Option>
-                                <Select.Option value="shanghai"  >Shanghai</Select.Option>
-                                <Select.Option value="shenzhen"  >Shenzhen</Select.Option>
+                                <Select.Option value="beijing">Beijing</Select.Option>
+                                <Select.Option value="shanghai">Shanghai</Select.Option>
+                                <Select.Option value="shenzhen">Shenzhen</Select.Option>
                             </Select>
                         </Form.Item>
                         <Form.Item
@@ -146,17 +166,18 @@ export default () => {
                     </Space>
                 </Form.Item>
                 <Form.Item
-                    label="Option"
-                    field="option"
+                    label="Check"
+                    field="check"
                     rules={[
                         { required: true, message: '请最少选一项!' },
                     ]}
                 >
                     <CheckGroup
+                        checkAll="全选"
                         onChange={(newValue) => {
                             console.log(newValue)
                         }}
-                        defaultValue={["1"]}
+                        defaultValue={["2"]}
                     >
                         <Row gap={[8, 8]}>
                             {options.map((option) => {
@@ -177,8 +198,40 @@ export default () => {
                     </CheckGroup>
                 </Form.Item>
                 <Form.Item
-                    label="Check"
-                    field="check"
+                    label="Radio"
+                    field="radio"
+                    rules={[
+                        { required: true, message: '请最少选一项!' },
+                    ]}
+                >
+                    <RadioGroup
+                        onChange={(newValue) => {
+                            console.log(newValue)
+                        }}
+                        defaultValue="2"
+                    >
+                        <Row gap={[8, 8]}>
+                            {options.map((option) => {
+                                const label = option.label
+                                const checkValue = option.value
+                                return (
+                                    <Col span={6} key={checkValue}>
+                                        <Radio
+                                            disabled={option.disabled}
+                                            value={checkValue}
+                                            name="a"
+                                        >
+                                            {label}
+                                        </Radio>
+                                    </Col>
+                                );
+                            })}
+                        </Row>
+                    </RadioGroup>
+                </Form.Item>
+                <Form.Item
+                    label="Agree"
+                    field="agree"
                     triggerPropName='checked'
                     rules={[
                         { required: true },
@@ -206,7 +259,6 @@ export default () => {
                             }}
                         >Fill</Button>
                     </Space>
-
                 </Form.Item>
             </Form>
         </div>

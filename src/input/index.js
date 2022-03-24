@@ -59,7 +59,6 @@ Input.propTypes = {
 Input.defaultProps = {
     prefixClass: "tui-input",
     type: "text",
-    disabled: false,
 }
 
 export default Input

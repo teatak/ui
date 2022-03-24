@@ -9,7 +9,7 @@ import FormItem from "./formitem"
 import FormContext from "../formcontext"
 
 const Form = (props) => {
-    const { style, requiredSymbol, size, className, prefixClass, labelAlign, labelCol, wrapperCol, layout, onSubmit, ...rest } = props
+    const { style, requiredSymbol, size, className, prefixClass, labelAlign, labelCol, wrapperCol, layout, onSubmit, disabled, ...rest } = props
     const momeForm = () => {
         return {
             items: {},
@@ -19,6 +19,7 @@ const Form = (props) => {
             labelAlign, labelAlign,
             labelCol: labelCol,
             wrapperCol: wrapperCol,
+            disabled: disabled,
             setItem: (name, element) => {
                 form.items[name] = element
             }
@@ -70,12 +71,14 @@ Form.propTypes = {
     size: PropTypes.oneOf(['large', 'medium', 'small', 'tiny']), //大小
     labelAlign: PropTypes.oneOf(['left', 'right', 'center']), //label对齐
     requiredSymbol: PropTypes.bool, //是否显示*
+    disabled: PropTypes.bool, //禁用
 }
 
 Form.defaultProps = {
     prefixClass: "tui-form",
     layout: "horizontal",
     size: "medium",
+    disabled: false,
     labelCol: { span: 5 },
     wrapperCol: { span: 19 },
     labelAlign: "right",

@@ -3,17 +3,18 @@ import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useMergeState } from "../util"
 import { isFunction } from "../util/is"
-import Group, { CheckGroupContext } from "./group"
+import Group, { RadioGroupContext } from "./group"
 
-const Check = forwardRef((props, ref) => {
-    const context = useContext(CheckGroupContext);
+const Radio = forwardRef((props, ref) => {
+    const context = useContext(RadioGroupContext);
     const mergeProps = { ...props };
     if (context.isGroup) {
-        mergeProps.checked = context.value.indexOf(props.value) !== -1;
+        mergeProps.checked = context.value == props.value;
         mergeProps.disabled = !!(context.disabled || props.disabled);
     }
 
-    const { style, className, prefixClass, value, disabled, onChange, group, indeterminate, children, ...rest } = mergeProps
+
+    const { style, className, prefixClass, value, disabled, onChange, group, children, ...rest } = mergeProps
 
     const [checked, setChecked] = useMergeState(false, {
         value: mergeProps.checked,
@@ -21,21 +22,20 @@ const Check = forwardRef((props, ref) => {
     })
 
     useEffect(() => {
-        if (value) {
-            context.registerValue(value);
-        }
-        return () => {
-            if (value) {
-                context.unRegisterValue(value);
-            }
-        };
+        // if (value) {
+        //     context.registerValue(value);
+        // }
+        // return () => {
+        //     if (value) {
+        //         context.unRegisterValue(value);
+        //     }
+        // };
     }, [value]);
 
     const classNames = classnames(
         prefixClass,
         {
             [`${prefixClass}-disabled`]: disabled,
-            [`${prefixClass}-indeterminate`]: checked ? false : indeterminate,
             [`${prefixClass}-checked`]: checked,
         },
         className,
@@ -57,10 +57,10 @@ const Check = forwardRef((props, ref) => {
             checked={!!checked}
             onChange={handleChange}
             onClick={(e) => e.stopPropagation()}
-            type="checkbox"
+            type="radio"
         />
         {isFunction(children) ? (
-            children(checked, indeterminate)
+            children(checked)
         ) : (
             <>
                 <span className={`${prefixClass}-inner`}></span>
@@ -70,13 +70,13 @@ const Check = forwardRef((props, ref) => {
     </label>
 })
 
-Check.propTypes = {
+Radio.propTypes = {
 }
 
-Check.defaultProps = {
-    prefixClass: 'tui-check',
+Radio.defaultProps = {
+    prefixClass: 'tui-radio',
 }
 
-Check.Group = Group
+Radio.Group = Group
 
-export default Check
+export default Radio
