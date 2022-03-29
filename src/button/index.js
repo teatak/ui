@@ -60,7 +60,7 @@ const Button = forwardRef((props, ref) => {
 })
 
 Button.propTypes = {
-  type: PropTypes.oneOf(['filled', 'outlined', 'text']), //类型
+  type: PropTypes.oneOf(['filled', 'outlined', 'standard']), //类型
   long: PropTypes.bool, //长按钮
   rounded: PropTypes.bool, //圆角按钮
   circle: PropTypes.bool, //圆形按钮
@@ -77,7 +77,7 @@ Button.defaultProps = {
   long: false,
   rounded: false,
   circle: false,
-  type: 'text',
+  type: 'standard',
   color: 'primary',
 }
 

@@ -7,8 +7,29 @@ import "../trigger/style"
 import { useMergeState } from "../util"
 
 const Option = forwardRef((props, ref) => {
-    const { children, multi, ...rest } = props
-    return <li {...rest}>{children}{multi ? <span></span> : null}</li>
+    const { children, prefixClass, multi, hover, ...rest } = props
+    useEffect(() => {
+        // if (ref.current && hover) {
+        //     const offsetTop = ref.current.offsetTop
+        //     const clientHeight = ref.current.clientHeight
+        //     const parent = ref.current.parentElement
+        //     if (offsetTop + clientHeight > (parent.scrollTop + parent.clientHeight)) {
+        //         //next
+        //         parent.scrollTo({ top: offsetTop + clientHeight - parent.clientHeight, behavior: 'smooth' })
+        //     }
+        //     if (parent.scrollTop > offsetTop) {
+        //         //prev
+        //         parent.scrollTo({ top: offsetTop })
+        //     }
+        // }
+
+    }, [hover])
+    return <li {...rest} ref={ref}>
+        <span className={`${prefixClass}-option-text`}>
+            {children}
+        </span>
+        {multi ? <span className={`${prefixClass}-option-check`}></span> : null}
+    </li>
 })
 
 const Select = forwardRef((props, ref) => {
@@ -16,6 +37,7 @@ const Select = forwardRef((props, ref) => {
     const selectRef = useRef()
     const triggerRef = useRef()
     const optionsRef = useRef([])
+    const wrapperRef = useRef(null);
 
     const { size: ctxSize } = useContext(FormContext);
     const { style, disabled, className, prefixClass, multi, placeholder, noBorder, size, onChange, ...rest } = props
@@ -118,46 +140,80 @@ const Select = forwardRef((props, ref) => {
         setFocused(false)
         close()
     }
+    const scrollIntoView = (optionValue) => {
+        let option = optionsRef.current.find(e => e.value == optionValue)
+        if (option && option.dom) {
+            const offsetTop = option.dom.offsetTop
+            const clientHeight = option.dom.clientHeight
+            const parent = option.dom.parentElement
+            if (offsetTop + clientHeight > (parent.scrollTop + parent.clientHeight)) {
+                //next
+                parent.scrollTo({ top: offsetTop + clientHeight - parent.clientHeight })
+            }
+            if (parent.scrollTop > offsetTop) {
+                //prev
+                parent.scrollTo({ top: offsetTop })
+            }
+        }
+    };
 
     const hoverNext = () => {
+        let nextValue = undefined
         if (hoverValue) {
             //find index
             const arr = optionsRef.current.filter((item) => item.disabled === false)
             if (arr.length > 0) {
                 let index = arr.findIndex((item) => item.value === hoverValue)
-                if (index + 1 === arr.length) { //last
-                    setHoverValue(arr[0].value)
+                if (index === -1) {
+                    nextValue = arr[0].value
                 } else {
-                    setHoverValue(arr[index + 1].value)
+                    if (index + 1 === arr.length) { //last
+                        nextValue = arr[0].value
+                    } else {
+                        nextValue = arr[index + 1].value
+                    }
                 }
             }
         } else {
             //hover first
             const arr = optionsRef.current.filter((item) => item.disabled === false)
             if (arr.length > 0) {
-                setHoverValue(arr[0].value)
+                nextValue = arr[0].value
             }
+        }
+        if (nextValue) {
+            setHoverValue(nextValue)
+            scrollIntoView(nextValue)
         }
     }
 
     const hoverPrev = () => {
+        let prevValue = undefined
         if (hoverValue) {
             //find index
             const arr = optionsRef.current.filter((item) => item.disabled === false)
             if (arr.length > 0) {
                 let index = arr.findIndex((item) => item.value === hoverValue)
-                if (index === 0) { //first
-                    setHoverValue(arr[arr.length - 1].value)
+                if (index === -1) {
+                    prevValue = arr[arr.length - 1].value
                 } else {
-                    setHoverValue(arr[index - 1].value)
+                    if (index === 0) { //first
+                        prevValue = arr[arr.length - 1].value
+                    } else {
+                        prevValue = arr[index - 1].value
+                    }
                 }
             }
         } else {
             //hover last
             const arr = optionsRef.current.filter((item) => item.disabled === false)
             if (arr.length > 0) {
-                setHoverValue(arr[arr.length - 1].value)
+                prevValue = arr[arr.length - 1].value
             }
+        }
+        if (prevValue) {
+            setHoverValue(prevValue)
+            scrollIntoView(prevValue)
         }
     }
 
@@ -213,8 +269,14 @@ const Select = forwardRef((props, ref) => {
                     [`${prefixClass}-option-disabled`]: item.props.disabled
                 },
             )
-            return <item.type multi={multi} className={classNames}
-                key={`item-${index}`} {...item.props}
+            return <item.type multi={multi} ref={(r) => {
+                //save in array
+                let option = optionsRef.current.find(e => e.value == optionValue)
+                if (option) {
+                    option.dom = r
+                }
+            }} hover={hoverValue === optionValue} className={classNames}
+                key={`${optionValue}`} {...item.props}
                 onMouseEnter={(e) => {
                     setHoverValue(optionValue)
                     item.props.onMouseEnter && item.props.onMouseEnter(e)
@@ -240,7 +302,7 @@ const Select = forwardRef((props, ref) => {
             />
         })
     }
-    const options = <ul className={`${prefixClass}-options`}>
+    const options = <ul ref={wrapperRef} className={`${prefixClass}-options`}>
         {renderOptions()}
     </ul>
 
@@ -408,6 +470,10 @@ Select.propTypes = {
 }
 
 Select.defaultProps = {
+    prefixClass: 'tui-select',
+}
+
+Option.defaultProps = {
     prefixClass: 'tui-select',
 }
 

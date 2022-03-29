@@ -132,7 +132,7 @@ export default () => <div className="examples">
           <Button type="outlined" circle color="secondary"><PhotoCamera /></Button>
           <Button type="outlined" rounded size="small" color="error"><PhotoCamera /></Button>
           <Button type="outlined" rounded color="error" startIcon={<Delete />}>Danger</Button>
-          <Button type="text" rounded>Normal</Button>
+          <Button type="standard" rounded>Normal</Button>
           <Button rounded disabled>Disabled</Button>
         </Space>
       </div>
@@ -151,12 +151,12 @@ import {
 export default () => <div className="examples">
   <Space>
     <Button type="filled" circle size="large" color="error"><PhotoCamera /></Button>
-    <Button type="text" circle color="primary"><PhotoCamera /></Button>
+    <Button type="standard" circle color="primary"><PhotoCamera /></Button>
     <Button type="outlined" circle size="large" color="primary"><PhotoCamera /></Button>
     <Button type="outlined" circle color="secondary"><PhotoCamera /></Button>
     <Button type="outlined" circle size="small" color="error"><PhotoCamera /></Button>
     <Button type="outlined" rounded color="error" startIcon={<Delete />}>Danger</Button>
-    <Button type="text" rounded>Normal</Button>
+    <Button type="standard" rounded>Normal</Button>
     <Button rounded disabled>Disabled</Button>
   </Space>
 </div>      
@@ -253,7 +253,7 @@ export default () => <div>
 
 | Property  | Description | Type | Default |
 | --------- | ------- | ------- | ------- |
-| type      | PropTypes.oneOf(['filled', 'outlined', 'text']) | string | text |
+| type      | PropTypes.oneOf(['filled', 'outlined', 'standard']) | string | standard |
 | color     | PropTypes.oneOf(['primary','secondary','success','error','info','warning']) | string | primary |
 | size      | PropTypes.oneOf(['large', 'medium', 'small', 'tiny']) | string | medium |
 | long      | long button    | boolean | false |

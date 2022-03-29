@@ -292,22 +292,21 @@
 //trigger
 .@{select-prefix-class}-trigger {
   & .@{trigger-prefix-class}-inner {
-    max-height: 300px;
-    overflow-y: auto;
-    overflow-x: hidden;
     padding: 0;
     border: solid 1px var(--color-border-2);
-    box-shadow: var(--box-shadow-select-trigger) !important;
     & .@{select-prefix-class}-options {
       cursor: pointer;
       list-style: none;
-      margin: 4px 0;
+      max-height: 200px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background-color: var(--color-background-popup);
+      // padding: 4px 0;
       & li {
         padding: 8px 16px;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        transition: background-color 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
         &.@{select-prefix-class}-option-selected {
           color: rgb(var(--primary-6));
         }
@@ -327,15 +326,13 @@
       & .@{select-prefix-class}-options {
         & li {
           display: flex;
-          align-items: center;
-          justify-content: space-between;
-          & span {
-            display: none;
-          }
           &.@{select-prefix-class}-option-selected {
-            & span {
-              display: block;
-              width: 8px;
+            & .@{select-prefix-class}-option-text {
+              flex: auto;
+            }
+            & .@{select-prefix-class}-option-check {
+              margin-top: 2px;
+              width: 6px;
               height: 10px;
               border: solid 2px rgb(var(--blue-5));
               transform: rotate(45deg);

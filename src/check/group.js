@@ -58,7 +58,7 @@ const Group = (props) => {
 
     return (
         <span className={classNames} style={style}>
-            {checkAll ? <Check disabled={disabled} indeterminate={indeterminate} checked={checkedAll} onChange={(check) => {
+            {checkAll ? <Check disabled={disabled} className={`${prefixClass}-checkAll`} indeterminate={indeterminate} checked={checkedAll} onChange={(check) => {
                 if (check) {
                     const newVal = value.slice();
                     allOptionValues.filter((o) => !o.disabled).forEach((o) => {

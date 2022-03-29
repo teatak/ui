@@ -29,6 +29,10 @@ const Grid = loadable(() => import('./pages/grid'), fallback)
 const Space = loadable(() => import('./pages/space'), fallback)
 const Modal = loadable(() => import('./pages/modal'), fallback)
 const Trigger = loadable(() => import('./pages/trigger'), fallback)
+const Check = loadable(() => import('./pages/check'), fallback)
+const Radio = loadable(() => import('./pages/radio'), fallback)
+const Alert = loadable(() => import('./pages/alert'), fallback)
+const Notification = loadable(() => import('./pages/notification'), fallback)
 
 const Root = () => {
   return (
@@ -49,6 +53,12 @@ const Root = () => {
               <NavLink to="/select">Select</NavLink>
             </Menu.Item>
             <Menu.Item>
+              <NavLink to="/check">Check</NavLink>
+            </Menu.Item>
+            <Menu.Item>
+              <NavLink to="/radio">Radio</NavLink>
+            </Menu.Item>
+            <Menu.Item>
               <NavLink to="/form">Form</NavLink>
             </Menu.Item>
             <Menu.Item>
@@ -62,6 +72,12 @@ const Root = () => {
             </Menu.Item>
             <Menu.Item>
               <NavLink to="/trigger">Trigger</NavLink>
+            </Menu.Item>
+            <Menu.Item>
+              <NavLink to="/alert">Alert</NavLink>
+            </Menu.Item>
+            <Menu.Item>
+              <NavLink to="/notification">Notification</NavLink>
             </Menu.Item>
           </Menu>
         </div>
@@ -89,6 +105,14 @@ const Root = () => {
                 <Helmet title="Select - TeaTak" />
                 <Select />
               </Route>
+              <Route strict path="/check">
+                <Helmet title="Check - TeaTak" />
+                <Check />
+              </Route>
+              <Route strict path="/radio">
+                <Helmet title="Radio - TeaTak" />
+                <Radio />
+              </Route>
               <Route strict path="/form">
                 <Helmet title="Form - TeaTak" />
                 <Form />
@@ -108,6 +132,14 @@ const Root = () => {
               <Route strict path="/trigger">
                 <Helmet title="Trigger - TeaTak" />
                 <Trigger />
+              </Route>
+              <Route strict path="/alert">
+                <Helmet title="Alert - TeaTak" />
+                <Alert />
+              </Route>
+              <Route strict path="/notification">
+                <Helmet title="Notification - TeaTak" />
+                <Notification />
               </Route>
             </Switch>
           </div>

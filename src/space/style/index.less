@@ -1,9 +1,18 @@
 @space-prefix-class: tui-space;
 
 .@{space-prefix-class} {
+  display: inline-flex;
+  flex-wrap: wrap;
+  &.@{space-prefix-class}-horizontal {
+    align-items: center;
+    flex-direction: row;
+  }
+  &.@{space-prefix-class}-vertical {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  & .@{space-prefix-class}-item {
     display: flex;
-    flex-wrap: wrap;
-    & .@{space-prefix-class}-item {
-        display: flex;
-    }
+  }
 }

@@ -17,17 +17,17 @@ import "./index.css"
 
 
 export default () => {
-    const [options, setOptions] = useState(['Beijing', 'Shanghai', 'Guangzhou', 'Disabled'])
+    const [options, setOptions] = useState(['Beijing', 'Shanghai', 'Guangzhou', 'Disabled', 'Shenzhen', 'Qingdao', 'Jinan', 'Nanjing', 'Xian'])
     return <div className="page">
         <h1>Select</h1>
         <h2>Basic</h2>
         <div className="examples" >
             <Row gap="16px" style={{ width: 500 }}>
                 <Col xs="24" sm="12" lg="12">
-                    <Select placeholder="Select City" defaultValue="Shanghai" >
+                    <Select placeholder="Select City" defaultValue="Xian" >
                         {options.map((option, index) => (
-                            <Select.Option key={option} disabled={index === 3} value={option} name={index + ". " + option}>
-                                {option}
+                            <Select.Option key={option} disabled={index === 3} value={option} name={option}>
+                                {index + 1 + ". " + option}
                             </Select.Option>
                         ))}
                     </Select>

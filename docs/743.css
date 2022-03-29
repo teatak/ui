@@ -34,6 +34,7 @@
   transform: scale(0);
   opacity: 0;
   content: " ";
+  box-sizing: border-box;
   transition: all 0.2s cubic-bezier(0, 0, 0.48, 1.58);
 }
 .tui-check .tui-check-inner::after {
@@ -41,14 +42,15 @@
   top: 1px;
   left: -1px;
   display: table;
-  width: 4px;
-  height: 8px;
+  width: 6px;
+  height: 10px;
   border: 2px solid var(--color-background-2);
   border-top: 0;
   border-left: 0;
   transform: rotate(45deg) scale(0);
   transform-origin: bottom right;
   opacity: 0;
+  box-sizing: border-box;
   transition: all 0.2s cubic-bezier(0, 0, 0.48, 1.58);
   content: " ";
 }
@@ -257,123 +259,123 @@
 .tui-button.tui-button-outlined.tui-button-circle {
   padding: 0;
 }
-.tui-button-text:not(disabled) {
+.tui-button-standard:not(disabled) {
   background-color: transparent;
   color: rgb(var(--primary-6));
   box-shadow: none;
 }
-.tui-button-text:not(disabled):hover,
-.tui-button-text:not(disabled):focus {
+.tui-button-standard:not(disabled):hover,
+.tui-button-standard:not(disabled):focus {
   background-color: var(--color-primary-1);
   box-shadow: none;
 }
-.tui-button-text:not(disabled):active,
-.tui-button-text:not(disabled).clicked {
+.tui-button-standard:not(disabled):active,
+.tui-button-standard:not(disabled).clicked {
   background-color: var(--color-primary-2);
   box-shadow: none;
 }
-.tui-button-text:not(disabled):disabled {
+.tui-button-standard:not(disabled):disabled {
   cursor: default;
   color: rgb(var(--grey-5));
   background-color: transparent;
   box-shadow: none;
   border: none;
 }
-.tui-button-text:not(disabled):disabled:hover,
-.tui-button-text:not(disabled):disabled:focus,
-.tui-button-text:not(disabled):disabled:active {
+.tui-button-standard:not(disabled):disabled:hover,
+.tui-button-standard:not(disabled):disabled:focus,
+.tui-button-standard:not(disabled):disabled:active {
   color: rgb(var(--grey-5));
   background-color: transparent;
   box-shadow: none;
   border: none;
 }
-.tui-button-text.tui-button-color-primary {
+.tui-button-standard.tui-button-color-primary {
   color: rgb(var(--primary-6));
   border: none;
   background-color: transparent;
 }
-.tui-button-text.tui-button-color-primary:hover,
-.tui-button-text.tui-button-color-primary:focus {
+.tui-button-standard.tui-button-color-primary:hover,
+.tui-button-standard.tui-button-color-primary:focus {
   border: none;
   background-color: var(--color-primary-1);
 }
-.tui-button-text.tui-button-color-primary:active,
-.tui-button-text.tui-button-color-primary.clicked {
+.tui-button-standard.tui-button-color-primary:active,
+.tui-button-standard.tui-button-color-primary.clicked {
   border: none;
   background-color: var(--color-primary-2);
 }
-.tui-button-text.tui-button-color-info {
+.tui-button-standard.tui-button-color-info {
   color: rgb(var(--primary-6));
   border: none;
   background-color: transparent;
 }
-.tui-button-text.tui-button-color-info:hover,
-.tui-button-text.tui-button-color-info:focus {
+.tui-button-standard.tui-button-color-info:hover,
+.tui-button-standard.tui-button-color-info:focus {
   border: none;
   background-color: var(--color-primary-1);
 }
-.tui-button-text.tui-button-color-info:active,
-.tui-button-text.tui-button-color-info.clicked {
+.tui-button-standard.tui-button-color-info:active,
+.tui-button-standard.tui-button-color-info.clicked {
   border: none;
   background-color: var(--color-primary-2);
 }
-.tui-button-text.tui-button-color-secondary {
+.tui-button-standard.tui-button-color-secondary {
   color: rgb(var(--grey-8));
   border: none;
   background-color: transparent;
 }
-.tui-button-text.tui-button-color-secondary:hover,
-.tui-button-text.tui-button-color-secondary:focus {
+.tui-button-standard.tui-button-color-secondary:hover,
+.tui-button-standard.tui-button-color-secondary:focus {
   border: none;
   background-color: var(--color-secondary-1);
 }
-.tui-button-text.tui-button-color-secondary:active,
-.tui-button-text.tui-button-color-secondary.clicked {
+.tui-button-standard.tui-button-color-secondary:active,
+.tui-button-standard.tui-button-color-secondary.clicked {
   border: none;
   background-color: var(--color-secondary-2);
 }
-.tui-button-text.tui-button-color-success {
+.tui-button-standard.tui-button-color-success {
   color: rgb(var(--green-6));
   border: none;
   background-color: transparent;
 }
-.tui-button-text.tui-button-color-success:hover,
-.tui-button-text.tui-button-color-success:focus {
+.tui-button-standard.tui-button-color-success:hover,
+.tui-button-standard.tui-button-color-success:focus {
   border: none;
   background-color: var(--color-success-1);
 }
-.tui-button-text.tui-button-color-success:active,
-.tui-button-text.tui-button-color-success.clicked {
+.tui-button-standard.tui-button-color-success:active,
+.tui-button-standard.tui-button-color-success.clicked {
   border: none;
   background-color: var(--color-success-2);
 }
-.tui-button-text.tui-button-color-error {
+.tui-button-standard.tui-button-color-error {
   color: rgb(var(--red-6));
   border: none;
   background-color: transparent;
 }
-.tui-button-text.tui-button-color-error:hover,
-.tui-button-text.tui-button-color-error:focus {
+.tui-button-standard.tui-button-color-error:hover,
+.tui-button-standard.tui-button-color-error:focus {
   border: none;
   background-color: var(--color-error-1);
 }
-.tui-button-text.tui-button-color-error:active,
-.tui-button-text.tui-button-color-error.clicked {
+.tui-button-standard.tui-button-color-error:active,
+.tui-button-standard.tui-button-color-error.clicked {
   border: none;
   background-color: var(--color-error-2);
 }
-.tui-button-text.tui-button-color-warning {
+.tui-button-standard.tui-button-color-warning {
   color: rgb(var(--orange-6));
   border: none;
   background-color: transparent;
 }
-.tui-button-text.tui-button-color-warning:hover,
-.tui-button-text.tui-button-color-warning:focus {
+.tui-button-standard.tui-button-color-warning:hover,
+.tui-button-standard.tui-button-color-warning:focus {
   border: none;
   background-color: var(--color-warning-1);
 }
-.tui-button-text.tui-button-color-warning:active,
-.tui-button-text.tui-button-color-warning.clicked {
+.tui-button-standard.tui-button-color-warning:active,
+.tui-button-standard.tui-button-color-warning.clicked {
   border: none;
   background-color: var(--color-warning-2);
 }
@@ -619,10 +621,120 @@
 }
 
 .tui-space {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
+}
+.tui-space.tui-space-horizontal {
+  align-items: center;
+  flex-direction: row;
+}
+.tui-space.tui-space-vertical {
+  align-items: flex-start;
+  flex-direction: column;
 }
 .tui-space .tui-space-item {
   display: flex;
+}
+
+.tui-notification-wrapper {
+  position: fixed;
+  z-index: 1003;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tui-notification-wrapper.tui-notification-wrapper-top {
+  width: 100%;
+  top: 20px;
+}
+.tui-notification-wrapper.tui-notification-wrapper-topLeft {
+  left: 20px;
+  top: 20px;
+}
+.tui-notification-wrapper.tui-notification-wrapper-topRight {
+  right: 20px;
+  top: 20px;
+}
+.tui-notification-wrapper.tui-notification-wrapper-bottom {
+  width: 100%;
+  bottom: 20px;
+  flex-direction: column-reverse;
+}
+.tui-notification-wrapper.tui-notification-wrapper-bottomLeft {
+  left: 20px;
+  bottom: 20px;
+  flex-direction: column-reverse;
+}
+.tui-notification-wrapper.tui-notification-wrapper-bottomRight {
+  right: 20px;
+  bottom: 20px;
+  flex-direction: column-reverse;
+}
+.tui-notification-wrapper .tui-notification {
+  position: relative;
+  border-radius: var(--border-radius-medium);
+  border: 1px solid var(--color-border-2);
+  margin-bottom: 12px;
+  background-color: var(--color-background-popup);
+  box-shadow: var(--box-shadow-popup);
+  overflow: hidden;
+  box-sizing: border-box;
+  opacity: 1;
+  transition: opacity 0.2s linear;
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+  padding: 8px 16px;
+  line-height: 1.5;
+}
+.tui-notification-wrapper .tui-notification .tui-notification-icon-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  height: 24px;
+}
+.tui-notification-wrapper .tui-notification .tui-notification-icon-wrapper svg {
+  width: 1em;
+  height: 1em;
+  font-size: 22px;
+}
+.tui-notification-wrapper .tui-notification.tui-notification-info .tui-notification-icon-wrapper svg {
+  color: rgb(var(--primary-6));
+}
+.tui-notification-wrapper .tui-notification.tui-notification-success .tui-notification-icon-wrapper svg {
+  color: rgb(var(--green-6));
+}
+.tui-notification-wrapper .tui-notification.tui-notification-warning .tui-notification-icon-wrapper svg {
+  color: rgb(var(--orange-6));
+}
+.tui-notification-wrapper .tui-notification.tui-notification-error .tui-notification-icon-wrapper svg {
+  color: rgb(var(--red-6));
+}
+.tui-notification-wrapper .tui-notification .tui-notification-content-wrapper {
+  flex: auto;
+  line-height: 24px;
+}
+.tui-notification-wrapper .tui-notification .tui-notification-content-wrapper .tui-notification-title {
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.tui-notification-wrapper .tui-notification .tui-notification-actions-wrapper {
+  margin-left: 6px;
+}
+.tui-notification-wrapper .tui-notification .tui-notification-btn-close {
+  margin-left: 6px;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  user-select: none;
+  color: var(--color-foreground-2);
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+.tui-notification-wrapper .tui-notification .tui-notification-btn-close svg {
+  font-size: 14px;
 }
 

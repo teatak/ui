@@ -1,21 +1,22 @@
 import React from "react"
+import PropTypes from "prop-types"
+import classnames from "classnames"
 
 const Space = (props) => {
   const {
     style,
     gap,
-    alignItems,
     className,
     itemClassName,
     prefixClass,
+    direction = "horizontal",
     ...rest
   } = props
-
-  let classes = prefixClass
-
-  if (className) {
-    classes += ' ' + className
-  }
+  const classNames = classnames(
+    prefixClass,
+    `${prefixClass}-${direction}`,
+    className
+  );
 
   let itemClasses = prefixClass + '-item'
 
@@ -37,11 +38,10 @@ const Space = (props) => {
 
   const gapStyle = {
     gap: gapCss,
-    alignItems: alignItems || 'center',
   }
 
   return (
-    <div className={classes} style={{ ...gapStyle, ...style }}>
+    <div className={classNames} style={{ ...gapStyle, ...style }}>
       {React.Children.map(props.children, (item, index) => {
         return (
           <div key={index} className={itemClasses}>
@@ -51,6 +51,10 @@ const Space = (props) => {
       })}
     </div>
   )
+}
+
+Space.propTypes = {
+  direction: PropTypes.oneOf(['horizontal', 'vertical']), //方向
 }
 
 Space.defaultProps = {

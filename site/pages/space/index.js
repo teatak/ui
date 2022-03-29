@@ -41,12 +41,22 @@ export default () => <div className="page">
 </div> 
 \`\`\`
         `} />
-
+        <div className="examples">
+            <Space direction='vertical'>
+                Text
+                <Button>Button</Button>
+                <Button type="filled" color="primary">Filled</Button>
+                <Button type="outlined" color="primary">Outlined</Button>
+                <Button type="filled" rounded color="danger"><Delete /></Button>
+            </Space>
+        </div>
         <Markdown children={`
 ## API
 
 | Property  | Description | Type | Default |
 | --------- | ------- | ------- | ------- |
+| direction | direction | PropTypes.oneOf(['horizontal', 'vertical']) | horizontal |
+
         `} />
     </div>
 }

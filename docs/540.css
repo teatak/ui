@@ -198,6 +198,7 @@
   transform: scale(0);
   opacity: 0;
   content: " ";
+  box-sizing: border-box;
   transition: all 0.2s cubic-bezier(0, 0, 0.48, 1.58);
 }
 .tui-check .tui-check-inner::after {
@@ -205,14 +206,15 @@
   top: 1px;
   left: -1px;
   display: table;
-  width: 4px;
-  height: 8px;
+  width: 6px;
+  height: 10px;
   border: 2px solid var(--color-background-2);
   border-top: 0;
   border-left: 0;
   transform: rotate(45deg) scale(0);
   transform-origin: bottom right;
   opacity: 0;
+  box-sizing: border-box;
   transition: all 0.2s cubic-bezier(0, 0, 0.48, 1.58);
   content: " ";
 }
@@ -538,6 +540,7 @@
   border: solid 1px rgb(var(--red-5));
   background: var(--color-error-1);
 }
+.tui-form .tui-form-item.tui-form-item-has-error .tui-select.tui-select-focused,
 .tui-form .tui-form-item.tui-form-item-has-error .tui-select:focus {
   border: solid 1px rgb(var(--red-6));
   background: var(--color-error-1);

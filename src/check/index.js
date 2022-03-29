@@ -13,7 +13,7 @@ const Check = forwardRef((props, ref) => {
         mergeProps.disabled = !!(context.disabled || props.disabled);
     }
 
-    const { style, className, prefixClass, value, disabled, onChange, group, indeterminate, children, ...rest } = mergeProps
+    const { style, className, prefixClass, value, disabled, onChange, indeterminate, children, ...rest } = mergeProps
 
     const [checked, setChecked] = useMergeState(false, {
         value: mergeProps.checked,
