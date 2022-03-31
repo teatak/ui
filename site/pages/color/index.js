@@ -82,6 +82,34 @@ export default () => {
           <div style={{ background: `var(--color-fill-4)` }}>--color-fill-4</div>
         </Col>
       </Row>
+      <h2>Box shadow:</h2>
+      <Row gap="16px" className="shadows">
+        <Col xs="24" sm="12" lg="6">
+          <div style={{ boxShadow: `var(--box-shadow-1)` }}>--box-shadow-1</div>
+        </Col>
+        <Col xs="24" sm="12" lg="6">
+          <div style={{ boxShadow: `var(--box-shadow-2)` }}>--box-shadow-2</div>
+        </Col>
+        <Col xs="24" sm="12" lg="6">
+          <div style={{ boxShadow: `var(--box-shadow-3)` }}>--box-shadow-3</div>
+        </Col>
+        <Col xs="24" sm="12" lg="6">
+          <div style={{ boxShadow: `var(--box-shadow-4)` }}>--box-shadow-4</div>
+        </Col>
+
+        <Col xs="24" sm="12" lg="6">
+          <div style={{ boxShadow: `var(--box-shadow-btn)` }}>--box-shadow-btn</div>
+        </Col>
+        <Col xs="24" sm="12" lg="6">
+          <div style={{ boxShadow: `var(--box-shadow-popup)` }}>--box-shadow-popup</div>
+        </Col>
+        <Col xs="24" sm="12" lg="6">
+          <div style={{ boxShadow: `var(--box-shadow-popup-up)` }}>--box-shadow-popup-up</div>
+        </Col>
+        <Col xs="24" sm="12" lg="6">
+          <div style={{ boxShadow: `var(--box-shadow-popup-down)` }}>--box-shadow-popup-down</div>
+        </Col>
+      </Row>
       <h2>Color:</h2>
       <Row gap="16px">
         <Col xs="24" sm="12" lg="6">

@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import classnames from "classnames"
 
 import InfoOutlinedIcon from '../svg/icons/InfoOutlined';
-import ErrorOutlinedIcon from '../svg/icons/CancelOutlined';
+import ErrorOutlinedIcon from '../svg/icons/ErrorOutlined';
 import SuccessOutlinedIcon from '../svg/icons/SuccessOutlined';
 import WarningOutlinedIcon from '../svg/icons/WarningOutlined';
 
-import CloseOutlinedIcon from '../svg/icons/CloseOutlined';
+import CloseIcon from '../svg/icons/Close';
 
 const Notice = (props) => {
     const { prefixClass, duration, onClose, id } = props;
@@ -62,7 +62,7 @@ const Notice = (props) => {
         </div>
         {props.actions && <div className={`${prefixClass}-actions-wrapper`}>{props.actions}</div>}
         {props.closeable && (
-            <button className={`${prefixClass}-btn-close`} onClick={handleClose}  >{props.closeElement || <CloseOutlinedIcon />}</button>
+            <button className={`${prefixClass}-btn-close`} onClick={handleClose}  >{props.closeElement || <CloseIcon />}</button>
         )}
     </div>
 }

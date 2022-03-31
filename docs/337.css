@@ -207,11 +207,10 @@
   --size-button-outlined-padding-medium: 0 15px;
   --size-button-outlined-padding-small: 0 11px;
   --size-button-outlined-padding-tiny: 0 7px;
-  --box-shadow-1: 0 -1px 4px 0 rgba(0, 0, 0, 0.06),
-    0 1px 4px 0 rgba(0, 0, 0, 0.1);
-  --box-shadow-2: 0 -1px 4px 0 rgba(0, 0, 0, 0.06),
-    0 2px 12px 0 rgba(0, 0, 0, 0.1);
-  --box-shadow-3: 0 1px 8px rgba(0, 0, 0, 0.06);
+  --box-shadow-1: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  --box-shadow-2: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+  --box-shadow-3: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+  --box-shadow-4: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
   --box-shadow-btn: 0 1px 2px 0 rgba(0, 0, 0, 0.2),
     0 1px 3px 1px rgba(0, 0, 0, 0.1);
   --box-shadow-popup: 0 -1px 4px 0 rgba(0, 0, 0, 0.06),
@@ -221,7 +220,6 @@
   --box-shadow-popup-up: 0 -1px 4px 0 rgba(0, 0, 0, 0.06),
     0 2px 12px 0 rgba(0, 0, 0, 0.1);
   --box-shadow-popup-arrow: 1px 1px 8px 0px rgba(0, 0, 0, 0.1);
-  --box-shadow-select-trigger: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 [data-color-mode="light"][data-light-theme*="light"] {
   color-scheme: light;

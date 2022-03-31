@@ -37,6 +37,10 @@
   border: solid 1px var(--color-border-2);
   border-radius: 6px;
 }
+.color-page .shadows > div > div {
+  padding: 16px;
+  border-radius: 6px;
+}
 .color-page .borders > div > div {
   padding: 16px;
   border-radius: 6px;

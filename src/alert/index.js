@@ -3,12 +3,12 @@ import PropTypes from "prop-types"
 import classnames from "classnames"
 import { CSSTransition } from 'react-transition-group';
 
-import InfoOutlinedIcon from '../svg/icons/InfoOutlined';
-import ErrorOutlinedIcon from '../svg/icons/CancelOutlined';
-import SuccessOutlinedIcon from '../svg/icons/SuccessOutlined';
-import WarningOutlinedIcon from '../svg/icons/WarningOutlined';
+import InfoIcon from '../svg/icons/Info';
+import ErrorIcon from '../svg/icons/Error';
+import SuccessIcon from '../svg/icons/Success';
+import WarningIcon from '../svg/icons/Warning';
 
-import CloseOutlinedIcon from '../svg/icons/CloseOutlined';
+import CloseIcon from '../svg/icons/Close';
 
 const Title = forwardRef((props, ref) => {
     const {
@@ -49,13 +49,13 @@ const Alert = forwardRef((props, ref) => {
         }
         switch (color) {
             case 'info':
-                return <InfoOutlinedIcon />
+                return <InfoIcon />
             case 'success':
-                return <SuccessOutlinedIcon />
+                return <SuccessIcon />
             case 'warning':
-                return <WarningOutlinedIcon />
+                return <WarningIcon />
             case 'error':
-                return <ErrorOutlinedIcon />
+                return <ErrorIcon />
             default:
                 return null;
         }
@@ -77,7 +77,7 @@ const Alert = forwardRef((props, ref) => {
             </div>
             {actions && <div className={`${prefixClass}-actions-wrapper`}>{actions}</div>}
             {closeable && (
-                <button className={`${prefixClass}-btn-close`} onClick={handleClose} >{closeElement || <CloseOutlinedIcon />}</button>
+                <button className={`${prefixClass}-btn-close`} onClick={handleClose} >{closeElement || <CloseIcon />}</button>
             )}
         </div>
     </CSSTransition>
