@@ -2,7 +2,7 @@ import React, { forwardRef, useEffect, useContext, useRef, useState, useImperati
 import PropTypes from "prop-types"
 import classnames from "classnames"
 import FormContext from "../formcontext"
-import Trigger from "../trigger"
+import { Trigger } from "../"
 import "../trigger/style"
 import { useMergeState } from "../util"
 

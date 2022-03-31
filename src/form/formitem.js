@@ -9,7 +9,7 @@ import Schema from "async-validator"
 import { isArray, isFunction, isUndefined, isObject } from '../util/is';
 
 import FormContext from "../formcontext"
-import { Row, Col } from "../grid"
+import { Row, Col } from "../"
 import "../grid/style"
 
 const CapitalizeFirstLetter = (string) => {
