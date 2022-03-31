@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Markdown from '../../components/markdown'
+import { Delete, PhotoCamera, AddCircle } from '@mui/icons-material'
 import { Check, Button, Space, Row, Col } from '../../../src'
 import '../../../src/check/style'
 import '../../../src/button/style'
@@ -36,7 +37,9 @@ export default () => {
                 <Check checked={checked}>选择</Check>
                 <Check checked={checked}>
                     {(checked, indeterminate) => {
-                        return checked ? "自定义已选择" : "自定义未选择"
+                        return checked ?
+                            <div style={{ background: "#d0d0d0", padding: "10px" }}><Delete /></div> :
+                            <div style={{ padding: "10px" }}><Delete /></div>
                     }}
                 </Check>
                 <Button onClick={(e) => {
@@ -54,7 +57,9 @@ export default () => {
             <Check checked={checked}>选择</Check>
             <Check checked={checked}>
                 {(checked, indeterminate) => {
-                    return checked ? "自定义已选择" : "自定义未选择"
+                    return checked ?
+                        <div style={{ background: "#d0d0d0", padding: "10px" }}><Delete /></div> :
+                        <div style={{ padding: "10px" }}><Delete /></div>
                 }}
             </Check>
             <Button onClick={(e) => {

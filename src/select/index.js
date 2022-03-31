@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import classnames from "classnames"
 import FormContext from "../formcontext"
 import { Trigger } from "../"
-import "../trigger/style"
 import { useMergeState } from "../util"
 
 const Option = forwardRef((props, ref) => {

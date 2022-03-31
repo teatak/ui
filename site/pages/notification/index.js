@@ -1,11 +1,9 @@
 import React, { useState } from "react"
 import Markdown from "../../components/markdown"
 
-import { Button, Space } from '../../../src'
+import { Button, Space, useNotification } from '../../../src'
 import '../../../src/button/style'
 import '../../../src/space/style'
-
-import { useNotification } from '../../../src'
 import '../../../src/notification/style'
 
 export default () => {

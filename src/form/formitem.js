@@ -10,7 +10,6 @@ import { isArray, isFunction, isUndefined, isObject } from '../util/is';
 
 import FormContext from "../formcontext"
 import { Row, Col } from "../"
-import "../grid/style"
 
 const CapitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
