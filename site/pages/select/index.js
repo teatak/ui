@@ -112,7 +112,7 @@ export default () => {
         <div className="examples" >
             <Row gap="16px">
                 <Col xs="24" sm="12" lg="6">
-                    <Select placeholder="Select City" noBorder>
+                    <Select placeholder="Select City" borderless>
                         {options.map((option, index) => (
                             <Select.Option key={option} disabled={index === 3} value={option}>
                                 {option}
@@ -129,7 +129,7 @@ export default () => {
     return <div className="examples">
         <Row gap="16px">
             <Col xs="24" sm="12" lg="6">
-                <Select placeholder="Select City" multi noBorder size="small">
+                <Select placeholder="Select City" multi borderless size="small">
                     {options.map((option, index) => (
                         <Select.Option key={option} disabled={index === 3} value={option}>
                             {option}

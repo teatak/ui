@@ -45,14 +45,14 @@
   width: 0 !important;
   position: absolute;
 }
-.tui-select.tui-select-no-border {
+.tui-select.tui-select-borderless {
   border: solid 1px transparent;
   box-shadow: none;
   background: none;
 }
-.tui-select.tui-select-no-border:hover,
-.tui-select.tui-select-no-border:focus,
-.tui-select.tui-select-no-border.tui-select-focused {
+.tui-select.tui-select-borderless:hover,
+.tui-select.tui-select-borderless:focus,
+.tui-select.tui-select-borderless.tui-select-focused {
   border: solid 1px transparent;
   box-shadow: none;
   background: none;

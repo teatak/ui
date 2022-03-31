@@ -6,7 +6,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 let instance = {};
 let container = undefined
-let maxCount = 8
+let maxCount = 100
 let duration = 3000
 
 const addNotification = (props) => {
@@ -18,7 +18,13 @@ const addNotification = (props) => {
         duration: props.duration === undefined ? duration : props.duration
     }
     if (instance[position]) {
-        instance[position].add(_props)
+        const notices = instance[position].notices;
+        if (notices.length >= maxCount) {
+            notices.shift();
+            instance[position].add(_props)
+        } else {
+            instance[position].add(_props)
+        }
     } else {
         const div = document.createElement('div');
         (container || document.body).appendChild(div);
@@ -75,6 +81,7 @@ const Notification = forwardRef((props, ref) => {
 
     useImperativeHandle(ref, () => ({
         dom: divRef,
+        notices: notices,
         add: (props) => {
             let _n = [...notices]
             _n.push(props)

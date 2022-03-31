@@ -40,7 +40,7 @@ const Select = forwardRef((props, ref) => {
     const wrapperRef = useRef(null);
 
     const { size: ctxSize } = useContext(FormContext);
-    const { style, disabled, className, prefixClass, multi, placeholder, noBorder, size, onChange, ...rest } = props
+    const { style, disabled, className, prefixClass, multi, placeholder, borderless, size, onChange, ...rest } = props
 
     const [value, setValue] = useMergeState((multi ? [] : undefined), {
         value: props.value,
@@ -67,7 +67,7 @@ const Select = forwardRef((props, ref) => {
         `${prefixClass}-size-${size || ctxSize || "medium"}`,
         {
             [`${prefixClass}-focused`]: focused,
-            [`${prefixClass}-no-border`]: noBorder,
+            [`${prefixClass}-borderless`]: borderless,
             [`${prefixClass}-open`]: triggerVisible,
         },
         className
