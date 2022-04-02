@@ -10,7 +10,7 @@ import {
 } from 'react-router-dom'
 import { Menu, ColorMenu } from '../src'
 import '../src/menu/style'
-import '../src/colormenu/style'
+import '../src/color-menu/style'
 
 import { Progress, Loading } from './helper/loading'
 import loadable from '@loadable/component'

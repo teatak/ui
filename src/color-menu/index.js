@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Menu, Trigger, Button } from "../"
+import { Menu, Trigger, Button } from ".."
 import "../menu/style"
 import "../trigger/style"
 import "../button/style"
