@@ -129,12 +129,14 @@
     color: var(--color-foreground-tooltip);
     & .@{trigger-prefix-class}-inner {
       background-color: var(--color-background-tooltip);
-      border: solid 1px var(--color-fill-3);
+      border: solid 1px transparent;
+      box-shadow: none;
     }
     & .@{trigger-prefix-class}-arrow {
       &::before {
         background-color: var(--color-background-tooltip);
-        border: solid 1px var(--color-fill-3);
+        border: solid 1px transparent;
+        box-shadow: none;
       }
     }
   }

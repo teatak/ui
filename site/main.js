@@ -8,8 +8,10 @@ import {
   Switch,
   Route,
 } from 'react-router-dom'
-import { Menu } from '../src'
+import { Menu, ColorMenu } from '../src'
 import '../src/menu/style'
+import '../src/colormenu/style'
+
 import { Progress, Loading } from './helper/loading'
 import loadable from '@loadable/component'
 
@@ -41,7 +43,9 @@ const Root = () => {
         <div className="menu">
           <Menu type="vertical">
             <Menu.Item>
-              <NavLink to="/color">Color</NavLink>
+              <NavLink to="/color" isActive={(match, location) => {
+                console.log(match)
+              }} >Color</NavLink>
             </Menu.Item>
             <Menu.Item>
               <NavLink to="/button">Button</NavLink>
@@ -142,6 +146,9 @@ const Root = () => {
                 <Notification />
               </Route>
             </Switch>
+          </div>
+          <div className='content-fixed'>
+            <ColorMenu />
           </div>
         </div>
       </main>

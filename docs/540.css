@@ -843,4 +843,20 @@
   box-shadow: 0px 0px 0px 3px var(--color-error-2);
 }
 
+.tui-space {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.tui-space.tui-space-horizontal {
+  align-items: center;
+  flex-direction: row;
+}
+.tui-space.tui-space-vertical {
+  align-items: flex-start;
+  flex-direction: column;
+}
+.tui-space .tui-space-item {
+  display: flex;
+}
+
 

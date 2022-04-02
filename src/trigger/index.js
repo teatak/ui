@@ -29,7 +29,7 @@ const Trigger = forwardRef((props, ref) => {
         const offset = props.offset || [0, 4]
         const t = triggerRef.current.getBoundingClientRect()
         const p = portalRef.current.getBoundingClientRect()
-        let top, left
+        let top, left, right
         let mergeStyle = {}
         let mergeArrowStyle = {}
         let realPos = position
@@ -43,7 +43,7 @@ const Trigger = forwardRef((props, ref) => {
                     realPos = "bottom"
                 }
                 left = (document.documentElement.scrollLeft || document.body.scrollLeft) + t.left - (p.width - t.width) / 2 + offset[0]
-                mergeStyle = { top: top, left: left }
+                mergeStyle = { top: top, left: left, right: "auto" }
                 break
             case "bottomLeft":
                 top = (document.documentElement.scrollTop || document.body.scrollTop) + t.top + t.height + offset[1]
@@ -54,7 +54,7 @@ const Trigger = forwardRef((props, ref) => {
                     realPos = "bottomLeft"
                 }
                 left = (document.documentElement.scrollLeft || document.body.scrollLeft) + t.left + offset[0]
-                mergeStyle = { top: top, left: left }
+                mergeStyle = { top: top, left: left, right: "auto" }
                 mergeArrowStyle = { left: t.width / 2 - 10 }
                 break
             case "bottomRight":
@@ -65,8 +65,8 @@ const Trigger = forwardRef((props, ref) => {
                 } else {
                     realPos = "bottomRight"
                 }
-                left = (document.documentElement.scrollLeft || document.body.scrollLeft) + t.right - p.width - offset[0]
-                mergeStyle = { top: top, left: left }
+                right = (document.documentElement.clientWidth || document.body.clientWidth) - t.right - offset[0]
+                mergeStyle = { top: top, left: "auto", right: right }
                 mergeArrowStyle = { right: t.width / 2 - 10 }
                 break
             case "top":
@@ -78,7 +78,7 @@ const Trigger = forwardRef((props, ref) => {
                     realPos = "top"
                 }
                 left = (document.documentElement.scrollLeft || document.body.scrollLeft) + t.left - (p.width - t.width) / 2 + offset[0]
-                mergeStyle = { top: top, left: left }
+                mergeStyle = { top: top, left: left, right: "auto" }
                 break
             case "topLeft":
                 top = (document.documentElement.scrollTop || document.body.scrollTop) + t.top - p.height - offset[1]
@@ -89,7 +89,7 @@ const Trigger = forwardRef((props, ref) => {
                     realPos = "topLeft"
                 }
                 left = (document.documentElement.scrollLeft || document.body.scrollLeft) + t.left + offset[0]
-                mergeStyle = { top: top, left: left }
+                mergeStyle = { top: top, left: left, right: "auto" }
                 mergeArrowStyle = { left: t.width / 2 - 10 }
                 break
             case "topRight":
@@ -100,8 +100,8 @@ const Trigger = forwardRef((props, ref) => {
                 } else {
                     realPos = "topRight"
                 }
-                left = (document.documentElement.scrollLeft || document.body.scrollLeft) + t.right - p.width - offset[0]
-                mergeStyle = { top: top, left: left }
+                right = (document.documentElement.clientWidth || document.body.clientWidth) - t.right - offset[0]
+                mergeStyle = { top: top, left: "auto", right: right }
                 mergeArrowStyle = { right: t.width / 2 - 10 }
                 break
         }
