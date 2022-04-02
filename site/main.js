@@ -8,9 +8,9 @@ import {
   Switch,
   Route,
 } from 'react-router-dom'
-import { Menu, ColorMenu } from '../src'
+import { Menu, ColorMode } from '../src'
 import '../src/menu/style'
-import '../src/color-menu/style'
+import '../src/color-mode/style'
 
 import { Progress, Loading } from './helper/loading'
 import loadable from '@loadable/component'
@@ -148,7 +148,7 @@ const Root = () => {
             </Switch>
           </div>
           <div className='content-fixed'>
-            <ColorMenu />
+            <ColorMode.Menu />
           </div>
         </div>
       </main>
@@ -157,7 +157,7 @@ const Root = () => {
 }
 
 const Main = () => {
-  return <Root />
+  return <ColorMode><Root /></ColorMode>
 }
 
 ReactDOM.render(<Main />, document.getElementById('root'))

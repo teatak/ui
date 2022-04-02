@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Menu, Trigger, Button } from ".."
 import "../menu/style"
 import "../trigger/style"
@@ -105,7 +105,7 @@ const ColorMenu = (props) => {
     const text = (value) => {
         switch (value) {
             case "auto":
-                return <ContrastAlt className="arco-icon" />
+                return <ContrastAlt />
                 break;
             case "light":
                 return <LightMode />
@@ -114,7 +114,7 @@ const ColorMenu = (props) => {
                 return <DarkMode />
                 break;
             default:
-                return <ContrastAlt className="arco-icon" />
+                return <ContrastAlt />
                 break;
         }
     }
@@ -135,4 +135,7 @@ const ColorMenu = (props) => {
     </Trigger>
 }
 
-export default ColorMenu
+ColorMode.Menu = ColorMenu
+
+export default ColorMode
+export { ColorMenu }

@@ -11,7 +11,7 @@ export { default as Trigger } from './trigger';
 export { default as Check } from './check';
 export { default as Radio } from './radio';
 export { default as Alert } from './alert';
-export { default as ColorMenu } from './color-menu';
+export { default as ColorMode } from './color-mode';
 
 export { default as Notification, useNotification } from './notification';
 
