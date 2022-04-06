@@ -1,4 +1,7 @@
-.tui-button.btn-colormode {
+@color-menu-prefix-class: tui-color-menu;
+@trigger-prefix-class: tui-trigger;
+
+.@{color-menu-prefix-class}-btn {
   background: var(--color-background-popup) !important;
   border: solid 1px var(--color-border-2) !important;
   box-shadow: var(--box-shadow-popup) !important;
@@ -9,6 +12,28 @@
     display: inline-block;
     flex-shrink: 0;
     user-select: none;
-    font-size: 16px;
+    font-size: 16px !important;
+  }
+}
+.@{color-menu-prefix-class} {
+  padding: 4px 0;
+  border-radius: var(--border-radius-medium);
+  & li {
+    line-height: 36px;
+    &:hover {
+      background-color: var(--color-fill-2);
+    }
+    &.tui-menu-item-selected {
+      color: rgb(var(--primary-6));
+      //background-color: var(--color-fill-3);
+    }
+  }
+}
+.@{color-menu-prefix-class}-trigger {
+  &.@{trigger-prefix-class} {
+    & .@{trigger-prefix-class}-inner {
+      //background-color: var(--color-background-popup);
+      padding: 0;
+    }
   }
 }

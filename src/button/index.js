@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef, useContext, forwardRef } from "react"
 import PropTypes from "prop-types"
 import classnames from "classnames"
-import FormContext from "../formcontext"
+import FormContext from "../form/form-context"
 
 const Button = forwardRef((props, ref) => {
   const timerRef = useRef()
@@ -53,7 +53,7 @@ const Button = forwardRef((props, ref) => {
       ref={buttonRef}
     >
       {startIcon ? <span className={prefixClass + '-start-icon'}>{startIcon}</span> : null}
-      <span>{props.children}</span>
+      <span className={prefixClass + '-text'}>{props.children}</span>
       {endIcon ? <span className={prefixClass + '-end-icon'}>{endIcon}</span> : null}
     </button>
   )

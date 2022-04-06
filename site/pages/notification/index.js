@@ -17,6 +17,7 @@ export default () => {
                     onClick={() => {
                         notification.info({
                             position: 'top',
+                            duration: 0,
                             content: 'This is an info message!',
                             closeable: true,
                         });

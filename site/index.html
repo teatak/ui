@@ -19,7 +19,7 @@
     <title><%= htmlWebpackPlugin.options.title %></title><% for (var i in htmlWebpackPlugin.files.css) { %>
     <link href="<%=htmlWebpackPlugin.files.css[i] %>" rel="stylesheet"><% } %>
 </head>
-<body>
+<body data-color-mode="auto" data-light-theme="light" data-dark-theme="dark">
     <div id="root" class="root"><div class="spinner-content-page">Loading...</div></div><% for (var i in htmlWebpackPlugin.files.js) { %>
     <script type="text/javascript" src="<%=htmlWebpackPlugin.files.js[i]%>"></script><% } %>
 </body>

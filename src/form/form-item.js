@@ -8,8 +8,8 @@ import PropTypes from "prop-types"
 import Schema from "async-validator"
 import { isArray, isFunction, isUndefined, isObject } from '../util/is';
 
-import FormContext from "../formcontext"
-import { Row, Col } from "../"
+import FormContext from "../form/form-context"
+import { Row, Col } from ".."
 
 const CapitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);

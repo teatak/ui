@@ -1,7 +1,7 @@
 import React, { useState, useContext, forwardRef } from "react"
 import PropTypes from "prop-types"
 import classnames from "classnames"
-import FormContext from "../formcontext"
+import FormContext from "../form/form-context"
 
 const Input = forwardRef((props, ref) => {
 

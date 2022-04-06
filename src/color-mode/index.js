@@ -24,11 +24,14 @@ const ColorMode = (props) => {
         document.body.setAttribute("data-light-theme", lightMode)
         document.body.setAttribute("data-dark-theme", darkMode)
         const el = document.querySelector("meta[name='color-scheme']");
-        if (colorMode == "auto") {
-            el.setAttribute('content', "light dark")
-        }
-        if (colorMode == "dark") {
-            el.setAttribute('content', "dark light")
+        if (el) {
+            // <meta name="color-scheme" content="dark light">
+            if (colorMode == "auto") {
+                el.setAttribute('content', "light dark")
+            }
+            if (colorMode == "dark") {
+                el.setAttribute('content', "dark light")
+            }
         }
     }
     willMount.current = false
@@ -37,6 +40,9 @@ const ColorMode = (props) => {
 }
 
 const ColorMenu = (props) => {
+
+    const { prefixClass } = props
+
     const [visible, setVisible] = React.useState(false);
 
     const [value, setValue] = useState(() => {
@@ -51,7 +57,6 @@ const ColorMenu = (props) => {
     });
 
     const saveVaule = (value) => {
-        setVisible(false)
         if (window.localStorage) {
             let storage = window.localStorage;
             storage.COLOR_MODE = value
@@ -67,6 +72,7 @@ const ColorMenu = (props) => {
             }
         }
         setValue(value)
+        setVisible(false)
     };
 
 
@@ -78,8 +84,8 @@ const ColorMenu = (props) => {
 
     const dropList = (value) => {
         return <Menu
-            className="color-switch-menu"
-        // selectedKeys={[value]}
+            className={`${prefixClass}`}
+            selectedKeys={[value]}
         >
             <Menu.Item key='auto' onClick={() => {
                 saveVaule("auto")
@@ -102,6 +108,8 @@ const ColorMenu = (props) => {
         </Menu>
     }
 
+    const [options, setOptions] = useState(['auto', 'light', 'dark'])
+
     const text = (value) => {
         switch (value) {
             case "auto":
@@ -119,20 +127,28 @@ const ColorMenu = (props) => {
         }
     }
 
-    return <Trigger
-        showArrow
-        action="hover"
-        popupVisible={visible}
-        content={dropList(value)}
-        onVisibleChange={(visible) => {
-            setVisible(visible)
-        }}
-        position='topRight'
-    >
-        <Button className="btn-colormode" circle size='large'>
-            {text(value)}
-        </Button>
-    </Trigger>
+    return <>
+        <Trigger
+            showArrow
+            action="hover"
+            visible={visible}
+            content={dropList(value)}
+            onVisibleChange={(visible) => {
+                setVisible(visible)
+            }}
+            className={`${prefixClass}-trigger`}
+            position='topRight'
+            transitionClass="slide"
+        >
+            <Button className={`${prefixClass}-btn`} circle size='large'>
+                {text(value)}
+            </Button>
+        </Trigger>
+    </>
+}
+
+ColorMenu.defaultProps = {
+    prefixClass: "tui-color-menu",
 }
 
 ColorMode.Menu = ColorMenu

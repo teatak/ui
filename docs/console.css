@@ -153,8 +153,9 @@
   --color-fill-4: rgb(var(--grey-4));
   --color-background-1: #fff;
   --color-background-2: #fff;
-  --color-background-3: rgb(var(--grey-2));
-  --color-background-4: rgb(var(--grey-3));
+  --color-background-3: #fff;
+  --color-background-4: #fff;
+  --color-background-5: #fff;
   --color-background-popup: #fff;
   --color-background-tooltip: #414141;
   --color-border-1: rgba(0, 0, 0, 0.2);
@@ -207,17 +208,17 @@
   --size-button-outlined-padding-medium: 0 15px;
   --size-button-outlined-padding-small: 0 11px;
   --size-button-outlined-padding-tiny: 0 7px;
-  --box-shadow-1: 0px 0px 4px 0px rgba(0, 0, 0, 0.1), 0 4px 12px rgb(0 0 0 / 7%);
-  --box-shadow-2: 0px 0px 4px 0px rgba(0, 0, 0, 0.1), 0 4px 12px rgb(0 0 0 / 10%);
-  --box-shadow-3: 0px 0px 4px 0px rgba(0, 0, 0, 0.1), 0 4px 12px rgb(0 0 0 / 12%);
+  --box-shadow-1: 0px 0px 1px 0px rgba(0, 0, 0, 0.1), 0 4px 12px rgb(0 0 0 / 7%);
+  --box-shadow-2: 0px 0px 2px 0px rgba(0, 0, 0, 0.1), 0 4px 12px rgb(0 0 0 / 10%);
+  --box-shadow-3: 0px 0px 3px 0px rgba(0, 0, 0, 0.1), 0 4px 12px rgb(0 0 0 / 12%);
   --box-shadow-4: 0px 0px 4px 0px rgba(0, 0, 0, 0.1), 0 4px 12px rgb(0 0 0 / 15%);
   --box-shadow-btn: 0px 0px 2px 1px rgba(0, 0, 0, 0.1),
     0px 2px 3px 1px rgb(0 0 0 / 15%);
-  --box-shadow-popup: 0px 0px 4px 0px rgba(0, 0, 0, 0.1),
+  --box-shadow-popup: 0px 0px 3px 0px rgba(0, 0, 0, 0.1),
     0 4px 12px rgb(0 0 0 / 15%);
-  --box-shadow-popup-down: 0px 0px 4px 0px rgba(0, 0, 0, 0.1),
+  --box-shadow-popup-down: 0px 0px 3px 0px rgba(0, 0, 0, 0.1),
     0 -4px 12px rgb(0 0 0 / 15%);
-  --box-shadow-popup-up: 0px 0px 4px 0px rgba(0, 0, 0, 0.1),
+  --box-shadow-popup-up: 0px 0px 3px 0px rgba(0, 0, 0, 0.1),
     0 4px 12px rgb(0 0 0 / 15%);
   --box-shadow-popup-arrow: 1px 1px 8px 0px rgba(0, 0, 0, 0.1);
 }
@@ -374,8 +375,9 @@
   --color-fill-4: rgb(var(--grey-4));
   --color-background-1: #fff;
   --color-background-2: #fff;
-  --color-background-3: rgb(var(--grey-2));
-  --color-background-4: rgb(var(--grey-3));
+  --color-background-3: #fff;
+  --color-background-4: #fff;
+  --color-background-5: #fff;
   --color-background-popup: #fff;
   --color-background-tooltip: #414141;
   --color-border-1: rgba(0, 0, 0, 0.2);
@@ -559,15 +561,16 @@
   --color-foreground-3: #8b8b8b;
   --color-foreground-4: #5d5d5d;
   --color-foreground-tooltip: #fff;
-  --color-fill-1: #2c2c2c;
-  --color-fill-2: #343434;
-  --color-fill-3: #3f3f3f;
-  --color-fill-4: #464646;
+  --color-fill-1: rgba(255, 255, 255, 0.04);
+  --color-fill-2: rgba(255, 255, 255, 0.08);
+  --color-fill-3: rgba(255, 255, 255, 0.12);
+  --color-fill-4: rgba(255, 255, 255, 0.16);
   --color-background-1: #161616;
   --color-background-2: #232323;
   --color-background-3: #2a2a2a;
   --color-background-4: #313131;
-  --color-background-popup: #505050;
+  --color-background-5: #373737;
+  --color-background-popup: #373737;
   --color-background-tooltip: #616161;
   --color-border-1: #4d4d4d;
   --color-border-2: #464646;
@@ -757,8 +760,9 @@
     --color-fill-4: rgb(var(--grey-4));
     --color-background-1: #fff;
     --color-background-2: #fff;
-    --color-background-3: rgb(var(--grey-2));
-    --color-background-4: rgb(var(--grey-3));
+    --color-background-3: #fff;
+    --color-background-4: #fff;
+    --color-background-5: #fff;
     --color-background-popup: #fff;
     --color-background-tooltip: #414141;
     --color-border-1: rgba(0, 0, 0, 0.2);
@@ -944,15 +948,16 @@
     --color-foreground-3: #8b8b8b;
     --color-foreground-4: #5d5d5d;
     --color-foreground-tooltip: #fff;
-    --color-fill-1: #2c2c2c;
-    --color-fill-2: #343434;
-    --color-fill-3: #3f3f3f;
-    --color-fill-4: #464646;
+    --color-fill-1: rgba(255, 255, 255, 0.04);
+    --color-fill-2: rgba(255, 255, 255, 0.08);
+    --color-fill-3: rgba(255, 255, 255, 0.12);
+    --color-fill-4: rgba(255, 255, 255, 0.16);
     --color-background-1: #161616;
     --color-background-2: #232323;
     --color-background-3: #2a2a2a;
     --color-background-4: #313131;
-    --color-background-popup: #505050;
+    --color-background-5: #373737;
+    --color-background-popup: #373737;
     --color-background-tooltip: #616161;
     --color-border-1: #4d4d4d;
     --color-border-2: #464646;
@@ -1104,13 +1109,34 @@ a:active {
   padding: 0;
 }
 .tui-menu .tui-menu-item {
+  line-height: 36px;
+  padding: 0 12px;
   cursor: pointer;
+  position: relative;
+}
+.tui-menu .tui-menu-item svg {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  flex-shrink: 0;
+  user-select: none;
 }
 .tui-menu .tui-menu-item a {
   display: block;
-  padding: 8px 16px;
   color: var(--color-foreground-2);
   transition: all 0.3s cubic-bezier(0.44, 0.9, 0.6, 0.94);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tui-menu .tui-menu-item a::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  content: "";
 }
 .tui-menu .tui-menu-item a:hover {
   color: rgb(var(--primary-6));
@@ -1340,6 +1366,9 @@ a:active {
 }
 .tui-button .tui-button-end-icon {
   margin-left: 4px;
+}
+.tui-button .tui-button-text {
+  line-height: 1;
 }
 .tui-button.tui-button-size-large {
   border-radius: var(--border-radius-large);
@@ -1807,19 +1836,35 @@ a:active {
   background-color: var(--color-warning-2);
 }
 
-.tui-button.btn-colormode {
+.tui-color-menu-btn {
   background: var(--color-background-popup) !important;
   border: solid 1px var(--color-border-2) !important;
   box-shadow: var(--box-shadow-popup) !important;
 }
-.tui-button.btn-colormode svg {
+.tui-color-menu-btn svg {
   fill: currentColor;
   width: 1em;
   height: 1em;
   display: inline-block;
   flex-shrink: 0;
   user-select: none;
-  font-size: 16px;
+  font-size: 16px !important;
+}
+.tui-color-menu {
+  padding: 4px 0;
+  border-radius: var(--border-radius-medium);
+}
+.tui-color-menu li {
+  line-height: 36px;
+}
+.tui-color-menu li:hover {
+  background-color: var(--color-fill-2);
+}
+.tui-color-menu li.tui-menu-item-selected {
+  color: rgb(var(--primary-6));
+}
+.tui-color-menu-trigger.tui-trigger .tui-trigger-inner {
+  padding: 0;
 }
 
 
@@ -2087,15 +2132,5 @@ main .content h2 {
   100% {
     transform: rotate(360deg);
   }
-}
-svg {
-  fill: currentColor;
-  width: 1em;
-  height: 1em;
-  display: inline-block;
-  font-size: 1.5rem;
-  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  flex-shrink: 0;
-  user-select: none;
 }
 

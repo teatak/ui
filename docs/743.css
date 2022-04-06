@@ -204,6 +204,7 @@
   height: 24px;
 }
 .tui-notification-wrapper .tui-notification .tui-notification-icon-wrapper svg {
+  fill: currentColor;
   width: 1em;
   height: 1em;
   font-size: 22px;

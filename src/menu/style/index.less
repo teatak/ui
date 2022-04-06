@@ -4,12 +4,33 @@
   list-style: none;
   padding: 0;
   .@{menu-prefix-class}-item {
+    line-height: 36px;
+    padding: 0 12px;
     cursor: pointer;
-    a {
+    position: relative;
+    & svg {
+      fill: currentColor;
+      width: 1em;
+      height: 1em;
+      display: inline-block;
+      flex-shrink: 0;
+      user-select: none;
+    }
+    & a {
       display: block;
-      padding: 8px 16px;
       color: var(--color-foreground-2);
       transition: all 0.3s cubic-bezier(0.44, 0.9, 0.6, 0.94);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: transparent;
+        content: "";
+      }
       &:hover {
         color: rgb(var(--primary-6));
       }
