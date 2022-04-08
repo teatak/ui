@@ -11,7 +11,7 @@ import {
 
 export default () => {
 
-    return <div className="page">
+    return <div className="">
         <h1>Space</h1>
         <div className="examples">
             <Space>

@@ -18,7 +18,7 @@ import "./index.css"
 
 export default () => {
     const [options, setOptions] = useState(['Beijing', 'Shanghai', 'Guangzhou', 'Disabled', 'Shenzhen', 'Qingdao', 'Jinan', 'Nanjing', 'Xian'])
-    return <div className="page">
+    return <div className="">
         <h1>Select</h1>
         <h2>Basic</h2>
         <div className="examples" >

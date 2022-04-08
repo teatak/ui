@@ -8,7 +8,8 @@ const Trigger = forwardRef((props, ref) => {
 
     const timeout = 225
 
-    const { className, prefixClass, arrow, position, autoFit, onVisibleChange, onClickOutSide, tooltip, action, visible, defaultVisible, content, disabled, transitionClass, ...rest } = props
+    //props fixed 解决fixed定位，滚动条滚动时调用setPotion
+    const { className, prefixClass, fixed, arrow, position, autoFit, onVisibleChange, onClickOutSide, tooltip, action, visible, defaultVisible, content, disabled, transitionClass, ...rest } = props
 
     const children = React.Children.only(props.children)
     const triggerRef = children.ref || useRef()
@@ -27,6 +28,9 @@ const Trigger = forwardRef((props, ref) => {
 
     const setPosition = () => {
         const offset = props.offset || [0, 4]
+        if (!(triggerRef.current && portalRef.current)) {
+            return
+        }
         const t = triggerRef.current.getBoundingClientRect()
         const p = portalRef.current.getBoundingClientRect()
         let top, left, right
@@ -43,7 +47,7 @@ const Trigger = forwardRef((props, ref) => {
                     realPos = "bottom"
                 }
                 left = (document.documentElement.scrollLeft || document.body.scrollLeft) + t.left - (p.width - t.width) / 2 + offset[0]
-                mergeStyle = { top: top, left: left, right: "auto" }
+                mergeStyle = { top: top, left: left }
                 break
             case "bottomLeft":
                 top = (document.documentElement.scrollTop || document.body.scrollTop) + t.top + t.height + offset[1]
@@ -54,7 +58,7 @@ const Trigger = forwardRef((props, ref) => {
                     realPos = "bottomLeft"
                 }
                 left = (document.documentElement.scrollLeft || document.body.scrollLeft) + t.left + offset[0]
-                mergeStyle = { top: top, left: left, right: "auto" }
+                mergeStyle = { top: top, left: left }
                 mergeArrowStyle = { left: t.width / 2 - 10 }
                 break
             case "bottomRight":
@@ -65,8 +69,8 @@ const Trigger = forwardRef((props, ref) => {
                 } else {
                     realPos = "bottomRight"
                 }
-                right = (document.documentElement.clientWidth || document.body.clientWidth) - t.right - offset[0]
-                mergeStyle = { top: top, left: "auto", right: right }
+                left = (document.documentElement.scrollLeft || document.body.scrollLeft) + t.right - p.width - offset[0]
+                mergeStyle = { top: top, left: left }
                 mergeArrowStyle = { right: t.width / 2 - 10 }
                 break
             case "top":
@@ -78,7 +82,7 @@ const Trigger = forwardRef((props, ref) => {
                     realPos = "top"
                 }
                 left = (document.documentElement.scrollLeft || document.body.scrollLeft) + t.left - (p.width - t.width) / 2 + offset[0]
-                mergeStyle = { top: top, left: left, right: "auto" }
+                mergeStyle = { top: top, left: left }
                 break
             case "topLeft":
                 top = (document.documentElement.scrollTop || document.body.scrollTop) + t.top - p.height - offset[1]
@@ -89,7 +93,7 @@ const Trigger = forwardRef((props, ref) => {
                     realPos = "topLeft"
                 }
                 left = (document.documentElement.scrollLeft || document.body.scrollLeft) + t.left + offset[0]
-                mergeStyle = { top: top, left: left, right: "auto" }
+                mergeStyle = { top: top, left: left }
                 mergeArrowStyle = { left: t.width / 2 - 10 }
                 break
             case "topRight":
@@ -100,8 +104,8 @@ const Trigger = forwardRef((props, ref) => {
                 } else {
                     realPos = "topRight"
                 }
-                right = (document.documentElement.clientWidth || document.body.clientWidth) - t.right - offset[0]
-                mergeStyle = { top: top, left: "auto", right: right }
+                left = (document.documentElement.scrollLeft || document.body.scrollLeft) + t.right - p.width - offset[0]
+                mergeStyle = { top: top, left: left }
                 mergeArrowStyle = { right: t.width / 2 - 10 }
                 break
         }
@@ -128,8 +132,10 @@ const Trigger = forwardRef((props, ref) => {
                 toggle(visible)
             }
         } else {
-            if (portalVisible != visible) {
-                toggle(visible)
+            if (visible !== undefined) {
+                if (portalVisible != visible) {
+                    toggle(visible)
+                }
             }
         }
     }, [visible]);
@@ -148,7 +154,7 @@ const Trigger = forwardRef((props, ref) => {
     const toggle = (v) => {
         if (v) {
             setPortalVisible(v);
-            setTimeout(() => { setPosition() }, 0)
+            setTimeout(() => { setPosition() }, 10)
         } else {
             setExiting(true)
             setPortalVisible(v)
@@ -165,9 +171,23 @@ const Trigger = forwardRef((props, ref) => {
                 toggle(!portalVisible)
             }
         }
+        if (triggerRef.current && fixed) {
+            window.onscroll = (e) => {
+                if (portalVisible) {
+                    setPosition()
+                }
+            }
+        }
     }
 
     if (tooltip || action === "hover") {
+        if (triggerRef.current && fixed) {
+            window.onscroll = (e) => {
+                if (portalVisible) {
+                    setPosition()
+                }
+            }
+        }
         newChildProps.onMouseEnter = (e) => {
             delayToDo(0, () => {
                 toggle(true)
@@ -231,27 +251,29 @@ const Trigger = forwardRef((props, ref) => {
     )
 
     const portal = <Portal visible={portalVisible || exiting}>
-        <CSSTransition
-            in={portalVisible}
-            timeout={timeout}
-            classNames={`${prefixClass}-${transitionClass}`}
-            appear
-            mountOnEnter
-            unmountOnExit
-            onExited={(e) => {
-                setExiting(false)
-            }}
-        >
-            <span className={classNames} ref={portalRef} style={popupStyle} {...newPortalProps}>
-                <div trigger-position={realPosition} className={classNamesPos}>
-                    {arrow ? <div className={`${prefixClass}-arrow`} style={arrowStyle}></div>
-                        : null}
-                    <div className={`${prefixClass}-inner`}>
-                        {content}
+        <div style={{ width: "100%", position: "absolute", top: "0px", left: "0px", overflow: "visible" }}>
+            <CSSTransition
+                in={portalVisible}
+                timeout={timeout}
+                classNames={transitionClass}
+                appear
+                mountOnEnter
+                unmountOnExit
+                onExited={(e) => {
+                    setExiting(false)
+                }}
+            >
+                <span className={classNames} ref={portalRef} style={popupStyle} {...newPortalProps}>
+                    <div trigger-position={realPosition} className={classNamesPos}>
+                        {arrow ? <div className={`${prefixClass}-arrow`} style={arrowStyle}></div>
+                            : null}
+                        <div className={`${prefixClass}-inner`}>
+                            {content}
+                        </div>
                     </div>
-                </div>
-            </span>
-        </CSSTransition>
+                </span>
+            </CSSTransition>
+        </div>
     </Portal>
 
     return <>
@@ -272,7 +294,8 @@ Trigger.defaultProps = {
     transitionClass: "fade",
     autoFit: true,
     arrow: true,
-    tooltip: false
+    tooltip: false,
+    fixed: false,
 }
 
 export default Trigger

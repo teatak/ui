@@ -1,16 +1,14 @@
 import React from "react"
+import classnames from "classnames"
 
 const Svg = (props) => {
+    const { className, viewBox, prefixClass, ...rest } = props;
+    const classNames = classnames(
+        prefixClass,
+        className,
+    );
 
-    const {className, viewBox, prefixClass, ...rest} = props;
-
-    let classes = prefixClass 
-
-    if (className) {
-        classes += " " + className;
-    }
-
-    return <svg className={classes} viewBox={viewBox?viewBox:"0 0 24 24"} {...rest}>
+    return <svg className={classNames} viewBox={viewBox ? viewBox : "0 0 24 24"} {...rest}>
         {props.children}
     </svg>
 }

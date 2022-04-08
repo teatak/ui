@@ -26,7 +26,7 @@ const Color = (props) => {
 
 export default () => {
   return (
-    <div className="page color-page">
+    <div className="color-page">
       <h1>Color</h1>
       <h2>Foreground:</h2>
       <div className="examples">

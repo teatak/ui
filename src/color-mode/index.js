@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react'
-import { Menu, Trigger, Button } from ".."
+import classnames from "classnames"
+
+import { Menu, Trigger, Button } from "../"
 import "../menu/style"
 import "../trigger/style"
 import "../button/style"
@@ -41,8 +43,12 @@ const ColorMode = (props) => {
 
 const ColorMenu = (props) => {
 
-    const { prefixClass } = props
+    const { prefixClass, className, fixed } = props
 
+    const classNamesBtn = classnames(
+        `${prefixClass}-btn`,
+        className,
+    )
     const [visible, setVisible] = React.useState(false);
 
     const [value, setValue] = useState(() => {
@@ -139,8 +145,9 @@ const ColorMenu = (props) => {
             className={`${prefixClass}-trigger`}
             position='topRight'
             transitionClass="slide"
+            fixed={fixed}
         >
-            <Button className={`${prefixClass}-btn`} circle size='large'>
+            <Button className={classNamesBtn} circle size='large'>
                 {text(value)}
             </Button>
         </Trigger>

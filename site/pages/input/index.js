@@ -23,7 +23,7 @@ export default () => {
         setShowPassword(!showPassword);
     };
 
-    return <div className="page">
+    return <div className="">
         <h1>Input</h1>
         <h2>size</h2>
         <div className="examples">

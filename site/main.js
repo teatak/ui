@@ -7,9 +7,8 @@ import {
   Routes,
   Route,
   Navigate,
-  useMatch,
 } from 'react-router-dom'
-import { Menu, ColorMode } from '../src'
+import { Menu, ColorMode, Button } from '../src'
 import '../src/menu/style'
 import '../src/color-mode/style'
 
@@ -17,32 +16,36 @@ import { Progress, Loading } from './helper/loading'
 import loadable from '@loadable/component'
 
 import './main.less'
+import Spinner from '../src/svg/icons/Spinner'
 
 const fallback = {
   fallback: <Progress />,
 }
 
-const Demo = loadable(() => import('./pages/demo'), fallback)
-const Color = loadable(() => import('./pages/color'), fallback)
-const Input = loadable(() => import('./pages/input'), fallback)
-const Select = loadable(() => import('./pages/select'), fallback)
-const Button = loadable(() => import('./pages/button'), fallback)
-const Form = loadable(() => import('./pages/form'), fallback)
-const Grid = loadable(() => import('./pages/grid'), fallback)
-const Space = loadable(() => import('./pages/space'), fallback)
-const Modal = loadable(() => import('./pages/modal'), fallback)
-const Trigger = loadable(() => import('./pages/trigger'), fallback)
-const Check = loadable(() => import('./pages/check'), fallback)
-const Radio = loadable(() => import('./pages/radio'), fallback)
-const Alert = loadable(() => import('./pages/alert'), fallback)
-const Notification = loadable(() => import('./pages/notification'), fallback)
+const PageDemo = loadable(() => import('./pages/demo'), fallback)
+const PageColor = loadable(() => import('./pages/color'), fallback)
+const PageInput = loadable(() => import('./pages/input'), fallback)
+const PageSelect = loadable(() => import('./pages/select'), fallback)
+const PageButton = loadable(() => import('./pages/button'), fallback)
+const PageForm = loadable(() => import('./pages/form'), fallback)
+const PageGrid = loadable(() => import('./pages/grid'), fallback)
+const PageSpace = loadable(() => import('./pages/space'), fallback)
+const PageModal = loadable(() => import('./pages/modal'), fallback)
+const PageTrigger = loadable(() => import('./pages/trigger'), fallback)
+const PageCheck = loadable(() => import('./pages/check'), fallback)
+const PageRadio = loadable(() => import('./pages/radio'), fallback)
+const PageAlert = loadable(() => import('./pages/alert'), fallback)
+const PageNotification = loadable(() => import('./pages/notification'), fallback)
 
 const Root = () => {
-  let match = useMatch({ path: "/button", end: true });
-  console.log(match)
   return (
-    <main>
-      <div className="menu">
+    <div className="page">
+      <header className="header">
+        <div>
+          {/* <Button type="outlined" color="error"><Spinner /></Button> */}
+        </div>
+      </header>
+      <nav className="menu">
         <Menu type="vertical">
           <Menu.Item>
             <NavLink to="/color">Color</NavLink>
@@ -84,74 +87,74 @@ const Root = () => {
             <NavLink to="/notification">Notification</NavLink>
           </Menu.Item>
         </Menu>
-      </div>
-      <div className="content">
+      </nav>
+      <main className="content">
         <div className='content-page'>
           <Routes>
             <Route path="/" element={<Navigate to="/button" replace />} />
             <Route path="/demo" element={<>
               <Helmet title="Demo - TeaTak" />
-              <Demo />
+              <PageDemo />
             </>} />
             <Route strict path="/color" element={<>
               <Helmet title="Color - TeaTak" />
-              <Color />
+              <PageColor />
             </>} />
             <Route strict path="/button" element={<>
               <Helmet title="Button - TeaTak" />
-              <Button />
+              <PageButton />
             </>} />
             <Route strict path="/input" element={<>
               <Helmet title="Input - TeaTak" />
-              <Input />
+              <PageInput />
             </>} />
             <Route strict path="/select" element={<>
               <Helmet title="Select - TeaTak" />
-              <Select />
+              <PageSelect />
             </>} />
             <Route strict path="/check" element={<>
               <Helmet title="Check - TeaTak" />
-              <Check />
+              <PageCheck />
             </>} />
             <Route strict path="/radio" element={<>
               <Helmet title="Radio - TeaTak" />
-              <Radio />
+              <PageRadio />
             </>} />
             <Route strict path="/form" element={<>
               <Helmet title="Form - TeaTak" />
-              <Form />
+              <PageForm />
             </>} />
             <Route strict path="/grid" element={<>
               <Helmet title="Grid - TeaTak" />
-              <Grid />
+              <PageGrid />
             </>} />
             <Route strict path="/space" element={<>
               <Helmet title="Space - TeaTak" />
-              <Space />
+              <PageSpace />
             </>} />
             <Route strict path="/modal" element={<>
               <Helmet title="Modal - TeaTak" />
-              <Modal />
+              <PageModal />
             </>} />
             <Route strict path="/trigger" element={<>
               <Helmet title="Trigger - TeaTak" />
-              <Trigger />
+              <PageTrigger />
             </>} />
             <Route strict path="/alert" element={<>
               <Helmet title="Alert - TeaTak" />
-              <Alert />
+              <PageAlert />
             </>} />
             <Route strict path="/notification" element={<>
               <Helmet title="Notification - TeaTak" />
-              <Notification />
+              <PageNotification />
             </>} />
           </Routes>
         </div>
-        <div className='content-fixed'>
-          <ColorMode.Menu />
+        <div>
+          <ColorMode.Menu fixed={true} className="content-fixed" />
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   )
 }
 

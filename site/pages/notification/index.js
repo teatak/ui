@@ -9,7 +9,7 @@ import '../../../src/notification/style'
 export default () => {
     const [notification, setConfig] = useNotification()
     setConfig({ maxCount: 20 })
-    return <div className="page">
+    return <div className="">
         <h1>Notification</h1>
         <div className="examples">
             <Space>

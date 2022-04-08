@@ -29,7 +29,7 @@ export default () => {
             value: '4',
         },
     ];
-    return <div className="page">
+    return <div className="">
         <h1>Check</h1>
         <h2>自定义</h2>
         <div className="examples">

@@ -14,7 +14,7 @@ import './index.css'
 
 export default () => {
   return (
-    <div className="page">
+    <div className="">
       <h1>Button</h1>
       <Markdown children={`
 ## color:

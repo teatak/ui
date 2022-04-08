@@ -4,6 +4,7 @@ import classnames from "classnames"
 import Item from './menu-item'
 import MenuContext from './menu-context'
 import { useMergeState } from "../util"
+import KeyboardArrowRight from '../svg/icons/KeyboardArrowRight'
 
 const Menu = (props) => {
     const { style, direction, className, prefixClass, ...rest } = props;
@@ -27,6 +28,10 @@ const Menu = (props) => {
         className,
     )
 
+    const classInnerNames = classnames(
+        `${prefixClass}-inner`
+    )
+
     const renderChildren = (children, props) => {
         return React.Children.map(children, (item, index) => {
             if (!item || !item.props) {
@@ -45,7 +50,11 @@ const Menu = (props) => {
     }
 
     return <MenuContext.Provider value={menu} >
-        <ul className={classNames} style={style}>{renderChildren(props.children)}</ul>
+        <KeyboardArrowRight />
+        <nav className={classNames} style={style} >
+            <ul className={classInnerNames} >{renderChildren(props.children)}</ul>
+        </nav>
+
     </MenuContext.Provider>
 }
 

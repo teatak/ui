@@ -22,7 +22,7 @@ export default () => {
     setIsModalVisible(false);
   };
 
-  return <div className="page">
+  return <div className="">
     <h1>Modal</h1>
     <div className="examples">
       <Button type="outlined" onClick={showModal}>Open Modal</Button>

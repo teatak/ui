@@ -8,7 +8,7 @@ import '../../../src/row/style'
 import '../../../src/col/style'
 
 export default () => {
-    return <div className="page">
+    return <div className="">
         <h1>Alert</h1>
         <h2>Standard</h2>
         <div className="examples" >

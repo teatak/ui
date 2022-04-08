@@ -3,40 +3,49 @@
 .@{menu-prefix-class} {
   list-style: none;
   padding: 0;
-  .@{menu-prefix-class}-item {
-    line-height: 36px;
-    padding: 0 12px;
-    cursor: pointer;
-    position: relative;
-    & svg {
-      fill: currentColor;
-      width: 1em;
-      height: 1em;
-      display: inline-block;
-      flex-shrink: 0;
-      user-select: none;
-    }
-    & a {
-      display: block;
-      color: var(--color-foreground-2);
-      transition: all 0.3s cubic-bezier(0.44, 0.9, 0.6, 0.94);
+  & .@{menu-prefix-class}-inner {
+    padding: 4px 8px;
+    & .@{menu-prefix-class}-item {
+      line-height: 36px;
+      cursor: pointer;
+      position: relative;
       overflow: hidden;
+      white-space: nowrap;
       text-overflow: ellipsis;
-      &::before {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: transparent;
-        content: "";
+      &:not(:last-child) {
+        margin-bottom: 4px;
       }
-      &:hover {
-        color: rgb(var(--primary-6));
+      & svg {
+        fill: currentColor;
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        flex-shrink: 0;
+        user-select: none;
       }
-      &.active {
-        background: var(--color-primary-2);
-        color: rgb(var(--primary-6));
+      & a {
+        padding: 0 12px;
+        display: block;
+        color: var(--color-foreground-2);
+        transition: all 0.3s cubic-bezier(0.44, 0.9, 0.6, 0.94);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &::before {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: transparent;
+          content: "";
+        }
+        &:hover {
+          background: var(--color-fill-1);
+        }
+        &.active {
+          background: var(--color-fill-2);
+          color: rgb(var(--primary-6));
+        }
       }
     }
   }

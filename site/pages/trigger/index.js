@@ -13,7 +13,7 @@ import {
 
 export default () => {
     const [visible, setVisible] = useState(false)
-    return <div className="page">
+    return <div className="">
         <h1>Trigger</h1>
         <h2>position</h2>
         <div className="examples">

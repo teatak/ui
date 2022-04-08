@@ -33,7 +33,7 @@ export default () => {
         },
     ];
 
-    return <div className="page">
+    return <div className="">
         <h1>Demo</h1>
         <div className="examples">
             <Row gap={[8, 16]}>
