@@ -1893,16 +1893,16 @@ a:active {
   padding: 4px 0;
   border-radius: var(--border-radius-medium);
 }
-.tui-color-menu .tui-menu-inner {
+.tui-color-menu.tui-menu .tui-menu-inner {
   padding: 0;
 }
-.tui-color-menu .tui-menu-inner li {
+.tui-color-menu.tui-menu .tui-menu-inner li {
   padding: 0 8px;
 }
-.tui-color-menu .tui-menu-inner li:hover {
+.tui-color-menu.tui-menu .tui-menu-inner li:hover {
   background-color: var(--color-fill-2);
 }
-.tui-color-menu .tui-menu-inner li.tui-menu-item-selected {
+.tui-color-menu.tui-menu .tui-menu-inner li.tui-menu-item-selected {
   color: rgb(var(--primary-6));
 }
 .tui-color-menu-trigger.tui-trigger .tui-trigger-inner {

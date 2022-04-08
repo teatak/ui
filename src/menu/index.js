@@ -50,11 +50,9 @@ const Menu = (props) => {
     }
 
     return <MenuContext.Provider value={menu} >
-        <KeyboardArrowRight />
         <nav className={classNames} style={style} >
             <ul className={classInnerNames} >{renderChildren(props.children)}</ul>
         </nav>
-
     </MenuContext.Provider>
 }
 

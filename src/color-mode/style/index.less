@@ -18,15 +18,17 @@
 .@{color-menu-prefix-class} {
   padding: 4px 0;
   border-radius: var(--border-radius-medium);
-  & .tui-menu-inner {
-    padding: 0;
-    & li {
-      padding: 0 8px;
-      &:hover {
-        background-color: var(--color-fill-2);
-      }
-      &.tui-menu-item-selected {
-        color: rgb(var(--primary-6));
+  &.tui-menu {
+    & .tui-menu-inner {
+      padding: 0;
+      & li {
+        padding: 0 8px;
+        &:hover {
+          background-color: var(--color-fill-2);
+        }
+        &.tui-menu-item-selected {
+          color: rgb(var(--primary-6));
+        }
       }
     }
   }
