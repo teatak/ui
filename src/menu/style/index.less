@@ -1,10 +1,12 @@
 @menu-prefix-class: tui-menu;
 
 .@{menu-prefix-class} {
+  font-size: 14px;
   list-style: none;
   padding: 0;
   & .@{menu-prefix-class}-inner {
-    padding: 4px 8px;
+    padding: 4px;
+    list-style: none;
     & .@{menu-prefix-class}-item {
       line-height: 36px;
       cursor: pointer;
@@ -12,8 +14,16 @@
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+      transition: all 0.3s cubic-bezier(0.44, 0.9, 0.6, 0.94);
       &:not(:last-child) {
         margin-bottom: 4px;
+      }
+      &:hover {
+        //background: var(--color-fill-1);
+      }
+      &.@{menu-prefix-class}-item-selected {
+        // background: var(--color-fill-2);
+        // color: rgb(var(--primary-6));
       }
       & svg {
         fill: currentColor;
@@ -45,6 +55,58 @@
         &.active {
           background: var(--color-fill-2);
           color: rgb(var(--primary-6));
+        }
+      }
+    }
+    & .@{menu-prefix-class}-submenu {
+      &.@{menu-prefix-class}-submenu-opened {
+        & .@{menu-prefix-class}-submenu-title-suffix {
+          transform: rotate(90deg);
+        }
+      }
+      &:not(:last-child) {
+        margin-bottom: 4px;
+      }
+      & .@{menu-prefix-class}-submenu-title {
+        line-height: 36px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+        margin-bottom: 4px;
+        &:hover {
+          background: var(--color-fill-1);
+        }
+        & svg {
+          margin-right: 12px;
+          fill: currentColor;
+          width: 1em;
+          height: 1em;
+          display: inline-block;
+          flex-shrink: 0;
+          user-select: none;
+          font-size: 16px;
+        }
+        & .@{menu-prefix-class}-submenu-title-suffix {
+          margin-left: auto;
+          margin-right: 0px;
+          font-size: 16px;
+          transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        }
+      }
+      & .@{menu-prefix-class}-submenu-inner {
+        list-style: none;
+        overflow: hidden;
+        transition: height 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+        & .@{menu-prefix-class}-item {
+          & a {
+            padding-left: 40px;
+          }
         }
       }
     }

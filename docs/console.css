@@ -1025,7 +1025,6 @@ a:active {
   width: 1em;
   height: 1em;
   display: inline-block;
-  font-size: 1.5rem;
   transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   flex-shrink: 0;
   user-select: none;
@@ -1195,11 +1194,13 @@ a:active {
 }
 
 .tui-menu {
+  font-size: 14px;
   list-style: none;
   padding: 0;
 }
 .tui-menu .tui-menu-inner {
-  padding: 4px 8px;
+  padding: 4px;
+  list-style: none;
 }
 .tui-menu .tui-menu-inner .tui-menu-item {
   line-height: 36px;
@@ -1208,6 +1209,7 @@ a:active {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  transition: all 0.3s cubic-bezier(0.44, 0.9, 0.6, 0.94);
 }
 .tui-menu .tui-menu-inner .tui-menu-item:not(:last-child) {
   margin-bottom: 4px;
@@ -1243,6 +1245,52 @@ a:active {
 .tui-menu .tui-menu-inner .tui-menu-item a.active {
   background: var(--color-fill-2);
   color: rgb(var(--primary-6));
+}
+.tui-menu .tui-menu-inner .tui-menu-submenu.tui-menu-submenu-opened .tui-menu-submenu-title-suffix {
+  transform: rotate(90deg);
+}
+.tui-menu .tui-menu-inner .tui-menu-submenu:not(:last-child) {
+  margin-bottom: 4px;
+}
+.tui-menu .tui-menu-inner .tui-menu-submenu .tui-menu-submenu-title {
+  line-height: 36px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  margin-bottom: 4px;
+}
+.tui-menu .tui-menu-inner .tui-menu-submenu .tui-menu-submenu-title:hover {
+  background: var(--color-fill-1);
+}
+.tui-menu .tui-menu-inner .tui-menu-submenu .tui-menu-submenu-title svg {
+  margin-right: 12px;
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  flex-shrink: 0;
+  user-select: none;
+  font-size: 16px;
+}
+.tui-menu .tui-menu-inner .tui-menu-submenu .tui-menu-submenu-title .tui-menu-submenu-title-suffix {
+  margin-left: auto;
+  margin-right: 0px;
+  font-size: 16px;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.tui-menu .tui-menu-inner .tui-menu-submenu .tui-menu-submenu-inner {
+  list-style: none;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+}
+.tui-menu .tui-menu-inner .tui-menu-submenu .tui-menu-submenu-inner .tui-menu-item a {
+  padding-left: 40px;
 }
 
 .tui-trigger {
@@ -1889,7 +1937,7 @@ a:active {
   user-select: none;
   font-size: 16px !important;
 }
-.tui-color-menu {
+.tui-color-menu.tui-menu {
   padding: 4px 0;
   border-radius: var(--border-radius-medium);
 }
@@ -1910,101 +1958,37 @@ a:active {
 }
 
 
-
-.ui-spinner {
-  width: 32px;
-  height: 32px;
-  color: var(--blue);
-  stroke: currentColor;
-  animation: spinner 2s infinite linear;
-}
-
-@-webkit-keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-    stroke-dasharray: 1px, 200px;
-    stroke-dashoffset: 0;
-  }
-
-  50% {
-    stroke-dasharray: 100px, 200px;
-    stroke-dashoffset: -15px;
-  }
-
-  100% {
-    transform: rotate(360deg);
-    stroke-dasharray: 100px, 200px;
-    stroke-dashoffset: -125px;
-  }
-}
-
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-    stroke-dasharray: 1px, 200px;
-    stroke-dashoffset: 0;
-  }
-
-  50% {
-    stroke-dasharray: 100px, 200px;
-    stroke-dashoffset: -15px;
-  }
-
-  100% {
-    transform: rotate(360deg);
-    stroke-dasharray: 100px, 200px;
-    stroke-dashoffset: -125px;
-  }
-}
-
-@-webkit-keyframes loadingCircle {
-  0% {
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes loadingCircle {
-  0% {
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
 .page {
   display: flex;
   width: 100%;
 }
 .page .header {
   width: calc(100% - 200px);
+  height: 60px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   position: fixed;
-  box-sizing: border-box;
-  z-index: 1100;
+  z-index: 99;
   top: 0;
   right: 0;
+  padding: 0 16px;
   transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   box-shadow: none;
   backdrop-filter: blur(20px);
+  border-bottom: solid 1px var(--color-border-2);
+  background: var(--color-background-2);
+}
+.page .header img {
+  height: 40px;
+  vertical-align: middle;
+}
+.page .header .header-menu {
+  flex: auto;
+  display: flex;
+  justify-content: flex-end;
 }
 .page .menu {
+  overflow-y: auto;
   position: sticky;
   top: 0;
   height: 100vh;
@@ -2015,10 +1999,8 @@ a:active {
   background: var(--color-background-2);
   border-right: solid 1px var(--color-border-2);
 }
-.page .menu .tui-menu {
-  padding-top: 16px;
-}
 .page .content {
+  margin-top: 60px;
   overflow: hidden;
   position: relative;
   flex: 1;
@@ -2039,11 +2021,11 @@ a:active {
   margin: 24px 0;
   padding: 0;
   font-size: 36px;
-  font-weight: 800;
+  font-weight: 600;
 }
 .page .content h2 {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
   margin: 24px 0;
 }
 .examples {

@@ -1,4 +1,10 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
+
+const useComponentWillMount = (func) => {
+    const willMount = useRef(true)
+    if (willMount.current) func()
+    willMount.current = false
+}
 
 const usePrevious = (value) => {
     const ref = useRef();
@@ -32,4 +38,4 @@ const useMergeState = (defaultStateValue, props) => {
     return [mergedValue, setStateValue, stateValue];
 }
 
-export { usePrevious, useMergeState } 
+export { usePrevious, useMergeState, useComponentWillMount } 

@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import Helmet from 'react-helmet'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 import {
-  NavLink,
+  useMatch,
+  useResolvedPath,
+  NavLink as BaseNavLink,
   HashRouter as Router,
   Routes,
   Route,
@@ -16,7 +18,10 @@ import { Progress, Loading } from './helper/loading'
 import loadable from '@loadable/component'
 
 import './main.less'
-import Spinner from '../src/svg/icons/Spinner'
+import Github from './components/icons/github'
+import { ArticleRounded, ToggleOffRounded } from '@mui/icons-material'
+import MenuContext from '../src/menu/menu-context'
+
 
 const fallback = {
   fallback: <Progress />,
@@ -37,55 +42,123 @@ const PageRadio = loadable(() => import('./pages/radio'), fallback)
 const PageAlert = loadable(() => import('./pages/alert'), fallback)
 const PageNotification = loadable(() => import('./pages/notification'), fallback)
 
-const Root = () => {
+const NavLink = React.forwardRef((props, ref) => {
+  const { ...rest } = props
+  let resolved = useResolvedPath(props.to);
+
+  let match = useMatch({ path: resolved.pathname, end: true });
+
+  const menuContext = useContext(MenuContext)
+
+  if (match) {
+    // setTimeout(() => {
+    //   menuContext.setSelectedKeys([props.to])
+    // }, 0)
+  }
+
+  useEffect(() => {
+    // if (match) {
+    //   menuContext.setSelectedKeys([props.to])
+    // }
+  }, [])
+  return (
+    <BaseNavLink
+      ref={ref}
+      {...rest}
+      className={({ isActive }) => {
+        if (isActive) {
+          // setTimeout(() => {
+          //   menuContext.setSelectedKeys([props.to])
+          // }, 0)
+        }
+        const classNames = [
+          props.className,
+          isActive ? "active" : null,
+        ]
+          .filter(Boolean)
+          .join(" ")
+
+        return classNames
+      }}
+    />
+  );
+});
+
+const App = () => {
+  // let resolved = useResolvedPath("/select");
+  // let match = useMatch({ path: resolved.pathname, end: true });
+  // console.log(match)
   return (
     <div className="page">
       <header className="header">
-        <div>
+        <div className="logo">
+          <img src="images/logo.png" />
           {/* <Button type="outlined" color="error"><Spinner /></Button> */}
+        </div>
+        <div className="header-menu">
+          <a href="https://github.com/teatak/ui">
+            <Button type="outlined" circle><Github /></Button>
+          </a>
         </div>
       </header>
       <nav className="menu">
-        <Menu type="vertical">
-          <Menu.Item>
-            <NavLink to="/color">Color</NavLink>
-          </Menu.Item>
-          <Menu.Item>
-            <NavLink to="/button">Button</NavLink>
-          </Menu.Item>
-          <Menu.Item>
-            <NavLink to="/input">Input</NavLink>
-          </Menu.Item>
-          <Menu.Item>
-            <NavLink to="/select">Select</NavLink>
-          </Menu.Item>
-          <Menu.Item>
-            <NavLink to="/check">Check</NavLink>
-          </Menu.Item>
-          <Menu.Item>
-            <NavLink to="/radio">Radio</NavLink>
-          </Menu.Item>
-          <Menu.Item>
-            <NavLink to="/form">Form</NavLink>
-          </Menu.Item>
-          <Menu.Item>
-            <NavLink to="/grid">Grid</NavLink>
-          </Menu.Item>
-          <Menu.Item>
-            <NavLink to="/space">Space</NavLink>
-          </Menu.Item>
-          <Menu.Item>
-            <NavLink to="/modal">Modal</NavLink>
-          </Menu.Item>
-          <Menu.Item>
-            <NavLink to="/trigger">Trigger</NavLink>
-          </Menu.Item>
-          <Menu.Item>
-            <NavLink to="/alert">Alert</NavLink>
-          </Menu.Item>
-          <Menu.Item>
-            <NavLink to="/notification">Notification</NavLink>
-          </Menu.Item>
+        <Menu
+          defaultSelectedKeys={["/button"]}
+          type="vertical">
+          <Menu.SubMenu
+            key="1"
+            title={<>
+              <ArticleRounded /> Getting Started
+            </>}
+          >
+            <Menu.Item key="/color">
+              <NavLink to="/color">Color</NavLink>
+            </Menu.Item>
+            <Menu.Item key="/button">
+              <NavLink to="/button">Button</NavLink>
+            </Menu.Item>
+            <Menu.Item key="/input">
+              <NavLink to="/input">Input</NavLink>
+            </Menu.Item>
+          </Menu.SubMenu>
+          <Menu.SubMenu
+            key="2"
+            title={<>
+              <ToggleOffRounded /> Components
+            </>}
+          >
+            <Menu.Item key="/select">
+              <NavLink to="/select">Select</NavLink>
+            </Menu.Item>
+            <Menu.Item key="/check">
+              <NavLink to="/check">Check</NavLink>
+            </Menu.Item>
+            <Menu.Item key="/radio">
+              <NavLink to="/radio">Radio</NavLink>
+            </Menu.Item>
+            <Menu.Item key="/form">
+              <NavLink to="/form">Form</NavLink>
+            </Menu.Item>
+            <Menu.Item key="/grid">
+              <NavLink to="/grid">Grid</NavLink>
+            </Menu.Item>
+            <Menu.Item key="/space">
+              <NavLink to="/space">Space</NavLink>
+            </Menu.Item>
+            <Menu.Item key="/modal">
+              <NavLink to="/modal">Modal</NavLink>
+            </Menu.Item>
+            <Menu.Item key="/trigger">
+              <NavLink to="/trigger">Trigger</NavLink>
+            </Menu.Item>
+            <Menu.Item key="/alert">
+              <NavLink to="/alert">Alert</NavLink>
+            </Menu.Item>
+            <Menu.Item key="/notification">
+              <NavLink to="/notification">Notification</NavLink>
+            </Menu.Item>
+          </Menu.SubMenu>
+
         </Menu>
       </nav>
       <main className="content">
@@ -161,9 +234,10 @@ const Root = () => {
 const Main = () => {
   return <ColorMode>
     <Router>
-      <Root />
+      <App />
     </Router>
   </ColorMode>
 }
 
-ReactDOM.render(<Main />, document.getElementById('root'))
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container).render(<Main />)

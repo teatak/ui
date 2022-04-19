@@ -1,5 +1,5 @@
 import React, { forwardRef, useRef, useImperativeHandle, useState } from "react"
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import classnames from "classnames"
 import Notice from "./notice";
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -29,7 +29,7 @@ const addNotification = (props) => {
         const div = document.createElement('div');
         (container || document.body).appendChild(div);
 
-        ReactDOM.render(
+        ReactDOM.createRoot(div).render(
             <Notification position={position} ref={(ref) => {
                 if (ref) {
                     if (instance[position]) {
@@ -39,8 +39,7 @@ const addNotification = (props) => {
                         instance[position].add(_props)
                     }
                 }
-            }}></Notification>,
-            div
+            }}></Notification>
         )
     }
 

@@ -1,5 +1,6 @@
 @color-menu-prefix-class: tui-color-menu;
 @trigger-prefix-class: tui-trigger;
+@menu-prefix-class: tui-menu;
 
 .@{color-menu-prefix-class}-btn {
   background: var(--color-background-popup) !important;
@@ -16,17 +17,17 @@
   }
 }
 .@{color-menu-prefix-class} {
-  padding: 4px 0;
-  border-radius: var(--border-radius-medium);
-  &.tui-menu {
-    & .tui-menu-inner {
+  &.@{menu-prefix-class} {
+    padding: 4px 0;
+    border-radius: var(--border-radius-medium);
+    & .@{menu-prefix-class}-inner {
       padding: 0;
       & li {
         padding: 0 8px;
         &:hover {
           background-color: var(--color-fill-2);
         }
-        &.tui-menu-item-selected {
+        &.@{menu-prefix-class}-item-selected {
           color: rgb(var(--primary-6));
         }
       }

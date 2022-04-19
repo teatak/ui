@@ -1,6 +1,6 @@
 {
     "name": "@teatak/ui",
-    "version": "1.2.65",
+    "version": "1.2.67",
     "description": "teatak ui",
     "license": "MPL-2.0",
     "main": "lib/index.js",
@@ -46,10 +46,10 @@
         "postcss-import": "^14.0.1",
         "postcss-loader": "^5.2.0",
         "postcss-nested": "^5.0.6",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
         "react-helmet": "^6.1.0",
-        "react-is": "^17.0.2",
+        "react-is": "^18.0.0",
         "react-markdown": "^6.0.2",
         "react-redux": "^7.2.3",
         "react-router-dom": "^6.3.0",
@@ -62,8 +62,8 @@
         "webpack-cli": "^4.6.0"
     },
     "peerDependencies": {
-        "react": ">=16.9.0",
-        "react-dom": ">=16.9.0"
+        "react": ">=18.0.0",
+        "react-dom": ">=18.0.0"
     },
     "dependencies": {
         "@mui/icons-material": "^5.3.1",

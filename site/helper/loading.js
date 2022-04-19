@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import NProgress from "nprogress"
-import Spinner from "../components/spinner";
+import Spinner from "../../src/svg/icons/Spinner";
 
 const useComponentWillMount = (func) => {
     const willMount = useRef(true)
