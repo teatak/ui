@@ -22,9 +22,9 @@ const ColorMode = (props) => {
                 colorMode = storage.COLOR_MODE
             }
         }
-        document.body.setAttribute("data-color-mode", colorMode)
-        document.body.setAttribute("data-light-theme", lightMode)
-        document.body.setAttribute("data-dark-theme", darkMode)
+        document.documentElement.setAttribute("data-color-mode", colorMode)
+        document.documentElement.setAttribute("data-light-theme", lightMode)
+        document.documentElement.setAttribute("data-dark-theme", darkMode)
         const el = document.querySelector("meta[name='color-scheme']");
         if (el) {
             // <meta name="color-scheme" content="dark light">
@@ -67,7 +67,7 @@ const ColorMenu = (props) => {
             let storage = window.localStorage;
             storage.COLOR_MODE = value
         }
-        document.body.setAttribute("data-color-mode", value)
+        document.documentElement.setAttribute("data-color-mode", value)
         const el = document.querySelector("meta[name='color-scheme']");
         if (el) {
             if (value == "auto") {
