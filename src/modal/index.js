@@ -13,9 +13,21 @@ const modal = (props) => {
     const [animatedVisible, setAnimatedVisible] = useState(visible);
     const [portalVisible, setPortalVisible] = useState(visible);
 
+    const getScrollBarWidth = (element) => {
+        return element.tagName === 'BODY'
+            ? window.innerWidth - (document.body.clientWidth || document.documentElement.clientWidth)
+            : element.offsetWidth - element.clientWidth;
+    };
+
     useEffect(() => {
         if (visible) {
-            document.body.style.overflow = "hidden";
+            let container = document.body
+            const containerScrollBarWidth = getScrollBarWidth(container);
+            if (containerScrollBarWidth) {
+                container.style.width = `calc(${container.style.width || '100%'
+                    } - ${containerScrollBarWidth}px)`;
+            }
+            container.style.overflow = "hidden";
             setPortalVisible(true)
             setTimeout(() => { setAnimatedVisible(true) }, 0);
         } else {
@@ -25,7 +37,9 @@ const modal = (props) => {
 
     const onExited = (e) => {
         setPortalVisible(false)
-        document.body.style.overflow = null;
+        let container = document.body
+        container.style.width = null
+        container.style.overflow = null;
     }
 
     const wrapperRef = useRef();

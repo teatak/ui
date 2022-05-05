@@ -1229,6 +1229,8 @@ a:active {
   transition: all 0.3s cubic-bezier(0.44, 0.9, 0.6, 0.94);
   overflow: hidden;
   text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
 }
 .tui-menu .tui-menu-inner .tui-menu-item a::before {
   position: absolute;
@@ -1245,6 +1247,10 @@ a:active {
 .tui-menu .tui-menu-inner .tui-menu-item a.active {
   background: var(--color-fill-2);
   color: rgb(var(--primary-6));
+}
+.tui-menu .tui-menu-inner .tui-menu-item a svg {
+  font-size: 16px;
+  margin-right: 12px;
 }
 .tui-menu .tui-menu-inner .tui-menu-submenu.tui-menu-submenu-opened .tui-menu-submenu-title-suffix {
   transform: rotate(90deg);
@@ -2127,46 +2133,4 @@ a:active {
   transform: rotate(3deg) translate(0px, -4px);
 }
 /* Remove these to get rid of the spinner */
-#nprogress .spinner {
-  display: block;
-  position: fixed;
-  z-index: 1031;
-  top: 15px;
-  right: 15px;
-}
-#nprogress .spinner-icon {
-  width: 18px;
-  height: 18px;
-  box-sizing: border-box;
-  border: solid 2px transparent;
-  border-top-color: rgb(var(--primary-6));
-  border-left-color: rgb(var(--primary-6));
-  border-radius: 50%;
-  -webkit-animation: nprogress-spinner 400ms linear infinite;
-  animation: nprogress-spinner 400ms linear infinite;
-}
-.nprogress-custom-parent {
-  overflow: hidden;
-  position: relative;
-}
-.nprogress-custom-parent #nprogress .spinner,
-.nprogress-custom-parent #nprogress .bar {
-  position: absolute;
-}
-@-webkit-keyframes nprogress-spinner {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@keyframes nprogress-spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 

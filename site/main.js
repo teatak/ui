@@ -22,7 +22,7 @@ import './main.less'
 import Github from './components/icons/github'
 import { ArticleRounded, ToggleOffRounded } from '@mui/icons-material'
 import MenuContext from '../src/menu/menu-context'
-
+import MenuData from './menu'
 
 const fallback = {
   fallback: <Progress />,
@@ -94,9 +94,108 @@ const NavLink = React.forwardRef((props, ref) => {
 });
 
 const App = () => {
-  // let resolved = useResolvedPath("/select");
-  // let match = useMatch({ path: resolved.pathname, end: true });
-  // console.log(match)
+
+  const renderMenu = () => {
+    let defaultOpenedKeys = []
+    let defaultSelectedKeys = []
+    const loop = (parent, items) => {
+      return items.map((item) => {
+        if (item.subMenu) {
+          return <Menu.SubMenu
+            key={item.name}
+            title={<>
+              {item.icon ? item.icon : null}{item.name}
+            </>}
+          >
+            {loop(item, item.children)}
+          </Menu.SubMenu>
+        } else {
+          let match = useMatch({ path: item.path, end: item.end });
+          if (match) {
+            defaultSelectedKeys.push(item.name)
+            if (parent) {
+              defaultOpenedKeys.push(parent.name)
+            }
+          }
+          return <Menu.Item key={item.name}>
+            <NavLink to={item.path}>{item.icon ? item.icon : null}{item.name}</NavLink>
+          </Menu.Item>
+        }
+      })
+    }
+
+    return <Menu
+      defaultOpenedKeys={defaultOpenedKeys}
+      defaultSelectedKeys={defaultSelectedKeys}
+    >
+      {loop(null, MenuData)}
+    </Menu>
+  }
+
+  const renderRouters = () => {
+    return <Wrapper>
+      <Routes>
+        <Route path="/" element={<Navigate to="/button" replace />} />
+        <Route path="/demo" element={<>
+          <Helmet title="Demo - TeaTak" />
+          <PageDemo />
+        </>} />
+        <Route strict path="/color" element={<>
+          <Helmet title="Color - TeaTak" />
+          <PageColor />
+        </>} />
+        <Route strict path="/button" element={<>
+          <Helmet title="Button - TeaTak" />
+          <PageButton />
+        </>} />
+        <Route strict path="/input" element={<>
+          <Helmet title="Input - TeaTak" />
+          <PageInput />
+        </>} />
+        <Route strict path="/select" element={<>
+          <Helmet title="Select - TeaTak" />
+          <PageSelect />
+        </>} />
+        <Route strict path="/check" element={<>
+          <Helmet title="Check - TeaTak" />
+          <PageCheck />
+        </>} />
+        <Route strict path="/radio" element={<>
+          <Helmet title="Radio - TeaTak" />
+          <PageRadio />
+        </>} />
+        <Route strict path="/form" element={<>
+          <Helmet title="Form - TeaTak" />
+          <PageForm />
+        </>} />
+        <Route strict path="/grid" element={<>
+          <Helmet title="Grid - TeaTak" />
+          <PageGrid />
+        </>} />
+        <Route strict path="/space" element={<>
+          <Helmet title="Space - TeaTak" />
+          <PageSpace />
+        </>} />
+        <Route strict path="/modal" element={<>
+          <Helmet title="Modal - TeaTak" />
+          <PageModal />
+        </>} />
+        <Route strict path="/trigger" element={<>
+          <Helmet title="Trigger - TeaTak" />
+          <PageTrigger />
+        </>} />
+        <Route strict path="/alert" element={<>
+          <Helmet title="Alert - TeaTak" />
+          <PageAlert />
+        </>} />
+        <Route strict path="/notification" element={<>
+          <Helmet title="Notification - TeaTak" />
+          <PageNotification />
+        </>} />
+      </Routes>
+    </Wrapper>
+  }
+
   return (
     <div className="page">
       <header className="header">
@@ -111,129 +210,11 @@ const App = () => {
         </div>
       </header>
       <nav className="menu">
-        <Menu
-          defaultSelectedKeys={["/button"]}
-          type="vertical">
-          <Menu.SubMenu
-            key="1"
-            title={<>
-              <ArticleRounded /> Getting Started
-            </>}
-          >
-            <Menu.Item key="/color">
-              <NavLink to="/color">Color</NavLink>
-            </Menu.Item>
-            <Menu.Item key="/button">
-              <NavLink to="/button">Button</NavLink>
-            </Menu.Item>
-            <Menu.Item key="/input">
-              <NavLink to="/input">Input</NavLink>
-            </Menu.Item>
-          </Menu.SubMenu>
-          <Menu.SubMenu
-            key="2"
-            title={<>
-              <ToggleOffRounded /> Components
-            </>}
-          >
-            <Menu.Item key="/select">
-              <NavLink to="/select">Select</NavLink>
-            </Menu.Item>
-            <Menu.Item key="/check">
-              <NavLink to="/check">Check</NavLink>
-            </Menu.Item>
-            <Menu.Item key="/radio">
-              <NavLink to="/radio">Radio</NavLink>
-            </Menu.Item>
-            <Menu.Item key="/form">
-              <NavLink to="/form">Form</NavLink>
-            </Menu.Item>
-            <Menu.Item key="/grid">
-              <NavLink to="/grid">Grid</NavLink>
-            </Menu.Item>
-            <Menu.Item key="/space">
-              <NavLink to="/space">Space</NavLink>
-            </Menu.Item>
-            <Menu.Item key="/modal">
-              <NavLink to="/modal">Modal</NavLink>
-            </Menu.Item>
-            <Menu.Item key="/trigger">
-              <NavLink to="/trigger">Trigger</NavLink>
-            </Menu.Item>
-            <Menu.Item key="/alert">
-              <NavLink to="/alert">Alert</NavLink>
-            </Menu.Item>
-            <Menu.Item key="/notification">
-              <NavLink to="/notification">Notification</NavLink>
-            </Menu.Item>
-          </Menu.SubMenu>
-
-        </Menu>
+        {renderMenu()}
       </nav>
       <main className="content">
         <div className='content-page'>
-          <Wrapper>
-
-            <Routes>
-              <Route path="/" element={<Navigate to="/button" replace />} />
-              <Route path="/demo" element={<>
-                <Helmet title="Demo - TeaTak" />
-                <PageDemo />
-              </>} />
-              <Route strict path="/color" element={<>
-                <Helmet title="Color - TeaTak" />
-                <PageColor />
-              </>} />
-              <Route strict path="/button" element={<>
-                <Helmet title="Button - TeaTak" />
-                <PageButton />
-              </>} />
-              <Route strict path="/input" element={<>
-                <Helmet title="Input - TeaTak" />
-                <PageInput />
-              </>} />
-              <Route strict path="/select" element={<>
-                <Helmet title="Select - TeaTak" />
-                <PageSelect />
-              </>} />
-              <Route strict path="/check" element={<>
-                <Helmet title="Check - TeaTak" />
-                <PageCheck />
-              </>} />
-              <Route strict path="/radio" element={<>
-                <Helmet title="Radio - TeaTak" />
-                <PageRadio />
-              </>} />
-              <Route strict path="/form" element={<>
-                <Helmet title="Form - TeaTak" />
-                <PageForm />
-              </>} />
-              <Route strict path="/grid" element={<>
-                <Helmet title="Grid - TeaTak" />
-                <PageGrid />
-              </>} />
-              <Route strict path="/space" element={<>
-                <Helmet title="Space - TeaTak" />
-                <PageSpace />
-              </>} />
-              <Route strict path="/modal" element={<>
-                <Helmet title="Modal - TeaTak" />
-                <PageModal />
-              </>} />
-              <Route strict path="/trigger" element={<>
-                <Helmet title="Trigger - TeaTak" />
-                <PageTrigger />
-              </>} />
-              <Route strict path="/alert" element={<>
-                <Helmet title="Alert - TeaTak" />
-                <PageAlert />
-              </>} />
-              <Route strict path="/notification" element={<>
-                <Helmet title="Notification - TeaTak" />
-                <PageNotification />
-              </>} />
-            </Routes>
-          </Wrapper>
+          {renderRouters()}
         </div>
         <div>
           <ColorMode.Menu fixed={true} className="content-fixed" />
