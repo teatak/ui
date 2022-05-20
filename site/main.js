@@ -124,11 +124,13 @@ const App = () => {
       })
     }
 
+    let list = loop(null, MenuData)
+
     return <Menu
       defaultOpenedKeys={defaultOpenedKeys}
       defaultSelectedKeys={defaultSelectedKeys}
     >
-      {loop(null, MenuData)}
+      {list}
     </Menu>
   }
 

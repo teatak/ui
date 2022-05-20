@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import { isArray } from "./is";
 
 const useComponentWillMount = (func) => {
     const willMount = useRef(true)
@@ -34,7 +35,14 @@ const useMergeState = (defaultStateValue, props) => {
         }
     }, [value]);
 
-    const mergedValue = (value === undefined) ? stateValue : value;
+    let mergedValue = undefined
+    //if is array
+    if (isArray(defaultStateValue)) {
+        mergedValue = (value === undefined) ? (stateValue.length === 0 && defaultStateValue.length === 0 ? defaultValue : stateValue) : value;
+    } else {
+        mergedValue = (value === undefined) ? (stateValue === defaultStateValue ? defaultValue : stateValue) : value;
+    }
+
     return [mergedValue, setStateValue, stateValue];
 }
 
