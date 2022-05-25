@@ -126,12 +126,14 @@ const App = () => {
 
     let list = loop(null, MenuData)
 
-    return <Menu
-      defaultOpenedKeys={defaultOpenedKeys}
-      defaultSelectedKeys={defaultSelectedKeys}
-    >
-      {list}
-    </Menu>
+    if (defaultOpenedKeys.length > 0) {
+      return <Menu
+        defaultOpenedKeys={defaultOpenedKeys}
+        defaultSelectedKeys={defaultSelectedKeys}
+      >
+        {list}
+      </Menu>
+    }
   }
 
   const renderRouters = () => {

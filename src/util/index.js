@@ -35,13 +35,7 @@ const useMergeState = (defaultStateValue, props) => {
         }
     }, [value]);
 
-    let mergedValue = undefined
-    //if is array
-    if (isArray(defaultStateValue)) {
-        mergedValue = (value === undefined) ? (stateValue.length === 0 && defaultStateValue.length === 0 ? defaultValue : stateValue) : value;
-    } else {
-        mergedValue = (value === undefined) ? (stateValue === defaultStateValue ? defaultValue : stateValue) : value;
-    }
+    const mergedValue = (value === undefined) ? stateValue : value;
 
     return [mergedValue, setStateValue, stateValue];
 }
