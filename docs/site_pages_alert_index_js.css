@@ -1,0 +1,185 @@
+.tui-alert {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: var(--border-radius-medium);
+  line-height: 1.5;
+}
+.tui-alert .tui-alert-icon-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  height: 24px;
+}
+.tui-alert .tui-alert-icon-wrapper svg {
+  width: 1em;
+  height: 1em;
+  font-size: 18px;
+}
+.tui-alert .tui-alert-content-wrapper {
+  flex: auto;
+  line-height: 24px;
+}
+.tui-alert .tui-alert-content-wrapper .tui-alert-title {
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.tui-alert .tui-alert-actions-wrapper {
+  margin-left: 6px;
+}
+.tui-alert .tui-alert-btn-close {
+  margin-left: 12px;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  user-select: none;
+  color: var(--color-foreground-2);
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+.tui-alert .tui-alert-btn-close svg {
+  font-size: 14px;
+}
+.tui-alert.tui-alert-standard.tui-alert-info {
+  background: var(--color-primary-1);
+}
+.tui-alert.tui-alert-standard.tui-alert-info .tui-alert-icon-wrapper svg {
+  fill: rgb(var(--primary-6));
+  color: rgb(var(--primary-6));
+}
+.tui-alert.tui-alert-standard.tui-alert-info .tui-alert-content-wrapper {
+  color: rgb(var(--primary-8));
+}
+.tui-alert.tui-alert-standard.tui-alert-warning {
+  background: var(--color-warning-1);
+}
+.tui-alert.tui-alert-standard.tui-alert-warning .tui-alert-icon-wrapper svg {
+  fill: rgb(var(--orange-6));
+  color: rgb(var(--orange-6));
+}
+.tui-alert.tui-alert-standard.tui-alert-warning .tui-alert-content-wrapper {
+  color: rgb(var(--orange-8));
+}
+.tui-alert.tui-alert-standard.tui-alert-error {
+  background: var(--color-error-1);
+}
+.tui-alert.tui-alert-standard.tui-alert-error .tui-alert-icon-wrapper svg {
+  fill: rgb(var(--red-6));
+  color: rgb(var(--red-6));
+}
+.tui-alert.tui-alert-standard.tui-alert-error .tui-alert-content-wrapper {
+  color: rgb(var(--red-8));
+}
+.tui-alert.tui-alert-standard.tui-alert-success {
+  background: var(--color-success-1);
+}
+.tui-alert.tui-alert-standard.tui-alert-success .tui-alert-icon-wrapper svg {
+  fill: rgb(var(--green-6));
+  color: rgb(var(--green-6));
+}
+.tui-alert.tui-alert-standard.tui-alert-success .tui-alert-content-wrapper {
+  color: rgb(var(--green-8));
+}
+.tui-alert.tui-alert-filled .tui-alert-btn-close {
+  color: #fff;
+}
+.tui-alert.tui-alert-filled.tui-alert-info {
+  background: rgb(var(--primary-5));
+}
+.tui-alert.tui-alert-filled.tui-alert-info .tui-alert-icon-wrapper svg {
+  fill: #fff;
+  color: #fff;
+}
+.tui-alert.tui-alert-filled.tui-alert-info .tui-alert-content-wrapper {
+  color: #fff;
+}
+.tui-alert.tui-alert-filled.tui-alert-warning {
+  background: rgb(var(--orange-5));
+}
+.tui-alert.tui-alert-filled.tui-alert-warning .tui-alert-icon-wrapper svg {
+  fill: #fff;
+  color: #fff;
+}
+.tui-alert.tui-alert-filled.tui-alert-warning .tui-alert-content-wrapper {
+  color: #fff;
+}
+.tui-alert.tui-alert-filled.tui-alert-error {
+  background: rgb(var(--red-5));
+}
+.tui-alert.tui-alert-filled.tui-alert-error .tui-alert-icon-wrapper svg {
+  fill: #fff;
+  color: #fff;
+}
+.tui-alert.tui-alert-filled.tui-alert-error .tui-alert-content-wrapper {
+  color: #fff;
+}
+.tui-alert.tui-alert-filled.tui-alert-success {
+  background: rgb(var(--green-5));
+}
+.tui-alert.tui-alert-filled.tui-alert-success .tui-alert-icon-wrapper svg {
+  fill: #fff;
+  color: #fff;
+}
+.tui-alert.tui-alert-filled.tui-alert-success .tui-alert-content-wrapper {
+  color: #fff;
+}
+.tui-alert.tui-alert-outlined.tui-alert-info {
+  border: solid 1px rgb(var(--primary-7));
+}
+.tui-alert.tui-alert-outlined.tui-alert-info .tui-alert-icon-wrapper svg {
+  fill: rgb(var(--primary-6));
+  color: rgb(var(--primary-6));
+}
+.tui-alert.tui-alert-outlined.tui-alert-info .tui-alert-content-wrapper {
+  color: rgb(var(--primary-8));
+}
+.tui-alert.tui-alert-outlined.tui-alert-warning {
+  border: solid 1px rgb(var(--orange-7));
+}
+.tui-alert.tui-alert-outlined.tui-alert-warning .tui-alert-icon-wrapper svg {
+  fill: rgb(var(--orange-6));
+  color: rgb(var(--orange-6));
+}
+.tui-alert.tui-alert-outlined.tui-alert-warning .tui-alert-content-wrapper {
+  color: rgb(var(--orange-8));
+}
+.tui-alert.tui-alert-outlined.tui-alert-error {
+  border: solid 1px rgb(var(--red-7));
+}
+.tui-alert.tui-alert-outlined.tui-alert-error .tui-alert-icon-wrapper svg {
+  fill: rgb(var(--red-6));
+  color: rgb(var(--red-6));
+}
+.tui-alert.tui-alert-outlined.tui-alert-error .tui-alert-content-wrapper {
+  color: rgb(var(--red-8));
+}
+.tui-alert.tui-alert-outlined.tui-alert-success {
+  border: solid 1px rgb(var(--green-7));
+}
+.tui-alert.tui-alert-outlined.tui-alert-success .tui-alert-icon-wrapper svg {
+  fill: rgb(var(--green-6));
+  color: rgb(var(--green-6));
+}
+.tui-alert.tui-alert-outlined.tui-alert-success .tui-alert-content-wrapper {
+  color: rgb(var(--green-8));
+}
+
+.tui-space {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.tui-space.tui-space-horizontal {
+  align-items: center;
+  flex-direction: row;
+}
+.tui-space.tui-space-vertical {
+  align-items: flex-start;
+  flex-direction: column;
+}
+.tui-space .tui-space-item {
+  display: flex;
+}
+

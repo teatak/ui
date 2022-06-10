@@ -1,0 +1,106 @@
+.tui-radio {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.tui-radio > input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+.tui-radio .tui-radio-inner {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-fill-3);
+  border-radius: var(--border-radius-circle);
+  background-color: var(--color-background-2);
+  transition: all 0.3s;
+}
+.tui-radio .tui-radio-inner::after {
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: var(--border-radius-circle);
+  background-color: var(--color-background-2);
+  width: 12px;
+  height: 12px;
+  top: 0;
+  left: 0;
+  transform: scale(1);
+  transition: all 0.2s cubic-bezier(0, 0, 0.48, 1.58);
+  content: " ";
+}
+.tui-radio .tui-radio-text {
+  margin-left: 8px;
+}
+.tui-radio:hover .tui-radio-inner {
+  border-color: var(--color-fill-4);
+}
+.tui-radio.tui-radio-checked .tui-radio-inner {
+  border: 2px solid rgb(var(--primary-6));
+  background: rgb(var(--primary-6));
+}
+.tui-radio.tui-radio-checked .tui-radio-inner::after {
+  transform: scale(0.4);
+  background-color: var(--color-background-2);
+}
+.tui-radio.tui-radio-disabled {
+  cursor: default;
+}
+.tui-radio.tui-radio-disabled .tui-radio-inner {
+  border: 2px solid rgb(var(--grey-4));
+  background: rgb(var(--grey-3));
+}
+.tui-radio.tui-radio-disabled .tui-radio-inner::after {
+  background: transparent;
+}
+.tui-radio.tui-radio-disabled:hover .tui-radio-inner {
+  border: 2px solid rgb(var(--grey-4));
+}
+.tui-radio.tui-radio-disabled.tui-radio-checked:hover .tui-radio-inner {
+  border: 2px solid transparent;
+  background: var(--color-primary-3);
+}
+.tui-radio.tui-radio-disabled.tui-radio-checked .tui-radio-inner {
+  border: 2px solid transparent;
+  background: var(--color-primary-3);
+}
+.tui-radio.tui-radio-disabled.tui-radio-checked .tui-radio-inner::after {
+  transform: scale(0.4);
+  background-color: var(--color-background-2);
+}
+.tui-radio.tui-radio-disabled .tui-radio-text {
+  color: rgb(var(--grey-4));
+}
+.tui-radio-group.tui-radio-group-direction-horizontal > .tui-radio {
+  margin-right: 16px;
+}
+.tui-radio-group.tui-radio-group-direction-vertical > .tui-radio {
+  display: flex;
+  margin-right: 0;
+  line-height: 32px;
+}
+
+.tui-space {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.tui-space.tui-space-horizontal {
+  align-items: center;
+  flex-direction: row;
+}
+.tui-space.tui-space-vertical {
+  align-items: flex-start;
+  flex-direction: column;
+}
+.tui-space .tui-space-item {
+  display: flex;
+}
+

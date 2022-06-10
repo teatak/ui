@@ -38,7 +38,7 @@ const ColorMode = (props) => {
     }
     willMount.current = false
 
-    return <>{props.children}</>
+    return props.children
 }
 
 const ColorMenu = (props) => {
