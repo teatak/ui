@@ -68,7 +68,7 @@
           for (; currentSample !== lastSample && sampleValues[currentSample] <= aX; ++currentSample) {
             intervalStart += kSampleStepSize;
           }
-          --currentSample;
+          --tt-currentSample;
     
           // Interpolate to provide an initial guess for t
           var dist = (aX - sampleValues[currentSample]) / (sampleValues[currentSample + 1] - sampleValues[currentSample]);

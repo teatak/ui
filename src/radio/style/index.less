@@ -19,16 +19,16 @@
     display: inline-block;
     width: 16px;
     height: 16px;
-    border: 2px solid var(--color-fill-3);
-    border-radius: var(--border-radius-circle);
-    background-color: var(--color-background-2);
+    border: 2px solid var(--tt-color-fill-3);
+    border-radius: var(--tt-border-radius-circle);
+    background-color: var(--tt-color-background-2);
     transition: all 0.3s;
     &::after {
       display: inline-block;
       box-sizing: border-box;
       position: absolute;
-      border-radius: var(--border-radius-circle);
-      background-color: var(--color-background-2);
+      border-radius: var(--tt-border-radius-circle);
+      background-color: var(--tt-color-background-2);
       width: 12px;
       height: 12px;
       top: 0;
@@ -43,51 +43,51 @@
   }
   &:hover {
     & .@{radio-prefix-class}-inner {
-      border-color: var(--color-fill-4);
+      border-color: var(--tt-color-fill-4);
     }
   }
   &.@{radio-prefix-class}-checked {
     & .@{radio-prefix-class}-inner {
-        border: 2px solid rgb(var(--primary-6));
-        background: rgb(var(--primary-6));
+        border: 2px solid rgb(var(--tt-primary-6));
+        background: rgb(var(--tt-primary-6));
         &::after {
           transform: scale(.4);
-          background-color: var(--color-background-2);
+          background-color: var(--tt-color-background-2);
         }
     }
   }
   &.@{radio-prefix-class}-disabled {
     cursor: default;
     & .@{radio-prefix-class}-inner {
-      border: 2px solid rgb(var(--grey-4));
-      background: rgb(var(--grey-3));
+      border: 2px solid rgb(var(--tt-grey-4));
+      background: rgb(var(--tt-grey-3));
       &::after {
         background: transparent;
       }
     } 
     &:hover {
       & .@{radio-prefix-class}-inner {
-        border: 2px solid rgb(var(--grey-4));
+        border: 2px solid rgb(var(--tt-grey-4));
       }
     }
     &.@{radio-prefix-class}-checked {
       &:hover {
         & .@{radio-prefix-class}-inner {
           border: 2px solid transparent;
-          background: var(--color-primary-3);
+          background: var(--tt-color-primary-3);
         }
       }
       & .@{radio-prefix-class}-inner {
           border: 2px solid transparent;
-          background: var(--color-primary-3);
+          background: var(--tt-color-primary-3);
           &::after {
             transform: scale(.4);
-            background-color: var(--color-background-2);
+            background-color: var(--tt-color-background-2);
           }
       }
     }
     & .@{radio-prefix-class}-text {
-      color: rgb(var(--grey-4));
+      color: rgb(var(--tt-grey-4));
     }
   }
 }

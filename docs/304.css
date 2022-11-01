@@ -30,11 +30,11 @@
   border-radius: 0 0 6px 6px;
 }
 .color-page .colors .reverse {
-  color: var(--color-background-2);
+  color: var(--tt-color-background-2);
 }
 .color-page .bgs > div > div {
   padding: 16px;
-  border: solid 1px var(--color-border-2);
+  border: solid 1px var(--tt-color-border-2);
   border-radius: 6px;
 }
 .color-page .shadows > div > div {

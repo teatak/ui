@@ -3,9 +3,9 @@
 @menu-prefix-class: tui-menu;
 
 .@{color-menu-prefix-class}-btn {
-  background: var(--color-background-popup) !important;
-  border: solid 1px var(--color-border-2) !important;
-  box-shadow: var(--box-shadow-popup) !important;
+  background: var(--tt-color-background-popup) !important;
+  border: solid 1px var(--tt-color-border-2) !important;
+  box-shadow: var(--tt-box-shadow-popup) !important;
   & svg {
     fill: currentColor;
     width: 1em;
@@ -19,16 +19,16 @@
 .@{color-menu-prefix-class} {
   &.@{menu-prefix-class} {
     padding: 4px 0;
-    border-radius: var(--border-radius-medium);
+    border-radius: var(--tt-border-radius-medium);
     & .@{menu-prefix-class}-inner {
       padding: 0;
       & li {
         padding: 0 8px;
         &:hover {
-          background-color: var(--color-fill-2);
+          background-color: var(--tt-color-fill-2);
         }
         &.@{menu-prefix-class}-item-selected {
-          color: rgb(var(--primary-6));
+          color: rgb(var(--tt-primary-6));
         }
       }
     }
@@ -37,7 +37,7 @@
 .@{color-menu-prefix-class}-trigger {
   &.@{trigger-prefix-class} {
     & .@{trigger-prefix-class}-inner {
-      //background-color: var(--color-background-popup);
+      //background-color: var(--tt-color-background-popup);
       padding: 0;
     }
   }

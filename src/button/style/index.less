@@ -7,16 +7,15 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  border-radius: var(--border-radius-medium);
-  padding: var(--size-button-padding-medium);
-  height: var(--size-medium);
+  border-radius: var(--tt-border-radius-medium);
+  padding: var(--tt-size-button-padding-medium);
+  height: var(--tt-size-medium);
   outline: none;
   border: none;
   font-size: 14px;
   user-select: none;
-  color: var(--color-foreground-2);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+  color: var(--tt-color-foreground-2);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
     border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   & svg {
     font-size: 20px;
@@ -32,9 +31,9 @@
     line-height: 1;
   }
   &.@{button-prefix-class}-size-large {
-    border-radius: var(--border-radius-large);
-    padding: var(--size-button-padding-large);
-    height: var(--size-large);
+    border-radius: var(--tt-border-radius-large);
+    padding: var(--tt-size-button-padding-large);
+    height: var(--tt-size-large);
     font-size: 14px;
     & svg {
       font-size: 22px;
@@ -47,9 +46,9 @@
     }
   }
   &.@{button-prefix-class}-size-small {
-    border-radius: var(--border-radius-small);
-    padding: var(--size-button-padding-small);
-    height: var(--size-small);
+    border-radius: var(--tt-border-radius-small);
+    padding: var(--tt-size-button-padding-small);
+    height: var(--tt-size-small);
     font-size: 12px;
     & svg {
       font-size: 16px;
@@ -68,9 +67,9 @@
     }
   }
   &.@{button-prefix-class}-size-tiny {
-    border-radius: var(--border-radius-small);
-    padding: var(--size-button-padding-tiny);
-    height: var(--size-tiny);
+    border-radius: var(--tt-border-radius-small);
+    padding: var(--tt-size-button-padding-tiny);
+    height: var(--tt-size-tiny);
     font-size: 12px;
     & svg {
       font-size: 14px;
@@ -105,33 +104,33 @@
   }
   &.@{button-prefix-class}-circle {
     border-radius: 50%;
-    width: var(--size-medium);
-    height: var(--size-medium);
+    width: var(--tt-size-medium);
+    height: var(--tt-size-medium);
     padding: 0;
     &.@{button-prefix-class}-size-large {
-      width: var(--size-large);
-      height: var(--size-large);
+      width: var(--tt-size-large);
+      height: var(--tt-size-large);
     }
     &.@{button-prefix-class}-size-small {
-      width: var(--size-small);
-      height: var(--size-small);
+      width: var(--tt-size-small);
+      height: var(--tt-size-small);
     }
     &.@{button-prefix-class}-size-tiny {
-      width: var(--size-tiny);
-      height: var(--size-tiny);
+      width: var(--tt-size-tiny);
+      height: var(--tt-size-tiny);
     }
   }
   //outline
   &.@{button-prefix-class}-outlined {
-    padding: var(--size-button-outlined-padding-medium);
+    padding: var(--tt-size-button-outlined-padding-medium);
     &.@{button-prefix-class}-size-large {
-      padding: var(--size-button-outlined-padding-large);
+      padding: var(--tt-size-button-outlined-padding-large);
     }
     &.@{button-prefix-class}-size-small {
-      padding: var(--size-button-outlined-padding-small);
+      padding: var(--tt-size-button-outlined-padding-small);
     }
     &.@{button-prefix-class}-size-tiny {
-      padding: var(--size-button-outlined-padding-tiny);
+      padding: var(--tt-size-button-outlined-padding-tiny);
     }
     &.@{button-prefix-class}-circle {
       padding: 0;

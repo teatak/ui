@@ -18,9 +18,9 @@
   display: inline-block;
   width: 16px;
   height: 16px;
-  border: 2px solid var(--color-fill-3);
-  border-radius: var(--border-radius-small);
-  background-color: var(--color-background-2);
+  border: 2px solid var(--tt-color-fill-3);
+  border-radius: var(--tt-border-radius-small);
+  background-color: var(--tt-color-background-2);
   transition: all 0.3s;
 }
 .tui-check .tui-check-inner::before {
@@ -30,7 +30,7 @@
   left: 1px;
   width: 10px;
   height: 2px;
-  background: var(--color-background-2);
+  background: var(--tt-color-background-2);
   transform: scale(0);
   opacity: 0;
   content: " ";
@@ -44,7 +44,7 @@
   display: table;
   width: 6px;
   height: 10px;
-  border: 2px solid var(--color-background-2);
+  border: 2px solid var(--tt-color-background-2);
   border-top: 0;
   border-left: 0;
   transform: rotate(45deg) scale(0);
@@ -58,11 +58,11 @@
   margin-left: 8px;
 }
 .tui-check:hover .tui-check-inner {
-  border-color: var(--color-fill-4);
+  border-color: var(--tt-color-fill-4);
 }
 .tui-check.tui-check-indeterminate .tui-check-inner {
-  border: 2px solid rgb(var(--primary-6));
-  background: rgb(var(--primary-6));
+  border: 2px solid rgb(var(--tt-primary-6));
+  background: rgb(var(--tt-primary-6));
 }
 .tui-check.tui-check-indeterminate .tui-check-inner::before {
   transform: scale(1);
@@ -72,8 +72,8 @@
   opacity: 0;
 }
 .tui-check.tui-check-checked .tui-check-inner {
-  border: 2px solid rgb(var(--primary-6));
-  background: rgb(var(--primary-6));
+  border: 2px solid rgb(var(--tt-primary-6));
+  background: rgb(var(--tt-primary-6));
 }
 .tui-check.tui-check-checked .tui-check-inner::before {
   opacity: 0;
@@ -86,12 +86,12 @@
   cursor: default;
 }
 .tui-check.tui-check-disabled .tui-check-inner {
-  border: 2px solid rgb(var(--grey-4));
-  background: rgb(var(--grey-3));
+  border: 2px solid rgb(var(--tt-grey-4));
+  background: rgb(var(--tt-grey-3));
 }
 .tui-check.tui-check-disabled.tui-check-indeterminate .tui-check-inner {
-  border: 2px solid rgb(var(--grey-4));
-  background: rgb(var(--grey-4));
+  border: 2px solid rgb(var(--tt-grey-4));
+  background: rgb(var(--tt-grey-4));
 }
 .tui-check.tui-check-disabled.tui-check-indeterminate .tui-check-inner::before {
   transform: scale(1);
@@ -105,7 +105,7 @@
 }
 .tui-check.tui-check-disabled.tui-check-checked .tui-check-inner {
   border: 2px solid transparent;
-  background: var(--color-primary-3);
+  background: var(--tt-color-primary-3);
 }
 .tui-check.tui-check-disabled.tui-check-checked .tui-check-inner::before {
   opacity: 0;
@@ -115,10 +115,10 @@
   opacity: 1;
 }
 .tui-check.tui-check-disabled:hover .tui-check-inner {
-  border: 2px solid rgb(var(--grey-4));
+  border: 2px solid rgb(var(--tt-grey-4));
 }
 .tui-check.tui-check-disabled .tui-check-text {
-  color: rgb(var(--grey-4));
+  color: rgb(var(--tt-grey-4));
 }
 .tui-check-group.tui-check-group-direction-horizontal > .tui-check {
   margin-right: 16px;
@@ -182,11 +182,11 @@
 }
 .tui-notification-wrapper .tui-notification {
   position: relative;
-  border-radius: var(--border-radius-medium);
-  border: 1px solid var(--color-border-2);
+  border-radius: var(--tt-border-radius-medium);
+  border: 1px solid var(--tt-color-border-2);
   margin-bottom: 12px;
-  background-color: var(--color-background-popup);
-  box-shadow: var(--box-shadow-popup);
+  background-color: var(--tt-color-background-popup);
+  box-shadow: var(--tt-box-shadow-popup);
   overflow: hidden;
   box-sizing: border-box;
   opacity: 1;
@@ -210,16 +210,16 @@
   font-size: 22px;
 }
 .tui-notification-wrapper .tui-notification.tui-notification-info .tui-notification-icon-wrapper svg {
-  color: rgb(var(--primary-6));
+  color: rgb(var(--tt-primary-6));
 }
 .tui-notification-wrapper .tui-notification.tui-notification-success .tui-notification-icon-wrapper svg {
-  color: rgb(var(--green-6));
+  color: rgb(var(--tt-green-6));
 }
 .tui-notification-wrapper .tui-notification.tui-notification-warning .tui-notification-icon-wrapper svg {
-  color: rgb(var(--orange-6));
+  color: rgb(var(--tt-orange-6));
 }
 .tui-notification-wrapper .tui-notification.tui-notification-error .tui-notification-icon-wrapper svg {
-  color: rgb(var(--red-6));
+  color: rgb(var(--tt-red-6));
 }
 .tui-notification-wrapper .tui-notification .tui-notification-content-wrapper {
   flex: auto;
@@ -239,7 +239,7 @@
   background: none;
   cursor: pointer;
   user-select: none;
-  color: var(--color-foreground-2);
+  color: var(--tt-color-foreground-2);
   height: 24px;
   display: flex;
   align-items: center;

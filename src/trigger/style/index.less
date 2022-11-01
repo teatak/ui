@@ -2,8 +2,8 @@
 .@{trigger-prefix-class} {
   position: absolute;
   & .@{trigger-prefix-class}-inner {
-    background-color: var(--color-background-popup);
-    border-radius: var(--border-radius-medium);
+    background-color: var(--tt-color-background-popup);
+    border-radius: var(--tt-border-radius-medium);
     padding: 8px 12px;
   }
   & .@{trigger-prefix-class}-arrow {
@@ -31,14 +31,14 @@
   & .@{trigger-prefix-class}-bottom {
     padding-top: 8px;
     & .@{trigger-prefix-class}-inner {
-      box-shadow: var(--box-shadow-popup-down);
+      box-shadow: var(--tt-box-shadow-popup-down);
     }
     & .@{trigger-prefix-class}-arrow {
       top: 0px;
       left: calc(50% - 10px);
       &::before {
-        background-color: var(--color-background-popup);
-        box-shadow: var(--box-shadow-popup-arrow);
+        background-color: var(--tt-color-background-popup);
+        box-shadow: var(--tt-box-shadow-popup-arrow);
         transform: translateY(5px) rotate(-135deg);
       }
     }
@@ -46,14 +46,14 @@
   & .@{trigger-prefix-class}-bottomLeft {
     padding-top: 8px;
     & .@{trigger-prefix-class}-inner {
-      box-shadow: var(--box-shadow-popup-down);
+      box-shadow: var(--tt-box-shadow-popup-down);
     }
     & .@{trigger-prefix-class}-arrow {
       top: 0px;
       left: 16px;
       &::before {
-        background-color: var(--color-background-popup);
-        box-shadow: var(--box-shadow-popup-arrow);
+        background-color: var(--tt-color-background-popup);
+        box-shadow: var(--tt-box-shadow-popup-arrow);
         transform: translateY(5px) rotate(-135deg);
       }
     }
@@ -61,14 +61,14 @@
   & .@{trigger-prefix-class}-bottomRight {
     padding-top: 8px;
     & .@{trigger-prefix-class}-inner {
-      box-shadow: var(--box-shadow-popup-down);
+      box-shadow: var(--tt-box-shadow-popup-down);
     }
     & .@{trigger-prefix-class}-arrow {
       top: 0px;
       right: 16px;
       &::before {
-        background-color: var(--color-background-popup);
-        box-shadow: var(--box-shadow-popup-arrow);
+        background-color: var(--tt-color-background-popup);
+        box-shadow: var(--tt-box-shadow-popup-arrow);
         transform: translateY(5px) rotate(-135deg);
       }
     }
@@ -76,14 +76,14 @@
   & .@{trigger-prefix-class}-top {
     padding-bottom: 8px;
     & .@{trigger-prefix-class}-inner {
-      box-shadow: var(--box-shadow-popup-up);
+      box-shadow: var(--tt-box-shadow-popup-up);
     }
     & .@{trigger-prefix-class}-arrow {
       bottom: 0px;
       left: calc(50% - 10px);
       &::before {
-        background-color: var(--color-background-popup);
-        box-shadow: var(--box-shadow-popup-arrow);
+        background-color: var(--tt-color-background-popup);
+        box-shadow: var(--tt-box-shadow-popup-arrow);
         transform: translateY(-5px) rotate(45deg);
       }
     }
@@ -91,14 +91,14 @@
   & .@{trigger-prefix-class}-topLeft {
     padding-bottom: 8px;
     & .@{trigger-prefix-class}-inner {
-      box-shadow: var(--box-shadow-popup-up);
+      box-shadow: var(--tt-box-shadow-popup-up);
     }
     & .@{trigger-prefix-class}-arrow {
       bottom: 0px;
       left: 16px;
       &::before {
-        background-color: var(--color-background-popup);
-        box-shadow: var(--box-shadow-popup-arrow);
+        background-color: var(--tt-color-background-popup);
+        box-shadow: var(--tt-box-shadow-popup-arrow);
         transform: translateY(-5px) rotate(45deg);
       }
     }
@@ -106,14 +106,14 @@
   & .@{trigger-prefix-class}-topRight {
     padding-bottom: 8px;
     & .@{trigger-prefix-class}-inner {
-      box-shadow: var(--box-shadow-popup-up);
+      box-shadow: var(--tt-box-shadow-popup-up);
     }
     & .@{trigger-prefix-class}-arrow {
       bottom: 0px;
       right: 16px;
       &::before {
-        background-color: var(--color-background-popup);
-        box-shadow: var(--box-shadow-popup-arrow);
+        background-color: var(--tt-color-background-popup);
+        box-shadow: var(--tt-box-shadow-popup-arrow);
         transform: translateY(-5px) rotate(45deg);
       }
     }
@@ -126,15 +126,15 @@
   }
   //tooltip
   &.@{trigger-prefix-class}-tooltip {
-    color: var(--color-foreground-tooltip);
+    color: var(--tt-color-foreground-tooltip);
     & .@{trigger-prefix-class}-inner {
-      background-color: var(--color-background-tooltip);
+      background-color: var(--tt-color-background-tooltip);
       border: solid 1px transparent;
       box-shadow: none;
     }
     & .@{trigger-prefix-class}-arrow {
       &::before {
-        background-color: var(--color-background-tooltip);
+        background-color: var(--tt-color-background-tooltip);
         border: solid 1px transparent;
         box-shadow: none;
       }

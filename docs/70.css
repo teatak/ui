@@ -51,11 +51,11 @@
 }
 .tui-notification-wrapper .tui-notification {
   position: relative;
-  border-radius: var(--border-radius-medium);
-  border: 1px solid var(--color-border-2);
+  border-radius: var(--tt-border-radius-medium);
+  border: 1px solid var(--tt-color-border-2);
   margin-bottom: 12px;
-  background-color: var(--color-background-popup);
-  box-shadow: var(--box-shadow-popup);
+  background-color: var(--tt-color-background-popup);
+  box-shadow: var(--tt-box-shadow-popup);
   overflow: hidden;
   box-sizing: border-box;
   opacity: 1;
@@ -79,16 +79,16 @@
   font-size: 22px;
 }
 .tui-notification-wrapper .tui-notification.tui-notification-info .tui-notification-icon-wrapper svg {
-  color: rgb(var(--primary-6));
+  color: rgb(var(--tt-primary-6));
 }
 .tui-notification-wrapper .tui-notification.tui-notification-success .tui-notification-icon-wrapper svg {
-  color: rgb(var(--green-6));
+  color: rgb(var(--tt-green-6));
 }
 .tui-notification-wrapper .tui-notification.tui-notification-warning .tui-notification-icon-wrapper svg {
-  color: rgb(var(--orange-6));
+  color: rgb(var(--tt-orange-6));
 }
 .tui-notification-wrapper .tui-notification.tui-notification-error .tui-notification-icon-wrapper svg {
-  color: rgb(var(--red-6));
+  color: rgb(var(--tt-red-6));
 }
 .tui-notification-wrapper .tui-notification .tui-notification-content-wrapper {
   flex: auto;
@@ -108,7 +108,7 @@
   background: none;
   cursor: pointer;
   user-select: none;
-  color: var(--color-foreground-2);
+  color: var(--tt-color-foreground-2);
   height: 24px;
   display: flex;
   align-items: center;
