@@ -15,11 +15,11 @@ const Color = (props) => {
       <div style={{ background: `rgb(var(--tt-${name}-3))` }}>--tt-{name}-3</div>
       <div style={{ background: `rgb(var(--tt-${name}-4))` }}>--tt-{name}-4</div>
       <div style={{ background: `rgb(var(--tt-${name}-5))` }}>--tt-{name}-5</div>
-      <div style={{ background: `rgb(var(--tt-${name}-6))`, color: `var(--tt-color-background-2)` }} >--{name}-6</div>
-      <div className="reverse" style={{ background: `rgb(var(--${name}-7))`, color: `var(--tt-color-background-2)` }} >--{name}-7</div>
-      <div className="reverse" style={{ background: `rgb(var(--${name}-8))`, color: `var(--tt-color-background-2)` }} >--{name}-8</div>
-      <div className="reverse" style={{ background: `rgb(var(--${name}-9))`, color: `var(--tt-color-background-2)` }} >--{name}-9</div>
-      <div className="reverse" style={{ background: `rgb(var(--${name}-10))`, color: `var(--tt-color-background-2)` }} >--{name}-10</div>
+      <div style={{ background: `rgb(var(--tt-${name}-6))`, color: `var(--tt-color-background-2)` }} >--tt-{name}-6</div>
+      <div className="reverse" style={{ background: `rgb(var(--tt-${name}-7))`, color: `var(--tt-color-background-2)` }} >--tt-{name}-7</div>
+      <div className="reverse" style={{ background: `rgb(var(--tt-${name}-8))`, color: `var(--tt-color-background-2)` }} >--tt-{name}-8</div>
+      <div className="reverse" style={{ background: `rgb(var(--tt-${name}-9))`, color: `var(--tt-color-background-2)` }} >--tt-{name}-9</div>
+      <div className="reverse" style={{ background: `rgb(var(--tt-${name}-10))`, color: `var(--tt-color-background-2)` }} >--tt-{name}-10</div>
     </div>
   )
 }
