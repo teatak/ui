@@ -1,4 +1,12 @@
-<!doctype html><html data-color-mode="auto" data-light-theme="light" data-dark-theme="dark"><head><meta charset="UTF-8"><meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><meta name="color-scheme" content="light dark"><link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"><style>.spinner-content-page {
+<!DOCTYPE html>
+<html data-color-mode="auto" data-light-theme="light" data-dark-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="color-scheme" content="light dark">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <style>
+        .spinner-content-page {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -6,4 +14,37 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }</style><title>UI - TeaTak</title><link href="console.css?3b1a3f25862fd60299c0" rel="stylesheet"></head><body><div id="root" class="root"><div class="spinner-content-page">Loading...</div></div><script src="console.js?3b1a3f25862fd60299c0"></script></body></html>
+        }
+    </style>
+    <!-- <script>
+        let colorMode = "auto";
+        let darkMode = "dark";
+        let lightMode = "light";
+        if (window.localStorage) {
+        let storage = window.localStorage;
+        if (storage.COLOR_MODE != null) {
+            colorMode = storage.COLOR_MODE
+        }
+        }
+        document.documentElement.setAttribute("data-color-mode", colorMode)
+        document.documentElement.setAttribute("data-light-theme", lightMode)
+        document.documentElement.setAttribute("data-dark-theme", darkMode)
+        const el = document.querySelector("meta[name='color-scheme']");
+        if (el) {
+        // <meta name="color-scheme" content="dark light">
+        if (colorMode == "auto") {
+            el.setAttribute('content', "light dark")
+        }
+        if (colorMode == "dark") {
+            el.setAttribute('content', "dark light")
+        }
+        }
+    </script> -->
+    <title>UI - TeaTak</title>
+    <link href="console.css?5508cfd2da241fee9fbd" rel="stylesheet">
+</head>
+<body>
+    <div id="root" class="root"><div class="spinner-content-page">Loading...</div></div>
+    <script type="text/javascript" src="console.js?5508cfd2da241fee9fbd"></script>
+</body>
+</html>

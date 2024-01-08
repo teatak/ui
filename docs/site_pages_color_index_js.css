@@ -1,0 +1,48 @@
+.tui-space {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.tui-space.tui-space-horizontal {
+  align-items: center;
+  flex-direction: row;
+}
+.tui-space.tui-space-vertical {
+  align-items: flex-start;
+  flex-direction: column;
+}
+.tui-space .tui-space-item {
+  display: flex;
+}
+
+.color-page .colors div {
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.color-page .colors div:hover {
+  transform: scale(1.05);
+}
+.color-page .colors div:first-child {
+  border-radius: 6px 6px 0 0;
+}
+.color-page .colors div:last-child {
+  border-radius: 0 0 6px 6px;
+}
+.color-page .colors .reverse {
+  color: var(--tt-color-background-2);
+}
+.color-page .bgs > div > div {
+  padding: 16px;
+  border: solid 1px var(--tt-color-border-2);
+  border-radius: 6px;
+}
+.color-page .shadows > div > div {
+  padding: 16px;
+  border-radius: 6px;
+}
+.color-page .borders > div > div {
+  padding: 16px;
+  border-radius: 6px;
+}
+

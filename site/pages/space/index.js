@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense, useState } from 'react'
 import { Space, Button } from "../../../src";
 import "../../../src/space/style";
 import "../../../src/button/style";
@@ -10,6 +10,7 @@ import {
 } from '@mui/icons-material';
 
 export default () => {
+    const [query, setQuery] = useState('');
 
     return <div className="">
         <h1>Space</h1>

@@ -20,7 +20,6 @@ import loadable from '@loadable/component'
 
 import './main.less'
 import Github from './components/icons/github'
-import { ArticleRounded, ToggleOffRounded } from '@mui/icons-material'
 import MenuContext from '../src/menu/menu-context'
 import MenuData from './menu'
 

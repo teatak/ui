@@ -16,6 +16,30 @@
             align-items: center;
         }
     </style>
+    <!-- <script>
+        let colorMode = "auto";
+        let darkMode = "dark";
+        let lightMode = "light";
+        if (window.localStorage) {
+        let storage = window.localStorage;
+        if (storage.COLOR_MODE != null) {
+            colorMode = storage.COLOR_MODE
+        }
+        }
+        document.documentElement.setAttribute("data-color-mode", colorMode)
+        document.documentElement.setAttribute("data-light-theme", lightMode)
+        document.documentElement.setAttribute("data-dark-theme", darkMode)
+        const el = document.querySelector("meta[name='color-scheme']");
+        if (el) {
+        // <meta name="color-scheme" content="dark light">
+        if (colorMode == "auto") {
+            el.setAttribute('content', "light dark")
+        }
+        if (colorMode == "dark") {
+            el.setAttribute('content', "dark light")
+        }
+        }
+    </script> -->
     <title><%= htmlWebpackPlugin.options.title %></title><% for (var i in htmlWebpackPlugin.files.css) { %>
     <link href="<%=htmlWebpackPlugin.files.css[i] %>" rel="stylesheet"><% } %>
 </head>
