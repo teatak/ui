@@ -35,7 +35,7 @@ module.exports = {
                 use: ['@svgr/webpack'],
             },
             {
-                test: /\.m?js$/,
+                test: /\.(js|mjs|jsx|ts|tsx)$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
@@ -45,7 +45,6 @@ module.exports = {
                             '@babel/plugin-proposal-class-properties',
                             '@babel/plugin-syntax-dynamic-import',
                             '@babel/transform-runtime',
-                            ['import', { libraryName: 'antd', style: true }, 'antd'],
                             ['import', { libraryName: '@teatak/ui', style: true }, '@teatak/ui']
                         ]
                     }

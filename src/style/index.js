@@ -1,4 +1,2 @@
-/**
- * Created by yanggang on 2018/12/31.
- */
-import "./index.less"
+export { baseSetting } from './base'
+export { prerenderGlobalStyle, GlobalStyle } from './theme'
