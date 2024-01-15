@@ -1,0 +1,32 @@
+"use strict";
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(self["webpackChunk_teatak_ui"] = self["webpackChunk_teatak_ui"] || []).push([["site_pages_color_js"],{
+
+/***/ "./site/pages/color.js":
+/*!*****************************!*\
+  !*** ./site/pages/color.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style */ \"./site/pages/style.js\");\n/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/react/jsx-runtime */ \"./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js\");\n\n\n\nconst Color = props => {\n  const {\n    name\n  } = props;\n  return (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(\"div\", {\n    css: _style__WEBPACK_IMPORTED_MODULE_1__.colors,\n    className: \"colors\",\n    children: [(0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(\"div\", {\n      style: {\n        background: `rgb(var(--tui-${name}-1))`\n      },\n      children: [\"--tui-\", name, \"-1\"]\n    }), (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(\"div\", {\n      style: {\n        background: `rgb(var(--tui-${name}-2))`\n      },\n      children: [\"--tui-\", name, \"-2\"]\n    }), (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(\"div\", {\n      style: {\n        background: `rgb(var(--tui-${name}-3))`\n      },\n      children: [\"--tui-\", name, \"-3\"]\n    }), (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(\"div\", {\n      style: {\n        background: `rgb(var(--tui-${name}-4))`\n      },\n      children: [\"--tui-\", name, \"-4\"]\n    }), (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(\"div\", {\n      style: {\n        background: `rgb(var(--tui-${name}-5))`\n      },\n      children: [\"--tui-\", name, \"-5\"]\n    }), (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(\"div\", {\n      className: \"reverse\",\n      style: {\n        background: `rgb(var(--tui-${name}-6))`,\n        color: `var(--tui-color-background-2)`\n      },\n      children: [\"--tui-\", name, \"-6\"]\n    }), (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(\"div\", {\n      className: \"reverse\",\n      style: {\n        background: `rgb(var(--tui-${name}-7))`,\n        color: `var(--tui-color-background-2)`\n      },\n      children: [\"--tui-\", name, \"-7\"]\n    }), (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(\"div\", {\n      className: \"reverse\",\n      style: {\n        background: `rgb(var(--tui-${name}-8))`,\n        color: `var(--tui-color-background-2)`\n      },\n      children: [\"--tui-\", name, \"-8\"]\n    }), (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(\"div\", {\n      className: \"reverse\",\n      style: {\n        background: `rgb(var(--tui-${name}-9))`,\n        color: `var(--tui-color-background-2)`\n      },\n      children: [\"--tui-\", name, \"-9\"]\n    }), (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(\"div\", {\n      className: \"reverse\",\n      style: {\n        background: `rgb(var(--tui-${name}-10))`,\n        color: `var(--tui-color-background-2)`\n      },\n      children: [\"--tui-\", name, \"-10\"]\n    })]\n  });\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\n  return (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(\"div\", {\n    children: [(0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(\"h1\", {\n      children: \"Color\"\n    }), (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(\"h2\", {\n      children: \"Color:\"\n    }), (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(\"div\", {\n      children: (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Color, {\n        name: \"red\"\n      })\n    }), (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(\"div\", {\n      children: (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Color, {\n        name: \"blue\"\n      })\n    }), (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(\"div\", {\n      children: (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Color, {\n        name: \"gray\"\n      })\n    })]\n  });\n});\n\n//# sourceURL=webpack://@teatak/ui/./site/pages/color.js?");
+
+/***/ }),
+
+/***/ "./site/pages/style.js":
+/*!*****************************!*\
+  !*** ./site/pages/style.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   colors: () => (/* binding */ colors)\n/* harmony export */ });\n/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/react */ \"./node_modules/@emotion/react/dist/emotion-react.browser.esm.js\");\n\nconst colors = (0,_emotion_react__WEBPACK_IMPORTED_MODULE_0__.css)`\n    div {\n      padding: 16px;\n      text-align: center;\n      cursor: pointer;\n      transition: transform 0.2s;\n      &:hover {\n        transform: scale(1.05);\n      }\n      &:first-of-type {\n        border-radius: 6px 6px 0 0;\n      }\n      &:last-of-type {\n        border-radius: 0 0 6px 6px;\n      }\n    }\n    .reverse {\n      color: var(--tt-color-background-2);\n    }\n`;\n\n\n//# sourceURL=webpack://@teatak/ui/./site/pages/style.js?");
+
+/***/ })
+
+}]);

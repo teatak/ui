@@ -1,7 +1,6 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Global } from '@emotion/react'
-import { globalStyle, baseSetting } from './base'
+import { globalStyle, mergeBaseStyle } from './style'
 
 const storageKey = 'color-scheme'
 let loaded = false
@@ -23,11 +22,10 @@ const reflectPreference = () => {
 }
 
 // 提前加载全局样式，在DOM渲染之前加载
-export const prerenderGlobalStyle = (theme) => {
+export const prerenderGlobalStyle = (style) => {
     if (!loaded) {
-        if (theme) {
-            Object.assign(baseSetting.light, theme.light)
-            Object.assign(baseSetting.dark, theme.dark)
+        if (style) {
+            mergeBaseStyle(style)
         }
         ReactDOM.createRoot(document.createElement("div")).render(
             <Global styles={globalStyle()} />
@@ -38,12 +36,13 @@ export const prerenderGlobalStyle = (theme) => {
 }
 // 全局样式
 export const GlobalStyle = (props) => {
-    const { theme } = props
-    if (theme) {
-        Object.assign(baseSetting.light, theme.light)
-        Object.assign(baseSetting.dark, theme.dark)
+    if (!loaded) {
+        const { style } = props
+        if (style) {
+            mergeBaseStyle(style)
+        }
+        reflectPreference()
+        loaded = true
+        return <Global styles={globalStyle()} />
     }
-    reflectPreference()
-    loaded = true
-    return <Global styles={global()} />
 }

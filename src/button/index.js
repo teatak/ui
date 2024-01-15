@@ -1,11 +1,9 @@
-/** @jsx jsx */
-import React, { useEffect, useState, useRef, useContext, forwardRef } from "react"
-import PropTypes from "prop-types"
-import { css, jsx } from '@emotion/react'
+import { forwardRef } from 'react'
+import PropTypes from 'prop-types'
+import { css } from '@emotion/react'
 
 const style = css`
   padding: 32px;
-  background-color: hotpink;
   font-size: 24px;
   border-radius: 4px;
   &:hover {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useContext, forwardRef } from "react"
+import { useEffect, useState, useRef, useContext, forwardRef } from 'react'
 
 const ConfigProvider = forwardRef((props, ref) => {
     const { children } = props;

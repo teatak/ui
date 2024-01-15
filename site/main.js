@@ -1,20 +1,8 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { prerenderGlobalStyle, ConfigProvider, Button } from '../src'
-let theme = {
-    dark: {
-        colorPrimary: '#00b96b',
-        borderRadius: 2,
-        colorBgContainer: '#f6ffed',
-        backGround: "#111"
-    },
-}
-prerenderGlobalStyle(theme)
+import App from './app'
 
 const Main = () => {
-    return <ConfigProvider>
-        <Button className="test">AAA</Button>
-    </ConfigProvider>
+    return <App />
 }
 
 window.onload = () => {
