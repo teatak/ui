@@ -4,8 +4,19 @@ import { generateColor } from './color'
 //基础样式
 export const baseStyle = {
     base: {
-        blue: "rgb(32,80,145)",
-        gray: "rgb(73,73,73)",
+        red: "rgb(255, 78, 71)",
+        pink: "rgb(255, 71, 126)",
+        purple: "rgb(233, 69, 255)",
+        deeppurple: "rgb(146, 74, 255)",
+        blue: "rgb(56, 118, 209)",
+        cyan: "rgb(36, 199, 214)",
+        green: "rgb(54, 194, 82)",
+        lime: "rgb(209, 219, 66)",
+        yellow: "rgb(255, 233, 87)",
+        amber: "rgb(199, 165, 44)",
+        orange: "rgb(250, 141, 57)",
+        deeporange: "rgb(255, 137, 74)",
+        gray: "rgb(97,97,97)",
     },
     light: {
         backGround: "rgb(255,255,255)",
@@ -26,12 +37,46 @@ export const mergeBaseStyle = (style) => {
 }
 
 //生成样式
-const generateStyle = (key, option = { dark: false, gray: false }) => {
+const generateStyle = (key, option) => {
+    option = Object.assign({ dark: false, gray: false }, option)
     let lines = []
     let color = {}
     switch (key) {
+        case "red":
+            color = generateColor(baseStyle.base.red, option)
+            break
+        case "pink":
+            color = generateColor(baseStyle.base.pink, option)
+            break
+        case "purple":
+            color = generateColor(baseStyle.base.purple, option)
+            break
+        case "deeppurple":
+            color = generateColor(baseStyle.base.deeppurple, option)
+            break
         case "blue":
             color = generateColor(baseStyle.base.blue, option)
+            break
+        case "cyan":
+            color = generateColor(baseStyle.base.cyan, option)
+            break
+        case "green":
+            color = generateColor(baseStyle.base.green, option)
+            break
+        case "lime":
+            color = generateColor(baseStyle.base.lime, option)
+            break
+        case "yellow":
+            color = generateColor(baseStyle.base.yellow, option)
+            break
+        case "amber":
+            color = generateColor(baseStyle.base.amber, option)
+            break
+        case "orange":
+            color = generateColor(baseStyle.base.orange, option)
+            break
+        case "deeporange":
+            color = generateColor(baseStyle.base.deeporange, option)
             break
         case "gray":
             color = generateColor(baseStyle.base.gray, option)
@@ -54,7 +99,19 @@ export const light = () => {
         color-scheme: light;
         --tui-color-background: ${baseStyle.light.backGround};
         --tui-color-icon-primary: rgb(101 109 118);
+        --tui-color-background-2: rgb(var(--tui-gray-1));
+        ${generateStyle("red")}
+        ${generateStyle("pink")}
+        ${generateStyle("purple")}
+        ${generateStyle("deeppurple")}
         ${generateStyle("blue")}
+        ${generateStyle("cyan")}
+        ${generateStyle("green")}
+        ${generateStyle("lime")}
+        ${generateStyle("yellow")}
+        ${generateStyle("amber")}
+        ${generateStyle("orange")}
+        ${generateStyle("deeporange")}
         ${generateStyle("gray", { gray: true })}
     `
 }
@@ -64,8 +121,20 @@ export const dark = () => {
     return css`
         color-scheme: dark;
         --tui-color-background: ${baseStyle.dark.backGround};
+        --tui-color-background-2: rgb(var(--tui-gray-1));
         --tui-color-icon-primary: rgb(132 141 151);
+        ${generateStyle("red", { dark: true })}
+        ${generateStyle("pink", { dark: true })}
+        ${generateStyle("purple", { dark: true })}
+        ${generateStyle("deeppurple", { dark: true })}
         ${generateStyle("blue", { dark: true })}
+        ${generateStyle("cyan", { dark: true })}
+        ${generateStyle("green", { dark: true })}
+        ${generateStyle("lime", { dark: true })}
+        ${generateStyle("yellow", { dark: true })}
+        ${generateStyle("amber", { dark: true })}
+        ${generateStyle("orange", { dark: true })}
+        ${generateStyle("deeporange", { dark: true })}
         ${generateStyle("gray", { dark: true, gray: true })}
     `
 }
@@ -91,6 +160,12 @@ export const globalStyle = () => {
         }
         body {
             background-color: var(--tui-color-background);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
         }
         /* Make clicks pass-through */
         #nprogress {

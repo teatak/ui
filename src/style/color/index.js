@@ -1,5 +1,5 @@
-import colorPalette from './palette'
-import colorPaletteDark from './palette-dark'
+import { colorPalette, colorPaletteGray } from './palette'
+import { colorPaletteDark, colorPaletteDarkGray } from './palette-dark'
 import Color from 'color'
 
 const getRgbStr = (color) => {
@@ -10,15 +10,30 @@ const getRgbStr = (color) => {
         .join(',')
 }
 
-export const generateColor = (color, option = { gray: false, dark: false, format: "rgb" }) => {
+export const generateColor = (color, option) => {
+    option = Object.assign({ gray: false, dark: false, format: "rgb" }, option)
     let colorObj = {}
     for (let i = 1; i <= 10; i++) {
         option.index = i
-        colorObj[i] = option.dark ? colorPaletteDark(color, option.index, option.format) : colorPalette(color, option.index, option.format)
-        if (option.gray) {
-            let _gray = Color(colorObj[i]).grayscale().rgb().string()
-            colorObj[i] = _gray
+        if (!option.dark) {
+            //light
+            if (option.gray) {
+                colorObj[i] = colorPaletteGray(color, option.index, option.format)
+            } else {
+                colorObj[i] = colorPalette(color, option.index, option.format)
+            }
+        } else {
+            //dark
+            if (option.gray) {
+                colorObj[i] = colorPaletteDarkGray(color, option.index, option.format)
+            } else {
+                colorObj[i] = colorPaletteDark(color, option.index, option.format)
+            }
         }
+        // if (option.gray) {
+        //     let _gray = Color(colorObj[i]).grayscale().rgb().string()
+        //     colorObj[i] = _gray
+        // }
         colorObj[i] = getRgbStr(colorObj[i])
     }
     return colorObj

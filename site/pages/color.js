@@ -1,4 +1,5 @@
 import { colors } from './style'
+import { css } from '@emotion/react'
 
 const Color = (props) => {
     const { name } = props
@@ -18,19 +19,75 @@ const Color = (props) => {
     )
 }
 
+const row = css`
+    margin-left: -8px;
+    margin-right: -8px;
+    row-gap: 16px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    align-items: center;
+`
+const col = css`
+    padding: 0px 8px;
+    display: block;
+    flex: 0 0 25%;
+    max-width: 25%;
+`
+
 export default () => {
     return (
-        <div>
+        <div css={css`
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 32px;
+    max-width: 1100px;
+`}>
             <h1>Color</h1>
             <h2>Color:</h2>
-            <div>
-                <Color name="red"></Color>
-            </div>
-            <div>
-                <Color name="blue"></Color>
-            </div>
-            <div>
-                <Color name="gray"></Color>
+            <div css={row}>
+                <div css={col}>
+                    <Color name="red"></Color>
+                </div>
+                <div css={col}>
+                    <Color name="pink"></Color>
+                </div>
+                <div css={col}>
+                    <Color name="purple"></Color>
+                </div>
+                <div css={col}>
+                    <Color name="deeppurple"></Color>
+                </div>
+                <div css={col}>
+                    <Color name="blue"></Color>
+                </div>
+                <div css={col}>
+                    <Color name="cyan"></Color>
+                </div>
+                <div css={col}>
+                    <Color name="green"></Color>
+                </div>
+                <div css={col}>
+                    <Color name="lime"></Color>
+                </div>
+                <div css={col}>
+                    <Color name="yellow"></Color>
+                </div>
+                <div css={col}>
+                    <Color name="amber"></Color>
+                </div>
+                <div css={col}>
+                    <Color name="orange"></Color>
+                </div>
+                <div css={col}>
+                    <Color name="deeporange"></Color>
+                </div>
+                <div css={col}>
+                    <Color name="gray"></Color>
+                </div>
             </div>
         </div>
     )

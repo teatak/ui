@@ -1,51 +1,82 @@
 import Color from 'color'
 import { getColorString } from './utils'
 
+const colorPaletteGray = (originColor, i, format) => {
+  const color = Color(originColor);
+  const v = color.value();
+
+  const maxValue = 95;
+  const minValue = 10;
+
+  function getNewValue(isLight, i) {
+    const _v = isLight ? v + ((maxValue - v) / 5) * i : (v <= minValue ? v : v - ((v - minValue) / 4) * i);
+    console.log(_v)
+    return _v
+  }
+
+  const isLight = i < 6;
+  const index = isLight ? 6 - i : i - 6;
+
+  const retColor = i === 6
+    ? Color({
+      h: 0,
+      s: 0,
+      v: v,
+    })
+    : Color({
+      h: 0,
+      s: 0,
+      v: getNewValue(isLight, index),
+    });
+
+  return getColorString(retColor, format);
+}
+
 const colorPalette = (originColor, i, format) => {
-  const color = Color(originColor)
-  const h = color.hue()
-  const s = color.saturationv()
-  const v = color.value()
+  const color = Color(originColor);
+  const h = color.hue();
+  const s = color.saturationv();
+  const v = color.value();
 
-  const hueStep = 2
-  const maxSaturationStep = 100
-  const minSaturationStep = 9
+  const hueStep = 2;
+  const maxSaturationStep = 100;
+  const minSaturationStep = 9;
 
-  const maxValue = 100
-  const minValue = 30
+  const maxValue = 100;
+  const minValue = 30;
 
-  const getNewHue = (isLight, i) => {
-    let hue
+  function getNewHue(isLight, i) {
+    let hue;
     if (h >= 60 && h <= 240) {
-      hue = isLight ? h - hueStep * i : h + hueStep * i
+      hue = isLight ? h - hueStep * i : h + hueStep * i;
     } else {
-      hue = isLight ? h + hueStep * i : h - hueStep * i
+      hue = isLight ? h + hueStep * i : h - hueStep * i;
     }
     if (hue < 0) {
-      hue += 360
+      hue += 360;
     } else if (hue >= 360) {
-      hue -= 360
+      hue -= 360;
     }
-    return Math.round(hue)
+    return Math.round(hue);
   }
 
-  const getNewSaturation = (isLight, i) => {
-    let newSaturation
+  function getNewSaturation(isLight, i) {
+    let newSaturation;
 
     if (isLight) {
-      newSaturation = s <= minSaturationStep ? s : s - ((s - minSaturationStep) / 5) * i
+      newSaturation = s <= minSaturationStep ? s : s - ((s - minSaturationStep) / 5) * i;
     } else {
-      newSaturation = s + ((maxSaturationStep - s) / 4) * i
+      newSaturation = s + ((maxSaturationStep - s) / 4) * i;
     }
-    return newSaturation
+    return newSaturation;
   }
 
-  const getNewValue = (isLight, i) => {
-    return isLight ? v + ((maxValue - v) / 5) * i : (v <= minValue ? v : v - ((v - minValue) / 4) * i)
+  function getNewValue(isLight, i) {
+    return isLight ? v + ((maxValue - v) / 5) * i : (v <= minValue ? v : v - ((v - minValue) / 4) * i);
   }
 
-  const isLight = i < 6
-  const index = isLight ? 6 - i : i - 6
+  const isLight = i < 6;
+  const index = isLight ? 6 - i : i - 6;
 
   const retColor = i === 6
     ? color
@@ -53,9 +84,9 @@ const colorPalette = (originColor, i, format) => {
       h: getNewHue(isLight, index),
       s: getNewSaturation(isLight, index),
       v: getNewValue(isLight, index),
-    })
+    });
 
-  return getColorString(retColor, format)
+  return getColorString(retColor, format);
 }
 
-export default colorPalette
+export { colorPalette, colorPaletteGray }

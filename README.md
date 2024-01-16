@@ -1,5 +1,5 @@
 # UI
 
-> npm i @teatak/ui 
+> npm i -D @teatak/ui 
 
 <https://teatak.github.io/ui/>
