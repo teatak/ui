@@ -30,10 +30,6 @@ export const generateColor = (color, option) => {
                 colorObj[i] = colorPaletteDark(color, option.index, option.format)
             }
         }
-        // if (option.gray) {
-        //     let _gray = Color(colorObj[i]).grayscale().rgb().string()
-        //     colorObj[i] = _gray
-        // }
         colorObj[i] = getRgbStr(colorObj[i])
     }
     return colorObj

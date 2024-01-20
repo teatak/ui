@@ -3,14 +3,22 @@ import { getColorString } from './utils'
 
 const colorPaletteGray = (originColor, i, format) => {
   const color = Color(originColor);
+  const h = color.hue();
+  const s = color.saturationv();
   const v = color.value();
 
-  const maxValue = 95;
+  const maxValue = 99;
   const minValue = 10;
 
   function getNewValue(isLight, i) {
-    const _v = isLight ? v + ((maxValue - v) / 5) * i : (v <= minValue ? v : v - ((v - minValue) / 4) * i);
-    console.log(_v)
+    let b = 2
+    let c = 0.6
+    let _v = v
+    if (isLight) {
+      _v = v + ((maxValue - v) / 5) * (5 - 5 * Math.pow(b, -i * c))
+    } else {
+      _v = (v <= minValue ? v : v - ((v - minValue) / 4) * (4 - 4 * Math.pow(b, -i * c)))
+    }
     return _v
   }
 
@@ -19,13 +27,13 @@ const colorPaletteGray = (originColor, i, format) => {
 
   const retColor = i === 6
     ? Color({
-      h: 0,
-      s: 0,
+      h: h,
+      s: s,
       v: v,
     })
     : Color({
-      h: 0,
-      s: 0,
+      h: h,
+      s: s,
       v: getNewValue(isLight, index),
     });
 

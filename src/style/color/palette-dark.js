@@ -4,11 +4,7 @@ import { getColorString } from './utils';
 
 const colorPaletteDarkGray = (originColor, i, format) => {
   const lightColor = Color(colorPaletteGray(originColor, 10 - i + 1));
-  const retColor = Color({
-    h: 0,
-    s: 0,
-    v: lightColor.value(),
-  });
+  const retColor = lightColor;
   return getColorString(retColor, format);
 }
 

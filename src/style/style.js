@@ -1,82 +1,104 @@
 import { css } from '@emotion/react'
 import { generateColor } from './color'
+import { mergeDeep } from '../helper/common'
 
 //基础样式
 export const baseStyle = {
     base: {
-        red: "rgb(255, 78, 71)",
-        pink: "rgb(255, 71, 126)",
-        purple: "rgb(233, 69, 255)",
-        deeppurple: "rgb(146, 74, 255)",
-        blue: "rgb(56, 118, 209)",
-        cyan: "rgb(36, 199, 214)",
-        green: "rgb(54, 194, 82)",
-        lime: "rgb(209, 219, 66)",
-        yellow: "rgb(255, 233, 87)",
-        amber: "rgb(199, 165, 44)",
-        orange: "rgb(250, 141, 57)",
-        deeporange: "rgb(255, 137, 74)",
-        gray: "rgb(97,97,97)",
+        // color
+        primary: "rgb(0, 122, 255)",
+        red: "rgb(255, 59, 48)",
+        orange: "rgb(255, 149, 0)",
+        yellow: "rgb(255, 204, 0)",
+        green: "rgb(52, 199, 89)",
+        mint: "rgb(0, 199, 190)",
+        cyan: "rgb(50, 173, 230)",
+        blue: "rgb(0, 122, 255)",
+        indigo: "rgb(88, 86, 214)",
+        purple: "rgb(175, 82, 222)",
+        pink: "rgb(255, 45, 85)",
+        gray: "rgb(130, 130, 130)",
     },
-    light: {
-        backGround: "rgb(255,255,255)",
+    backGround: {
+        base: "rgb(255, 255, 255)",
+        light: "rgb(255, 255, 255)",
+        dark: "rgb(30, 30, 30)",
     },
-    dark: {
-        backGround: "rgb(32,34,36)",
+    textColor: {
+        base: {
+            1: "rgb(var(--tui-gray-10))",
+            2: "rgb(var(--tui-gray-8))",
+            3: "rgb(var(--tui-gray-6))",
+            4: "rgb(var(--tui-gray-4))",
+        },
+        light: {
+            1: "rgb(var(--tui-gray-10))",
+            2: "rgb(var(--tui-gray-8))",
+            3: "rgb(var(--tui-gray-6))",
+            4: "rgb(var(--tui-gray-4))",
+        },
+        dark: {
+            1: "rgb(var(--tui-gray-10))",
+            2: "rgb(var(--tui-gray-8))",
+            3: "rgb(var(--tui-gray-6))",
+            4: "rgb(var(--tui-gray-4))",
+        },
+    },
+}
+const matchTheme = (key, theme, index) => {
+    if (index) {
+        return key[theme] ? key[theme][index] : key["base"][index]
+    } else {
+        return key[theme] ? key[theme] : key["base"]
     }
 }
-
 //合并基础样式
 export const mergeBaseStyle = (style) => {
     if (style) {
-        Object.assign(baseStyle.base, style.base)
-        Object.assign(baseStyle.light, style.light)
-        Object.assign(baseStyle.dark, style.dark)
+        mergeDeep(baseStyle, style)
     }
     return baseStyle
 }
 
 //生成样式
-const generateStyle = (key, option) => {
-    option = Object.assign({ dark: false, gray: false }, option)
+const generateStyle = (key, { dark = false, gray = false }) => {
+    //option = Object.assign({ dark: false, gray: false }, option)
     let lines = []
     let color = {}
+    const option = { dark, gray }
     switch (key) {
+        case "primary":
+            color = generateColor(baseStyle.base.primary, option)
+            break
         case "red":
             color = generateColor(baseStyle.base.red, option)
-            break
-        case "pink":
-            color = generateColor(baseStyle.base.pink, option)
-            break
-        case "purple":
-            color = generateColor(baseStyle.base.purple, option)
-            break
-        case "deeppurple":
-            color = generateColor(baseStyle.base.deeppurple, option)
-            break
-        case "blue":
-            color = generateColor(baseStyle.base.blue, option)
-            break
-        case "cyan":
-            color = generateColor(baseStyle.base.cyan, option)
-            break
-        case "green":
-            color = generateColor(baseStyle.base.green, option)
-            break
-        case "lime":
-            color = generateColor(baseStyle.base.lime, option)
-            break
-        case "yellow":
-            color = generateColor(baseStyle.base.yellow, option)
-            break
-        case "amber":
-            color = generateColor(baseStyle.base.amber, option)
             break
         case "orange":
             color = generateColor(baseStyle.base.orange, option)
             break
-        case "deeporange":
-            color = generateColor(baseStyle.base.deeporange, option)
+        case "yellow":
+            color = generateColor(baseStyle.base.yellow, option)
+            break
+        case "green":
+            color = generateColor(baseStyle.base.green, option)
+            break
+        case "mint":
+            color = generateColor(baseStyle.base.mint, option)
+            break
+        case "cyan":
+            color = generateColor(baseStyle.base.cyan, option)
+            break
+        case "blue":
+            color = generateColor(baseStyle.base.blue, option)
+            break
+        case "indigo":
+            color = generateColor(baseStyle.base.indigo, option)
+            break
+        case "purple":
+            color = generateColor(baseStyle.base.purple, option)
+            break
+        case "pink":
+            color = generateColor(baseStyle.base.pink, option)
             break
         case "gray":
             color = generateColor(baseStyle.base.gray, option)
@@ -95,47 +117,79 @@ const generateStyle = (key, option) => {
 
 //浅色模式
 export const light = () => {
+    const theme = "light"
     return css`
-        color-scheme: light;
-        --tui-color-background: ${baseStyle.light.backGround};
-        --tui-color-icon-primary: rgb(101 109 118);
-        --tui-color-background-2: rgb(var(--tui-gray-1));
-        ${generateStyle("red")}
-        ${generateStyle("pink")}
-        ${generateStyle("purple")}
-        ${generateStyle("deeppurple")}
-        ${generateStyle("blue")}
-        ${generateStyle("cyan")}
-        ${generateStyle("green")}
-        ${generateStyle("lime")}
-        ${generateStyle("yellow")}
-        ${generateStyle("amber")}
-        ${generateStyle("orange")}
-        ${generateStyle("deeporange")}
+        color-scheme: ${theme};
+        ${generateStyle("primary", {})}
+        ${generateStyle("red", {})}
+        ${generateStyle("orange", {})}
+        ${generateStyle("yellow", {})}
+        ${generateStyle("green", {})}
+        ${generateStyle("mint", {})}
+        ${generateStyle("cyan", {})}
+        ${generateStyle("blue", {})}
+        ${generateStyle("indigo", {})}
+        ${generateStyle("purple", {})}
+        ${generateStyle("pink", {})}
         ${generateStyle("gray", { gray: true })}
+
+        /* text */
+        --tui-text-color-1: ${matchTheme(baseStyle.textColor, theme, 1)};
+        --tui-text-color-2: ${matchTheme(baseStyle.textColor, theme, 2)};
+        --tui-text-color-3: ${matchTheme(baseStyle.textColor, theme, 3)};
+        --tui-text-color-4: ${matchTheme(baseStyle.textColor, theme, 4)};
+
+        /* background */
+        --tui-background-color: ${matchTheme(baseStyle.backGround, theme)};
+        --tui-color-background-1: rgb(var(--tui-gray-1));
+        --tui-color-background-2: rgb(var(--tui-gray-2));
+        --tui-color-background-3: rgb(var(--tui-gray-3));
+        --tui-color-background-4: rgb(var(--tui-gray-4));
+
+        /* border */
+        --tui-color-border-1: rgb(var(--tui-gray-1));
+        --tui-color-border-2: rgb(var(--tui-gray-2));
+        --tui-color-border-3: rgb(var(--tui-gray-3));
+        --tui-color-border-4: rgb(var(--tui-gray-4));  
     `
 }
 
 //深色模式
 export const dark = () => {
+    const theme = "dark"
     return css`
-        color-scheme: dark;
-        --tui-color-background: ${baseStyle.dark.backGround};
-        --tui-color-background-2: rgb(var(--tui-gray-1));
-        --tui-color-icon-primary: rgb(132 141 151);
+        color-scheme: ${theme};
+        ${generateStyle("primary", { dark: true })}
         ${generateStyle("red", { dark: true })}
-        ${generateStyle("pink", { dark: true })}
-        ${generateStyle("purple", { dark: true })}
-        ${generateStyle("deeppurple", { dark: true })}
-        ${generateStyle("blue", { dark: true })}
-        ${generateStyle("cyan", { dark: true })}
-        ${generateStyle("green", { dark: true })}
-        ${generateStyle("lime", { dark: true })}
-        ${generateStyle("yellow", { dark: true })}
-        ${generateStyle("amber", { dark: true })}
         ${generateStyle("orange", { dark: true })}
-        ${generateStyle("deeporange", { dark: true })}
+        ${generateStyle("yellow", { dark: true })}
+        ${generateStyle("green", { dark: true })}
+        ${generateStyle("mint", { dark: true })}
+        ${generateStyle("cyan", { dark: true })}
+        ${generateStyle("blue", { dark: true })}
+        ${generateStyle("indigo", { dark: true })}
+        ${generateStyle("purple", { dark: true })}
+        ${generateStyle("pink", { dark: true })}
         ${generateStyle("gray", { dark: true, gray: true })}
+        
+        /* text */
+        --tui-text-color-1: ${matchTheme(baseStyle.textColor, theme, 1)};
+        --tui-text-color-2: ${matchTheme(baseStyle.textColor, theme, 2)};
+        --tui-text-color-3: ${matchTheme(baseStyle.textColor, theme, 3)};
+        --tui-text-color-4: ${matchTheme(baseStyle.textColor, theme, 4)};
+
+        /* background */
+        --tui-color-background:  ${matchTheme(baseStyle.backGround, theme)};
+        --tui-color-background-1: rgb(var(--tui-gray-1));
+        --tui-color-background-2: rgb(var(--tui-gray-2));
+        --tui-color-background-3: rgb(var(--tui-gray-3));
+        --tui-color-background-4: rgb(var(--tui-gray-4));
+
+        /* border */
+        --tui-color-border-1: rgb(var(--tui-gray-1));
+        --tui-color-border-2: rgb(var(--tui-gray-2));
+        --tui-color-border-3: rgb(var(--tui-gray-3));
+        --tui-color-border-4: rgb(var(--tui-gray-4));
     `
 }
 
@@ -159,7 +213,9 @@ export const globalStyle = () => {
             }
         }
         body {
+            font-size: 14px;
             background-color: var(--tui-color-background);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
         }
         * {
             margin: 0;

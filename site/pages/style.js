@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-const colors = css`
+export const color = css`
     div {
       padding: 16px;
       text-align: center;
@@ -17,8 +17,24 @@ const colors = css`
       }
     }
     .reverse {
-      color: var(--tt-color-background-2);
+      color: var(--tui-color-background-2);
     }
 `
 
-export { colors }
+export const row = css`
+    margin-left: -8px;
+    margin-right: -8px;
+    row-gap: 16px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    align-items: center;
+`
+export const col = css`
+    padding: 0px 8px;
+    display: block;
+    flex: 0 0 25%;
+    max-width: 25%;
+`

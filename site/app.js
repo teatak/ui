@@ -15,8 +15,8 @@ import { Progress } from './helper/loading'
 import { prerenderGlobalStyle, ConfigProvider, Button } from '../src'
 let style = {
     // base: {
-    //     blue: "#3491FA",
-    //     gray: "#3491FA",
+    //     blue: "#aaa",
+    //     gray: "#aaa",
     // }
 }
 prerenderGlobalStyle(style)
@@ -24,7 +24,7 @@ const fallback = {
     fallback: <Progress />,
 }
 
-const PageColor = loadable(() => import('./pages/color'))
+const PageVariable = loadable(() => import('./pages/variable'))
 
 const Wrapper = ({ children }) => {
     const location = useLocation();
@@ -39,14 +39,13 @@ const App = () => {
     const renderRouters = () => {
         return <Wrapper>
             <Routes>
-                <Route path="/" element={<Navigate to="/color" replace />} />
+                <Route path="/" element={<Navigate to="/variable" replace />} />
                 <Route path="/demo" element={<>
                     <Helmet title="Demo - TeaTak" />
                 </>} />
-                <Route strict path="/color" element={<>
-                    <Progress />
-                    <Helmet title="Color - TeaTak" />
-                    <PageColor />
+                <Route strict path="/variable" element={<>
+                    <Helmet title="Variable - TeaTak" />
+                    <PageVariable />
                 </>} />
             </Routes>
         </Wrapper>
@@ -60,9 +59,7 @@ const App = () => {
 
                     </div>
                     <div className="header-menu">
-                        <a href="https://github.com/teatak/ui">
-                            <Button type="outlined"></Button>
-                        </a>
+
                     </div>
                 </header>
                 <main className="content">
@@ -74,6 +71,5 @@ const App = () => {
         </Router>
     </ConfigProvider>
 }
-
 
 export default App
