@@ -49,17 +49,24 @@ export default () => {
             </div>
             <h2>背景色(Background)</h2>
             <div css={spanDiv}>
-                <span style={{ backgroundColor: "var(--tui-color-background-1)" }}>--color-background-1</span>
-                <span style={{ backgroundColor: "var(--tui-color-background-2)" }}>--color-background-2</span>
-                <span style={{ backgroundColor: "var(--tui-color-background-3)" }}>--color-background-3</span>
-                <span style={{ backgroundColor: "var(--tui-color-background-4)" }}>--color-background-4</span>
+                <span style={{ backgroundColor: "var(--tui-background-color-1)" }}>--tui-background-color-1</span>
+                <span style={{ backgroundColor: "var(--tui-background-color-2)" }}>--tui-background-color-2</span>
+                <span style={{ backgroundColor: "var(--tui-background-color-3)" }}>--tui-background-color-3</span>
+                <span style={{ backgroundColor: "var(--tui-background-color-4)" }}>--tui-background-color-4</span>
             </div>
             <h2>边框(Border)</h2>
             <div css={spanDiv}>
-                <span style={{ border: "2px solid var(--tui-color-border-1)" }}>--color-border-1</span>
-                <span style={{ border: "2px solid var(--tui-color-border-2)" }}>--color-border-2</span>
-                <span style={{ border: "2px solid var(--tui-color-border-3)" }}>--color-border-3</span>
-                <span style={{ border: "2px solid var(--tui-color-border-4)" }}>--color-border-4</span>
+                <span style={{ border: "2px solid var(--tui-border-color-1)" }}>--tui-border-color-1</span>
+                <span style={{ border: "2px solid var(--tui-border-color-2)" }}>--tui-border-color-2</span>
+                <span style={{ border: "2px solid var(--tui-border-color-3)" }}>--tui-border-color-3</span>
+                <span style={{ border: "2px solid var(--tui-border-color-4)" }}>--tui-border-color-4</span>
+            </div>
+            <h2>尺寸(Size)</h2>
+            <div css={spanDiv}>
+                <span style={{ fontSize: "var(--tui-size-mini)" }}>--tui-size-mini</span>
+                <span style={{ fontSize: "var(--tui-size-small)" }}>--tui-size-small</span>
+                <span style={{ fontSize: "var(--tui-size-medium)" }}>--tui-size-medium</span>
+                <span style={{ fontSize: "var(--tui-size-large)" }}>--tui-size-large</span>
             </div>
             <h2>调色板</h2>
             <div>
