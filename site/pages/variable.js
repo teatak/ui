@@ -1,5 +1,6 @@
 import { color, row, col } from './style'
 import { css } from '@emotion/react'
+import { Space } from '../../src'
 
 const Palette = (props) => {
     const { name } = props
@@ -25,7 +26,8 @@ const spanDiv = css`
     align-items: center;
     span {
         margin: auto;
-        padding: 8px;
+        background-color: red;
+        padding: 2px;
     }
 `
 
@@ -41,11 +43,14 @@ export default () => {
             <h1>变量和颜色</h1>
             <div></div>
             <h2>文字(Text)</h2>
-            <div css={spanDiv}>
+            <Space css={spanDiv} align="stretch">
                 <span style={{ color: "var(--tui-text-color-1)" }}>--tui-text-color-1</span>
                 <span style={{ color: "var(--tui-text-color-2)" }}>--tui-text-color-2</span>
                 <span style={{ color: "var(--tui-text-color-3)" }}>--tui-text-color-3</span>
                 <span style={{ color: "var(--tui-text-color-4)" }}>--tui-text-color-4</span>
+            </Space>
+            <div css={spanDiv}>
+
             </div>
             <h2>背景色(Background)</h2>
             <div css={spanDiv}>
