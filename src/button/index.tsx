@@ -1,6 +1,4 @@
-import { ReactNode } from "react"
-
-const Button = (props: { children: ReactNode }) => {
+const Button = (props: { children: React.ReactNode }) => {
     const { children } = props
     return <button>{children}</button>
 }

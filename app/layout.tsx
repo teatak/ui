@@ -1,4 +1,10 @@
 import type { Metadata } from "next";
+import { Noto_Sans_SC } from 'next/font/google'
+
+const inter = Noto_Sans_SC({
+  weight: '400',
+  subsets: ['latin']
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={inter.className}>测试{children}</body>
     </html>
   );
 }
