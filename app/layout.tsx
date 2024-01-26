@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Noto_Sans_SC } from 'next/font/google'
-import Links from './components/links'
+import StyledComponentsRegistry from '@/lib/registry'
+import Links from '@/components/links'
+
 const inter = Noto_Sans_SC({
   weight: '400',
   subsets: ['latin']
@@ -21,8 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Links />
-        {children}
+        <StyledComponentsRegistry>
+          <Links />
+          {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   )
