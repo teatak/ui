@@ -8,3 +8,5 @@ src/
 test/
 site/
 docs/
+storybook-static/
+.storybook/

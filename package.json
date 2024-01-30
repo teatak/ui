@@ -17,7 +17,9 @@
   "scripts": {
     "clean:dist": "rimraf dist",
     "build": "npm-run-all clean:* --parallel build:*",
-    "build:rollup": "rollup -c --bundleConfigAsCjs"
+    "build:rollup": "rollup -c --bundleConfigAsCjs",
+    "storybook": "storybook dev -p 6006",
+    "build:storybook": "storybook build"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",

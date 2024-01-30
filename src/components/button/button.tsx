@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ButtonProps } from "./button.types";
 
-const StyledButton = styled.button<ButtonProps>`
+const StyledButton = styled.button<any>`
   border: 0;
   line-height: 1;
   font-size: 15px;
@@ -17,11 +17,11 @@ const StyledButton = styled.button<ButtonProps>`
             : props.size === "medium"
                 ? "9px 30px 11px"
                 : "14px 30px 16px"};
-  color: ${(props) => (props.primary ? "#1b116e" : "#ffffff")};
-  background-color: ${(props) => (props.primary ? "#6bedb5" : "#1b116e")};
+  color: ${(props) => (props.$primary ? "#1b116e" : "#ffffff")};
+  background-color: ${(props) => (props.$primary ? "#6bedb5" : "#1b116e")};
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   &:hover {
-    background-color: ${(props) => (props.primary ? "#55bd90" : "#6bedb5")};
+    background-color: ${(props) => (props.$primary ? "#55bd90" : "#6bedb5")};
   }
   &:active {
     border: solid 2px #1b116e;
@@ -43,7 +43,7 @@ const Button: React.FC<ButtonProps> = ({
     return (
         <StyledButton
             type="button"
-            primary={primary}
+            $primary={primary}
             disabled={disabled}
             size={size}
         >
