@@ -5,6 +5,7 @@ import Links from '@/components/links'
 
 const inter = Noto_Sans_SC({
   weight: '400',
+  display: "block",
   subsets: ['latin']
 })
 
@@ -12,7 +13,8 @@ export const metadata: Metadata = {
   title: {
     template: '%s - Teatak',
     default: 'Teatak',
-  }
+  },
+  description: "teatak"
 }
 
 export default function RootLayout({
@@ -22,12 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <StyledComponentsRegistry>
+      <StyledComponentsRegistry>
+        <body className={inter.className}>
           <Links />
           {children}
-        </StyledComponentsRegistry>
-      </body>
+        </body>
+      </StyledComponentsRegistry>
     </html>
   )
 }

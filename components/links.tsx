@@ -32,7 +32,7 @@ export default function Links() {
                     <NavLink href='/'>Home</NavLink>
                 </li>
                 <li>
-                    <NavLink href='/dashboard/a'>Dashboard</NavLink>
+                    <NavLink href='/dashboard'>Dashboard</NavLink>
                 </li>
                 <li>
                     <NavLink href='/about'>About</NavLink>
