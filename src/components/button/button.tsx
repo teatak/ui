@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ButtonProps } from "./button.types";
+import { ButtonProps } from "./interface";
 
 const StyledButton = styled.button<any>`
   border: 0;

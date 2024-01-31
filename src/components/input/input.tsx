@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { InputProps } from "./input.types";
+import { InputProps } from "./interface";
 
 const StyledInput = styled.input<InputProps>`
     color:red;
