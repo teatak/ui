@@ -1,5 +1,4 @@
 import Color from "color";
-import { baseStyle, dark } from "../base";
 
 //根据基础颜色生成10级的颜色
 export const generateColor = (

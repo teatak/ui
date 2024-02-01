@@ -1,13 +1,23 @@
 import React from "react";
-import { baseStyle, generateColor, prerenderGlobalStyle } from '../style'
+import { baseTheme, generateColor, prerenderGlobalStyle } from '../style'
 
-prerenderGlobalStyle()
+let theme = {
+    borderRadius: {
+        none: 0,
+        small: "4px",
+        medium: "6px",
+        large: "10px",
+        circle: "50%",
+    },
+}
 
-export default (props: { dark: boolean } = { dark: false }) => {
+prerenderGlobalStyle(theme)
+
+export default ({ dark = false }: { dark: boolean }) => {
     return <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {Object.keys(baseStyle.base).map((k, i) => {
-            let v = baseStyle.base[k]
-            let rgbs = generateColor(v, { dark: props.dark })
+        {Object.keys(baseTheme.base).map((k, i) => {
+            let v = baseTheme.base[k]
+            let rgbs = generateColor(v, { dark: dark })
             return <div key={i} style={{ width: "25%" }}>
                 {Object.keys(rgbs).map((_k, _i) => {
                     let _v = rgbs[_k]
