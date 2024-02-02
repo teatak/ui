@@ -35,6 +35,6 @@ export default [
             }),
             commonjs(),
         ],
-        external: ["color", "react", "react-dom", "react-dom/client", "styled-components"],
+        external: ["color", "classnames", "react", "react-dom", "react-dom/client", "prop-types", "styled-components"],
     },
 ];
