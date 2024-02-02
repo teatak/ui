@@ -92,6 +92,21 @@ export const baseTheme = {
         small: "28px",
         medium: "32px",
         large: "36px",
+        //空隙
+        gapMini: "4px",
+        gapSmall: "8px",
+        gapMedium: "16px",
+        gapLarge: "24px",
+        //距离，按钮，输入框，padding
+        spaceMini: "8px",
+        spaceSmall: "12px",
+        spaceMedium: "16px",
+        spaceLarge: "20px",
+        //填充
+        paddingMini: "8px",
+        paddingSmall: "16px",
+        paddingMedium: "24px",
+        paddingLarge: "32px",
     }
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import ReactDOM from 'react-dom/client'
 import { generateColor } from './palette'
 import { createGlobalStyle, css } from 'styled-components';
@@ -30,7 +30,8 @@ const generateStyles = (dark = false) => {
 //theme
 const storageKey = 'color-scheme'
 const attributeKey = 'data-tui-color-scheme'
-let loaded = false
+let loadedColorScheme = false
+let loadedVariable = false
 
 const renderSize = () => {
     let lines = []
@@ -46,6 +47,24 @@ const renderSize = () => {
     lines.push(`--tui-size-small: ${baseTheme.size["small"] ? baseTheme.size["small"] : "var(--tui-size-7)"};\n`)
     lines.push(`--tui-size-medium: ${baseTheme.size["medium"] ? baseTheme.size["medium"] : "var(--tui-size-8)"};\n`)
     lines.push(`--tui-size-large: ${baseTheme.size["large"] ? baseTheme.size["large"] : "var(--tui-size-9)"};\n`)
+
+    //空隙
+    lines.push(`--tui-size-gap-mini: ${baseTheme.size["gapMini"] ? baseTheme.size["gapMini"] : "var(--tui-size-1)"};\n`)
+    lines.push(`--tui-size-gap-small: ${baseTheme.size["gapSmall"] ? baseTheme.size["gapSmall"] : "var(--tui-size-2)"};\n`)
+    lines.push(`--tui-size-gap-medium: ${baseTheme.size["gapMedium"] ? baseTheme.size["gapMedium"] : "var(--tui-size-4)"};\n`)
+    lines.push(`--tui-size-gap-large: ${baseTheme.size["gapLarge"] ? baseTheme.size["gapLarge"] : "var(--tui-size-6)"};\n`)
+
+    //距离，按钮，输入框，padding
+    lines.push(`--tui-size-space-mini: ${baseTheme.size["spaceMini"] ? baseTheme.size["spaceMini"] : "var(--tui-size-2)"};\n`)
+    lines.push(`--tui-size-space-small: ${baseTheme.size["spaceSmall"] ? baseTheme.size["spaceSmall"] : "var(--tui-size-3)"};\n`)
+    lines.push(`--tui-size-space-medium: ${baseTheme.size["spaceMedium"] ? baseTheme.size["spaceMedium"] : "var(--tui-size-4)"};\n`)
+    lines.push(`--tui-size-space-large: ${baseTheme.size["spaceLarge"] ? baseTheme.size["spaceLarge"] : "var(--tui-size-5)"};\n`)
+
+    //填充
+    lines.push(`--tui-size-padding-mini: ${baseTheme.size["paddingMini"] ? baseTheme.size["paddingMini"] : "var(--tui-size-2)"};\n`)
+    lines.push(`--tui-size-padding-small: ${baseTheme.size["paddingSmall"] ? baseTheme.size["paddingSmall"] : "var(--tui-size-4)"};\n`)
+    lines.push(`--tui-size-padding-medium: ${baseTheme.size["paddingMedium"] ? baseTheme.size["paddingMedium"] : "var(--tui-size-6)"};\n`)
+    lines.push(`--tui-size-padding-large: ${baseTheme.size["paddingLarge"] ? baseTheme.size["paddingLarge"] : "var(--tui-size-8)"};\n`)
 
     return lines.join('')
 }
@@ -64,10 +83,7 @@ const base = () => {
 const light = () => {
     const theme = "light"
     return css`
-        color-scheme: ${theme};
-
         ${generateStyles(false)}
-
         /* text */
         --tui-text-color-1: ${matchTheme(baseTheme.textColor, theme, 1)};
         --tui-text-color-2: ${matchTheme(baseTheme.textColor, theme, 2)};
@@ -92,8 +108,7 @@ const light = () => {
 const dark = () => {
     const theme = "dark"
     return css`
-        color-scheme: ${theme};
-
+        ${generateStyles(true)}
         /* text */
         --tui-text-color-1: ${matchTheme(baseTheme.textColor, theme, 1)};
         --tui-text-color-2: ${matchTheme(baseTheme.textColor, theme, 2)};
@@ -115,34 +130,31 @@ const dark = () => {
     `
 }
 
-const Global = createGlobalStyle`
+const GlobalVariable = createGlobalStyle`
     :root {
+        ${props => (props.$light)}
         ${props => (props.$base)}
     }
-    :root, [data-tui-color-scheme="light"] {
+`
+
+const GlobalColorScheme = createGlobalStyle`
+    [data-tui-color-scheme="light"] {
+        color-scheme: light;
         ${props => (props.$light)}
     }
     [data-tui-color-scheme="dark"] {
+        color-scheme: dark;
         ${props => (props.$dark)}
     }
     [data-tui-color-scheme="auto"] {
         @media (prefers-color-scheme: light) {
+            color-scheme: light;
             ${props => (props.$light)}
         }
         @media (prefers-color-scheme: dark) {
+            color-scheme: dark;
             ${props => (props.$dark)}
         }
-    }
-    body {
-        font-size: 14px;
-        background-color: var(--tui-background-color);
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    }
-    * {
-        margin: 0;
-        padding: 0;
-        outline: none;
-        box-sizing: border-box;
     }
 `
 
@@ -157,31 +169,42 @@ const reflectPreference = () => {
     document.firstElementChild?.setAttribute(attributeKey, theme)
 }
 
-// 提前加载全局样式，在DOM渲染之前加载
-export const prerenderGlobalStyle = (theme) => {
-    if (!loaded) {
+// 提前加载全局变量
+export const prerenderVariable = (theme) => {
+    if (!loadedVariable) {
         if (theme) {
             mergeBaseTheme(theme)
         }
+        loadedVariable = true
         ReactDOM.createRoot(document.createElement("div")).render(
-            <Global $base={base()} $light={light()} $dark={dark()} />
+            <GlobalVariable $base={base()} $light={light()} />
         )
-        reflectPreference()
-        loaded = true
     }
 }
 
-// 全局样式
-export const GlobalStyle = (props) => {
-    if (!loaded) {
-        const { theme } = props
+// 提前加载全局颜色模式
+export const prerenderColorScheme = (theme) => {
+    if (!loadedColorScheme) {
         if (theme) {
             mergeBaseTheme(theme)
         }
         reflectPreference()
-        loaded = true
-        return <Global $base={base()} $light={light()} $dark={dark()} />
-    } else {
-        return null
+        loadedColorScheme = true
+        ReactDOM.createRoot(document.createElement("div")).render(
+            <GlobalColorScheme $light={light()} $dark={dark()} />
+        )
     }
+}
+
+// 提前加载全局样式，在DOM渲染之前加载
+export const prerenderGlobalStyle = (theme) => {
+    prerenderVariable(theme)
+    prerenderColorScheme(theme)
+}
+
+export const withGlobalVariable = (WrappedComponent) => {
+    prerenderVariable()
+    return forwardRef((props, ref) => {
+        return <WrappedComponent {...props} ref={ref} />
+    })
 }

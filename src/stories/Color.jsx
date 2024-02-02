@@ -1,17 +1,5 @@
 import React from "react";
-import { baseTheme, generateColor, prerenderGlobalStyle } from '../style'
-
-let theme = {
-    borderRadius: {
-        none: 0,
-        small: "4px",
-        medium: "6px",
-        large: "10px",
-        circle: "50%",
-    },
-}
-
-prerenderGlobalStyle(theme)
+import { baseTheme, generateColor } from '../style'
 
 export default ({ dark = false }) => {
     return <div style={{ display: "flex", flexWrap: "wrap" }}>

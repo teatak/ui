@@ -1,7 +1,7 @@
 import Color from './Color'
 
 const meta = {
-    title: 'Example/Color',
+    title: 'Start/Color',
     component: Color,
     parameters: {
         layout: 'centered',
