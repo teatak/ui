@@ -1,13 +1,12 @@
-import resolve from "@rollup/plugin-node-resolve";
+import nodeResolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import typescript from "@rollup/plugin-typescript";
-import dts from "rollup-plugin-dts";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import babel from '@rollup/plugin-babel';
 const packageJson = require("./package.json");
 
 export default [
     {
-        input: "src/index.ts",
+        input: "src/index.js",
         output: [
             {
                 dir: "./dist/cjs",
@@ -26,15 +25,16 @@ export default [
         ],
         plugins: [
             peerDepsExternal(),
-            resolve(),
+            nodeResolve({
+                extensions: ['.js', '.jsx']
+            }),
+            babel({
+                babelHelpers: 'bundled',
+                presets: ['@babel/preset-react'],
+                extensions: ['.js', '.jsx']
+            }),
             commonjs(),
-            typescript({ tsconfig: "./tsconfig.build.json" }),
         ],
-        external: ["react", "react-dom", "styled-components"],
-    },
-    {
-        input: "src/index.ts",
-        output: [{ file: "dist/types.d.ts", format: "esm" }],
-        plugins: [dts.default()],
+        external: ["color", "react", "react-dom", "react-dom/client", "styled-components"],
     },
 ];

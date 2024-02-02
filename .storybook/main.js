@@ -1,6 +1,5 @@
-import type { StorybookConfig } from "@storybook/react-webpack5";
-
-const config: StorybookConfig = {
+/** @type { import('@storybook/react-webpack5').StorybookConfig } */
+const config = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
@@ -18,11 +17,6 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: "tag",
-  },
-  typescript: {
-    reactDocgen: "react-docgen",
-    skipBabel: true,
-    check: false,
   },
 };
 export default config;

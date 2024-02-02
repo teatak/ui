@@ -13,7 +13,7 @@ let theme = {
 
 prerenderGlobalStyle(theme)
 
-export default ({ dark = false }: { dark: boolean }) => {
+export default ({ dark = false }) => {
     return <div style={{ display: "flex", flexWrap: "wrap" }}>
         {Object.keys(baseTheme.base).map((k, i) => {
             let v = baseTheme.base[k]
