@@ -16,7 +16,9 @@ export const Button = withGlobalVariable(forwardRef<HTMLButtonElement, ButtonPro
         color = 'primary',
         size,
         htmlType,
+        onClick,
         children,
+        disabled,
         ...rest
     } = props
 
@@ -34,12 +36,21 @@ export const Button = withGlobalVariable(forwardRef<HTMLButtonElement, ButtonPro
         },
         className,
     )
+    const handleClick: React.MouseEventHandler<HTMLElement> = (event: any): void => {
+        if (disabled) {
+            typeof event?.preventDefault === 'function' && event.preventDefault();
+            return;
+        }
+        onClick && onClick(event);
+    };
+
     return <Styled
         ref={buttonRef}
         $prefixClass={prefixClass}
         style={style}
         className={classNames}
         type={htmlType}
+        onClick={handleClick}
         {...rest}
     >
         {children}

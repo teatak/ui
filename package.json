@@ -31,16 +31,20 @@
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
-    "@storybook/addon-essentials": "^7.6.11",
-    "@storybook/addon-interactions": "^7.6.11",
-    "@storybook/addon-links": "^7.6.11",
-    "@storybook/blocks": "^7.6.11",
-    "@storybook/react": "^7.6.11",
-    "@storybook/react-webpack5": "^7.6.11",
-    "@storybook/test": "^7.6.11",
+    "@storybook/addon-essentials": "^7.6.12",
+    "@storybook/addon-interactions": "^7.6.12",
+    "@storybook/addon-links": "^7.6.12",
+    "@storybook/addon-mdx-gfm": "^7.6.12",
+    "@storybook/blocks": "^7.6.12",
+    "@storybook/react": "^7.6.12",
+    "@storybook/react-webpack5": "^7.6.12",
+    "@storybook/test": "^7.6.12",
     "@types/color": "^3.0.6",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
@@ -51,7 +55,7 @@
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-minification": "^0.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "storybook": "^7.6.11",
+    "storybook": "^7.6.12",
     "typescript": "^5.3.3"
   }
 }
