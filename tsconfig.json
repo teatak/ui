@@ -3,8 +3,9 @@
         "module": "esnext",
         "target": "es2015",
         "lib": [
-            "dom"
+            "dom",
         ],
+        "allowJs": true,
         "sourceMap": true,
         "jsx": "react",
         "moduleResolution": "node",
@@ -13,23 +14,13 @@
         "noImplicitAny": true,
         "strictNullChecks": true,
         "esModuleInterop": true,
-        "baseUrl": "./",
-        "paths": {
-            "components": [
-                "src/components/*"
-            ],
-        }
     },
+    "include": [
+        "src/**/*",
+    ],
     "exclude": [
         "node_modules",
         "build",
         "dist",
-        "scripts",
-        "acceptance-tests",
-        "webpack",
-        "jest"
-    ],
-    "types": [
-        "typePatches"
     ]
 }

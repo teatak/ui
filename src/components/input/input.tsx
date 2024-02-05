@@ -6,22 +6,21 @@ const StyledInput = styled.input<InputProps>`
     color:red;
 `;
 
-const Input: React.FC<InputProps> = ({
-    size,
-    primary,
-    disabled,
-    text,
-}) => {
+export const Input = (props: InputProps) => {
+    const {
+        primary,
+        disabled,
+        size,
+        text
+    } = props
     return (
         <StyledInput
             type="input"
             primary={primary}
             disabled={disabled}
             size={size}
+            defaultValue={text}
         >
-            {text}
         </StyledInput>
     );
 };
-
-export default Input;

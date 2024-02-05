@@ -1,6 +1,6 @@
 
 import { merge } from '../helper/common'
-
+import { injectControlThemes } from './inject'
 //基础样式
 export const baseTheme: any = {
     base: {
@@ -83,21 +83,39 @@ export const baseTheme: any = {
     },
     borderRadius: {
         none: 0,
-        small: "2px",
-        medium: "4px",
+        tiny: "2px",
+        small: "4px",
+        medium: "6px",
         large: "8px",
         circle: "50%",
     },
     size: {
-        mini: "24px",
+        tiny: "24px",
         small: "28px",
         medium: "32px",
         large: "36px",
+        //空隙
+        gapTiny: "4px",
+        gapSmall: "8px",
+        gapMedium: "16px",
+        gapLarge: "24px",
+        //距离，按钮，输入框，padding
+        spaceTiny: "8px",
+        spaceSmall: "12px",
+        spaceMedium: "16px",
+        spaceLarge: "20px",
+        //填充
+        paddingTiny: "8px",
+        paddingSmall: "16px",
+        paddingMedium: "24px",
+        paddingLarge: "32px",
     }
 }
 
 //合并基础样式
-export const mergeBaseTheme = (theme: any) => {
+export const mergeBaseTheme = (theme?: any) => {
+    //注入
+    injectControlThemes()
     if (theme) {
         merge(baseTheme, theme)
     }

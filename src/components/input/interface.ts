@@ -1,5 +1,8 @@
 
 export interface InputProps {
+    /** 
+     * text
+     */
     text?: string;
     primary?: boolean;
     disabled?: boolean;
