@@ -1,27 +1,28 @@
 import React from 'react';
-import { Space, Button } from '../components';
+import { Space, Button, ButtonProps } from '../components';
 
 export interface ButtonPropsOverride {
-    type?: 'standard' | 'filled' | 'outlined'
+    type?: 'text' | 'filled' | 'outlined'
     long?: boolean
-    rounded?: boolean
-    circle?: boolean
+    shape?: 'circle' | 'round' | 'square';
+    loading?: boolean
+    loadingPosition?: 'start' | 'end'
     size?: 'tiny' | 'small' | 'medium' | 'large'
 }
 
-export const ButtonWithType = (props: ButtonPropsOverride) => {
+export const ButtonWithType = (props: ButtonProps) => {
     const { type, ...rest } = props
     return <Space>
-        <Button type={props.type} color="primary" {...rest} onClick={() => {
-            console.log(11111)
+        <Button type={props.type} color="primary" loadingPosition="end" {...rest} onClick={() => {
+
         }}>Primary</Button>
         <Button type={props.type} color="secondary" {...rest}>Secondary</Button>
-        <Button type={props.type} color="success" {...rest}>Success</Button>
+        <Button type={props.type} color="success" loadingPosition="start" {...rest}>Success</Button>
         <Button type={props.type} color="error" {...rest}>Error</Button>
         <Button type={props.type} color="info" {...rest}>Info</Button>
         <Button type={props.type} color="warning" {...rest}>Warning</Button>
-        <Button type={props.type} disabled {...rest} onClick={() => {
-            console.log(2222)
+        <Button type={props.type} href="#" {...rest} >Link</Button>
+        <Button type={props.type}  {...rest} disabled onClick={() => {
         }}>Disabled</Button>
     </Space>
 }

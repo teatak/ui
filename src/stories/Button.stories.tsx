@@ -31,27 +31,31 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const ButtonTypes: Story = {
   args: {
-    type: "outlined"
+    type: 'outlined',
+    shape: 'round',
+    loading: true,
+
   },
 };
 
 export const Small: Story = {
   args: {
-    type: "filled",
+    type: "outlined",
     size: "small"
   },
 };
 
 export const Rounded: Story = {
   args: {
-    type: "filled",
-    rounded: true,
+    type: "text",
+    shape: "round",
+    loading: true,
   },
 };
 
 export const Circle: Story = {
   args: {
-    type: "filled",
-    circle: true,
+    type: "outlined",
+    shape: "circle",
   },
 };
