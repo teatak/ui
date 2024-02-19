@@ -83,6 +83,7 @@ export const baseTheme: any = {
     },
     borderRadius: {
         none: 0,
+        normal: "4px",
         tiny: "2px",
         small: "4px",
         medium: "6px",

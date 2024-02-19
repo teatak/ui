@@ -6,81 +6,82 @@ export const buttonTheme: any = {
     button: {
         size: {
             tiny: {
-                height: "26px",
-                padding: "6px",
+                base: 6,
+                fontSize: 12,
             },
             small: {
-                height: "30px",
-                padding: "7px",
+                base: 7,
+                fontSize: 12,
             },
             medium: {
-                height: "34px",
-                padding: "8px",
+                base: 8,
+                fontSize: 14,
             },
             large: {
-                height: "38px",
-                padding: "9px",
+                base: 9,
+                fontSize: 14,
             },
         },
         type: {
             text: {
                 //disabled
                 disabledColor: "rgb(var(--tui-gray-4))",
-                disabledBorder: "solid 1px transparent",
+                disabledBorder: "none",
                 disabledBg: "rgb(var(--tui-gray-1))",
                 boxShadow: "none",
                 boxShadowHover: "none",
+                boxShadowActive: "none",
 
                 //primary
                 primaryColor: "rgb(var(--tui-primary-6))",
-                primaryBorder: "solid 1px transparent",
-                primaryBorderHover: "solid 1px transparent",
-                primaryBorderActive: "solid 1px transparent",
+                primaryBorder: "none",
+                primaryBorderHover: "none",
+                primaryBorderActive: "none",
                 primaryBg: "rgb(var(--tui-primary-1))",
                 primaryBgHover: "rgb(var(--tui-primary-2))",
                 primaryBgActive: "rgb(var(--tui-primary-3))",
 
                 //secondary
                 secondaryColor: "rgb(var(--tui-gray-6))",
-                secondaryBorder: "solid 1px transparent",
-                secondaryBorderHover: "solid 1px transparent",
-                secondaryBorderActive: "solid 1px transparent",
+                secondaryBorder: "none",
+                secondaryBorderHover: "none",
+                secondaryBorderActive: "none",
                 secondaryBg: "rgb(var(--tui-gray-1))",
                 secondaryBgHover: "rgb(var(--tui-gray-2))",
                 secondaryBgActive: "rgb(var(--tui-gray-3))",
 
                 //success
                 successColor: "rgb(var(--tui-green-6))",
-                successBorder: "solid 1px transparent",
-                successBorderHover: "solid 1px transparent",
-                successBorderActive: "solid 1px transparent",
+                successBorder: "none",
+                successBorderHover: "none",
+                successBorderActive: "none",
                 successBg: "rgb(var(--tui-green-1))",
                 successBgHover: "rgb(var(--tui-green-2))",
                 successBgActive: "rgb(var(--tui-green-3))",
 
                 //error
                 errorColor: "rgb(var(--tui-red-6))",
-                errorBorder: "solid 1px transparent",
-                errorBorderHover: "solid 1px transparent",
-                errorBorderActive: "solid 1px transparent",
+                errorBorder: "none",
+                errorBorderHover: "none",
+                errorBorderActive: "none",
                 errorBg: "rgb(var(--tui-red-1))",
                 errorBgHover: "rgb(var(--tui-red-2))",
                 errorBgActive: "rgb(var(--tui-red-3))",
 
                 //info
                 infoColor: "rgb(var(--tui-blue-6))",
-                infoBorder: "solid 1px transparent",
-                infoBorderHover: "solid 1px transparent",
-                infoBorderActive: "solid 1px transparent",
+                infoBorder: "none",
+                infoBorderHover: "none",
+                infoBorderActive: "none",
                 infoBg: "rgb(var(--tui-blue-1))",
                 infoBgHover: "rgb(var(--tui-blue-2))",
                 infoBgActive: "rgb(var(--tui-blue-3))",
 
                 //warning
                 warningColor: "rgb(var(--tui-orange-6))",
-                warningBorder: "solid 1px transparent",
-                warningBorderHover: "solid 1px transparent",
-                warningBorderActive: "solid 1px transparent",
+                warningBorder: "none",
+                warningBorderHover: "none",
+                warningBorderActive: "none",
                 warningBg: "rgb(var(--tui-orange-1))",
                 warningBgHover: "rgb(var(--tui-orange-2))",
                 warningBgActive: "rgb(var(--tui-orange-3))",
@@ -89,61 +90,62 @@ export const buttonTheme: any = {
             filled: {
                 //disabled
                 disabledColor: "rgb(var(--tui-gray-4))",
-                disabledBorder: "solid 1px transparent",
+                disabledBorder: "none",
                 disabledBg: "rgb(var(--tui-gray-1))",
                 boxShadow: "none",
-                boxShadowHover: "var(--tui-box-shadow-4)",
+                boxShadowHover: "var(--tui-box-shadow-1)",
+                boxShadowActive: "none",
 
                 //primary
                 primaryColor: "#FFF",
-                primaryBorder: "solid 1px transparent",
-                primaryBorderHover: "solid 1px transparent",
-                primaryBorderActive: "solid 1px transparent",
+                primaryBorder: "none",
+                primaryBorderHover: "none",
+                primaryBorderActive: "none",
                 primaryBg: "rgb(var(--tui-primary-6))",
                 primaryBgHover: "rgb(var(--tui-primary-5))",
                 primaryBgActive: "rgb(var(--tui-primary-7))",
 
                 //secondary
                 secondaryColor: "rgb(var(--tui-gray-8))",
-                secondaryBorder: "solid 1px transparent",
-                secondaryBorderHover: "solid 1px transparent",
-                secondaryBorderActive: "solid 1px transparent",
+                secondaryBorder: "none",
+                secondaryBorderHover: "none",
+                secondaryBorderActive: "none",
                 secondaryBg: "rgb(var(--tui-gray-2))",
                 secondaryBgHover: "rgb(var(--tui-gray-3))",
                 secondaryBgActive: "rgb(var(--tui-gray-4))",
 
                 //success
                 successColor: "#FFF",
-                successBorder: "solid 1px transparent",
-                successBorderHover: "solid 1px transparent",
-                successBorderActive: "solid 1px transparent",
+                successBorder: "none",
+                successBorderHover: "none",
+                successBorderActive: "none",
                 successBg: "rgb(var(--tui-green-6))",
                 successBgHover: "rgb(var(--tui-green-5))",
                 successBgActive: "rgb(var(--tui-green-7))",
 
                 //error
                 errorColor: "#FFF",
-                errorBorder: "solid 1px transparent",
-                errorBorderHover: "solid 1px transparent",
-                errorBorderActive: "solid 1px transparent",
+                errorBorder: "none",
+                errorBorderHover: "none",
+                errorBorderActive: "none",
                 errorBg: "rgb(var(--tui-red-6))",
                 errorBgHover: "rgb(var(--tui-red-5))",
                 errorBgActive: "rgb(var(--tui-red-7))",
 
                 //info
                 infoColor: "#FFF",
-                infoBorder: "solid 1px transparent",
-                infoBorderHover: "solid 1px transparent",
-                infoBorderActive: "solid 1px transparent",
+                infoBorder: "none",
+                infoBorderHover: "none",
+                infoBorderActive: "none",
                 infoBg: "rgb(var(--tui-blue-6))",
                 infoBgHover: "rgb(var(--tui-blue-5))",
                 infoBgActive: "rgb(var(--tui-blue-7))",
 
                 //warning
                 warningColor: "#FFF",
-                warningBorder: "solid 1px transparent",
-                warningBorderHover: "solid 1px transparent",
-                warningBorderActive: "solid 1px transparent",
+                warningBorder: "none",
+                warningBorderHover: "none",
+                warningBorderActive: "none",
                 warningBg: "rgb(var(--tui-orange-6))",
                 warningBgHover: "rgb(var(--tui-orange-5))",
                 warningBgActive: "rgb(var(--tui-orange-7))",
@@ -155,6 +157,7 @@ export const buttonTheme: any = {
                 disabledBg: "rgb(var(--tui-gray-1))",
                 boxShadow: "none",
                 boxShadowHover: "none",
+                boxShadowActive: "none",
 
                 //primary
                 primaryColor: "rgb(var(--tui-primary-6))",
@@ -218,167 +221,243 @@ export default styled.button<{ $prefixClass: string }>`
     ${(props) => {
         const theme = baseTheme.button
         const _ = props.$prefixClass
+        const size = {
+            medium: {
+                height: theme["size"]["medium"]["base"] * 4 + "px",
+                padding: theme["size"]["medium"]["base"] + "px",
+                fontSize: theme["size"]["medium"]["fontSize"] + "px",
+                svgSize: theme["size"]["medium"]["base"] * 2 + "px",
+                roundBorderRadius: theme["size"]["medium"]["base"] * 2 + "px",
+            },
+            tiny: {
+                height: theme["size"]["tiny"]["base"] * 4 + "px",
+                padding: theme["size"]["tiny"]["base"] + "px",
+                fontSize: theme["size"]["tiny"]["fontSize"] + "px",
+                svgSize: theme["size"]["tiny"]["base"] * 2 + "px",
+                roundBorderRadius: theme["size"]["tiny"]["base"] * 2 + "px",
+            },
+            small: {
+                height: theme["size"]["small"]["base"] * 4 + "px",
+                padding: theme["size"]["small"]["base"] + "px",
+                fontSize: theme["size"]["small"]["fontSize"] + "px",
+                svgSize: theme["size"]["small"]["base"] * 2 + "px",
+                roundBorderRadius: theme["size"]["small"]["base"] * 2 + "px",
+            },
+            large: {
+                height: theme["size"]["large"]["base"] * 4 + "px",
+                padding: theme["size"]["large"]["base"] + "px",
+                fontSize: theme["size"]["large"]["fontSize"] + "px",
+                svgSize: theme["size"]["large"]["base"] * 2 + "px",
+                roundBorderRadius: theme["size"]["large"]["base"] * 2 + "px",
+            },
+        }
         return css`
             /* base */
             &.${_} {
+                box-sizing: border-box;
+                position: relative;
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
-                border-radius: var(--tui-border-radius-medium);
-                padding: 0 ${theme["size"]["medium"]["padding"]};
-                height: ${theme["size"]["medium"]["height"]};
+                border-radius: var(--tui-border-radius-normal);
+                padding: 0 ${size.medium.padding};
+                height: ${size.medium.height};
                 outline: none;
                 border: none;
-                font-size: 14px;
+                text-decoration: none;
+                font-size: ${size.medium.fontSize};
                 user-select: none;
                 color: var(--tui-text-color-2);
+                background-origin: border-box;
                 transition: 
                     width 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
                     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
-                    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-                    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-            }
-            & svg {
-                user-select: none;
-                font-size: 16px;
-            }
-            & .${_}-start-icon {
-                display: flex;
-                line-height: 1;
-            }
-            & .${_}-end-icon {
-                display: flex;
-                line-height: 1;
-            }
-            & .${_}-span {
-                display: flex;
-                margin: 0 ${theme["size"]["medium"]["padding"]};
-                line-height: 1;
-            }
-            &.${_}-size-tiny {
-                border-radius: var(--tui-border-radius-tiny);
-                padding: 0 ${theme["size"]["tiny"]["padding"]};
-                height: ${theme["size"]["tiny"]["height"]};
-                font-size: 12px;
+                    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
                 & svg {
-                    font-size: 12px;
+                    user-select: none;
+                    font-size: ${size.medium.svgSize};
+                }
+                & .${_}-start-icon {
+                    display: flex;
+                    line-height: 1;
+                }
+                & .${_}-end-icon {
+                    display: flex;
+                    line-height: 1;
                 }
                 & .${_}-span {
-                    margin: 0 ${theme["size"]["tiny"]["padding"]};
+                    display: flex;
+                    position: relative;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 ${size.medium.padding};
+                    line-height: 1;
+                    
                 }
-            }
-            &.${_}-size-small {
-                border-radius: var(--tui-border-radius-small);
-                padding: 0 ${theme["size"]["small"]["padding"]};
-                height: ${theme["size"]["small"]["height"]};
-                font-size: 12px;
-                & svg {
-                    font-size: 14px;
+                &.${_}-loading {
+                    opacity: 0.6;
+                    & .${_}-span {
+                        & .${_}-span-text {
+                            color: transparent;
+                        }
+                        & .${_}-span-loading {
+                            display: flex;
+                            position: absolute;
+                            left: 50%;
+                            transform: translate(-50%);
+                        }
+                    }
                 }
-                & .${_}-span {
-                    margin: 0 ${theme["size"]["small"]["padding"]};
+                &.${_}-long {
+                    width: 100%;
                 }
-            }
-            &.${_}-size-large {
-                border-radius: var(--tui-border-radius-large);
-                padding: 0 ${theme["size"]["large"]["padding"]};
-                height: ${theme["size"]["large"]["height"]};
-                font-size: 14px;
-                & svg {
-                    font-size: 18px;
-                }
-                & .${_}-span {
-                    margin: 0 ${theme["size"]["large"]["padding"]};
-                }
-            }
-            &.${_}-long {
-                width: 100%;
-            }
-            &.${_}-shape-round {
-                border-radius: 16px;
                 &.${_}-size-tiny {
-                    border-radius: 12px;
+                    padding: 0 ${size.tiny.padding};
+                    height: ${size.tiny.height};
+                    font-size: ${size.tiny.fontSize};
+                    & svg {
+                        font-size: ${size.tiny.svgSize};
+                    }
+                    & .${_}-span {
+                        margin: 0 ${size.tiny.padding};
+                    }
                 }
                 &.${_}-size-small {
-                    border-radius: 14px;
+                    padding: 0 ${size.small.padding};
+                    height: ${size.small.height};
+                    font-size: ${size.small.fontSize};
+                    & svg {
+                        font-size: ${size.small.svgSize};
+                    }
+                    & .${_}-span {
+                        margin: 0 ${size.small.padding};
+                    }
                 }
                 &.${_}-size-large {
-                    border-radius: 18px;
+                    padding: 0 ${size.large.padding};
+                    height: ${size.large.height};
+                    font-size: ${size.large.fontSize};
+                    & svg {
+                        font-size: ${size.large.svgSize};
+                    }
+                    & .${_}-span {
+                        margin: 0 ${size.large.padding};
+                    }
                 }
-            }
-            &.${_}-shape-circle {
-                border-radius: 50%;
-                width: var(--tui-size-medium);
-                height: var(--tui-size-medium);
-                padding: 0;
-                overflow: hidden;
-                &.${_}-size-tiny {
-                    width: var(--tui-size-tiny);
-                    height: var(--tui-size-tiny);
+                &.${_}-shape-round {
+                    border-radius: ${size.medium.roundBorderRadius};
+                    &.${_}-size-tiny {
+                        border-radius: ${size.tiny.roundBorderRadius};
+                    }
+                    &.${_}-size-small {
+                        border-radius: ${size.small.roundBorderRadius};
+                    }
+                    &.${_}-size-large {
+                        border-radius: ${size.large.roundBorderRadius};
+                    }
                 }
-                &.${_}-size-small {
-                    width: var(--tui-size-small);
-                    height: var(--tui-size-small);
+                &.${_}-shape-circle {
+                    border-radius: 50%;
+                    width: var(--tui-size-medium);
+                    height: var(--tui-size-medium);
+                    padding: 0;
+                    overflow: hidden;
+                    &.${_}-size-tiny {
+                        width: var(--tui-size-tiny);
+                        height: var(--tui-size-tiny);
+                    }
+                    &.${_}-size-small {
+                        width: var(--tui-size-small);
+                        height: var(--tui-size-small);
+                    }
+                    &.${_}-size-large {
+                        width: var(--tui-size-large);
+                        height: var(--tui-size-large);
+                    }
                 }
-                &.${_}-size-large {
-                    width: var(--tui-size-large);
-                    height: var(--tui-size-large);
-                }
-            }
-            ${buttonBase(_, 'text')}
-            ${buttonColor(_, 'text', 'primary')}
-            ${buttonColor(_, 'text', 'secondary')}
-            ${buttonColor(_, 'text', 'success')}
-            ${buttonColor(_, 'text', 'error')}
-            ${buttonColor(_, 'text', 'info')}
-            ${buttonColor(_, 'text', 'warning')}
+                ${buttonBase(_, 'text')}
+                ${buttonColor(_, 'text', 'primary')}
+                ${buttonColor(_, 'text', 'secondary')}
+                ${buttonColor(_, 'text', 'success')}
+                ${buttonColor(_, 'text', 'error')}
+                ${buttonColor(_, 'text', 'info')}
+                ${buttonColor(_, 'text', 'warning')}
 
-            ${buttonBase(_, 'filled')}
-            ${buttonColor(_, 'filled', 'primary')}
-            ${buttonColor(_, 'filled', 'secondary')}
-            ${buttonColor(_, 'filled', 'success')}
-            ${buttonColor(_, 'filled', 'error')}
-            ${buttonColor(_, 'filled', 'info')}
-            ${buttonColor(_, 'filled', 'warning')}
+                ${buttonBase(_, 'filled')}
+                ${buttonColor(_, 'filled', 'primary')}
+                ${buttonColor(_, 'filled', 'secondary')}
+                ${buttonColor(_, 'filled', 'success')}
+                ${buttonColor(_, 'filled', 'error')}
+                ${buttonColor(_, 'filled', 'info')}
+                ${buttonColor(_, 'filled', 'warning')}
 
-            ${buttonBase(_, 'outlined')}
-            ${buttonColor(_, 'outlined', 'primary')}
-            ${buttonColor(_, 'outlined', 'secondary')}
-            ${buttonColor(_, 'outlined', 'success')}
-            ${buttonColor(_, 'outlined', 'error')}
-            ${buttonColor(_, 'outlined', 'info')}
-            ${buttonColor(_, 'outlined', 'warning')}
+                ${buttonBase(_, 'outlined', true)}
+                ${buttonColor(_, 'outlined', 'primary')}
+                ${buttonColor(_, 'outlined', 'secondary')}
+                ${buttonColor(_, 'outlined', 'success')}
+                ${buttonColor(_, 'outlined', 'error')}
+                ${buttonColor(_, 'outlined', 'info')}
+                ${buttonColor(_, 'outlined', 'warning')}
+            }
         `
     }}
 `
 
-const buttonBase = (_: string, type: string) => {
+const buttonBase = (_: string, type: string, hasBorder?: boolean) => {
     const theme = baseTheme.button
-
+    const size = {
+        medium: {
+            padding: theme["size"]["medium"]["base"] - 1 + "px",
+        },
+        tiny: {
+            padding: theme["size"]["tiny"]["base"] - 1 + "px",
+        },
+        small: {
+            padding: theme["size"]["small"]["base"] - 1 + "px",
+        },
+        large: {
+            padding: theme["size"]["large"]["base"] - 1 + "px",
+        },
+    }
     return css`
     &.${_}-${type}:not(null) {
-        
         box-shadow: ${theme["type"][type]["boxShadow"]};
         &:hover,
         &:focus {
             box-shadow: ${theme["type"][type]["boxShadowHover"]};
         }
+        &:active,
+        &.clicked {
+            box-shadow: ${theme["type"][type]["boxShadowActive"]};;
+        }
         &.${_}-disabled,&:disabled{
             cursor: default;
             color: ${theme["type"][type]["disabledColor"]};
             border: ${theme["type"][type]["disabledBorder"]};
-            background-color: ${theme["type"][type]["disabledBg"]};
+            background: ${theme["type"][type]["disabledBg"]};
             box-shadow: none;
             &:hover,
             &:focus,
             &:active {
                 color: ${theme["type"][type]["disabledColor"]};
                 border: ${theme["type"][type]["disabledBorder"]};
-                background-color: ${theme["type"][type]["disabledBg"]};
+                background: ${theme["type"][type]["disabledBg"]};
                 box-shadow: none;
             }
         }
+        ${hasBorder ? css`
+            padding: 0 ${size.medium.padding};
+            &.${_}-size-tiny {
+                padding: 0 ${size.tiny.padding};
+            }
+            &.${_}-size-small {
+                padding: 0 ${size.small.padding};
+            }
+            &.${_}-size-large {
+                padding: 0 ${size.large.padding};
+            }
+        `: ''}
     }
 `
 }
@@ -390,15 +469,15 @@ const buttonColor = (_: string, type: string, color: string) => {
         &.${_}-color-${color} {
             color: ${theme["type"][type][color + "Color"]};
             border: ${theme["type"][type][color + "Border"]};
-            background-color: ${theme["type"][type][color + "Bg"]};
+            background: ${theme["type"][type][color + "Bg"]};
             &:hover {
                 border: ${theme["type"][type][color + "BorderHover"]};
-                background-color: ${theme["type"][type][color + "BgHover"]};
+                background: ${theme["type"][type][color + "BgHover"]};
             }
             &:active,
             &.clicked {
                 border: ${theme["type"][type][color + "BorderActive"]};
-                background-color: ${theme["type"][type][color + "BgActive"]};
+                background: ${theme["type"][type][color + "BgActive"]};
             }
         }
     }

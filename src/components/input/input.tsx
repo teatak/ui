@@ -1,26 +1,59 @@
-import React from "react";
+import React, { forwardRef, useContext } from "react";
 import styled from "styled-components";
+import classnames from 'classnames'
+import { FormContext } from "../form/context"
 import { InputProps } from "./interface";
+import { withGlobalVariable } from '../../style'
+import Styled from './styled'
 
-const StyledInput = styled.input<InputProps>`
-    color:red;
-`;
-
-export const Input = (props: InputProps) => {
+export const Input = withGlobalVariable(forwardRef<HTMLButtonElement, InputProps>((props: InputProps, ref) => {
+    const prefixClass = "tui-input"
     const {
-        primary,
+        style,
+        className,
         disabled,
         size,
-        text
+        htmlType = "input",
+        ...rest
     } = props
+
+    let {
+        startIcon,
+        endIcon,
+    } = props
+
+    const { size: ctxSize } = useContext(FormContext);
+
+    const classNamesRoot = classnames(
+        `${prefixClass}-root`,
+        `${prefixClass}-size-${size || ctxSize || "medium"}`,
+        {
+            [`${prefixClass}-disabled`]: disabled,
+        }
+    )
+
+    const classNames = classnames(
+        prefixClass,
+        {
+            [`${prefixClass}-has-start-icon`]: startIcon,
+            [`${prefixClass}-has-end-icon`]: endIcon,
+        },
+        className,
+    )
+
     return (
-        <StyledInput
-            type="input"
-            primary={primary}
-            disabled={disabled}
-            size={size}
-            defaultValue={text}
+        <Styled
+            className={classNamesRoot}
+            style={style}
+            $prefixClass={prefixClass}
         >
-        </StyledInput>
-    );
-};
+            <input
+                style={style}
+                className={classNames}
+                disabled={disabled}
+                {...rest}
+            >
+            </input>
+        </Styled>
+    )
+}))

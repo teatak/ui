@@ -1,5 +1,6 @@
-import React, { forwardRef, useRef } from 'react';
+import React, { forwardRef, useRef, useContext } from 'react';
 import classnames from 'classnames'
+import { FormContext } from "../form/context"
 import { ButtonProps } from './interface'
 import Styled from './styled'
 import { withGlobalVariable } from '../../style'
@@ -17,7 +18,7 @@ export const Button = withGlobalVariable(forwardRef<HTMLButtonElement, ButtonPro
         size,
         htmlType,
         loading,
-        loadingPosition,
+        loadingPosition = 'start',
         disabled,
         href,
         onClick,
@@ -30,16 +31,18 @@ export const Button = withGlobalVariable(forwardRef<HTMLButtonElement, ButtonPro
         children,
     } = props
 
+    const { size: ctxSize } = useContext(FormContext);
     const buttonRef = ref || useRef<HTMLButtonElement>(null)
 
     const classNames = classnames(
         prefixClass,
         `${prefixClass}-${type}`,
-        `${prefixClass}-size-${size || "medium"}`,
+        `${prefixClass}-size-${size || ctxSize || "medium"}`,
         `${prefixClass}-color-${color}`,
         `${prefixClass}-shape-${shape}`,
         {
             [`${prefixClass}-disabled`]: disabled,
+            [`${prefixClass}-loading`]: loading,
             [`${prefixClass}-long`]: long,
             [`${prefixClass}-link`]: href,
         },
@@ -57,10 +60,16 @@ export const Button = withGlobalVariable(forwardRef<HTMLButtonElement, ButtonPro
         if (shape === 'circle') {
             children = <Loading />
         } else {
-            const position = loadingPosition || 'start'
+            const position = loadingPosition
             switch (position) {
                 case 'start':
                     startIcon = <Loading />
+                    break
+                case 'center':
+                    children = <>
+                        <span className={prefixClass + '-span-text'}>{children}</span>
+                        <span className={prefixClass + '-span-loading'}><Loading /></span>
+                    </>
                     break
                 case 'end':
                     endIcon = <Loading />

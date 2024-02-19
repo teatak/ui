@@ -4,13 +4,12 @@ import { prerenderVariable } from '../style'
 import { ButtonWithType } from './ButtonWithType'
 
 const theme = {
-  button: {
-    standard: {
-      color: "red"
-    }
-  }
+  // base: {
+  //   primary: "rgb(93, 74, 99)",
+  // }
 }
 prerenderVariable(theme)
+
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -33,15 +32,13 @@ export const ButtonTypes: Story = {
   args: {
     type: 'outlined',
     shape: 'round',
-    loading: true,
-
   },
 };
 
-export const Small: Story = {
+export const Tiny: Story = {
   args: {
-    type: "outlined",
-    size: "small"
+    type: "filled",
+    size: "tiny"
   },
 };
 
@@ -49,7 +46,6 @@ export const Rounded: Story = {
   args: {
     type: "text",
     shape: "round",
-    loading: true,
   },
 };
 
