@@ -2,10 +2,11 @@ import React, { forwardRef, useMemo, useContext } from 'react';
 import classnames from 'classnames'
 import { withGlobalVariable } from '../../style'
 import { FormProps } from './interface'
-import { FormContext } from "./context"
+import { FormContext } from './context'
+import Styled from './styled'
 
-export const Form = withGlobalVariable(forwardRef<HTMLButtonElement, FormProps>((props: FormProps, ref) => {
-    const prefixClass = "tui-form"
+export const Form = withGlobalVariable(forwardRef<HTMLFormElement, FormProps>((props: FormProps, ref) => {
+    const prefixClass = 'tui-form'
     const {
         style,
         size = 'medium',
@@ -31,15 +32,15 @@ export const Form = withGlobalVariable(forwardRef<HTMLButtonElement, FormProps>(
 
     const form = useMemo(() => momeForm(), [props])
 
-    const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event: any): void => {
-        if (onSubmit) {
-            console.log("submit")
-        }
+    const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e: any): void => {
+        e.preventDefault()
+        e.stopPropagation()
+        onSubmit && onSubmit({}, e)
     };
 
     return <FormContext.Provider value={form}>
-        <form className={classNames} style={style} onSubmit={handleSubmit} {...rest}>
+        <Styled $prefixClass={prefixClass} className={classNames} style={style} onSubmit={handleSubmit} {...rest}>
             {children}
-        </form>
+        </Styled>
     </FormContext.Provider>
 }))

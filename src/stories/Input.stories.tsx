@@ -1,7 +1,7 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react'
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Input, Loading } from '../components';
+import { Input, Loading } from '../components'
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -17,54 +17,54 @@ const meta = {
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
   },
-} satisfies Meta<typeof Input>;
+} satisfies Meta<typeof Input>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Normal: Story = {
   args: {
-    defaultValue: "Normal",
+    defaultValue: 'Normal',
     onChange: (value, e) => { console.log(value, e) }
   },
-};
+}
 
 export const Tiny: Story = {
   args: {
     size: 'tiny',
-    placeholder: "startIcon endIcon",
+    placeholder: 'startIcon endIcon',
     startIcon: <Loading />,
     endIcon: <Loading />,
   },
-};
+}
 
 
 export const Small: Story = {
   args: {
     size: 'small',
-    placeholder: "Small",
+    placeholder: 'Small',
     startIcon: <Loading />,
     endIcon: <Loading />,
   },
-};
+}
 
 
 export const Large: Story = {
   args: {
     size: 'large',
-    placeholder: "Large",
+    placeholder: 'Large',
     startIcon: <Loading />,
     endIcon: <Loading />,
   },
-};
+}
 
 export const Outlined: Story = {
   args: {
-    placeholder: "Outlined",
+    placeholder: 'Outlined',
     type: 'outlined',
   },
-};
+}
 
 export const Text: Story = {
   args: {
@@ -74,11 +74,11 @@ export const Text: Story = {
     placeholder: 'Disabled Large Text',
     startIcon: <Loading />,
   },
-};
+}
 
 export const Password: Story = {
   args: {
     htmlType: 'password',
     placeholder: 'Password',
   },
-};
+}

@@ -1,32 +1,36 @@
-import React, { forwardRef, useContext, useRef } from "react";
+import React, { forwardRef, useContext, useRef } from 'react'
 import classnames from 'classnames'
-import { FormContext } from "../form/context"
-import { InputProps } from "./interface";
+import { FormContext } from '../form/context'
+import { InputProps } from './interface';
 import { withGlobalVariable } from '../../style'
 import Styled from './styled'
 
 export const Input = withGlobalVariable(forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref: any) => {
-    const prefixClass = "tui-input"
+    const prefixClass = 'tui-input'
     const {
         style,
         className,
         type = 'filled',
-        disabled,
         size,
-        htmlType = "text",
+        htmlType = 'text',
         startIcon,
         endIcon,
         onChange,
         ...rest
     } = props
 
-    const { size: ctxSize } = useContext(FormContext);
+    let {
+        disabled,
+    } = props
+
+    const { size: ctxSize, disabled: ctxDisabled } = useContext(FormContext);
     const inputRef = ref || useRef<HTMLInputElement>(null)
+    disabled = disabled || ctxDisabled
 
     const classNamesRoot = classnames(
         `${prefixClass}-root`,
         `${prefixClass}-${type}`,
-        `${prefixClass}-size-${size || ctxSize || "medium"}`,
+        `${prefixClass}-size-${size || ctxSize || 'medium'}`,
         {
             [`${prefixClass}-disabled`]: disabled,
         },
@@ -50,7 +54,7 @@ export const Input = withGlobalVariable(forwardRef<HTMLInputElement, InputProps>
             style={style}
             $prefixClass={prefixClass}
         >
-            {startIcon ? <span className={prefixClass + "-start-icon"}>{startIcon}</span> : null}
+            {startIcon ? <span className={prefixClass + '-start-icon'}>{startIcon}</span> : null}
             <input
                 ref={inputRef}
                 className={classNames}
@@ -60,7 +64,7 @@ export const Input = withGlobalVariable(forwardRef<HTMLInputElement, InputProps>
                 {...rest}
             >
             </input>
-            {endIcon ? <span className={prefixClass + "-end-icon"}>{endIcon}</span> : null}
+            {endIcon ? <span className={prefixClass + '-end-icon'}>{endIcon}</span> : null}
         </Styled>
     )
 }))

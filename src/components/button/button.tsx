@@ -1,13 +1,13 @@
 import React, { forwardRef, useRef, useContext } from 'react';
 import classnames from 'classnames'
-import { FormContext } from "../form/context"
+import { FormContext } from '../form/context'
 import { ButtonProps } from './interface'
 import Styled from './styled'
 import { withGlobalVariable } from '../../style'
 import { Loading } from '../loading'
 
 export const Button = withGlobalVariable(forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
-    const prefixClass = "tui-button"
+    const prefixClass = 'tui-button'
     const {
         style,
         className,
@@ -19,7 +19,6 @@ export const Button = withGlobalVariable(forwardRef<HTMLButtonElement, ButtonPro
         htmlType,
         loading,
         loadingPosition = 'start',
-        disabled,
         href,
         onClick,
         ...rest
@@ -29,15 +28,17 @@ export const Button = withGlobalVariable(forwardRef<HTMLButtonElement, ButtonPro
         startIcon,
         endIcon,
         children,
+        disabled,
     } = props
 
-    const { size: ctxSize } = useContext(FormContext);
+    const { size: ctxSize, disabled: ctxDisabled } = useContext(FormContext);
     const buttonRef = ref || useRef<HTMLButtonElement>(null)
+    disabled = disabled || ctxDisabled
 
     const classNames = classnames(
         prefixClass,
         `${prefixClass}-${type}`,
-        `${prefixClass}-size-${size || ctxSize || "medium"}`,
+        `${prefixClass}-size-${size || ctxSize || 'medium'}`,
         `${prefixClass}-color-${color}`,
         `${prefixClass}-shape-${shape}`,
         {

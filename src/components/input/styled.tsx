@@ -31,32 +31,32 @@ export default styled.span<{ $prefixClass: string }>`
         const _ = props.$prefixClass
         const size = {
             medium: {
-                height: theme["size"]["medium"]["base"] * 4 + "px",
-                padding: theme["size"]["medium"]["base"] + "px",
-                fontSize: theme["size"]["medium"]["fontSize"] + "px",
-                svgSize: theme["size"]["medium"]["base"] * 2 + "px",
-                roundBorderRadius: theme["size"]["medium"]["base"] * 2 + "px",
+                height: theme['size']['medium']['base'] * 4 + 'px',
+                padding: theme['size']['medium']['base'] + 'px',
+                fontSize: theme['size']['medium']['fontSize'] + 'px',
+                svgSize: theme['size']['medium']['base'] * 2 + 'px',
+                roundBorderRadius: theme['size']['medium']['base'] * 2 + 'px',
             },
             tiny: {
-                height: theme["size"]["tiny"]["base"] * 4 + "px",
-                padding: theme["size"]["tiny"]["base"] + "px",
-                fontSize: theme["size"]["tiny"]["fontSize"] + "px",
-                svgSize: theme["size"]["tiny"]["base"] * 2 + "px",
-                roundBorderRadius: theme["size"]["tiny"]["base"] * 2 + "px",
+                height: theme['size']['tiny']['base'] * 4 + 'px',
+                padding: theme['size']['tiny']['base'] + 'px',
+                fontSize: theme['size']['tiny']['fontSize'] + 'px',
+                svgSize: theme['size']['tiny']['base'] * 2 + 'px',
+                roundBorderRadius: theme['size']['tiny']['base'] * 2 + 'px',
             },
             small: {
-                height: theme["size"]["small"]["base"] * 4 + "px",
-                padding: theme["size"]["small"]["base"] + "px",
-                fontSize: theme["size"]["small"]["fontSize"] + "px",
-                svgSize: theme["size"]["small"]["base"] * 2 + "px",
-                roundBorderRadius: theme["size"]["small"]["base"] * 2 + "px",
+                height: theme['size']['small']['base'] * 4 + 'px',
+                padding: theme['size']['small']['base'] + 'px',
+                fontSize: theme['size']['small']['fontSize'] + 'px',
+                svgSize: theme['size']['small']['base'] * 2 + 'px',
+                roundBorderRadius: theme['size']['small']['base'] * 2 + 'px',
             },
             large: {
-                height: theme["size"]["large"]["base"] * 4 + "px",
-                padding: theme["size"]["large"]["base"] + "px",
-                fontSize: theme["size"]["large"]["fontSize"] + "px",
-                svgSize: theme["size"]["large"]["base"] * 2 + "px",
-                roundBorderRadius: theme["size"]["large"]["base"] * 2 + "px",
+                height: theme['size']['large']['base'] * 4 + 'px',
+                padding: theme['size']['large']['base'] + 'px',
+                fontSize: theme['size']['large']['fontSize'] + 'px',
+                svgSize: theme['size']['large']['base'] * 2 + 'px',
+                roundBorderRadius: theme['size']['large']['base'] * 2 + 'px',
             },
         }
         return css`
@@ -120,17 +120,40 @@ export default styled.span<{ $prefixClass: string }>`
                             background: var(--tui-background-color-1);  
                             box-shadow: 0px 0px 0px 3px rgb(var(--tui-primary-2));
                         }
+                        &[disabled] {
+                            border: solid 1px transparent;
+                            background: var(--tui-background-color-1);  
+                            box-shadow: none
+                            &:hover,
+                            &:focus {
+                                border: solid 1px transparent;
+                                background: var(--tui-background-color-1);  
+                                box-shadow: none;
+                            }
+                        }
                     }
                 }
                 &.${_}-outlined {
                     & .${_} {
-                        border: solid 1px var(--tui-background-color-2);    
+                        border: solid 1px var(--tui-background-color-2);  
+                        background: transparent;    
                         &:hover {
                             border: solid 1px rgb(var(--tui-primary-5));
                         }
                         &:focus {
                             border: solid 1px rgb(var(--tui-primary-6));
                             box-shadow: 0px 0px 0px 3px rgb(var(--tui-primary-2));
+                        }
+                        &[disabled] {
+                            border: solid 1px var(--tui-background-color-1);    
+                            background: transparent;    
+                            box-shadow: none
+                            &:hover,
+                            &:focus {
+                                border: solid 1px var(--tui-background-color-1);    
+                                background: transparent;    
+                                box-shadow: none;
+                            }
                         }
                     }
                 }

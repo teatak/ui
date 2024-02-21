@@ -3,4 +3,5 @@ import { FormContextProps } from './interface';
 
 export const FormContext = createContext<FormContextProps>({
     size: 'medium',
+    disabled: false,
 })

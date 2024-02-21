@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import styled, { keyframes } from 'styled-components'
 
 const dasharray = keyframes`
@@ -41,7 +41,7 @@ const Svg = styled.svg.attrs({
 `
 
 export const Loading = () => {
-    return <Svg viewBox="0 0 44 44">
-        <circle cx="22" cy="22" r="20" fill="none" strokeWidth="4" strokeLinecap="round"></circle>
+    return <Svg viewBox='0 0 44 44'>
+        <circle cx='22' cy='22' r='20' fill='none' strokeWidth='4' strokeLinecap='round'></circle>
     </Svg>
 }
