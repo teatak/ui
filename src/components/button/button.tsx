@@ -11,10 +11,10 @@ export const Button = withGlobalVariable(forwardRef<HTMLButtonElement, ButtonPro
     const {
         style,
         className,
-        type = "standard",
+        type = 'filled',
         long,
         shape = 'square',
-        color = 'primary',
+        color = 'secondary',
         size,
         htmlType,
         loading,

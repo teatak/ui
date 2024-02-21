@@ -24,6 +24,7 @@ export const buttonTheme: any = {
         },
         type: {
             text: {
+                hasBorder: false,
                 //disabled
                 disabledColor: "rgb(var(--tui-gray-4))",
                 disabledBorder: "none",
@@ -41,6 +42,10 @@ export const buttonTheme: any = {
                 primaryBgHover: "rgb(var(--tui-primary-2))",
                 primaryBgActive: "rgb(var(--tui-primary-3))",
 
+                primaryDisabledColor: "rgb(var(--tui-gray-4))",
+                primaryDisabledBorder: "none",
+                primaryDisabledBg: "rgb(var(--tui-primary-1))",
+
                 //secondary
                 secondaryColor: "rgb(var(--tui-gray-6))",
                 secondaryBorder: "none",
@@ -49,6 +54,10 @@ export const buttonTheme: any = {
                 secondaryBg: "rgb(var(--tui-gray-1))",
                 secondaryBgHover: "rgb(var(--tui-gray-2))",
                 secondaryBgActive: "rgb(var(--tui-gray-3))",
+
+                secondaryDisabledColor: "rgb(var(--tui-gray-4))",
+                secondaryDisabledBorder: "none",
+                secondaryDisabledBg: "rgb(var(--tui-gray-1))",
 
                 //success
                 successColor: "rgb(var(--tui-green-6))",
@@ -59,6 +68,10 @@ export const buttonTheme: any = {
                 successBgHover: "rgb(var(--tui-green-2))",
                 successBgActive: "rgb(var(--tui-green-3))",
 
+                successDisabledColor: "rgb(var(--tui-gray-4))",
+                successDisabledBorder: "none",
+                successDisabledBg: "rgb(var(--tui-green-1))",
+
                 //error
                 errorColor: "rgb(var(--tui-red-6))",
                 errorBorder: "none",
@@ -67,6 +80,10 @@ export const buttonTheme: any = {
                 errorBg: "rgb(var(--tui-red-1))",
                 errorBgHover: "rgb(var(--tui-red-2))",
                 errorBgActive: "rgb(var(--tui-red-3))",
+
+                errorDisabledColor: "rgb(var(--tui-gray-4))",
+                errorDisabledBorder: "none",
+                errorDisabledBg: "rgb(var(--tui-red-1))",
 
                 //info
                 infoColor: "rgb(var(--tui-blue-6))",
@@ -77,6 +94,10 @@ export const buttonTheme: any = {
                 infoBgHover: "rgb(var(--tui-blue-2))",
                 infoBgActive: "rgb(var(--tui-blue-3))",
 
+                infoDisabledColor: "rgb(var(--tui-gray-4))",
+                infoDisabledBorder: "none",
+                infoDisabledBg: "rgb(var(--tui-blue-1))",
+
                 //warning
                 warningColor: "rgb(var(--tui-orange-6))",
                 warningBorder: "none",
@@ -86,8 +107,12 @@ export const buttonTheme: any = {
                 warningBgHover: "rgb(var(--tui-orange-2))",
                 warningBgActive: "rgb(var(--tui-orange-3))",
 
+                warningDisabledColor: "rgb(var(--tui-gray-4))",
+                warningDisabledBorder: "none",
+                warningDisabledBg: "rgb(var(--tui-orange-1))",
             },
             filled: {
+                hasBorder: false,
                 //disabled
                 disabledColor: "rgb(var(--tui-gray-4))",
                 disabledBorder: "none",
@@ -105,6 +130,10 @@ export const buttonTheme: any = {
                 primaryBgHover: "rgb(var(--tui-primary-5))",
                 primaryBgActive: "rgb(var(--tui-primary-7))",
 
+                primaryDisabledColor: "rgb(var(--tui-gray-4))",
+                primaryDisabledBorder: "none",
+                primaryDisabledBg: "rgb(var(--tui-primary-1))",
+
                 //secondary
                 secondaryColor: "rgb(var(--tui-gray-8))",
                 secondaryBorder: "none",
@@ -113,6 +142,10 @@ export const buttonTheme: any = {
                 secondaryBg: "rgb(var(--tui-gray-2))",
                 secondaryBgHover: "rgb(var(--tui-gray-3))",
                 secondaryBgActive: "rgb(var(--tui-gray-4))",
+
+                secondaryDisabledColor: "rgb(var(--tui-gray-4))",
+                secondaryDisabledBorder: "none",
+                secondaryDisabledBg: "rgb(var(--tui-gray-1))",
 
                 //success
                 successColor: "#FFF",
@@ -123,6 +156,10 @@ export const buttonTheme: any = {
                 successBgHover: "rgb(var(--tui-green-5))",
                 successBgActive: "rgb(var(--tui-green-7))",
 
+                successDisabledColor: "rgb(var(--tui-gray-4))",
+                successDisabledBorder: "none",
+                successDisabledBg: "rgb(var(--tui-green-1))",
+
                 //error
                 errorColor: "#FFF",
                 errorBorder: "none",
@@ -131,6 +168,10 @@ export const buttonTheme: any = {
                 errorBg: "rgb(var(--tui-red-6))",
                 errorBgHover: "rgb(var(--tui-red-5))",
                 errorBgActive: "rgb(var(--tui-red-7))",
+
+                errorDisabledColor: "rgb(var(--tui-gray-4))",
+                errorDisabledBorder: "none",
+                errorDisabledBg: "rgb(var(--tui-red-1))",
 
                 //info
                 infoColor: "#FFF",
@@ -141,6 +182,10 @@ export const buttonTheme: any = {
                 infoBgHover: "rgb(var(--tui-blue-5))",
                 infoBgActive: "rgb(var(--tui-blue-7))",
 
+                infoDisabledColor: "rgb(var(--tui-gray-4))",
+                infoDisabledBorder: "none",
+                infoDisabledBg: "rgb(var(--tui-blue-1))",
+
                 //warning
                 warningColor: "#FFF",
                 warningBorder: "none",
@@ -149,8 +194,13 @@ export const buttonTheme: any = {
                 warningBg: "rgb(var(--tui-orange-6))",
                 warningBgHover: "rgb(var(--tui-orange-5))",
                 warningBgActive: "rgb(var(--tui-orange-7))",
+
+                warningDisabledColor: "rgb(var(--tui-gray-4))",
+                warningDisabledBorder: "none",
+                warningDisabledBg: "rgb(var(--tui-orange-1))",
             },
             outlined: {
+                hasBorder: true,
                 //disabled
                 disabledColor: "rgb(var(--tui-gray-4))",
                 disabledBorder: "solid 1px rgb(var(--tui-gray-2))",
@@ -168,6 +218,10 @@ export const buttonTheme: any = {
                 primaryBgHover: "rgb(var(--tui-primary-2))",
                 primaryBgActive: "rgb(var(--tui-primary-3))",
 
+                primaryDisabledColor: "rgb(var(--tui-gray-4))",
+                primaryDisabledBorder: "solid 1px rgb(var(--tui-gray-2))",
+                primaryDisabledBg: "rgb(var(--tui-primary-1))",
+
                 //secondary
                 secondaryColor: "rgb(var(--tui-gray-6))",
                 secondaryBorder: "solid 1px rgb(var(--tui-gray-6))",
@@ -176,6 +230,10 @@ export const buttonTheme: any = {
                 secondaryBg: "rgb(var(--tui-gray-1))",
                 secondaryBgHover: "rgb(var(--tui-gray-2))",
                 secondaryBgActive: "rgb(var(--tui-gray-3))",
+
+                secondaryDisabledColor: "rgb(var(--tui-gray-4))",
+                secondaryDisabledBorder: "solid 1px rgb(var(--tui-gray-2))",
+                secondaryDisabledBg: "rgb(var(--tui-gray-1))",
 
                 //success
                 successColor: "rgb(var(--tui-green-6))",
@@ -186,6 +244,10 @@ export const buttonTheme: any = {
                 successBgHover: "rgb(var(--tui-green-2))",
                 successBgActive: "rgb(var(--tui-green-3))",
 
+                successDisabledColor: "rgb(var(--tui-gray-4))",
+                successDisabledBorder: "solid 1px rgb(var(--tui-gray-2))",
+                successDisabledBg: "rgb(var(--tui-green-1))",
+
                 //error
                 errorColor: "rgb(var(--tui-red-6))",
                 errorBorder: "solid 1px rgb(var(--tui-red-6))",
@@ -194,6 +256,10 @@ export const buttonTheme: any = {
                 errorBg: "rgb(var(--tui-red-1))",
                 errorBgHover: "rgb(var(--tui-red-2))",
                 errorBgActive: "rgb(var(--tui-red-3))",
+
+                errorDisabledColor: "rgb(var(--tui-gray-4))",
+                errorDisabledBorder: "solid 1px rgb(var(--tui-gray-2))",
+                errorDisabledBg: "rgb(var(--tui-red-1))",
 
                 //info
                 infoColor: "rgb(var(--tui-blue-6))",
@@ -204,6 +270,10 @@ export const buttonTheme: any = {
                 infoBgHover: "rgb(var(--tui-blue-2))",
                 infoBgActive: "rgb(var(--tui-blue-3))",
 
+                infoDisabledColor: "rgb(var(--tui-gray-4))",
+                infoDisabledBorder: "solid 1px rgb(var(--tui-gray-2))",
+                infoDisabledBg: "rgb(var(--tui-blue-1))",
+
                 //warning
                 warningColor: "rgb(var(--tui-orange-6))",
                 warningBorder: "solid 1px rgb(var(--tui-orange-6))",
@@ -212,6 +282,10 @@ export const buttonTheme: any = {
                 warningBg: "rgb(var(--tui-orange-1))",
                 warningBgHover: "rgb(var(--tui-orange-2))",
                 warningBgActive: "rgb(var(--tui-orange-3))",
+
+                warningDisabledColor: "rgb(var(--tui-gray-4))",
+                warningDisabledBorder: "solid 1px rgb(var(--tui-gray-2))",
+                warningDisabledBg: "rgb(var(--tui-orange-1))",
             }
         }
     }
@@ -392,7 +466,7 @@ export default styled.button<{ $prefixClass: string }>`
                 ${buttonColor(_, 'filled', 'info')}
                 ${buttonColor(_, 'filled', 'warning')}
 
-                ${buttonBase(_, 'outlined', true)}
+                ${buttonBase(_, 'outlined')}
                 ${buttonColor(_, 'outlined', 'primary')}
                 ${buttonColor(_, 'outlined', 'secondary')}
                 ${buttonColor(_, 'outlined', 'success')}
@@ -404,9 +478,9 @@ export default styled.button<{ $prefixClass: string }>`
     }}
 `
 
-const buttonBase = (_: string, type: string, hasBorder?: boolean) => {
+const buttonBase = (_: string, type: string) => {
     const theme = baseTheme.button
-    const size = {
+    const borderSize = {
         medium: {
             padding: theme["size"]["medium"]["base"] - 1 + "px",
         },
@@ -431,31 +505,16 @@ const buttonBase = (_: string, type: string, hasBorder?: boolean) => {
         &.clicked {
             box-shadow: ${theme["type"][type]["boxShadowActive"]};;
         }
-        &.${_}-disabled,&:disabled{
-            cursor: default;
-            color: ${theme["type"][type]["disabledColor"]};
-            border: ${theme["type"][type]["disabledBorder"]};
-            background: ${theme["type"][type]["disabledBg"]};
-            box-shadow: none;
-            &:hover,
-            &:focus,
-            &:active {
-                color: ${theme["type"][type]["disabledColor"]};
-                border: ${theme["type"][type]["disabledBorder"]};
-                background: ${theme["type"][type]["disabledBg"]};
-                box-shadow: none;
-            }
-        }
-        ${hasBorder ? css`
-            padding: 0 ${size.medium.padding};
+        ${theme["type"][type]["hasBorder"] ? css`
+            padding: 0 ${borderSize.medium.padding};
             &.${_}-size-tiny {
-                padding: 0 ${size.tiny.padding};
+                padding: 0 ${borderSize.tiny.padding};
             }
             &.${_}-size-small {
-                padding: 0 ${size.small.padding};
+                padding: 0 ${borderSize.small.padding};
             }
             &.${_}-size-large {
-                padding: 0 ${size.large.padding};
+                padding: 0 ${borderSize.large.padding};
             }
         `: ''}
     }
@@ -468,16 +527,47 @@ const buttonColor = (_: string, type: string, color: string) => {
     &.${_}-${type} {
         &.${_}-color-${color} {
             color: ${theme["type"][type][color + "Color"]};
-            border: ${theme["type"][type][color + "Border"]};
+            border: ${theme["type"][type]["hasBorder"] ? theme["type"][type][color + "Border"] : "none"};
             background: ${theme["type"][type][color + "Bg"]};
-            &:hover {
-                border: ${theme["type"][type][color + "BorderHover"]};
+            &:hover,
+            &:focus {
+                border: ${theme["type"][type]["hasBorder"] ? theme["type"][type][color + "BorderHover"] : "none"};
                 background: ${theme["type"][type][color + "BgHover"]};
             }
             &:active,
             &.clicked {
-                border: ${theme["type"][type][color + "BorderActive"]};
+                border: ${theme["type"][type]["hasBorder"] ? theme["type"][type][color + "BorderActive"] : "none"};
                 background: ${theme["type"][type][color + "BgActive"]};
+            }
+            &.${_}-loading {
+                cursor: default;
+                color: ${theme["type"][type][color + "Color"]};
+                border: ${theme["type"][type]["hasBorder"] ? theme["type"][type][color + "Border"] : "none"};
+                background: ${theme["type"][type][color + "Bg"]};
+                box-shadow: none;
+                &:hover,
+                &:focus,
+                &:active {
+                    color: ${theme["type"][type][color + "Color"]};
+                    border: ${theme["type"][type]["hasBorder"] ? theme["type"][type][color + "Border"] : "none"};
+                    background: ${theme["type"][type][color + "Bg"]};
+                    box-shadow: none;
+                }
+            }
+            &.${_}-disabled,&:disabled{
+                cursor: default;
+                color: ${theme["type"][type][color + "DisabledColor"]};
+                border: ${theme["type"][type]["hasBorder"] ? theme["type"][type][color + "DisabledBorder"] : "none"};
+                background: ${theme["type"][type][color + "DisabledBg"]};
+                box-shadow: none;
+                &:hover,
+                &:focus,
+                &:active {
+                    color: ${theme["type"][type][color + "DisabledColor"]};
+                    border: ${theme["type"][type]["hasBorder"] ? theme["type"][type][color + "DisabledBorder"] : "none"};
+                    background: ${theme["type"][type][color + "DisabledBg"]};
+                    box-shadow: none;
+                }
             }
         }
     }

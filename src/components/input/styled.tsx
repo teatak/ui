@@ -63,28 +63,86 @@ export default styled.span<{ $prefixClass: string }>`
             /* base */
             &.${_}-root {
                 display: inline-block;
-                color: red;
+                color: var(--tui-text-color-1);
                 position: relative;
                 width: 100%;
+                line-height: 0px;
                 &.${_}-disabled {
-                    color: gray;
+                    color: var(--tui-text-color-4);
                 }
                 & .${_} {
-                    /* color: red; */
-                    color: red;
+                    color: var(--tui-text-color-1);
+                    height: ${size.medium.height};
+                    padding: 0 ${size.medium.padding};
+                    font-size: ${size.medium.fontSize};
+                    outline: none;
+                    width: 100%;
+                    background-origin: border-box;
+                    box-sizing: border-box;
+                    border: solid 1px transparent;
+                    border-radius: var(--tui-border-radius-normal);
+                    transition: 
+                        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
+                        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
+                        border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                    &::placeholder {
+                        color: var(--tui-text-color-3);
+                    }
+                    &.${_}-has-start-icon {
+                        padding-left: ${size.medium.height};
+                    }
+                    &.${_}-has-end-icon {
+                        padding-right: ${size.medium.height};
+                    }
                     &[disabled] {
-                        color: gray;
+                        color: var(--tui-text-color-4);
+                        &::placeholder {
+                            color: var(--tui-text-color-4);
+                        }
+                    }
+                }               
+                &.${_}-text {
+                    & .${_} {
+                        &[disabled] {
+                            background: transparent;
+                        }
+                    }
+                }
+                &.${_}-filled {
+                    & .${_} {
+                        background: var(--tui-background-color-2);    
+                        &:hover {
+                            border: solid 1px rgb(var(--tui-primary-5));
+                            background: var(--tui-background-color-1);  
+                        }
+                        &:focus {
+                            border: solid 1px rgb(var(--tui-primary-6));
+                            background: var(--tui-background-color-1);  
+                            box-shadow: 0px 0px 0px 3px rgb(var(--tui-primary-2));
+                        }
+                    }
+                }
+                &.${_}-outlined {
+                    & .${_} {
+                        border: solid 1px var(--tui-background-color-2);    
+                        &:hover {
+                            border: solid 1px rgb(var(--tui-primary-5));
+                        }
+                        &:focus {
+                            border: solid 1px rgb(var(--tui-primary-6));
+                            box-shadow: 0px 0px 0px 3px rgb(var(--tui-primary-2));
+                        }
                     }
                 }
                 & .${_}-start-icon {
                     display: inline-flex;
                     align-items: center;
                     position: absolute;
-                    margin-left: 7px;
+                    margin-left: ${size.medium.padding};
                     line-height: 0;
-                    height: var(--tt-size-medium);
+                    height: ${size.medium.height};
                     & svg {
-                        font-size: 20px;
+                        font-size: ${size.medium.svgSize};
                     }
                 }
                 & .${_}-end-icon {
@@ -92,11 +150,92 @@ export default styled.span<{ $prefixClass: string }>`
                     align-items: center;
                     position: absolute;
                     right: 0;
-                    margin-right: 7px;
+                    margin-right: ${size.medium.padding};
                     line-height: 0;
-                    height: var(--tt-size-medium);
+                    height: ${size.medium.height};
                     & svg {
-                        font-size: 20px;
+                        font-size: ${size.medium.svgSize};
+                    }
+                }
+                &.${_}-size-tiny {
+                    & .${_} {
+                        height: ${size.tiny.height};
+                        padding: 0 ${size.tiny.padding};
+                        font-size: ${size.tiny.fontSize};
+                        &.${_}-has-start-icon {
+                            padding-left: ${size.tiny.height};
+                        }
+                        &.${_}-has-end-icon {
+                            padding-right: ${size.tiny.height};
+                        }
+                    }
+                    & .${_}-start-icon {
+                        margin-left: ${size.tiny.padding};
+                        height: ${size.tiny.height};
+                        & svg {
+                            font-size: ${size.tiny.svgSize};
+                        }
+                    }
+                    & .${_}-end-icon {
+                        margin-left: ${size.tiny.padding};
+                        height: ${size.tiny.height};
+                        & svg {
+                            font-size: ${size.tiny.svgSize};
+                        }
+                    }
+                }
+                &.${_}-size-small {
+                    & .${_} {
+                        height: ${size.small.height};
+                        padding: 0 ${size.small.padding};
+                        font-size: ${size.small.fontSize};
+                        &.${_}-has-start-icon {
+                            padding-left: ${size.small.height};
+                        }
+                        &.${_}-has-end-icon {
+                            padding-right: ${size.small.height};
+                        }
+                    }
+                    & .${_}-start-icon {
+                        margin-left: ${size.small.padding};
+                        height: ${size.small.height};
+                        & svg {
+                            font-size: ${size.small.svgSize};
+                        }
+                    }
+                    & .${_}-end-icon {
+                        margin-left: ${size.small.padding};
+                        height: ${size.small.height};
+                        & svg {
+                            font-size: ${size.small.svgSize};
+                        }
+                    }
+                }
+                &.${_}-size-large {
+                    & .${_} {
+                        height: ${size.large.height};
+                        padding: 0 ${size.large.padding};
+                        font-size: ${size.large.fontSize};
+                        &.${_}-has-start-icon {
+                            padding-left: ${size.large.height};
+                        }
+                        &.${_}-has-end-icon {
+                            padding-right: ${size.large.height};
+                        }
+                    }
+                    & .${_}-start-icon {
+                        margin-left: ${size.large.padding};
+                        height: ${size.large.height};
+                        & svg {
+                            font-size: ${size.large.svgSize};
+                        }
+                    }
+                    & .${_}-end-icon {
+                        margin-left: ${size.large.padding};
+                        height: ${size.large.height};
+                        & svg {
+                            font-size: ${size.large.svgSize};
+                        }
                     }
                 }
             }

@@ -1,35 +1,36 @@
-import React, { forwardRef, useContext } from "react";
-import styled from "styled-components";
+import React, { forwardRef, useContext, useRef } from "react";
 import classnames from 'classnames'
 import { FormContext } from "../form/context"
 import { InputProps } from "./interface";
 import { withGlobalVariable } from '../../style'
 import Styled from './styled'
 
-export const Input = withGlobalVariable(forwardRef<HTMLButtonElement, InputProps>((props: InputProps, ref) => {
+export const Input = withGlobalVariable(forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref: any) => {
     const prefixClass = "tui-input"
     const {
         style,
         className,
+        type = 'filled',
         disabled,
         size,
-        htmlType = "input",
+        htmlType = "text",
+        startIcon,
+        endIcon,
+        onChange,
         ...rest
     } = props
 
-    let {
-        startIcon,
-        endIcon,
-    } = props
-
     const { size: ctxSize } = useContext(FormContext);
+    const inputRef = ref || useRef<HTMLInputElement>(null)
 
     const classNamesRoot = classnames(
         `${prefixClass}-root`,
+        `${prefixClass}-${type}`,
         `${prefixClass}-size-${size || ctxSize || "medium"}`,
         {
             [`${prefixClass}-disabled`]: disabled,
-        }
+        },
+        className,
     )
 
     const classNames = classnames(
@@ -37,9 +38,11 @@ export const Input = withGlobalVariable(forwardRef<HTMLButtonElement, InputProps
         {
             [`${prefixClass}-has-start-icon`]: startIcon,
             [`${prefixClass}-has-end-icon`]: endIcon,
-        },
-        className,
+        }
     )
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        onChange && onChange(e.target.value, e);
+    };
 
     return (
         <Styled
@@ -47,13 +50,17 @@ export const Input = withGlobalVariable(forwardRef<HTMLButtonElement, InputProps
             style={style}
             $prefixClass={prefixClass}
         >
+            {startIcon ? <span className={prefixClass + "-start-icon"}>{startIcon}</span> : null}
             <input
-                style={style}
+                ref={inputRef}
                 className={classNames}
                 disabled={disabled}
+                type={htmlType}
+                onChange={handleChange}
                 {...rest}
             >
             </input>
+            {endIcon ? <span className={prefixClass + "-end-icon"}>{endIcon}</span> : null}
         </Styled>
     )
 }))

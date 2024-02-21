@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { prerenderVariable } from '../style'
+import { prerenderVariable, prerenderColorScheme } from '../style'
 import { ButtonWithType } from './ButtonWithType'
 
 const theme = {
@@ -8,7 +8,7 @@ const theme = {
   //   primary: "rgb(93, 74, 99)",
   // }
 }
-prerenderVariable(theme)
+prerenderColorScheme(theme)
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -30,8 +30,6 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const ButtonTypes: Story = {
   args: {
-    type: 'outlined',
-    shape: 'round',
   },
 };
 
