@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import theme from '../../style'
 
 export default styled.div<{ $prefixClass: string }>`
      ${(props) => {
@@ -19,10 +20,12 @@ export default styled.div<{ $prefixClass: string }>`
                 flex-direction: column;
             }
             &.${_}-size-tiny {
-                gap: var(--tui-size-1)
+                // @ts-ignore
+                gap: ${theme.vars.fontSize.xs}
             }
             &.${_}-size-small {
-                gap: var(--tui-size-2)
+                background: ${theme.vars.scheme.primary.outlinedBackground};
+                gap: ${theme.vars.fontSize.sm}
             }
             &.${_}-size-medium {
                 gap: var(--tui-size-4)

@@ -2,15 +2,14 @@ import React, { forwardRef, useContext, useRef } from 'react'
 import classnames from 'classnames'
 import { FormContext } from '../form/context'
 import { InputProps } from './interface';
-import { withGlobalVariable } from '../../style'
 import Styled from './styled'
 
-export const Input = withGlobalVariable(forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref: any) => {
+export const Input = forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref: any) => {
     const prefixClass = 'tui-input'
     const {
         style,
         className,
-        type = 'filled',
+        type = 'outlined',
         size,
         htmlType = 'text',
         startIcon,
@@ -67,4 +66,4 @@ export const Input = withGlobalVariable(forwardRef<HTMLInputElement, InputProps>
             {endIcon ? <span className={prefixClass + '-end-icon'}>{endIcon}</span> : null}
         </Styled>
     )
-}))
+})

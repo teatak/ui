@@ -1,16 +1,21 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { ButtonInner } from './ButtonInner'
+import { Space } from '../components';
 
 const meta = {
-  title: 'Example/Button',
-  component: ButtonInner,
+  title: 'Example/Space',
+  component: Space,
   parameters: {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
+    children: {
+      table: {
+        disable: true
+      }
+    }
   },
   // decorators: [
   //   (Story) => (
@@ -19,32 +24,17 @@ const meta = {
   //     </div>
   //   ),
   // ],
-} satisfies Meta<typeof ButtonInner>
+} satisfies Meta<typeof Space>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const ButtonTypes: Story = {
+export const Default: Story = {
   args: {
-  },
-}
-
-export const Tiny: Story = {
-  args: {
-    type: 'solid',
-    size: 'tiny'
-  },
-}
-
-export const Rounded: Story = {
-  args: {
-    shape: 'round',
-  },
-}
-
-export const Circle: Story = {
-  args: {
-    type: 'solid',
-    shape: 'circle',
+    children: [
+      <span style={{ padding: 4, background: "red" }}>hello</span>,
+      <span style={{ padding: 4, background: "yellow" }}>text</span>,
+      <span style={{ padding: 4, background: "blue" }}>whoam</span>
+    ]
   },
 }

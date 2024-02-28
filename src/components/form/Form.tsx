@@ -1,11 +1,10 @@
 import React, { forwardRef, useMemo, useContext } from 'react';
 import classnames from 'classnames'
-import { withGlobalVariable } from '../../style'
 import { FormProps } from './interface'
 import { FormContext } from './context'
 import Styled from './styled'
 
-export const Form = withGlobalVariable(forwardRef<HTMLFormElement, FormProps>((props: FormProps, ref) => {
+export const Form = forwardRef<HTMLFormElement, FormProps>((props: FormProps, ref) => {
     const prefixClass = 'tui-form'
     const {
         style,
@@ -35,7 +34,10 @@ export const Form = withGlobalVariable(forwardRef<HTMLFormElement, FormProps>((p
     const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e: any): void => {
         e.preventDefault()
         e.stopPropagation()
-        onSubmit && onSubmit({}, e)
+        if (onSubmit) {
+
+        }
+        //onSubmit && onSubmit({}, e)
     };
 
     return <FormContext.Provider value={form}>
@@ -43,4 +45,4 @@ export const Form = withGlobalVariable(forwardRef<HTMLFormElement, FormProps>((p
             {children}
         </Styled>
     </FormContext.Provider>
-}))
+})

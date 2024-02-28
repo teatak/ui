@@ -17,3 +17,7 @@ export const merge: any = (target: any, ...sources: any) => {
     }
     return merge(target, ...sources)
 }
+
+export type RecursivePartial<T> = {
+    [P in keyof T]?: RecursivePartial<T[P]>;
+};

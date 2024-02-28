@@ -3,18 +3,17 @@ import classnames from 'classnames'
 import { FormContext } from '../form/context'
 import { ButtonProps } from './interface'
 import Styled from './styled'
-import { withGlobalVariable } from '../../style'
 import { Loading } from '../loading'
 
-export const Button = withGlobalVariable(forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
     const prefixClass = 'tui-button'
     const {
         style,
         className,
-        type = 'filled',
+        type = 'solid',
         long,
         shape = 'square',
-        color = 'secondary',
+        color = 'neutral',
         size,
         htmlType,
         loading,
@@ -99,4 +98,4 @@ export const Button = withGlobalVariable(forwardRef<HTMLButtonElement, ButtonPro
         <span className={prefixClass + '-span'}>{children}</span>
         {endIcon ? <span className={prefixClass + '-end-icon'}>{endIcon}</span> : null}
     </Styled>
-}))
+})

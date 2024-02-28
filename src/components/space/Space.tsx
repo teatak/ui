@@ -2,9 +2,8 @@ import React from 'react';
 import classnames from 'classnames'
 import Styled from './styled'
 import { SpaceProps } from './interface';
-import { withGlobalVariable } from '../../style'
 
-export const Space = withGlobalVariable((props: SpaceProps) => {
+export const Space = (props: SpaceProps) => {
     const {
         direction = 'horizontal',
         size = 'small',
@@ -41,4 +40,4 @@ export const Space = withGlobalVariable((props: SpaceProps) => {
             )
         })}
     </Styled>
-})
+}

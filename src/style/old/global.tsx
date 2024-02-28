@@ -220,8 +220,18 @@ export const prerenderGlobalStyle = (theme?: any) => {
 }
 
 export function withGlobalVariable<P>(WrappedComponent: React.ComponentType<P>) {
-    prerenderVariable()
+    prepareVars()
     return forwardRef((props: P, ref) => {
         return <WrappedComponent {...props} ref={ref} />
     })
+}
+
+//准备变量
+export function prepareVars() {
+
+}
+
+//准备样式
+export function prepareGlobalStyle() {
+
 }

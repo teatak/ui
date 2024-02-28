@@ -1,11 +1,19 @@
 import type { Preview } from '@storybook/react';
-import { prerenderColorScheme } from '../src/style'
-const theme = {
-  // base: {
-  //   primary: 'rgb(93, 74, 99)',
-  // }
-}
-prerenderColorScheme(theme)
+import { createTheme, prerenderColorScheme } from '../src/style'
+
+prerenderColorScheme(createTheme({
+  baseColor: {
+    primary: 'rgb(113, 101, 227)',
+  },
+}))
+
+// import { prerenderColorScheme } from '../src/style'
+// const theme = {
+//   // base: {
+//   //   primary: 'rgb(113, 101, 227)',
+//   // }
+// }
+// prerenderColorScheme(theme)
 
 const preview: Preview = {
   parameters: {

@@ -135,7 +135,7 @@ export default styled.span<{ $prefixClass: string }>`
                 }
                 &.${_}-outlined {
                     & .${_} {
-                        border: solid 1px var(--tui-background-color-2);  
+                        border: solid 1px rgb(var(--tui-gray-5));  
                         background: transparent;    
                         &:hover {
                             border: solid 1px rgb(var(--tui-primary-5));

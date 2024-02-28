@@ -8,7 +8,7 @@ export interface FormContextProps {
 export interface FormProps {
     style?: CSSProperties;
     className?: string | string[];
-    layout?: 'horizontal' | 'vertical'
+    layout?: 'horizontal' | 'vertical' | 'inline'
     size?: 'tiny' | 'small' | 'medium' | 'large'
     labelCol?: { span: number, offset: number }
     labelAlign?: 'right'
