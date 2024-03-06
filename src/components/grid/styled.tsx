@@ -154,10 +154,6 @@ export const StyledGridItem = styled.div<StyledGridItemProps>`
         let span: RecursivePartial<Span> = {}
         switch (typeof options.span) {
             case 'number':
-                span = {
-                    xs: options.span,
-                }
-                break;
             case 'boolean':
                 span = {
                     xs: options.span,
