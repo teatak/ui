@@ -16,13 +16,13 @@ const meta = {
       }
     }
   },
-  // decorators: [
-  //   (Story) => (
-  //     <div style={{ margin: '3em' }}>
-  //       <Story />
-  //     </div>
-  //   ),
-  // ],
+  decorators: [
+    (Story) => (
+      <div style={{ margin: '1em' }}>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof Space>
 
 export default meta

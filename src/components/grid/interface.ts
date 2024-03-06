@@ -43,7 +43,7 @@ export interface GridProps extends CommonProps, Omit<React.HTMLAttributes<HTMLEl
 }
 
 export interface GridItemProps extends CommonProps, Omit<React.HTMLAttributes<HTMLElement>, ''> {
-    span?: number | RecursivePartial<Span> | boolean
+    span?: number | boolean | RecursivePartial<Span>
     offset?: number | RecursivePartial<Column>,
 }
 

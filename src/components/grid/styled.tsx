@@ -143,7 +143,7 @@ export const StyledGrid = styled.div<StyledGridProps>`
 
 interface StyledGridItemProps {
     $options: {
-        span?: number | RecursivePartial<Span>,
+        span?: number | boolean | RecursivePartial<Span>,
         offset?: number | RecursivePartial<Column>,
     } & StyledCommonProps
 }
