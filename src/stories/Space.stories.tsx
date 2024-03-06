@@ -8,7 +8,6 @@ const meta = {
   parameters: {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
     children: {
@@ -29,7 +28,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
+export const Overview: Story = {
   args: {
     children: [
       <span style={{ padding: 4, background: "red" }}>hello</span>,

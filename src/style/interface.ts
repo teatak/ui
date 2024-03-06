@@ -58,6 +58,14 @@ export interface BaseColor extends Record<string, string> {
     gray: string
 }
 
+export interface Breakpoint extends Record<string, number> {
+    xs: number
+    sm: number
+    md: number
+    lg: number
+    xl: number
+}
+
 export interface BaseScales {
     baseColor: BaseColor,
     radius: Radius
@@ -65,6 +73,7 @@ export interface BaseScales {
     fontFamily: FontFamily
     fontSize: FontSize
     zIndex: ZIndex
+    breakpoint: Breakpoint
 }
 
 export interface ColorSchemes {
@@ -159,9 +168,9 @@ export interface ColorSystem {
 export interface Theme {
     entries: EntriesScales
     css: {
-        root: { [key: string]: string }
-        light: { [key: string]: string }
-        dark: { [key: string]: string }
+        root: Record<string, string>
+        light: Record<string, string>
+        dark: Record<string, string>
     },
-    vars: VarsScales
+    vars: VarsScales,
 }

@@ -24,7 +24,6 @@ export default styled.div<{ $prefixClass: string }>`
                 gap: ${theme.vars.fontSize.xs}
             }
             &.${_}-size-small {
-                background: ${theme.vars.scheme.primary.outlinedBackground};
                 gap: ${theme.vars.fontSize.sm}
             }
             &.${_}-size-medium {

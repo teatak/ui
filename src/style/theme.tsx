@@ -11,7 +11,7 @@ export interface CssVarsThemeOptions extends RecursivePartial<EntriesScales> {
 }
 
 //theme
-export type Scheme = 'system' | 'light' | 'dark'
+export type Mode = 'system' | 'light' | 'dark'
 const schemeStorageKey = 'color-scheme'
 const schemeAttributeKey = 'data-color-scheme'
 let loadedColorScheme = false
@@ -20,7 +20,6 @@ let loadedTheme: Theme
 
 const themeChanged = (themeOptions?: CssVarsThemeOptions) => {
     let nextOptions = merge(themeOptions || {}, loadedThemeOptions,)
-    console.log('themeChanged', nextOptions, loadedThemeOptions)
     if (JSON.stringify(nextOptions) == JSON.stringify(loadedThemeOptions)) {
         return false
     } else {
@@ -308,6 +307,15 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
         ...scalesInput.fontSize
     }
 
+    const breakpoint = {
+        xs: 0,
+        sm: 600,
+        md: 900,
+        lg: 1200,
+        xl: 1536,
+        ...scalesInput.breakpoint,
+    }
+
     const lightColorSystem: ColorSystem = {
         mode: 'light',
         primary: {
@@ -439,10 +447,10 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             fontFamily,
             radius: {
                 xs: '2px',
-                sm: '6px',
-                md: '8px',
-                lg: '12px',
-                xl: '16px',
+                sm: '4px',
+                md: '6px',
+                lg: '8px',
+                xl: '12px',
             },
             zIndex: {
                 badge: 1,
@@ -452,6 +460,7 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
                 snackbar: 1400,
                 tooltip: 1500,
             },
+            breakpoint,
         }
     }
 
@@ -464,7 +473,7 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
         prefix: cssVarPrefix,
         shouldSkipGeneratingVar: (keys: string[]) => {
             //skip mode
-            return keys[0] === 'mode'
+            return keys[0] === 'breakpoints' || keys[0] === 'mode'
         }
     })
 
@@ -474,8 +483,9 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             ...mergedScales
         },
         vars: themeVars,
-        css: themeCss
+        css: themeCss,
     }
+    // 提前加载全局颜色模式
     return loadedTheme = theme
 }
 
@@ -504,29 +514,37 @@ function prepareCssVars(theme: any, parserConfig: any) {
     }
 }
 
-const GlobalColorScheme = createGlobalStyle<{ $root: any, $light: any, $dark: any }>`
-    :root, [${schemeAttributeKey}='light'] {
-        color-scheme: light;
-        ${props => (props.$root)}
-        ${props => (props.$light)}
-    }
-    [${schemeAttributeKey}='dark'] {
-        color-scheme: dark;
-        ${props => (props.$dark)}
-    }
-    [${schemeAttributeKey}='system'] {
-        @media (prefers-color-scheme: light) {
-            color-scheme: light;
-            ${props => (props.$light)}
-        }
-        @media (prefers-color-scheme: dark) {
-            color-scheme: dark;
-            ${props => (props.$dark)}
-        }
-    }
-`
+let _defaultMode: Mode = 'system'
 
-let _defaultScheme: Scheme = 'light'
+const GlobalColorScheme = createGlobalStyle<{ $defaultMode: Mode, $root: any, $light: any, $dark: any }>`
+  ${props => {
+        return css`
+            :root {
+                color-scheme:  ${props.$defaultMode === 'dark' ? 'dark' : 'light'};
+                ${props.$root}
+                ${props.$defaultMode === 'dark' ? props.$dark : props.$light}
+            }
+            [${schemeAttributeKey}='light'] {
+                color-scheme: light;
+                ${props.$light}
+            }
+            [${schemeAttributeKey}='dark'] {
+                color-scheme: dark;
+                ${props.$dark}
+            }
+            [${schemeAttributeKey}='system'] {
+                @media (prefers-color-scheme: light) {
+                    color-scheme: light;
+                    ${props.$light}
+                }
+                @media (prefers-color-scheme: dark) {
+                    color-scheme: dark;
+                    ${props.$dark}
+                }
+            }
+        `
+    }}
+`
 
 function loadedVars(vars: 'root' | 'light' | 'dark') {
     if (loadedTheme) {
@@ -540,54 +558,58 @@ function loadedVars(vars: 'root' | 'light' | 'dark') {
     }
     return ""
 }
-function root() {
-    return css`
-        ${loadedVars('root')}
-    `
-}
-
-function light() {
-    return css`
-        ${loadedVars('light')}
-    `
-}
-function dark() {
-    return css`
-        ${loadedVars('dark')}
-    `
-}
 
 // 获取用户倾向样式
-export const getColorPreference = () => {
-    return localStorage.getItem(schemeStorageKey)
+export const getMode = () => {
+    const scheme = localStorage.getItem(schemeStorageKey)
+    if (scheme) {
+        return scheme
+    } else {
+        return _defaultMode
+    }
 }
-
 // 设置用户倾向样式
-export const setColorPreference = (scheme: Scheme) => {
+export const setMode = (scheme: Mode) => {
     localStorage.setItem(schemeStorageKey, scheme)
-    reflectPreference()
+    reflectMode()
+}
+// 设置用户倾向样式
+export const restoreMode = () => {
+    localStorage.removeItem(schemeStorageKey)
+    reflectMode()
 }
 // 应用用户倾向样式
-export const reflectPreference = () => {
-    let scheme = getColorPreference()
+export const reflectMode = () => {
+    const scheme = localStorage.getItem(schemeStorageKey)
     if (scheme) {
         document.firstElementChild?.setAttribute(schemeAttributeKey, scheme)
     } else {
-        if (_defaultScheme != 'light') {
-            document.firstElementChild?.setAttribute(schemeAttributeKey, _defaultScheme)
+        if (_defaultMode == 'system') {
+            document.firstElementChild?.setAttribute(schemeAttributeKey, _defaultMode)
         }
     }
 }
 
-// 提前加载全局颜色模式
-export const prerenderColorScheme = (theme?: Theme, defaultScheme?: Scheme) => {
+export const prerenderStyle = (defaultMode?: Mode) => {
     if (!loadedColorScheme) {
-        console.log(1111)
-        _defaultScheme = defaultScheme || 'light'
-        reflectPreference()
+        if (defaultMode) {
+            _defaultMode = defaultMode
+        }
+        reflectMode()
         loadedColorScheme = true
         ReactDOM.createRoot(document.createElement('div')).render(
-            <GlobalColorScheme $root={root()} $light={light()} $dark={dark()} />
+            <GlobalColorScheme
+                $defaultMode={_defaultMode}
+                $root={css`
+                    ${loadedVars('root')}
+                `}
+                $light={css`
+                    ${loadedVars('light')}
+                `}
+                $dark={css`
+                    ${loadedVars('dark')}
+                `}
+            />
         )
     }
 }

@@ -1,11 +1,13 @@
 import type { Preview } from '@storybook/react';
-import { createTheme, prerenderColorScheme } from '../src/style'
+import { createTheme, prerenderStyle } from '../src/style'
 
-prerenderColorScheme(createTheme({
+const theme = createTheme({
   baseColor: {
     primary: 'rgb(113, 101, 227)',
   },
-}))
+})
+
+prerenderStyle('system')
 
 // import { prerenderColorScheme } from '../src/style'
 // const theme = {
@@ -23,6 +25,16 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+    tags: [''],
+    backgrounds: {
+      // default: 'default',
+      // values: [
+      //   {
+      //     name: 'default',
+      //     value: 'transparent',
+      //   }
+      // ],
     },
   },
 };

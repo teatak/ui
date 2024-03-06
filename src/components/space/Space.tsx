@@ -14,7 +14,7 @@ export const Space = (props: SpaceProps) => {
         ...rest
     } = props
 
-    const prefixClass = 'tui_space'
+    const prefixClass = 'tui-space'
 
     const _align = align === undefined && direction === 'horizontal' ? 'center' : align;
 

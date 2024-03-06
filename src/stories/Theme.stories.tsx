@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Space } from '../components'
-import theme, { setColorPreference } from '../style'
+import theme, { setMode, restoreMode } from '../style'
 
 const Color = (props: any) => {
   const { name } = props
@@ -23,14 +23,17 @@ const Themes = () => {
   return <>
     <div style={{ background: theme.vars.scheme.background.body }}>
       <a onClick={() => {
-        setColorPreference('system')
+        setMode('system')
       }}>system</a>&nbsp;
       <a onClick={() => {
-        setColorPreference('light')
+        setMode('light')
       }}>light</a>&nbsp;
       <a onClick={() => {
-        setColorPreference('dark')
-      }}>dark</a>
+        setMode('dark')
+      }}>dark</a>&nbsp;
+      <a onClick={() => {
+        restoreMode()
+      }}>clear</a>
     </div>
     <Space>
       <Color name="blue"></Color>
@@ -54,11 +57,8 @@ const meta = {
   title: 'Example/Themes',
   component: Themes,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    // layout: 'centered',
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
   },
@@ -68,7 +68,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Normal: Story = {
+export const Overview: Story = {
   args: {
   },
 }
