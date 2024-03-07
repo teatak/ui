@@ -21,9 +21,6 @@ const Grid = (props: GridProps) => {
 
     const classNames = classnames(
         prefixClass,
-        `${prefixClass}-direction-${direction}`,
-        {
-        },
         className,
     );
 
@@ -37,17 +34,6 @@ const Grid = (props: GridProps) => {
         styleOverrides,
     }
 
-    const modifyChildren = (child: React.ReactElement) => {
-        const className = classnames(
-            child.props.className,
-            `${prefixClass}-item`,
-        )
-        const props = {
-            className
-        }
-        return React.cloneElement(child, props);
-    }
-
     return <GridContext.Provider value={{ columns: columns || 12 }}>
         <StyledGrid
             $options={options}
@@ -57,8 +43,8 @@ const Grid = (props: GridProps) => {
                 if (child.type === GridItem) {
                     return <child.type {...child.props}></child.type>
                 } else {
-                    console.warn("child is not Grid Item")
-                    return null
+                    //wraper 
+                    return <GridItem>{child}</GridItem>
                 }
             })}
         </StyledGrid>

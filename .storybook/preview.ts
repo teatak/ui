@@ -3,7 +3,7 @@ import { createTheme, prerenderStyle } from '../src/style'
 
 const theme = createTheme({
   baseColor: {
-    primary: 'rgb(113, 101, 227)',
+    // primary: 'rgb(113, 101, 227)',
   },
 })
 
