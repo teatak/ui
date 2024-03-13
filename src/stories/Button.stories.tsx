@@ -24,8 +24,7 @@ export const Overview: Story = {
 
 export const Tiny: Story = {
   args: {
-    type: 'solid',
-    size: 'tiny'
+    size: 'xs',
   },
 }
 
@@ -37,7 +36,7 @@ export const Rounded: Story = {
 
 export const Circle: Story = {
   args: {
-    type: 'solid',
+    variant: 'solid',
     shape: 'circle',
   },
 }

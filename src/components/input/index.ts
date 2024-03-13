@@ -1,2 +1,1 @@
-export * from './Input'
-export * from './styled'
+export { default } from './Input' 

@@ -1,20 +1,17 @@
-import { CSSProperties, ReactNode, HTMLProps } from 'react'
+import React, { ReactNode } from 'react'
+import { SizeType, VariantType, ColorType, ShapeType, CommonProps } from '../types'
 
-export interface ButtonProps {
-    style?: CSSProperties;
-    className?: string | string[]
-    type?: 'solid' | 'soft' | 'outlined' | 'text'
+export interface ButtonProps extends CommonProps, Omit<React.HTMLAttributes<HTMLButtonElement>, ''> {
+    variant?: VariantType
+    color?: ColorType
+    shape?: ShapeType
+    size?: SizeType
     long?: boolean
-    shape?: 'circle' | 'round' | 'square'
-    color?: 'primary' | 'neutral' | 'success' | 'error' | 'warning'
-    size?: 'tiny' | 'small' | 'medium' | 'large'
     htmlType?: 'submit' | 'button' | 'reset'
     loading?: boolean
     loadingPosition?: 'start' | 'center' | 'end'
     disabled?: boolean
     href?: string
-    onClick?: (e: Event) => void
     startIcon?: ReactNode
     endIcon?: ReactNode
-    children?: ReactNode
 }

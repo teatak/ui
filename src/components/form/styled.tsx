@@ -5,7 +5,7 @@ export default styled.form<{ $prefixClass: string }>`
         const _ = props.$prefixClass
         return css`
              &.${_} {
-                line-height: 0;
+               
              }
         `
     }}

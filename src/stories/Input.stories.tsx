@@ -25,7 +25,6 @@ type Story = StoryObj<typeof meta>
 export const Overview: Story = {
   args: {
     defaultValue: 'Normal',
-    onChange: (value, e) => { console.log(value, e) }
   },
 }
 

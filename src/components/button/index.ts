@@ -1,3 +1,2 @@
-export * from './Button'
-export * from './styled'
+export { default } from './Button'
 export * from './interface'

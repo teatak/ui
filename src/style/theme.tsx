@@ -1,10 +1,10 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef } from 'react'
 import ReactDOM from 'react-dom/client'
-import { merge, RecursivePartial } from "../helper/common";
+import { merge, RecursivePartial } from '../helper/common'
 import { generateColor } from './palette'
-import cssVarsParser from './cssVarsParser';
+import cssVarsParser from './cssVarsParser'
 import { Theme, EntriesScales, PaletteVariant, ColorSystem, VarsScales } from "./interface"
-import { createGlobalStyle, css } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components'
 
 export interface CssVarsThemeOptions extends RecursivePartial<EntriesScales> {
     cssVarPrefix?: string
@@ -54,18 +54,17 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
 
     const baseColor = {
         // color
-        primary: 'rgb(0, 122, 255)',
+        primary: 'rgb(15, 115, 214)',
         neutral: 'rgb(130, 130, 130)',
-        red: 'rgb(255, 59, 48)',
-        orange: 'rgb(255, 149, 0)',
-        yellow: 'rgb(255, 204, 0)',
-        green: 'rgb(52, 199, 89)',
-        mint: 'rgb(0, 199, 190)',
-        cyan: 'rgb(50, 173, 230)',
-        blue: 'rgb(0, 122, 255)',
-        indigo: 'rgb(88, 86, 214)',
-        purple: 'rgb(175, 82, 222)',
-        pink: 'rgb(255, 45, 85)',
+        red: 'rgb(213, 29, 29)',
+        orange: 'rgb(220, 132, 31)',
+        yellow: 'rgb(214, 189, 28)',
+        green: 'rgb(33, 184, 33)',
+        cyan: 'rgb(18, 196, 187)',
+        blue: 'rgb(15, 115, 214)',
+        indigo: 'rgb(78, 58, 190)',
+        purple: 'rgb(165, 67, 213)',
+        pink: 'rgb(207, 34, 129)',
         gray: 'rgb(130, 130, 130)',
         ...scalesInput.baseColor
     }
@@ -81,7 +80,6 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             orange: generateColor(baseColor.orange, { dark: false }),
             yellow: generateColor(baseColor.yellow, { dark: false }),
             green: generateColor(baseColor.green, { dark: false }),
-            mint: generateColor(baseColor.mint, { dark: false }),
             cyan: generateColor(baseColor.cyan, { dark: false }),
             blue: generateColor(baseColor.blue, { dark: false }),
             indigo: generateColor(baseColor.indigo, { dark: false }),
@@ -106,7 +104,6 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             orange: generateColor(baseColor.orange, { dark: true }),
             yellow: generateColor(baseColor.yellow, { dark: true }),
             green: generateColor(baseColor.green, { dark: true }),
-            mint: generateColor(baseColor.mint, { dark: true }),
             cyan: generateColor(baseColor.cyan, { dark: true }),
             blue: generateColor(baseColor.blue, { dark: true }),
             indigo: generateColor(baseColor.indigo, { dark: true }),
@@ -126,8 +123,9 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
     const createLightModeVariantVariables = (color: any): PaletteVariant => {
         const isLight = true
         return {
-            //定义样式
+            //text 定义样式
             textColor: getCssVarColor(`${color}-6`, isLight),
+            textColorDisabled: getCssVarColor(`neutral-4`, isLight),
             //border
             textBorderWidth: '0px',
             textBorder: 'transparent',
@@ -135,36 +133,39 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             textBorderActive: 'transparent',
             textBorderDisabled: 'transparent',
             //background
-            textBackground: getCssVarColor(`${color}-2`, isLight),
-            textBackgroundHover: getCssVarColor(`${color}-2`, isLight),
-            textBackgroundActive: getCssVarColor(`${color}-3`, isLight),
-            textBackgroundDisabled: getCssVarColor(`neutral-5`, isLight),
+            textBackground: 'none',
+            textBackgroundHover: getCssVarColor(`${color}-1`, isLight),
+            textBackgroundActive: getCssVarColor(`${color}-2`, isLight),
+            textBackgroundDisabled: 'none',
             //boxShadow
             textBoxShadow: 'none',
             textBoxShadowHover: 'none',
             textBoxShadowActive: 'none',
             textBoxShadowDisabled: 'none',
 
-            outlinedColor: getCssVarColor(`common-white`, isLight),
+            //outlined 定义样式
+            outlinedColor: getCssVarColor(`${color}-6`, isLight),
+            outlinedColorDisabled: getCssVarColor(`neutral-4`, isLight),
             //border
-            outlinedBorderWidth: '0px',
-            outlinedBorder: 'transparent',
-            outlinedBorderHover: 'transparent',
-            outlinedBorderActive: 'transparent',
-            outlinedBorderDisabled: 'transparent',
+            outlinedBorderWidth: '1px',
+            outlinedBorder: getCssVarColor(`${color}-6`, isLight),
+            outlinedBorderHover: getCssVarColor(`${color}-5`, isLight),
+            outlinedBorderActive: getCssVarColor(`${color}-6`, isLight),
+            outlinedBorderDisabled: getCssVarColor(`neutral-2`, isLight),
             //background
-            outlinedBackground: getCssVarColor(`${color}-6`, isLight),
-            outlinedBackgroundHover: getCssVarColor(`${color}-5`, isLight),
-            outlinedBackgroundActive: getCssVarColor(`${color}-7`, isLight),
-            outlinedBackgroundDisabled: getCssVarColor(`neutral-4`, isLight),
+            outlinedBackground: 'none',
+            outlinedBackgroundHover: getCssVarColor(`${color}-1`, isLight),
+            outlinedBackgroundActive: getCssVarColor(`${color}-2`, isLight),
+            outlinedBackgroundDisabled: 'none',
             //boxShadow
             outlinedBoxShadow: 'none',
-            outlinedBoxShadowHover: getCssVar('shadow-xs'),
+            outlinedBoxShadowHover: 'none',
             outlinedBoxShadowActive: 'none',
             outlinedBoxShadowDisabled: 'none',
 
-            //定义样式
-            softColor: getCssVarColor(`common-white`, isLight),
+            //soft 定义样式
+            softColor: getCssVarColor(`${color}-6`, isLight),
+            softColorDisabled: getCssVarColor(`neutral-4`, isLight),
             //border
             softBorderWidth: '0px',
             softBorder: 'transparent',
@@ -172,18 +173,19 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             softBorderActive: 'transparent',
             softBorderDisabled: 'transparent',
             //background
-            softBackground: getCssVarColor(`${color}-6`, isLight),
-            softBackgroundHover: getCssVarColor(`${color}-5`, isLight),
-            softBackgroundActive: getCssVarColor(`${color}-7`, isLight),
-            softBackgroundDisabled: getCssVarColor(`neutral-4`, isLight),
+            softBackground: getCssVarColor(`${color}-1`, isLight),
+            softBackgroundHover: getCssVarColor(`${color}-2`, isLight),
+            softBackgroundActive: getCssVarColor(`${color}-1`, isLight),
+            softBackgroundDisabled: getCssVarColor(`neutral-1`, isLight),
             //boxShadow
             softBoxShadow: 'none',
-            softBoxShadowHover: getCssVar('shadow-xs'),
+            softBoxShadowHover: 'none',
             softBoxShadowActive: 'none',
             softBoxShadowDisabled: 'none',
 
-            //定义样式
+            //solid 定义样式
             solidColor: getCssVarColor(`common-white`, isLight),
+            solidColorDisabled: getCssVarColor(`neutral-5`, isLight),
             //border
             solidBorderWidth: '0px',
             solidBorder: 'transparent',
@@ -193,12 +195,12 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             //background
             solidBackground: getCssVarColor(`${color}-6`, isLight),
             solidBackgroundHover: getCssVarColor(`${color}-5`, isLight),
-            solidBackgroundActive: getCssVarColor(`${color}-7`, isLight),
-            solidBackgroundDisabled: getCssVarColor(`neutral-4`, isLight),
+            solidBackgroundActive: getCssVarColor(`${color}-6`, isLight),
+            solidBackgroundDisabled: getCssVarColor(`neutral-2`, isLight),
             //boxShadow
             solidBoxShadow: 'none',
-            solidBoxShadowHover: getCssVar('shadow-xs'),
-            solidBoxShadowActive: 'none',
+            solidBoxShadowHover: getCssVar('shadow-md'),
+            solidBoxShadowActive: getCssVar('shadow-sm'),
             solidBoxShadowDisabled: 'none',
         }
     }
@@ -207,8 +209,9 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
     const createDarkModeVariantVariables = (color: any): PaletteVariant => {
         const isLight = false
         return {
-            //定义样式
+            //text 定义样式
             textColor: getCssVarColor(`${color}-6`, isLight),
+            textColorDisabled: getCssVarColor(`neutral-4`, isLight),
             //border
             textBorderWidth: '0px',
             textBorder: 'transparent',
@@ -216,36 +219,39 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             textBorderActive: 'transparent',
             textBorderDisabled: 'transparent',
             //background
-            textBackground: getCssVarColor(`${color}-2`, isLight),
-            textBackgroundHover: getCssVarColor(`${color}-2`, isLight),
-            textBackgroundActive: getCssVarColor(`${color}-3`, isLight),
-            textBackgroundDisabled: getCssVarColor(`neutral-5`, isLight),
+            textBackground: 'none',
+            textBackgroundHover: getCssVarColor(`${color}-1`, isLight),
+            textBackgroundActive: getCssVarColor(`${color}-2`, isLight),
+            textBackgroundDisabled: 'none',
             //boxShadow
             textBoxShadow: 'none',
             textBoxShadowHover: 'none',
             textBoxShadowActive: 'none',
             textBoxShadowDisabled: 'none',
 
-            outlinedColor: getCssVarColor(`common-white`, isLight),
+            //outlined 定义样式
+            outlinedColor: getCssVarColor(`${color}-6`, isLight),
+            outlinedColorDisabled: getCssVarColor(`neutral-4`, isLight),
             //border
-            outlinedBorderWidth: '0px',
-            outlinedBorder: 'transparent',
-            outlinedBorderHover: 'transparent',
-            outlinedBorderActive: 'transparent',
-            outlinedBorderDisabled: 'transparent',
+            outlinedBorderWidth: '1px',
+            outlinedBorder: getCssVarColor(`${color}-6`, isLight),
+            outlinedBorderHover: getCssVarColor(`${color}-5`, isLight),
+            outlinedBorderActive: getCssVarColor(`${color}-6`, isLight),
+            outlinedBorderDisabled: getCssVarColor(`neutral-2`, isLight),
             //background
-            outlinedBackground: getCssVarColor(`${color}-6`, isLight),
-            outlinedBackgroundHover: getCssVarColor(`${color}-5`, isLight),
-            outlinedBackgroundActive: getCssVarColor(`${color}-7`, isLight),
-            outlinedBackgroundDisabled: getCssVarColor(`neutral-4`, isLight),
+            outlinedBackground: 'none',
+            outlinedBackgroundHover: getCssVarColor(`${color}-1`, isLight),
+            outlinedBackgroundActive: getCssVarColor(`${color}-2`, isLight),
+            outlinedBackgroundDisabled: 'none',
             //boxShadow
             outlinedBoxShadow: 'none',
-            outlinedBoxShadowHover: getCssVar('shadow-xs'),
+            outlinedBoxShadowHover: 'none',
             outlinedBoxShadowActive: 'none',
             outlinedBoxShadowDisabled: 'none',
 
-            //定义样式
-            softColor: getCssVarColor(`common-white`, isLight),
+            //soft 定义样式
+            softColor: getCssVarColor(`${color}-6`, isLight),
+            softColorDisabled: getCssVarColor(`neutral-4`, isLight),
             //border
             softBorderWidth: '0px',
             softBorder: 'transparent',
@@ -253,18 +259,19 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             softBorderActive: 'transparent',
             softBorderDisabled: 'transparent',
             //background
-            softBackground: getCssVarColor(`${color}-6`, isLight),
-            softBackgroundHover: getCssVarColor(`${color}-5`, isLight),
-            softBackgroundActive: getCssVarColor(`${color}-7`, isLight),
-            softBackgroundDisabled: getCssVarColor(`neutral-4`, isLight),
+            softBackground: getCssVarColor(`${color}-1`, isLight),
+            softBackgroundHover: getCssVarColor(`${color}-2`, isLight),
+            softBackgroundActive: getCssVarColor(`${color}-1`, isLight),
+            softBackgroundDisabled: getCssVarColor(`neutral-1`, isLight),
             //boxShadow
             softBoxShadow: 'none',
-            softBoxShadowHover: getCssVar('shadow-xs'),
+            softBoxShadowHover: 'none',
             softBoxShadowActive: 'none',
             softBoxShadowDisabled: 'none',
 
-            //定义样式
+            //solid 定义样式
             solidColor: getCssVarColor(`common-white`, isLight),
+            solidColorDisabled: getCssVarColor(`neutral-5`, isLight),
             //border
             solidBorderWidth: '0px',
             solidBorder: 'transparent',
@@ -274,12 +281,12 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             //background
             solidBackground: getCssVarColor(`${color}-6`, isLight),
             solidBackgroundHover: getCssVarColor(`${color}-5`, isLight),
-            solidBackgroundActive: getCssVarColor(`${color}-7`, isLight),
-            solidBackgroundDisabled: getCssVarColor(`neutral-4`, isLight),
+            solidBackgroundActive: getCssVarColor(`${color}-6`, isLight),
+            solidBackgroundDisabled: getCssVarColor(`neutral-2`, isLight),
             //boxShadow
             solidBoxShadow: 'none',
-            solidBoxShadowHover: getCssVar('shadow-xs'),
-            solidBoxShadowActive: 'none',
+            solidBoxShadowHover: getCssVar('shadow-md'),
+            solidBoxShadowActive: getCssVar('shadow-sm'),
             solidBoxShadowDisabled: 'none',
         }
     }
@@ -342,7 +349,6 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
         orange: defaultColors.light.orange,
         yellow: defaultColors.light.yellow,
         green: defaultColors.light.green,
-        mint: defaultColors.light.mint,
         cyan: defaultColors.light.cyan,
         blue: defaultColors.light.blue,
         indigo: defaultColors.light.indigo,
@@ -353,17 +359,18 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             ...defaultColors.light.common
         },
         shadow: {
-            xs: `${getCssVar('common-shadowRing', defaultColors.light.common.shadowRing)}, 0px 1px 2px 0px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity')})`,
-            sm: `${getCssVar('common-shadowRing', defaultColors.light.common.shadowRing)}, 0px 1px 2px 0px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity')}), 0px 2px 4px 0px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity', defaultColors.light.common.shadowOpacity)})`,
-            md: `${getCssVar('common-shadowRing', defaultColors.light.common.shadowRing)}, 0px 2px 8px -2px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity')}), 0px 6px 12px -2px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity', defaultColors.light.common.shadowOpacity)})`,
-            lg: `${getCssVar('common-shadowRing', defaultColors.light.common.shadowRing)}, 0px 2px 8px -2px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity')}), 0px 12px 16px -4px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity', defaultColors.light.common.shadowOpacity)})`,
-            xl: `${getCssVar('common-shadowRing', defaultColors.light.common.shadowRing)}, 0px 2px 8px -2px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity')}), 0px 20px 24px -4px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity', defaultColors.light.common.shadowOpacity)})`,
+            xs: `${getCssVar('common-shadowRing', defaultColors.light.common.shadowRing)}, 0px 1px 2px 0px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity', defaultColors.light.common.shadowOpacity)})`,
+            sm: `${getCssVar('common-shadowRing', defaultColors.light.common.shadowRing)}, 0px 1px 2px 0px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity', defaultColors.light.common.shadowOpacity)}), 0px 2px 4px 0px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity', defaultColors.light.common.shadowOpacity)})`,
+            md: `${getCssVar('common-shadowRing', defaultColors.light.common.shadowRing)}, 0px 2px 8px -2px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity', defaultColors.light.common.shadowOpacity)}), 0px 6px 12px -2px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity', defaultColors.light.common.shadowOpacity)})`,
+            lg: `${getCssVar('common-shadowRing', defaultColors.light.common.shadowRing)}, 0px 2px 8px -2px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity', defaultColors.light.common.shadowOpacity)}), 0px 12px 16px -4px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity', defaultColors.light.common.shadowOpacity)})`,
+            xl: `${getCssVar('common-shadowRing', defaultColors.light.common.shadowRing)}, 0px 2px 8px -2px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity', defaultColors.light.common.shadowOpacity)}), 0px 20px 24px -4px rgba(${getCssVar('common-shadowChannel', defaultColors.light.common.shadowChannel)} / ${getCssVar('common-shadowOpacity', defaultColors.light.common.shadowOpacity)})`,
         },
         text: {
             primary: getCssVarColor('neutral-9', true),
             secondary: getCssVarColor('neutral-8', true),
             tertiary: getCssVarColor('neutral-7', true),
             icon: getCssVarColor('neutral-6', true),
+            revert: getCssVarColor('neutral-1', true),
         },
         background: {
             body: getCssVarColor('common-white', true),
@@ -402,7 +409,6 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
         orange: defaultColors.dark.orange,
         yellow: defaultColors.dark.yellow,
         green: defaultColors.dark.green,
-        mint: defaultColors.dark.mint,
         cyan: defaultColors.dark.cyan,
         blue: defaultColors.dark.blue,
         indigo: defaultColors.dark.indigo,
@@ -420,19 +426,20 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             xl: `${getCssVar('common-shadowRing', defaultColors.dark.common.shadowRing)}, 0px 2px 8px -2px rgba(${getCssVar('common-shadowChannel', defaultColors.dark.common.shadowChannel)} / ${getCssVar('common-shadowOpacity')}), 0px 20px 24px -4px rgba(${getCssVar('common-shadowChannel', defaultColors.dark.common.shadowChannel)} / ${getCssVar('common-shadowOpacity', defaultColors.dark.common.shadowOpacity)})`,
         },
         text: {
-            primary: getCssVarColor('neutral-9', true),
-            secondary: getCssVarColor('neutral-8', true),
-            tertiary: getCssVarColor('neutral-7', true),
-            icon: getCssVarColor('neutral-6', true),
+            primary: getCssVarColor('neutral-9', false),
+            secondary: getCssVarColor('neutral-8', false),
+            tertiary: getCssVarColor('neutral-7', false),
+            icon: getCssVarColor('neutral-6', false),
+            revert: getCssVarColor('neutral-1', true),
         },
         background: {
-            body: getCssVarColor('common-black', true),
-            surface: getCssVarColor('neutral-1', true),
-            popup: getCssVarColor('common-white', true),
-            level1: getCssVarColor('neutral-2', true),
-            level2: getCssVarColor('neutral-3', true),
-            level3: getCssVarColor('neutral-4', true),
-            tooltip: getCssVarColor('neutral-6', true),
+            body: getCssVarColor('common-black', false),
+            surface: getCssVarColor('neutral-1', false),
+            popup: getCssVarColor('common-white', false),
+            level1: getCssVarColor('neutral-2', false),
+            level2: getCssVarColor('neutral-3', false),
+            level3: getCssVarColor('neutral-4', false),
+            tooltip: getCssVarColor('neutral-6', false),
         },
     }
 

@@ -41,7 +41,6 @@ export interface ZIndex extends Record<string, number> {
     snackbar: number
 }
 
-
 export interface BaseColor extends Record<string, string> {
     primary: string
     neutral: string
@@ -90,7 +89,7 @@ export interface VarsScales extends BaseScales {
 }
 
 type DefaultVariant = 'text' | 'outlined' | 'soft' | 'solid'
-type DefaultProperty = 'Color' |
+type DefaultProperty = 'Color' | 'ColorDisabled' |
     'BorderWidth' | 'Border' | 'BorderHover' | 'BorderActive' | 'BorderDisabled' |
     'Background' | 'BackgroundHover' | 'BackgroundActive' | 'BackgroundDisabled' |
     'BoxShadow' | 'BoxShadowHover' | 'BoxShadowActive' | 'BoxShadowDisabled'
@@ -129,6 +128,7 @@ export interface Text {
     secondary: string
     tertiary: string
     icon: string
+    revert: string
 }
 
 export interface Background {
@@ -152,7 +152,6 @@ export interface ColorSystem {
     orange: PaletteRange
     yellow: PaletteRange
     green: PaletteRange
-    mint: PaletteRange
     cyan: PaletteRange
     blue: PaletteRange
     indigo: PaletteRange

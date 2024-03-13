@@ -40,8 +40,9 @@ const Svg = styled.svg.attrs({
     }
 `
 
-export const Loading = () => {
+const Loading = () => {
     return <Svg viewBox='0 0 44 44'>
         <circle cx='22' cy='22' r='20' fill='none' strokeWidth='4' strokeLinecap='round'></circle>
     </Svg>
 }
+export default Loading

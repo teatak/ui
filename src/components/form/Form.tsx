@@ -4,7 +4,7 @@ import { FormProps } from './interface'
 import { FormContext } from './context'
 import Styled from './styled'
 
-export const Form = forwardRef<HTMLFormElement, FormProps>((props: FormProps, ref) => {
+const Form = forwardRef<HTMLFormElement, FormProps>((props: FormProps, ref) => {
     const prefixClass = 'tui-form'
     const {
         style,
@@ -46,3 +46,5 @@ export const Form = forwardRef<HTMLFormElement, FormProps>((props: FormProps, re
         </Styled>
     </FormContext.Provider>
 })
+
+export default Form

@@ -1,7 +1,8 @@
 import { CSSProperties, ReactNode, HTMLProps } from 'react'
+import { SizeType } from '../types'
 
 export interface FormContextProps {
-    size?: 'tiny' | 'small' | 'medium' | 'large'
+    size?: SizeType
     disabled?: boolean
 }
 
@@ -9,7 +10,7 @@ export interface FormProps {
     style?: CSSProperties;
     className?: string | string[];
     layout?: 'horizontal' | 'vertical' | 'inline'
-    size?: 'tiny' | 'small' | 'medium' | 'large'
+    size?: SizeType
     labelCol?: { span: number, offset: number }
     labelAlign?: 'right'
     wrapperCol?: { span: number, offset: number }

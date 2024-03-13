@@ -1,19 +1,14 @@
-import { CSSProperties, ReactNode, InputHTMLAttributes } from 'react'
+import React, { ReactNode } from 'react'
+import { SizeType, VariantType, ColorType, ShapeType, CommonProps } from '../types'
 
-export interface InputProps extends Omit<
-    InputHTMLAttributes<HTMLInputElement>,
-    'onChange' | 'prefix' | 'className' | 'size' | 'height' | 'maxLength'
-> {
-    style?: CSSProperties
-    className?: string | string[]
-    type?: 'text' | 'filled' | 'outlined'
-    value?: string
-    defaultValue?: string
-    placeholder?: string
+export interface InputProps extends CommonProps, Omit<React.HTMLAttributes<HTMLInputElement>, ''> {
+    variant?: VariantType
+    color?: ColorType
+    shape?: ShapeType
+    size?: SizeType
+    loading?: boolean
+    loadingPosition?: 'start' | 'end'
     disabled?: boolean
-    size?: 'tiny' | 'small' | 'medium' | 'large'
     startIcon?: ReactNode
     endIcon?: ReactNode
-    htmlType?: 'text' | 'password'
-    onChange?: (value: string, e: React.ChangeEvent<HTMLInputElement>) => void
 }

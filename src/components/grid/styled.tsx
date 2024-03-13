@@ -82,12 +82,12 @@ export const StyledGrid = styled.div<StyledGridProps>`
             /* base */
             &.${_} {
                 --Grid-columns: ${columns.xs};
-                --Grid-rowSpacing: ${spacing.xs[0]}px;
-                --Grid-columnSpacing: ${spacing.xs[1]}px;
+                --Grid-rowSpacing: ${spacing.xs[0]};
+                --Grid-columnSpacing: ${spacing.xs[1]};
                 display: flex;
                 flex-wrap: wrap;
                 box-sizing: border-box;
-                margin: calc(var(--Grid-rowSpacing) / -2) calc(var(--Grid-columnSpacing) / -2);
+                margin: calc(var(--Grid-rowSpacing) / -2 * 1px) calc(var(--Grid-columnSpacing) / -2  1px);
                 flex-direction: ${options.direction};
                 justify-content: ${options.justifyContent};
                 align-items: ${options.alignItems};
@@ -113,26 +113,26 @@ export const StyledGrid = styled.div<StyledGridProps>`
                 `: ""}
                 ${spacing.sm ? css`
                     @media(min-width: ${theme.entries.breakpoint.sm}px) {
-                        --Grid-rowSpacing: ${spacing.sm[0]}px;
-                        --Grid-columnSpacing: ${spacing.sm[1]}px;
+                        --Grid-rowSpacing: ${spacing.sm[0]};
+                        --Grid-columnSpacing: ${spacing.sm[1]};
                     } 
                 `: ""}
                 ${spacing.md ? css`
                     @media(min-width: ${theme.entries.breakpoint.md}px) {
-                        --Grid-rowSpacing: ${spacing.md[0]}px;
-                        --Grid-columnSpacing: ${spacing.md[1]}px;
+                        --Grid-rowSpacing: ${spacing.md[0]};
+                        --Grid-columnSpacing: ${spacing.md[1]};
                     } 
                 `: ""}
                 ${spacing.lg ? css`
                     @media(min-width: ${theme.entries.breakpoint.lg}px) {
-                        --Grid-rowSpacing: ${spacing.lg[0]}px;
-                        --Grid-columnSpacing: ${spacing.lg[1]}px;
+                        --Grid-rowSpacing: ${spacing.lg[0]};
+                        --Grid-columnSpacing: ${spacing.lg[1]};
                     } 
                 `: ""}
                 ${spacing.xl ? css`
                     @media(min-width: ${theme.entries.breakpoint.xl}px) {
-                        --Grid-rowSpacing: ${spacing.xl[0]}px;
-                        --Grid-columnSpacing: ${spacing.xl[1]}px;
+                        --Grid-rowSpacing: ${spacing.xl[0]};
+                        --Grid-columnSpacing: ${spacing.xl[1]};
                     } 
                 `: ""}
                 ${styleOverrides}
@@ -199,19 +199,8 @@ export const StyledGridItem = styled.div<StyledGridItemProps>`
                 flex-shrink: 0;
                 flex-basis: auto;
                 min-width: 0;
-                overflow: hidden;
-                padding: calc(var(--Grid-rowSpacing) / 2) calc(var(--Grid-columnSpacing) / 2);
+                padding: calc(var(--Grid-rowSpacing) / 2 * 1px) calc(var(--Grid-columnSpacing) / 2 * 1px);
                 /* span */
-                ${span.xs !== undefined ? css`
-                    ${span.xs === 0 ? css`
-                        display: none;
-                    `: css`
-                        ${span.xs === true ? "" : css`
-                            width: calc(100% * ${span.xs} / var(--Grid-columns));
-                            display: block;
-                        `}
-                    `} 
-                `: ""} 
                 ${renderSpan(span.xs)}
                 ${span.sm !== undefined ? css`
                     @media(min-width: ${theme.entries.breakpoint.sm}px) {

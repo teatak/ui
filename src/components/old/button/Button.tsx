@@ -1,21 +1,20 @@
-import React, { forwardRef, useRef, useContext, useState } from 'react'
+import React, { forwardRef, useRef, useContext } from 'react';
 import classnames from 'classnames'
-import { CSSTransition } from 'react-transition-group';
-import { ButtonProps } from './interface'
-import { StyledButton } from './styled';
 import { FormContext } from '../form/context'
-import Loading from '../loading'
+import { ButtonProps } from './interface'
+import Styled from './styled'
+import { Loading } from '../loading'
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
     const prefixClass = 'tui-button'
     const {
         style,
         className,
-        variant = 'solid',
+        type = 'solid',
         long,
         shape = 'square',
         color = 'neutral',
-        size: sizeProp,
+        size,
         htmlType,
         loading,
         loadingPosition = 'start',
@@ -28,19 +27,17 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
         startIcon,
         endIcon,
         children,
-        disabled: disabledProp,
+        disabled,
     } = props
-    const [showStartIcon, setShowStartIcon] = useState(startIcon ? true : false);
 
-    const { size: sizeCtx, disabled: disabledCtx } = useContext(FormContext);
-    const size = sizeProp || sizeCtx || 'md'
-    const disabled = disabledProp || disabledCtx
+    const { size: ctxSize, disabled: ctxDisabled } = useContext(FormContext);
     const buttonRef = ref || useRef<HTMLButtonElement>(null)
+    disabled = disabled || ctxDisabled
 
     const classNames = classnames(
         prefixClass,
-        `${prefixClass}-${variant}`,
-        `${prefixClass}-size-${size}`,
+        `${prefixClass}-${type}`,
+        `${prefixClass}-size-${size || ctxSize || 'medium'}`,
         `${prefixClass}-color-${color}`,
         `${prefixClass}-shape-${shape}`,
         {
@@ -51,16 +48,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
         },
         className,
     )
-    const options = {
-        prefixClass,
-        variant,
-        long,
-        shape,
-        color,
-        size,
-        loading,
-        loadingPosition,
-    }
     const handleClick: React.MouseEventHandler<HTMLElement> = (event: any): void => {
         if (loading || disabled) {
             typeof event?.preventDefault === 'function' && event.preventDefault();
@@ -95,35 +82,20 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
         endIcon = null
     }
 
-    return <StyledButton
+    return <Styled
         ref={buttonRef}
+        $prefixClass={prefixClass}
         style={style}
         className={classNames}
-        as={href ? 'a' : 'button'}
-        $options={options}
         type={htmlType}
+        disabled={disabled}
+        as={href ? 'a' : 'button'}
+        href={href}
         onClick={handleClick}
         {...rest}
     >
-        <CSSTransition
-            in={startIcon ? true : false}
-            timeout={250}
-            classNames={prefixClass + '-in'}
-            unmountOnExit
-        >
-            <span className={prefixClass + '-start-icon'}>{startIcon}</span>
-        </CSSTransition>
+        {startIcon ? <span className={prefixClass + '-start-icon'}>{startIcon}</span> : null}
         <span className={prefixClass + '-span'}>{children}</span>
-        <CSSTransition
-            in={endIcon ? true : false}
-            timeout={250}
-            classNames={prefixClass + '-in'}
-            appear
-            unmountOnExit
-        >
-            <span className={prefixClass + '-end-icon'}>{endIcon}</span>
-        </CSSTransition>
-    </StyledButton>
+        {endIcon ? <span className={prefixClass + '-end-icon'}>{endIcon}</span> : null}
+    </Styled>
 })
-
-export default Button
