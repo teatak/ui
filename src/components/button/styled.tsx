@@ -75,6 +75,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
                 transition: 
                     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
                     width 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
+                    height 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
                     border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
                     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
                     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
@@ -165,7 +166,7 @@ const buttonBase = (_: string, color: ColorType, variant: VariantType) => {
             &.${_}-color-${color} {
                 color: ${palette[variant + 'Color']};
                 background: ${palette[variant + 'Background']};
-                border-width: ${palette[variant + 'BorderWidth']};
+                border-width: ${borderWidth};
                 border-color: ${palette[variant + 'Border']};
                 border-style: solid;
                 padding: 0 calc(var(--Button-baseSize) * 1px - ${borderWidth});

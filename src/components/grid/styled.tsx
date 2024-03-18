@@ -87,7 +87,7 @@ export const StyledGrid = styled.div<StyledGridProps>`
                 display: flex;
                 flex-wrap: wrap;
                 box-sizing: border-box;
-                margin: calc(var(--Grid-rowSpacing) / -2 * 1px) calc(var(--Grid-columnSpacing) / -2  1px);
+                margin: calc(var(--Grid-rowSpacing) / -2 * 1px) calc(var(--Grid-columnSpacing) / -2 * 1px);
                 flex-direction: ${options.direction};
                 justify-content: ${options.justifyContent};
                 align-items: ${options.alignItems};

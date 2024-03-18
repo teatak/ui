@@ -70,6 +70,7 @@ export const Overview: Story = {
 export const Space: Story = {
   args: {
     spacing: 6,
+    direction: 'column',
     children: [
       <Div>text</Div>,
       <Div>text</Div>,

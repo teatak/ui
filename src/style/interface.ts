@@ -91,7 +91,7 @@ export interface VarsScales extends BaseScales {
 type DefaultVariant = 'text' | 'outlined' | 'soft' | 'solid'
 type DefaultProperty = 'Color' | 'ColorDisabled' |
     'BorderWidth' | 'Border' | 'BorderHover' | 'BorderActive' | 'BorderDisabled' |
-    'Background' | 'BackgroundHover' | 'BackgroundActive' | 'BackgroundDisabled' |
+    'Background' | 'BackgroundHover' | 'BackgroundActive' | 'BackgroundFocus' | 'BackgroundDisabled' |
     'BoxShadow' | 'BoxShadowHover' | 'BoxShadowActive' | 'BoxShadowDisabled'
 
 export interface PaletteVariant

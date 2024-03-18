@@ -136,6 +136,7 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             textBackground: 'none',
             textBackgroundHover: getCssVarColor(`${color}-1`, isLight),
             textBackgroundActive: getCssVarColor(`${color}-2`, isLight),
+            textBackgroundFocus: 'none',
             textBackgroundDisabled: 'none',
             //boxShadow
             textBoxShadow: 'none',
@@ -156,6 +157,7 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             outlinedBackground: 'none',
             outlinedBackgroundHover: getCssVarColor(`${color}-1`, isLight),
             outlinedBackgroundActive: getCssVarColor(`${color}-2`, isLight),
+            outlinedBackgroundFocus: 'none',
             outlinedBackgroundDisabled: 'none',
             //boxShadow
             outlinedBoxShadow: 'none',
@@ -176,6 +178,7 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             softBackground: getCssVarColor(`${color}-1`, isLight),
             softBackgroundHover: getCssVarColor(`${color}-2`, isLight),
             softBackgroundActive: getCssVarColor(`${color}-1`, isLight),
+            softBackgroundFocus: getCssVarColor(`${color}-1`, isLight),
             softBackgroundDisabled: getCssVarColor(`neutral-1`, isLight),
             //boxShadow
             softBoxShadow: 'none',
@@ -196,6 +199,7 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             solidBackground: getCssVarColor(`${color}-6`, isLight),
             solidBackgroundHover: getCssVarColor(`${color}-5`, isLight),
             solidBackgroundActive: getCssVarColor(`${color}-6`, isLight),
+            solidBackgroundFocus: getCssVarColor(`${color}-6`, isLight),
             solidBackgroundDisabled: getCssVarColor(`neutral-2`, isLight),
             //boxShadow
             solidBoxShadow: 'none',
@@ -222,6 +226,7 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             textBackground: 'none',
             textBackgroundHover: getCssVarColor(`${color}-1`, isLight),
             textBackgroundActive: getCssVarColor(`${color}-2`, isLight),
+            textBackgroundFocus: getCssVarColor(`${color}-1`, isLight),
             textBackgroundDisabled: 'none',
             //boxShadow
             textBoxShadow: 'none',
@@ -242,6 +247,7 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             outlinedBackground: 'none',
             outlinedBackgroundHover: getCssVarColor(`${color}-1`, isLight),
             outlinedBackgroundActive: getCssVarColor(`${color}-2`, isLight),
+            outlinedBackgroundFocus: 'none',
             outlinedBackgroundDisabled: 'none',
             //boxShadow
             outlinedBoxShadow: 'none',
@@ -262,6 +268,7 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             softBackground: getCssVarColor(`${color}-1`, isLight),
             softBackgroundHover: getCssVarColor(`${color}-2`, isLight),
             softBackgroundActive: getCssVarColor(`${color}-1`, isLight),
+            softBackgroundFocus: getCssVarColor(`${color}-1`, isLight),
             softBackgroundDisabled: getCssVarColor(`neutral-1`, isLight),
             //boxShadow
             softBoxShadow: 'none',
@@ -282,6 +289,7 @@ export function createTheme(themeOptions?: CssVarsThemeOptions): Theme {
             solidBackground: getCssVarColor(`${color}-6`, isLight),
             solidBackgroundHover: getCssVarColor(`${color}-5`, isLight),
             solidBackgroundActive: getCssVarColor(`${color}-6`, isLight),
+            solidBackgroundFocus: getCssVarColor(`${color}-6`, isLight),
             solidBackgroundDisabled: getCssVarColor(`neutral-2`, isLight),
             //boxShadow
             solidBoxShadow: 'none',

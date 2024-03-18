@@ -21,7 +21,7 @@ export const generateColor = (
     return lines
 }
 
-const colorPaletteGray = (baseColor: string, i: number) => {
+const colorPaletteGray = (baseColor: Color | string, i: number) => {
     const color = Color(baseColor)
     const h = color.hue()
     const s = color.saturationv()
@@ -53,7 +53,7 @@ const colorPaletteGray = (baseColor: string, i: number) => {
     return rgb
 }
 
-const colorPalette = (baseColor: string, i: number) => {
+const colorPalette = (baseColor: Color | string, i: number) => {
     let color = Color(baseColor)
     const h = color.hue()
     const s = color.saturationv()
@@ -111,28 +111,69 @@ const colorPalette = (baseColor: string, i: number) => {
             v: getNewValue(isLight, index),
         })
 
-    if (baseColor == "rgb(3, 155, 229)") {
-        console.log(retColor)
-    }
-
     let rgb = retColor.rgb().round().object()
     return rgb
 }
 
-const colorPaletteDark = (baseColor: string, i: number) => {
+const colorPaletteDark = (baseColor: Color | string, i: number) => {
     let color = Color(baseColor)
     const h = color.hue()
     const s = color.saturationv()
     const v = color.value()
+    i = 10 - i + 1
 
-    let lightColor
     //detect if gray
     if (s < 5) {
-        lightColor = Color(colorPaletteGray(baseColor, 10 - i + 1))
-    } else {
-        lightColor = Color(colorPalette(baseColor, 10 - i + 1))
+        return colorPaletteGray(baseColor, i)
     }
-    const retColor = lightColor
+
+    const hueStep = 2
+    const maxSaturationStep = 80
+    const minSaturationStep = 20
+
+    const maxValue = 100
+    const minValue = 40
+
+    function getNewHue(isLight: boolean, i: number) {
+        let hue
+        if (h >= 60 && h <= 240) {
+            hue = isLight ? h - hueStep * i : h + hueStep * i
+        } else {
+            hue = isLight ? h + hueStep * i : h - hueStep * i
+        }
+        if (hue < 0) {
+            hue += 360
+        } else if (hue >= 360) {
+            hue -= 360
+        }
+        return Math.round(hue)
+    }
+
+    function getNewSaturation(isLight: boolean, i: number) {
+        let newSaturation
+        if (isLight) {
+            newSaturation = s <= minSaturationStep ? s : s - ((s - minSaturationStep) / 5) * i
+        } else {
+            newSaturation = s + ((maxSaturationStep - s) / 4) * i
+        }
+        return newSaturation
+    }
+
+    function getNewValue(isLight: boolean, i: number) {
+        return isLight ? v + ((maxValue - v) / 5) * i : (v <= minValue ? v : v - ((v - minValue) / 4) * i)
+    }
+
+    const isLight = i < 6
+    const index = isLight ? 6 - i : i - 6
+
+    let retColor = i === 6
+        ? color :
+        Color({
+            h: getNewHue(isLight, index),
+            s: getNewSaturation(isLight, index),
+            v: getNewValue(isLight, index),
+        })
+
     let rgb = retColor.rgb().round().object()
     return rgb
 }

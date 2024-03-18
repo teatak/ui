@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef, useContext, useState } from 'react'
+import React, { forwardRef, useRef, useContext, useImperativeHandle } from 'react'
 import classnames from 'classnames'
 import { CSSTransition } from 'react-transition-group';
 import { ButtonProps } from './interface'
@@ -6,7 +6,7 @@ import { StyledButton } from './styled';
 import { FormContext } from '../form/context'
 import Loading from '../loading'
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
     const prefixClass = 'tui-button'
     const {
         style,
@@ -21,6 +21,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
         loadingPosition = 'start',
         href,
         onClick,
+        disabled: disabledProp,
         ...rest
     } = props
 
@@ -28,14 +29,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
         startIcon,
         endIcon,
         children,
-        disabled: disabledProp,
     } = props
-    const [showStartIcon, setShowStartIcon] = useState(startIcon ? true : false);
 
     const { size: sizeCtx, disabled: disabledCtx } = useContext(FormContext);
     const size = sizeProp || sizeCtx || 'md'
     const disabled = disabledProp || disabledCtx
-    const buttonRef = ref || useRef<HTMLButtonElement>(null)
+    const buttonRef = useRef<HTMLButtonElement>(null)
+    useImperativeHandle(ref, () => buttonRef.current as HTMLButtonElement);
 
     const classNames = classnames(
         prefixClass,

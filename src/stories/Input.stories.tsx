@@ -24,59 +24,55 @@ type Story = StoryObj<typeof meta>
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Overview: Story = {
   args: {
-    defaultValue: 'Normal',
+    defaultValue: "Hello World",
   },
 }
 
 export const Tiny: Story = {
   args: {
-    size: 'tiny',
-    placeholder: 'startIcon endIcon',
-    startIcon: <Loading />,
-    endIcon: <Loading />,
+    defaultValue: "Hello World",
+    shape: 'round',
+    size: 'xs',
+    startDecorator: <Loading />,
   },
 }
 
 
 export const Small: Story = {
   args: {
-    size: 'small',
-    placeholder: 'Small',
-    startIcon: <Loading />,
-    endIcon: <Loading />,
+    defaultValue: "Hello World",
+    size: 'sm',
+    startDecorator: <Loading />,
   },
 }
 
 
 export const Large: Story = {
   args: {
-    size: 'large',
-    placeholder: 'Large',
-    startIcon: <Loading />,
-    endIcon: <Loading />,
+    defaultValue: "Hello World",
+    size: 'lg',
   },
 }
 
 export const Outlined: Story = {
   args: {
-    placeholder: 'Outlined',
-    type: 'outlined',
+    defaultValue: 'Outlined',
+    variant: 'outlined',
   },
 }
 
-export const Text: Story = {
+export const Disabled: Story = {
   args: {
-    type: 'text',
-    size: 'large',
+    defaultValue: 'Disabled',
+    size: 'lg',
     disabled: true,
-    placeholder: 'Disabled Large Text',
-    startIcon: <Loading />,
+    startDecorator: <Loading />,
   },
 }
 
 export const Password: Story = {
   args: {
+    defaultValue: 'Password',
     htmlType: 'password',
-    placeholder: 'Password',
   },
 }

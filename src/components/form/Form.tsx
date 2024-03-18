@@ -8,7 +8,7 @@ const Form = forwardRef<HTMLFormElement, FormProps>((props: FormProps, ref) => {
     const prefixClass = 'tui-form'
     const {
         style,
-        size = 'medium',
+        size = 'md',
         layout = 'horizontal',
         className,
         disabled,

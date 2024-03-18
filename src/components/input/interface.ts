@@ -1,14 +1,13 @@
 import React, { ReactNode } from 'react'
 import { SizeType, VariantType, ColorType, ShapeType, CommonProps } from '../types'
 
-export interface InputProps extends CommonProps, Omit<React.HTMLAttributes<HTMLInputElement>, ''> {
+export interface InputProps extends CommonProps, Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
     variant?: VariantType
     color?: ColorType
-    shape?: ShapeType
+    shape?: Exclude<ShapeType, 'circle'>
     size?: SizeType
-    loading?: boolean
-    loadingPosition?: 'start' | 'end'
     disabled?: boolean
-    startIcon?: ReactNode
-    endIcon?: ReactNode
+    startDecorator?: ReactNode
+    endDecorator?: ReactNode
+    htmlType?: 'text' | 'password'
 }
