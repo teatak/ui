@@ -35,7 +35,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
     const size = sizeProp || sizeCtx || 'md'
     const disabled = disabledProp || disabledCtx
     const buttonRef = useRef<HTMLButtonElement>(null)
-    useImperativeHandle(ref, () => buttonRef.current as HTMLButtonElement);
+    useImperativeHandle(ref, () => buttonRef.current!, []);
 
     const classNames = classnames(
         prefixClass,

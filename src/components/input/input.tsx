@@ -26,7 +26,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) 
     const size = sizeProp || sizeCtx || 'md'
     const disabled = disabledProp || disabledCtx
     const inputRef = useRef<HTMLInputElement>(null);
-    useImperativeHandle(ref, () => inputRef.current as HTMLInputElement);
+    useImperativeHandle(ref, () => inputRef.current!, []);
 
     const classNamesRoot = classnames(
         `${prefixClass}-root`,
