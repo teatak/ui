@@ -1,12 +1,11 @@
 import React from 'react'
 import classnames from 'classnames'
-import { GridItemProps } from './interface'
-import { StyledGridItem } from './styled'
+import { GridItemProps } from './Grid.types'
+import { StyledGridItem } from './Grid.styled'
 
 const GridItem = (props: GridItemProps) => {
     const {
         span,
-        spanStyle,
         offset,
         className,
         styleOverrides,
@@ -21,7 +20,6 @@ const GridItem = (props: GridItemProps) => {
 
     const options = {
         span,
-        spanStyle,
         offset,
         prefixClass,
         styleOverrides,

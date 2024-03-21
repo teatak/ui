@@ -1,9 +1,9 @@
 import React, { ReactElement, ReactNode } from 'react'
 import classnames from 'classnames'
-import { StyledGrid } from './styled'
-import { GridProps } from './interface'
-import GridItem from './GridItem'
-import GridContext from './GridContext'
+import { StyledGrid } from './Grid.styled'
+import { GridProps } from './Grid.types'
+import GridItem from './Grid.Item'
+import GridContext from './Grid.context'
 
 const Grid = (props: GridProps) => {
     const {

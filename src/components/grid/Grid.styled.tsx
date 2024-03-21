@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { StyledCommonProps } from '../types'
 import { RecursivePartial, merge } from '../../helper/common'
 import theme from '../../style'
-import { Span, Column, Spacing, SpacingArray, SpanStyle } from './interface'
+import { Span, Column, Spacing, SpacingArray } from './Grid.types'
 
 interface StyledGridProps {
     $options: {
@@ -18,7 +18,7 @@ export const StyledGrid = styled.div<StyledGridProps>`
     ${(props) => {
         const options = props.$options
         const _ = options.prefixClass
-        const styleOverrides = css(options.styleOverrides || {})
+        const styleOverrides = options.styleOverrides
         let columns: RecursivePartial<Column> = { xs: 12 }
         if (typeof options.columns === 'number') {
             columns = {
@@ -137,7 +137,7 @@ export const StyledGrid = styled.div<StyledGridProps>`
                         --Grid-columnSpacing: ${spacing.xl[1]};
                     } 
                 `: ""}
-                ${styleOverrides}
+                ${css(styleOverrides?.common || {})}
             }
         `
     }}
@@ -177,6 +177,8 @@ export const StyledGridItem = styled.div<StyledGridItemProps>`
         const styleOverrides = options.styleOverrides
         const renderSpan = (span?: number | boolean) => {
             switch (span) {
+                case undefined:
+                    return null
                 case 0:
                     return css`
                         display: none;

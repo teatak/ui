@@ -1,7 +1,7 @@
 import React, { useRef, useContext } from 'react'
 import classnames from 'classnames'
-import { InputProps } from './interface'
-import { StyledInput } from './styled'
+import { InputProps } from './Input.types'
+import { StyledInput } from './Input.styled'
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) => {
     const prefixClass = 'tui-input'

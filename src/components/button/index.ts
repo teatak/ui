@@ -1,2 +1,2 @@
 export { default } from './Button'
-export * from './interface'
+export * from './Button.types'

@@ -11,12 +11,11 @@ interface StyledInputProps {
     } & StyledCommonProps
 }
 
-
 export const StyledInput = styled.span<StyledInputProps>`
     ${(props) => {
         const options = props.$options
         const _ = options.prefixClass
-        const styleOverrides = css(options.styleOverrides || {})
+        const styleOverrides = options.styleOverrides
         let baseSize = 8
         let textFontSize = 12
         let iconFontSize = 12
@@ -92,7 +91,7 @@ export const StyledInput = styled.span<StyledInputProps>`
                     margin-inline-start: calc(var(--Input-baseSize) * 1px);
                 }
                 ${inputBase(_, options.color, options.variant)}
-                ${styleOverrides}
+                ${css(styleOverrides?.common || {})}
             }
         `
     }}
@@ -114,6 +113,10 @@ const inputBase = (_: string, color: ColorType, variant: VariantType) => {
                     &:-webkit-autofill:active{
                         color: ${colorRewrite} !important;
                         transition: background-color 5000s ease-in-out 0s;
+                    }
+                    &::placeholder {
+                        color: ${colorRewrite};
+                        opacity: 0.6;
                     }
                     &[disabled]{
                         cursor: default;

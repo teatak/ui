@@ -1,11 +1,11 @@
-import React, { forwardRef, useRef, useContext, useImperativeHandle } from 'react'
+import React, { forwardRef, useRef, useImperativeHandle } from 'react'
 import classnames from 'classnames'
 import { CSSTransition } from 'react-transition-group';
-import { ButtonProps } from './interface'
-import { StyledButton } from './styled';
+import { ButtonProps } from './Button.types'
+import { StyledButton } from './Button.styled';
 import Loading from '../loading'
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
     const prefixClass = 'tui-button'
     const {
         style,
@@ -31,7 +31,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonPr
     } = props
 
     const buttonRef = useRef<HTMLButtonElement>(null)
-    React.useImperativeHandle(ref, () => buttonRef.current!, [])
+    useImperativeHandle(ref, () => buttonRef.current!, [])
 
     const classNames = classnames(
         prefixClass,

@@ -9,18 +9,10 @@ const Div = styled.div`
   background: ${theme.vars.scheme.background.level1};
   padding: 8px;
 `
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+
 const meta = {
   title: 'Example/Grid',
   component: Grid,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    // layout: 'centered',
-  },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  argTypes: {
-  },
 } satisfies Meta<typeof Grid>
 
 export default meta

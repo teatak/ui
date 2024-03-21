@@ -22,7 +22,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
     ${(props) => {
         const options = props.$options
         const _ = options.prefixClass
-        const styleOverrides = css(options.styleOverrides || {})
+        const styleOverrides = options.styleOverrides
         let baseSize = 8
         let textFontSize = 12
         let iconFontSize = 12
@@ -152,7 +152,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
                     }
                 }
                 ${buttonBase(_, options.color, options.variant)}
-                ${styleOverrides}
+                ${css(styleOverrides?.common || {})}
             }
         `
     }}

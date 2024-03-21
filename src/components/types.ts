@@ -12,7 +12,7 @@ export type ColorType = 'primary' | 'neutral' | 'success' | 'danger' | 'warning'
 //形状
 export type ShapeType = 'circle' | 'round' | 'square'
 
-export interface Styles {
+export interface StyledObjects {
     common: StyledObject
     xs: StyledObject
     sm: StyledObject
@@ -23,7 +23,7 @@ export interface Styles {
 
 //默认 props
 export interface CommonProps {
-    styleOverrides?: Partial<Styles>,
+    styleOverrides?: Partial<StyledObjects>,
 }
 
 //默认 styled props
