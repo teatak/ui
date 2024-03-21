@@ -73,6 +73,6 @@ export const Disabled: Story = {
 export const Password: Story = {
   args: {
     defaultValue: 'Password',
-    htmlType: 'password',
+    type: 'password',
   },
 }

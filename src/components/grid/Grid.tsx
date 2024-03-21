@@ -40,12 +40,15 @@ const Grid = (props: GridProps) => {
             className={classNames}
             {...rest}>
             {React.Children.map(props.children, (child: ReactElement) => {
-                if (child.type === GridItem) {
-                    return <child.type {...child.props}></child.type>
-                } else {
-                    //wraper 
-                    return <GridItem>{child}</GridItem>
+                if (child) {
+                    if (child.type === GridItem) {
+                        return <child.type {...child.props}></child.type>
+                    } else {
+                        //wraper 
+                        return <GridItem>{child}</GridItem>
+                    }
                 }
+                return null
             })}
         </StyledGrid>
     </GridContext.Provider>

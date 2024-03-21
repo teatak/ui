@@ -4,35 +4,27 @@ import { Grid } from '../components';
 import styled from 'styled-components';
 import theme from '../style'
 
-const meta = {
-  title: 'Example/Grid',
-  component: Grid,
-  parameters: {
-  },
-  argTypes: {
-    children: {
-      table: {
-        disable: true
-      }
-    }
-  },
-  decorators: [
-    (Story) => (
-      <div style={{ margin: '1em' }}>
-        <Story />
-      </div>
-    ),
-  ],
-} satisfies Meta<typeof Grid>
-
-export default meta
-type Story = StoryObj<typeof meta>
-
 const Div = styled.div`
   border-radius: 8px;
   background: ${theme.vars.scheme.background.level1};
   padding: 8px;
 `
+// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+const meta = {
+  title: 'Example/Grid',
+  component: Grid,
+  parameters: {
+    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+    // layout: 'centered',
+  },
+  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+  // More on argTypes: https://storybook.js.org/docs/api/argtypes
+  argTypes: {
+  },
+} satisfies Meta<typeof Grid>
+
+export default meta
+type Story = StoryObj<typeof meta>
 
 export const Overview: Story = {
   args: {
@@ -67,7 +59,7 @@ export const Overview: Story = {
   },
 }
 
-export const Space: Story = {
+export const SpaceLike: Story = {
   args: {
     spacing: 6,
     direction: 'column',

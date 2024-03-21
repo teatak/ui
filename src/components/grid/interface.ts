@@ -1,6 +1,7 @@
 import React from 'react'
 import { CommonProps } from '../types'
 import { RecursivePartial } from '../../helper/common'
+import { StyledObject } from 'styled-components'
 
 export interface Spacing {
     xs: number[] | number
@@ -44,6 +45,6 @@ export interface GridProps extends CommonProps, Omit<React.HTMLAttributes<HTMLEl
 
 export interface GridItemProps extends CommonProps, Omit<React.HTMLAttributes<HTMLElement>, ''> {
     span?: number | boolean | RecursivePartial<Span>
-    offset?: number | RecursivePartial<Column>,
+    offset?: number | RecursivePartial<Column>
 }
 

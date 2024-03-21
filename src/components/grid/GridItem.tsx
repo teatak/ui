@@ -6,6 +6,7 @@ import { StyledGridItem } from './styled'
 const GridItem = (props: GridItemProps) => {
     const {
         span,
+        spanStyle,
         offset,
         className,
         styleOverrides,
@@ -20,6 +21,7 @@ const GridItem = (props: GridItemProps) => {
 
     const options = {
         span,
+        spanStyle,
         offset,
         prefixClass,
         styleOverrides,

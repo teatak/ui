@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { StyledCommonProps } from '../types'
 import { RecursivePartial, merge } from '../../helper/common'
 import theme from '../../style'
-import { Span, Column, Spacing, SpacingArray } from './interface'
+import { Span, Column, Spacing, SpacingArray, SpanStyle } from './interface'
 
 interface StyledGridProps {
     $options: {
@@ -87,7 +87,9 @@ export const StyledGrid = styled.div<StyledGridProps>`
                 display: flex;
                 flex-wrap: wrap;
                 box-sizing: border-box;
-                margin: calc(var(--Grid-rowSpacing) / -2 * 1px) calc(var(--Grid-columnSpacing) / -2 * 1px);
+                margin-inline: calc(var(--Grid-rowSpacing) / -2 * 1px);
+                margin-block: calc(var(--Grid-columnSpacing) / -2 * 1px);
+                /* margin: calc(var(--Grid-rowSpacing) / -2 * 1px) calc(var(--Grid-columnSpacing) / -2 * 1px); */
                 flex-direction: ${options.direction};
                 justify-content: ${options.justifyContent};
                 align-items: ${options.alignItems};
@@ -172,7 +174,7 @@ export const StyledGridItem = styled.div<StyledGridItemProps>`
             offset = merge(offset, options.offset)
         }
         const _ = options.prefixClass
-        const styleOverrides = css(options.styleOverrides || {})
+        const styleOverrides = options.styleOverrides
         const renderSpan = (span?: number | boolean) => {
             switch (span) {
                 case 0:
@@ -189,7 +191,6 @@ export const StyledGridItem = styled.div<StyledGridItemProps>`
                         display: block;
                     `
             }
-            return null
         }
         return css`
             &.${_} {
@@ -199,54 +200,59 @@ export const StyledGridItem = styled.div<StyledGridItemProps>`
                 flex-shrink: 0;
                 flex-basis: auto;
                 min-width: 0;
-                padding: calc(var(--Grid-rowSpacing) / 2 * 1px) calc(var(--Grid-columnSpacing) / 2 * 1px);
+                padding-inline: calc(var(--Grid-rowSpacing) / 2 * 1px);
+                padding-block: calc(var(--Grid-columnSpacing) / 2 * 1px);
                 /* span */
                 ${renderSpan(span.xs)}
                 ${span.sm !== undefined ? css`
                     @media(min-width: ${theme.entries.breakpoint.sm}px) {
                         ${renderSpan(span.sm)}
+                        ${css(styleOverrides?.sm || {})}
                     } 
                 `: ""} 
                 ${span.md !== undefined ? css`
                     @media(min-width: ${theme.entries.breakpoint.md}px) {
                         ${renderSpan(span.md)}
+                        ${css(styleOverrides?.md || {})}
                     } 
                 `: ""} 
                 ${span.lg !== undefined ? css`
                     @media(min-width: ${theme.entries.breakpoint.lg}px) {
                         ${renderSpan(span.lg)}
+                        ${css(styleOverrides?.lg || {})}
                     }
                 `: ""} 
                 ${span.xl !== undefined ? css`
                     @media(min-width: ${theme.entries.breakpoint.xl}px) {
                         ${renderSpan(span.xl)}
+                        ${css(styleOverrides?.xl || {})}
                     }
                 `: ""} 
                 /* offset */
                 ${offset.xs !== undefined ? css`
-                    margin-left: calc(100% * ${offset.xs} / var(--Grid-columns));
+                    margin-inline-start: calc(100% * ${offset.xs} / var(--Grid-columns));
                 `: ""} 
                 ${offset.sm !== undefined ? css`
                     @media(min-width: ${theme.entries.breakpoint.sm}px) {
-                        margin-left: calc(100% * ${offset.sm} / var(--Grid-columns));
+                        margin-inline-start: calc(100% * ${offset.sm} / var(--Grid-columns));
                     } 
                 `: ""} 
                 ${offset.md !== undefined ? css`
                     @media(min-width: ${theme.entries.breakpoint.md}px) {
-                        margin-left: calc(100% * ${offset.md} / var(--Grid-columns));
+                        margin-inline-start: calc(100% * ${offset.md} / var(--Grid-columns));
                     } 
                 `: ""} 
                 ${offset.lg !== undefined ? css`
                     @media(min-width: ${theme.entries.breakpoint.lg}px) {
-                        margin-left: calc(100% * ${offset.lg} / var(--Grid-columns));
+                        margin-inline-start: calc(100% * ${offset.lg} / var(--Grid-columns));
                     } 
                 `: ""} 
                 ${offset.xl !== undefined ? css`
                     @media(min-width: ${theme.entries.breakpoint.xl}px) {
-                        margin-left: calc(100% * ${offset.xl} / var(--Grid-columns));
+                        margin-inline-start: calc(100% * ${offset.xl} / var(--Grid-columns));
                     } 
                 `: ""} 
-                ${styleOverrides}
+                ${css(styleOverrides?.common || {})}
             }
         `
     }}

@@ -1,10 +1,9 @@
-import React, { forwardRef, useRef, useContext, useImperativeHandle } from 'react'
+import React, { useRef, useContext } from 'react'
 import classnames from 'classnames'
-import { FormContext } from '../form/context'
 import { InputProps } from './interface'
 import { StyledInput } from './styled'
 
-const Input = forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) => {
+const Input = React.forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) => {
     const prefixClass = 'tui-input'
     const {
         style,
@@ -12,21 +11,16 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) 
         variant = 'soft',
         shape = 'square',
         color = 'neutral',
-        size: sizeProp,
-        htmlType,
-        disabled: disabledProp,
+        size = 'md',
+        disabled,
         onChange,
         startDecorator,
         endDecorator,
         ...rest
     } = props
 
-    const { size: sizeCtx, disabled: disabledCtx } = useContext(FormContext);
-
-    const size = sizeProp || sizeCtx || 'md'
-    const disabled = disabledProp || disabledCtx
     const inputRef = useRef<HTMLInputElement>(null);
-    useImperativeHandle(ref, () => inputRef.current!, []);
+    React.useImperativeHandle(ref, () => inputRef.current!, [])
 
     const classNamesRoot = classnames(
         `${prefixClass}-root`,
@@ -73,7 +67,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) 
             className={classNames}
             ref={inputRef}
             disabled={disabled}
-            type={htmlType}
             onChange={handleChange}
             {...rest} />
         {endDecorator ? <span className={prefixClass + '-end'}>{endDecorator}</span> : null}

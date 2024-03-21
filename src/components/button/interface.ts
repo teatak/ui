@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { SizeType, VariantType, ColorType, ShapeType, CommonProps } from '../types'
 
 export interface ButtonProps extends CommonProps, Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, ''> {
@@ -7,11 +7,11 @@ export interface ButtonProps extends CommonProps, Omit<React.ButtonHTMLAttribute
     shape?: ShapeType
     size?: SizeType
     long?: boolean
-    htmlType?: 'submit' | 'button' | 'reset'
     loading?: boolean
     loadingPosition?: 'start' | 'center' | 'end'
     disabled?: boolean
     href?: string
-    startIcon?: ReactNode
-    endIcon?: ReactNode
+    buttonRef?: React.RefObject<HTMLButtonElement>
+    startIcon?: React.ReactNode
+    endIcon?: React.ReactNode
 }
