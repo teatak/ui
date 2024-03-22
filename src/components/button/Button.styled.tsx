@@ -84,8 +84,11 @@ export const StyledButton = styled.button<StyledButtonProps>`
                     line-height: 1;
                 }
                 & svg {
-                    font-size: calc(var(--Icon-fontSize) * 1px);
                     user-select: none;
+                    width: 1em;
+                    height: 1em;
+                    fill: currentColor;
+                    font-size: calc(var(--Icon-fontSize) * 1px);
                 }
                 & .${_}-span {
                     position: relative;
@@ -152,7 +155,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
                     }
                 }
                 ${buttonBase(_, options.color, options.variant)}
-                ${css(styleOverrides?.common || {})}
+                ${css(styleOverrides || {})}
             }
         `
     }}

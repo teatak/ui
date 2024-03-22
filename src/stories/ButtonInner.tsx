@@ -4,7 +4,7 @@ import { Grid, Button, ButtonProps } from '../components';
 export const ButtonInner = (props: ButtonProps) => {
     const { variant, ...rest } = props
     return <Grid spacing={4}>
-        <Button variant={variant} color='primary' {...rest} onClick={() => {
+        <Button startIcon={"AAA"} variant={variant} color='primary' {...rest} onClick={() => {
             console.log('clicked')
         }}>Primary</Button>
         <Button variant={variant} color='neutral' {...rest}>Neutral</Button>

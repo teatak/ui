@@ -63,6 +63,13 @@ export const StyledInput = styled.span<StyledInputProps>`
                     border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
                     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
                     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                & svg {
+                    user-select: none;
+                    width: 1em;
+                    height: 1em;
+                    fill: currentColor;
+                    font-size: calc(var(--Icon-fontSize) * 1px);
+                }
                 & .${_} {
                     outline: none;
                     width: 100%;
@@ -76,10 +83,6 @@ export const StyledInput = styled.span<StyledInputProps>`
                 &.${_}-shape-round {
                     border-radius: calc(var(--Input-baseSize) * 2px);
                 }
-                & svg {
-                    font-size: calc(var(--Icon-fontSize) * 1px);
-                    user-select: none;
-                }
                 & .${_}-start {
                     display: inline-flex;
                     align-items: center;
@@ -91,7 +94,7 @@ export const StyledInput = styled.span<StyledInputProps>`
                     margin-inline-start: calc(var(--Input-baseSize) * 1px);
                 }
                 ${inputBase(_, options.color, options.variant)}
-                ${css(styleOverrides?.common || {})}
+                ${css(styleOverrides || {})}
             }
         `
     }}

@@ -30,9 +30,6 @@ const Svg = styled.svg.attrs({
     xmlns: 'http://www.w3.org/2000/svg',
     xmlnsXlink: 'http://www.w3.org/1999/xlink',
 })`
-    width: 1em;
-    height: 1em;
-    vertical-align: middle;
     animation: 1.4s linear 0s infinite normal none running ${rotate};
     & circle {
         stroke: currentColor;

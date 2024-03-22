@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Input, Grid } from '../components'
 import { useForm, SubmitHandler, SubmitErrorHandler } from "react-hook-form"
-import Cancel from '../components/svg/icons/Cancel'
 
 enum GenderEnum {
     female = "female",
@@ -47,7 +46,9 @@ export const FormInner = () => {
 
     return <form onSubmit={handleSubmit(onSubmit, onError)} >
         <Grid spacing={8}>
-            <Grid.Item span={{ xs: 12, sm: 3 }} styleOverrides={{ sm: { textAlign: 'right' } }}>
+            <Grid.Item span={{ xs: 12, sm: 3 }} styleOverrides={{
+                sm: { textAlign: 'right' }
+            }}>
                 <label htmlFor="firstName">First Name <span style={{ color: 'red' }}>*</span></label>
             </Grid.Item>
             <Grid.Item span={{ xs: 12, sm: 9 }}>
@@ -63,7 +64,7 @@ export const FormInner = () => {
                             message: "pattern"
                         },
                     })}
-                    startDecorator={errors.firstName ? <Cancel /> : null}
+                    startDecorator={errors.firstName ? "AA" : null}
                     color={errors.firstName ? 'danger' : 'neutral'}
                     style={{ width: 200 }} id='firstName'
                 />

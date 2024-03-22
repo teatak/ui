@@ -1,14 +1,15 @@
 {
     "compilerOptions": {
-        "module": "esnext",
-        "target": "es2015",
+        "module": "ESNext",
+        "target": "ES2015",
         "lib": [
-            "dom",
+            "DOM",
+            "ESNext"
         ],
         "allowJs": true,
         "sourceMap": true,
         "jsx": "react",
-        "moduleResolution": "node",
+        "moduleResolution": "Node",
         "noImplicitReturns": true,
         "noImplicitThis": true,
         "noImplicitAny": true,
@@ -19,8 +20,8 @@
         "src/**/*",
     ],
     "exclude": [
-        "node_modules",
-        "build",
-        "dist",
+        "./node_modules/**/*",
+        "./build/**/*",
+        "./dist/**/*",
     ]
 }

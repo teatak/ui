@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import { CSSTransition } from 'react-transition-group';
 import { ButtonProps } from './Button.types'
 import { StyledButton } from './Button.styled';
-import Loading from '../loading'
+import { Loading } from '../../icons'
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
     const prefixClass = 'tui-button'

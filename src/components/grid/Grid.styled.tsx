@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { StyledObject, css } from 'styled-components'
 import { StyledCommonProps } from '../types'
 import { RecursivePartial, merge } from '../../helper/common'
 import theme from '../../style'
@@ -137,7 +137,7 @@ export const StyledGrid = styled.div<StyledGridProps>`
                         --Grid-columnSpacing: ${spacing.xl[1]};
                     } 
                 `: ""}
-                ${css(styleOverrides?.common || {})}
+                ${css(styleOverrides || {})}
             }
         `
     }}
@@ -209,25 +209,25 @@ export const StyledGridItem = styled.div<StyledGridItemProps>`
                 ${span.sm !== undefined ? css`
                     @media(min-width: ${theme.entries.breakpoint.sm}px) {
                         ${renderSpan(span.sm)}
-                        ${css(styleOverrides?.sm || {})}
+                        ${css(styleOverrides?.sm as StyledObject || {})}
                     } 
                 `: ""} 
                 ${span.md !== undefined ? css`
                     @media(min-width: ${theme.entries.breakpoint.md}px) {
                         ${renderSpan(span.md)}
-                        ${css(styleOverrides?.md || {})}
+                        ${css(styleOverrides?.md as StyledObject || {})}
                     } 
                 `: ""} 
                 ${span.lg !== undefined ? css`
                     @media(min-width: ${theme.entries.breakpoint.lg}px) {
                         ${renderSpan(span.lg)}
-                        ${css(styleOverrides?.lg || {})}
+                        ${css(styleOverrides?.lg as StyledObject || {})}
                     }
                 `: ""} 
                 ${span.xl !== undefined ? css`
                     @media(min-width: ${theme.entries.breakpoint.xl}px) {
                         ${renderSpan(span.xl)}
-                        ${css(styleOverrides?.xl || {})}
+                        ${css(styleOverrides?.xl as StyledObject || {})}
                     }
                 `: ""} 
                 /* offset */
@@ -254,7 +254,7 @@ export const StyledGridItem = styled.div<StyledGridItemProps>`
                         margin-inline-start: calc(100% * ${offset.xl} / var(--Grid-columns));
                     } 
                 `: ""} 
-                ${css(styleOverrides?.common || {})}
+                ${css(styleOverrides || {})}
             }
         `
     }}
