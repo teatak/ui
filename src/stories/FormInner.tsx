@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Input, Grid } from '../components'
 import { useForm, SubmitHandler, SubmitErrorHandler } from "react-hook-form"
-
+import { AdUnitsOutlined24Px } from '@teatak/icons'
 enum GenderEnum {
     female = "female",
     male = "male",
@@ -64,7 +64,7 @@ export const FormInner = () => {
                             message: "pattern"
                         },
                     })}
-                    startDecorator={errors.firstName ? "AA" : null}
+                    startDecorator={errors.firstName ? <AdUnitsOutlined24Px /> : null}
                     color={errors.firstName ? 'danger' : 'neutral'}
                     style={{ width: 200 }} id='firstName'
                 />

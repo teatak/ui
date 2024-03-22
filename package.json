@@ -17,15 +17,12 @@
   "scripts": {
     "clean:dist": "rimraf dist",
     "clean:storybook": "rimraf storybook-static",
-    "build": "export NODE_OPTIONS=--max-old-space-size=8192 && npm-run-all clean:** build:**",
+    "build": "npm-run-all clean:** build:**",
     "build:rollup": "rollup -c --bundleConfigAsCjs",
     "build:storybook": "storybook build",
-    "svgr": "npx @svgr/cli --out-dir src/icons/svgs --no-dimensions --typescript -- src/icons/files",
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
-    "@types/react": "^18.2.67",
-    "@types/react-dom": "^18.2.22",
     "classnames": "^2.5.1",
     "color": "^4.2.3",
     "prop-types": "^15.8.1",
@@ -51,7 +48,10 @@
     "@storybook/react-webpack5": "^8.0.4",
     "@storybook/test": "^8.0.4",
     "@svgr/cli": "^8.1.0",
+    "@teatak/icons": "^1.0.0",
     "@types/color": "^3.0.6",
+    "@types/react": "^18.2.67",
+    "@types/react-dom": "^18.2.22",
     "@types/react-transition-group": "^4.4.10",
     "@types/styled-components": "^5.1.34",
     "npm-run-all": "^4.1.5",
