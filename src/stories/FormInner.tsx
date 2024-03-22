@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Input, Grid } from '../components'
 import { useForm, SubmitHandler, SubmitErrorHandler } from "react-hook-form"
-import { AdUnitsOutlined24Px } from '@teatak/icons'
+import { _10K, Search } from '@teatak/icons'
 enum GenderEnum {
     female = "female",
     male = "male",
@@ -45,6 +45,7 @@ export const FormInner = () => {
     const [loading, setLoading] = useState(false)
 
     return <form onSubmit={handleSubmit(onSubmit, onError)} >
+        <Search style={{ width: '1em', height: '1em', fill: 'currentcolor' }} />
         <Grid spacing={8}>
             <Grid.Item span={{ xs: 12, sm: 3 }} styleOverrides={{
                 sm: { textAlign: 'right' }
@@ -64,7 +65,7 @@ export const FormInner = () => {
                             message: "pattern"
                         },
                     })}
-                    startDecorator={errors.firstName ? <AdUnitsOutlined24Px /> : null}
+                    startDecorator={errors.firstName ? <_10K /> : null}
                     color={errors.firstName ? 'danger' : 'neutral'}
                     style={{ width: 200 }} id='firstName'
                 />
