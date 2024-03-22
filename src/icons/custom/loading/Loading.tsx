@@ -25,11 +25,7 @@ const rotate = keyframes`
     }
 `
 
-const Svg = styled.svg.attrs({
-    version: '1.1',
-    xmlns: 'http://www.w3.org/2000/svg',
-    xmlnsXlink: 'http://www.w3.org/1999/xlink',
-})`
+const Svg = styled.svg`
     animation: 1.4s linear 0s infinite normal none running ${rotate};
     & circle {
         stroke: currentColor;
