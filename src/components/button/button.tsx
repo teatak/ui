@@ -21,14 +21,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
         type = 'button',
         onClick,
         disabled,
-        ...rest
+        ...otherProps
     } = props
 
     let {
         startIcon,
         endIcon,
         children,
-    } = props
+        ...rest
+    } = otherProps
 
     const buttonRef = useRef<HTMLButtonElement>(null)
     useImperativeHandle(ref, () => buttonRef.current!, [])

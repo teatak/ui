@@ -99,33 +99,33 @@ export const StyledButton = styled.button<StyledButtonProps>`
                 & .${_}-start-icon {
                     &.${_}-in-enter {
                         width: 0;
-                        transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
                     }
                     &.${_}-in-enter-active  {
                         width: calc(var(--Icon-fontSize) * 1px);
+                        transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
                     }
                     &.${_}-in-exit {
                         width: calc(var(--Icon-fontSize) * 1px);
-                        transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
                     }
                     &.${_}-in-exit-active {
                         width: 0;
+                        transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
                     }
                 }
                 & .${_}-end-icon {
                     &.${_}-in-enter {
                         width: 0;
-                        transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
                     }
                     &.${_}-in-enter-active  {
                         width: calc(var(--Icon-fontSize) * 1px);
+                        transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
                     }
                     &.${_}-in-exit {
                         width: calc(var(--Icon-fontSize) * 1px);
-                        transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
                     }
                     &.${_}-in-exit-active {
                         width: 0;
+                        transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
                     }
                 }
                 &.${_}-loading {

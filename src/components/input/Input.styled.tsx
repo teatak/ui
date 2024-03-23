@@ -83,15 +83,59 @@ export const StyledInput = styled.span<StyledInputProps>`
                 &.${_}-shape-round {
                     border-radius: calc(var(--Input-baseSize) * 2px);
                 }
-                & .${_}-start {
+                & .${_}-start-decorator {
                     display: inline-flex;
                     align-items: center;
                     margin-inline-end: calc(var(--Input-baseSize) * 1px);
+                    &.${_}-in-enter {
+                        opacity: 0;
+                        margin-inline-end: 0;
+                    }
+                    &.${_}-in-enter-active  {
+                        opacity: 1;
+                        margin-inline-end: calc(var(--Input-baseSize) * 1px);
+                        transition: 
+                            opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+                            margin-inline-end 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                    }
+                    &.${_}-in-exit {
+                        opacity: 1;
+                        margin-inline-end: calc(var(--Input-baseSize) * 1px);
+                    }
+                    &.${_}-in-exit-active {
+                        opacity: 0;
+                        margin-inline-end: 0;
+                        transition: 
+                            opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+                            margin-inline-end 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                    } 
                 }
-                & .${_}-end {
+                & .${_}-end-decorator {
                     display: inline-flex;
                     align-items: center;
                     margin-inline-start: calc(var(--Input-baseSize) * 1px);
+                    &.${_}-in-enter {
+                        opacity: 0;
+                        margin-inline-start: 0;
+                    }
+                    &.${_}-in-enter-active  {
+                        opacity: 1;
+                        margin-inline-start: calc(var(--Input-baseSize) * 1px);
+                        transition: 
+                            opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+                            margin-inline-start 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                    }
+                    &.${_}-in-exit {
+                        opacity: 1;
+                        margin-inline-start: calc(var(--Input-baseSize) * 1px);
+                    }
+                    &.${_}-in-exit-active {
+                        opacity: 0;
+                        margin-inline-start: 0;
+                        transition: 
+                            opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+                            margin-inline-start 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                    } 
                 }
                 ${inputBase(_, options.color, options.variant)}
                 ${css(styleOverrides || {})}
