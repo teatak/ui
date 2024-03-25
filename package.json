@@ -1,6 +1,6 @@
 {
   "name": "@teatak/ui",
-  "version": "1.2.73",
+  "version": "2.0.0",
   "description": "teatak ui",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -46,7 +46,7 @@
     "@storybook/react": "^8.0.4",
     "@storybook/react-webpack5": "^8.0.4",
     "@storybook/test": "^8.0.4",
-    "@teatak/icons": "^1.2.1",
+    "@teatak/icons": "^1.2.2",
     "@types/color": "^3.0.6",
     "@types/react": "^18.2.69",
     "@types/react-dom": "^18.2.22",
