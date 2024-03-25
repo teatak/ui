@@ -8,7 +8,7 @@ const Svg = styled.svg`
   fill: currentColor;
 `
 
-export const createSvg = (path: any) => {
+export const createSvg = (...path: any) => {
   return React.memo(React.forwardRef((props: any, ref: any) => {
     const { className, viewBox, ...rest } = props;
     const classNames = classnames(

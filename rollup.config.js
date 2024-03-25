@@ -30,7 +30,7 @@ export default [
             commonjs(),
             typescript({ tsconfig: "./tsconfig.build.json" }),
         ],
-        external: ["color", "classnames", "react", "react-dom", "react-dom/client", "styled-components"],
+        external: ["color", "classnames", "react", "react-dom", "react-dom/client", "react-transition-group", "styled-components"],
     },
     {
         input: "src/index.ts",
