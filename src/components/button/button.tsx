@@ -25,8 +25,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
     } = props
 
     let {
-        startIcon,
-        endIcon,
+        startDecorator,
+        endDecorator,
         children,
         ...rest
     } = otherProps
@@ -73,7 +73,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
             const position = loadingPosition
             switch (position) {
                 case 'start':
-                    startIcon = <Loading />
+                    startDecorator = <Loading />
                     break
                 case 'center':
                     children = <>
@@ -82,14 +82,14 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
                     </>
                     break
                 case 'end':
-                    endIcon = <Loading />
+                    endDecorator = <Loading />
                     break
             }
         }
     }
     if (shape === 'circle') {
-        startIcon = null
-        endIcon = null
+        startDecorator = null
+        endDecorator = null
     }
 
     return <StyledButton
@@ -103,22 +103,25 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
         {...rest}
     >
         <CSSTransition
-            in={startIcon ? true : false}
+            in={startDecorator ? true : false}
             timeout={250}
             classNames={prefixClass + '-in'}
             unmountOnExit
         >
-            <span className={prefixClass + '-start-icon'}>{startIcon}</span>
+            <span className={prefixClass + '-start-decorator'}>
+                {loading && loadingPosition === 'start' ? <Loading /> : (startDecorator || <Loading />)}
+            </span>
         </CSSTransition>
         <span className={prefixClass + '-span'}>{children}</span>
         <CSSTransition
-            in={endIcon ? true : false}
+            in={endDecorator ? true : false}
             timeout={250}
             classNames={prefixClass + '-in'}
-            appear
             unmountOnExit
         >
-            <span className={prefixClass + '-end-icon'}>{endIcon}</span>
+            <span className={prefixClass + '-end-decorator'}>
+                {loading && loadingPosition === 'end' ? <Loading /> : (endDecorator || <Loading />)}
+            </span>
         </CSSTransition>
     </StyledButton>
 })

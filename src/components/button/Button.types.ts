@@ -11,7 +11,6 @@ export interface ButtonProps extends CommonProps, Omit<React.ButtonHTMLAttribute
     loadingPosition?: 'start' | 'center' | 'end'
     disabled?: boolean
     href?: string
-    buttonRef?: React.RefObject<HTMLButtonElement>
-    startIcon?: React.ReactNode
-    endIcon?: React.ReactNode
+    startDecorator?: React.ReactNode
+    endDecorator?: React.ReactNode
 }

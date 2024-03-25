@@ -96,23 +96,9 @@ export const StyledButton = styled.button<StyledButtonProps>`
                     align-items: center;
                     margin: 0 calc(var(--Button-baseSize) * 1px);
                 }
-                & .${_}-start-icon {
-                    &.${_}-in-enter {
-                        width: 0;
-                    }
-                    &.${_}-in-enter-active  {
-                        width: calc(var(--Icon-fontSize) * 1px);
-                        transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-                    }
-                    &.${_}-in-exit {
-                        width: calc(var(--Icon-fontSize) * 1px);
-                    }
-                    &.${_}-in-exit-active {
-                        width: 0;
-                        transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-                    }
-                }
-                & .${_}-end-icon {
+                & .${_}-start-decorator, & .${_}-end-decorator {
+                    display: inline-flex;
+                    align-items: center;
                     &.${_}-in-enter {
                         width: 0;
                     }

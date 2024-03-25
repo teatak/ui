@@ -1,10 +1,11 @@
 import React from 'react';
 import { Grid, Button, ButtonProps } from '../components';
+import { _10K } from '@teatak/icons';
 
 export const ButtonInner = (props: ButtonProps) => {
     const { variant, ...rest } = props
     return <Grid spacing={4}>
-        <Button startIcon={"AAA"} variant={variant} color='primary' {...rest} onClick={() => {
+        <Button startDecorator={<_10K />} variant={variant} color='primary' {...rest} onClick={() => {
             console.log('clicked')
         }}>Primary</Button>
         <Button variant={variant} color='neutral' {...rest}>Neutral</Button>

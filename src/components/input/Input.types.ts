@@ -7,7 +7,6 @@ export interface InputProps extends CommonProps, Omit<React.InputHTMLAttributes<
     shape?: Exclude<ShapeType, 'circle'>
     size?: SizeType
     disabled?: boolean
-    inputRef?: React.RefObject<HTMLInputElement>
     startDecorator?: React.ReactNode
     endDecorator?: React.ReactNode
     type?: 'text' | 'password'
