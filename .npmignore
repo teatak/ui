@@ -10,3 +10,6 @@ site/
 docs/
 storybook-static/
 .storybook/
+rollup.config.js
+tsconfig.json
+tsconfig.build.json

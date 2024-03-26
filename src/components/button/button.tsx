@@ -72,17 +72,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
         } else {
             const position = loadingPosition
             switch (position) {
-                case 'start':
-                    startDecorator = <Loading />
-                    break
                 case 'center':
                     children = <>
                         <span className={prefixClass + '-span-text'}>{children}</span>
                         <span className={prefixClass + '-span-loading'}><Loading /></span>
                     </>
-                    break
-                case 'end':
-                    endDecorator = <Loading />
                     break
             }
         }
@@ -90,6 +84,29 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
     if (shape === 'circle') {
         startDecorator = null
         endDecorator = null
+    }
+
+    const renderDecorator = (pos: 'start' | 'end') => {
+        if (pos === 'start' && startDecorator) {
+            return <span className={prefixClass + '-start-decorator'}>
+                {loading && loadingPosition === 'start' ? <Loading /> : startDecorator}
+            </span>
+        }
+        if (pos === 'end' && endDecorator) {
+            return <span className={prefixClass + '-end-decorator'}>
+                {loading && loadingPosition === 'end' ? <Loading /> : endDecorator}
+            </span>
+        }
+        return <CSSTransition
+            in={loading && loadingPosition === pos ? true : false}
+            timeout={250}
+            classNames={prefixClass + '-in'}
+            unmountOnExit
+        >
+            <span className={prefixClass + '-' + pos + '-decorator'}>
+                <Loading />
+            </span>
+        </CSSTransition>
     }
 
     return <StyledButton
@@ -102,27 +119,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
         onClick={handleClick}
         {...rest}
     >
-        <CSSTransition
-            in={startDecorator ? true : false}
-            timeout={250}
-            classNames={prefixClass + '-in'}
-            unmountOnExit
-        >
-            <span className={prefixClass + '-start-decorator'}>
-                {loading && loadingPosition === 'start' ? <Loading /> : (startDecorator || <Loading />)}
-            </span>
-        </CSSTransition>
+        {renderDecorator('start')}
         <span className={prefixClass + '-span'}>{children}</span>
-        <CSSTransition
-            in={endDecorator ? true : false}
-            timeout={250}
-            classNames={prefixClass + '-in'}
-            unmountOnExit
-        >
-            <span className={prefixClass + '-end-decorator'}>
-                {loading && loadingPosition === 'end' ? <Loading /> : (endDecorator || <Loading />)}
-            </span>
-        </CSSTransition>
+        {renderDecorator('end')}
     </StyledButton>
 })
 

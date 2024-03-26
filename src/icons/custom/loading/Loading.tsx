@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from "classnames"
 import styled, { keyframes } from 'styled-components'
 
 const dasharray = keyframes`
@@ -33,8 +34,13 @@ const Svg = styled.svg`
     }
 `
 
-const Loading = () => {
-    return <Svg viewBox='0 0 44 44'>
+const Loading = (props: any) => {
+    const { className, ...rest } = props;
+    const classNames = classnames(
+        'tui-icon-loading',
+        className,
+    );
+    return <Svg className={classNames} viewBox="0 0 44 44" {...rest} >
         <circle cx='22' cy='22' r='20' fill='none' strokeWidth='4' strokeLinecap='round'></circle>
     </Svg>
 }

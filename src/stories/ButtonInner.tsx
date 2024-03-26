@@ -3,10 +3,15 @@ import { Grid, Button, ButtonProps } from '../components';
 import { _10K } from '@teatak/icons';
 
 export const ButtonInner = (props: ButtonProps) => {
+    const [start, setStart] = React.useState<any>(null)
     const { variant, ...rest } = props
     return <Grid spacing={4}>
-        <Button startDecorator={<_10K />} variant={variant} color='primary' {...rest} onClick={() => {
-            console.log('clicked')
+        <Button startDecorator={start} variant={variant} color='primary' {...rest} onClick={() => {
+            if (start) {
+                setStart(null)
+            } else {
+                setStart(<_10K />)
+            }
         }}>Primary</Button>
         <Button variant={variant} color='neutral' {...rest}>Neutral</Button>
         <Button variant={variant} color='success' {...rest}>Success</Button>
