@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef, useImperativeHandle } from 'react'
+import React, { forwardRef, useRef, useState, useEffect, useImperativeHandle } from 'react'
 import classnames from 'classnames'
 import { CSSTransition } from 'react-transition-group';
 import { ButtonProps } from './Button.types'
@@ -33,6 +33,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
 
     const buttonRef = useRef<HTMLButtonElement>(null)
     useImperativeHandle(ref, () => buttonRef.current!, [])
+    const timerRef = useRef<NodeJS.Timeout>()
+    useEffect(() => {
+        return () => clearTimeout(timerRef.current)
+    }, [])
+    const [clicked, setClicked] = useState(false)
 
     const classNames = classnames(
         prefixClass,
@@ -45,6 +50,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
             [`${prefixClass}-loading`]: loading,
             [`${prefixClass}-long`]: long,
             [`${prefixClass}-link`]: href,
+            [`clicked`]: clicked,
         },
         className,
     )
@@ -63,9 +69,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
             typeof event?.preventDefault === 'function' && event.preventDefault();
             return;
         }
-        onClick && onClick(event);
-    };
 
+        onClick && onClick(event);
+        setClicked(true)
+        if (timerRef) {
+            timerRef.current = setTimeout(() => {
+                setClicked(false)
+            }, 100)
+        }
+    };
     if (loading) {
         if (shape === 'circle') {
             children = <Loading />

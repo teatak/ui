@@ -16,7 +16,7 @@ export const createSvg = (...path: any) => {
       className,
     );
     return <Svg className={classNames} viewBox={viewBox ? viewBox : "0 0 24 24"} {...rest} >
-      {path}
+      {...path}
     </Svg>
   }))
 }

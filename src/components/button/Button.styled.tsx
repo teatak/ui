@@ -76,8 +76,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
                     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
                     width 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
                     height 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
-                    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
                     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
+                    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
                     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
                 &>span {
                     display: flex;
@@ -150,6 +150,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
 const buttonBase = (_: string, color: ColorType, variant: VariantType) => {
     const palette = theme.vars.scheme[color as keyof typeof theme.vars.scheme] as PaletteRangeVariant
     const borderWidth = palette[variant + 'BorderWidth']
+
     return css`
         &.${_}-${variant} {
             &.${_}-color-${color} {
@@ -164,10 +165,13 @@ const buttonBase = (_: string, color: ColorType, variant: VariantType) => {
                     background: ${palette[variant + 'BackgroundHover']};
                     box-shadow: ${palette[variant + 'BoxShadowHover']};
                 }
-                &:active,
-                &.clicked {
+                &:active,&.clicked {
                     background: ${palette[variant + 'BackgroundActive']};
                     box-shadow: ${palette[variant + 'BoxShadowActive']};
+                }
+                &:focus-visible {
+                    outline-offset: 1px;
+                    outline: solid 2px rgb(${theme.vars.scheme.primary[6]});
                 }
                 &.${_}-loading {
                     cursor: default;
