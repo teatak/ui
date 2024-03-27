@@ -1,9 +1,10 @@
-import React, { forwardRef, useRef, useState, useEffect, useImperativeHandle } from 'react'
+import React, { forwardRef, useRef, useState, useEffect, useImperativeHandle, useContext } from 'react'
 import classnames from 'classnames'
 import { CSSTransition } from 'react-transition-group';
 import { ButtonProps } from './Button.types'
 import { StyledButton } from './Button.styled';
 import { Loading } from '../../icons'
+import { ControlContext } from '../control';
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
     const prefixClass = 'tui-button'
@@ -14,13 +15,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
         long,
         shape = 'square',
         color = 'neutral',
-        size = 'md',
+        size: sizeProp,
         loading,
         loadingPosition = 'start',
         href,
         type = 'button',
         onClick,
-        disabled,
+        disabled: disabledProp,
         ...otherProps
     } = props
 
@@ -30,6 +31,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
         children,
         ...rest
     } = otherProps
+
+    const { size: sizeCtx, disabled: disabledCtx } = useContext(ControlContext)
+    const size = sizeProp || sizeCtx || 'md'
+    const disabled = disabledProp || disabledCtx || false
 
     const buttonRef = useRef<HTMLButtonElement>(null)
     useImperativeHandle(ref, () => buttonRef.current!, [])
@@ -65,19 +70,19 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
         loadingPosition,
     }
     const handleClick: React.MouseEventHandler<HTMLElement> = (event: any): void => {
-        event.stopPropagation()
-        event.preventDefault()
         if (loading || disabled) {
-            return;
+            event.stopPropagation()
+            event.preventDefault()
+            return
         }
-        onClick && onClick(event);
+        onClick && onClick(event)
         setClicked(true)
         if (timerRef) {
             timerRef.current = setTimeout(() => {
                 setClicked(false)
             }, 100)
         }
-    };
+    }
     if (loading) {
         if (shape === 'circle') {
             children = <Loading />
@@ -129,6 +134,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
         as={href ? 'a' : 'button'}
         $options={options}
         onClick={handleClick}
+        disabled={disabled}
         {...rest}
     >
         {renderDecorator('start')}

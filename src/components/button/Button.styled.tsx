@@ -55,15 +55,17 @@ export const StyledButton = styled.button<StyledButtonProps>`
                 --Button-baseSize: ${baseSize};
                 --Icon-fontSize: ${iconFontSize};
                 --Text-fontSize: ${textFontSize};
+                min-height: var(--Button-minHeight, calc(var(--Button-baseSize) * 4px));
+                margin-inline-start: var(--Button-marginInlineStart);
+                margin-inline-end: var(--Button-marginInlineEnd);
                 box-sizing: border-box;
                 position: relative;
-                display: flex;
+                display: inline-flex;
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
                 border-radius: var(--Button-radius, ${theme.vars.radius.sm});
-                padding: 0 calc(var(--Button-baseSize) * 1px);
-                height: calc(var(--Button-baseSize) * 4px);
+                padding-inline: calc(var(--Button-baseSize) * 1px);
                 outline: none;
                 border: none;
                 text-decoration: none;
@@ -82,19 +84,19 @@ export const StyledButton = styled.button<StyledButtonProps>`
                 &>span {
                     display: flex;
                     line-height: 1;
-                }
-                & svg {
-                    user-select: none;
-                    width: 1em;
-                    height: 1em;
-                    fill: currentColor;
-                    font-size: calc(var(--Icon-fontSize) * 1px);
+                    &>svg {
+                        user-select: none;
+                        width: 1em;
+                        height: 1em;
+                        fill: currentColor;
+                        font-size: calc(var(--Icon-fontSize) * 1px);
+                    }
                 }
                 & .${_}-span {
                     position: relative;
                     justify-content: center;
                     align-items: center;
-                    margin: 0 calc(var(--Button-baseSize) * 1px);
+                    margin-inline: calc(var(--Button-baseSize) * 1px);
                 }
                 & .${_}-start-decorator, & .${_}-end-decorator {
                     display: inline-flex;
@@ -133,7 +135,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
                 }
                 &.${_}-shape-circle {
                     border-radius: 50%;
-                    width: calc(var(--Button-baseSize) * 4px);
+                    height: var(--Button-minHeight, calc(var(--Button-baseSize) * 4px));
+                    width: var(--Button-minHeight, calc(var(--Button-baseSize) * 4px));
                     padding: 0;
                     overflow: hidden;
                     & .${_}-span {
@@ -159,7 +162,7 @@ const buttonBase = (_: string, color: ColorType, variant: VariantType) => {
                 border-width: ${borderWidth};
                 border-color: ${palette[variant + 'Border']};
                 border-style: solid;
-                padding: 0 calc(var(--Button-baseSize) * 1px - ${borderWidth});
+                padding-inline: calc(var(--Button-baseSize) * 1px - ${borderWidth});
                 box-shadow: ${palette[variant + 'BoxShadow']};
                 &:hover {
                     background: ${palette[variant + 'BackgroundHover']};

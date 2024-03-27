@@ -2,7 +2,8 @@ import React, { useRef, useContext } from 'react'
 import classnames from 'classnames'
 import { InputProps } from './Input.types'
 import { StyledInput } from './Input.styled'
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group'
+import { ControlContext } from '../control'
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) => {
     const prefixClass = 'tui-input'
@@ -12,13 +13,16 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props: InputProps,
         variant = 'soft',
         shape = 'square',
         color = 'neutral',
-        size = 'md',
-        disabled,
+        size: sizeProp,
+        disabled: disabledProp,
         onChange,
         startDecorator,
         endDecorator,
         ...rest
     } = props
+    const { size: sizeCtx, disabled: disabledCtx } = useContext(ControlContext)
+    const size = sizeProp || sizeCtx || 'md'
+    const disabled = disabledProp || disabledCtx || false
 
     const inputRef = useRef<HTMLInputElement>(null);
     React.useImperativeHandle(ref, () => inputRef.current!, [])
@@ -55,7 +59,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props: InputProps,
         onChange && onChange(e);
     };
 
-    return <StyledInput
+    return <ControlContext.Provider value={{ size, disabled }}><StyledInput
         className={classNamesRoot}
         style={style}
         $options={options}
@@ -69,7 +73,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props: InputProps,
             classNames={prefixClass + '-in'}
             unmountOnExit
         >
-            <span className={prefixClass + '-start-decorator'}>{startDecorator}</span>
+            <span onClick={(event) => {
+                event.stopPropagation()
+                event.preventDefault()
+            }} className={prefixClass + '-start-decorator'}>{startDecorator}</span>
         </CSSTransition>
         <input
             className={classNames}
@@ -83,8 +90,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props: InputProps,
             classNames={prefixClass + '-in'}
             unmountOnExit
         >
-            <span className={prefixClass + '-end-decorator'}>{endDecorator}</span>
+            <span onClick={(event) => {
+                event.stopPropagation()
+                event.preventDefault()
+            }} className={prefixClass + '-end-decorator'}>{endDecorator}</span>
         </CSSTransition>
     </StyledInput>
+    </ControlContext.Provider>
 })
 export default Input

@@ -45,9 +45,14 @@ export const StyledInput = styled.span<StyledInputProps>`
 
         return css`
               &.${_}-root {
+                --Input-radius: ${theme.vars.radius.sm};
                 --Input-baseSize: ${baseSize};
                 --Icon-fontSize: ${iconFontSize};
                 --Text-fontSize: ${textFontSize};
+                --Input-minHeight: calc(var(--Input-baseSize) * 4px);
+                --Input-decoratorChildHeight: calc((var(--Input-baseSize) - 1) * 4px);
+                --Input-decoratorChildOffset: calc(var(--Input-baseSize) * 1px - 2px);
+                --Input-decoratorChildRadius: calc(var(--Input-radius) - 2px);
                 cursor: text;
                 display: flex;
                 position: relative;
@@ -55,24 +60,27 @@ export const StyledInput = styled.span<StyledInputProps>`
                 width: 100%;
                 line-height: 0px;
                 font-size: calc(var(--Text-fontSize) * 1px);
-                height: calc(var(--Input-baseSize) * 4px);
+                min-height: var(--Input-minHeight);
                 padding-inline; calc(var(--Input-baseSize) * 1px);
-                border-radius: var(--Input-radius, ${theme.vars.radius.sm});
+                border-radius: var(--Input-radius);
                 transition: 
                     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
                     border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
                     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
                     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-                & svg {
-                    user-select: none;
-                    width: 1em;
-                    height: 1em;
-                    fill: currentColor;
-                    font-size: calc(var(--Icon-fontSize) * 1px);
+                &>span {
+                    &>svg {
+                        user-select: none;
+                        width: 1em;
+                        height: 1em;
+                        fill: currentColor;
+                        font-size: calc(var(--Icon-fontSize) * 1px);
+                    }
                 }
                 & .${_} {
                     outline: none;
                     width: 100%;
+                    font-size: calc(var(--Text-fontSize) * 1px);
                     background-origin: border-box;
                     box-sizing: border-box;
                     border: none;
@@ -84,6 +92,9 @@ export const StyledInput = styled.span<StyledInputProps>`
                     border-radius: calc(var(--Input-baseSize) * 2px);
                 }
                 & .${_}-start-decorator {
+                    --Button-marginInlineStart: calc(var(--Input-decoratorChildOffset) * -1); 
+                    --Button-minHeight: var(--Input-decoratorChildHeight);
+                    --Button-radius: var(--Input-decoratorChildRadius);
                     display: inline-flex;
                     align-items: center;
                     margin-inline-end: calc(var(--Input-baseSize) * 1px);
@@ -111,6 +122,9 @@ export const StyledInput = styled.span<StyledInputProps>`
                     } 
                 }
                 & .${_}-end-decorator {
+                    --Button-marginInlineEnd: calc(var(--Input-decoratorChildOffset) * -1); 
+                    --Button-minHeight: var(--Input-decoratorChildHeight);
+                    --Button-radius: var(--Input-decoratorChildRadius);
                     display: inline-flex;
                     align-items: center;
                     margin-inline-start: calc(var(--Input-baseSize) * 1px);

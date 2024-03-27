@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Input } from '../components'
+import { Input, Button } from '../components'
 import { Loading } from '../icons'
 
 const meta = {
@@ -31,7 +31,8 @@ export const Small: Story = {
   args: {
     defaultValue: "Hello World",
     size: 'sm',
-    startDecorator: <Loading />,
+    startDecorator: '$',
+    endDecorator: <Button color='primary'><Loading /></Button>,
   },
 }
 
