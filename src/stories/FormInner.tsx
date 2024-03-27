@@ -15,7 +15,7 @@ interface IFormInput {
 }
 
 export const FormInner = () => {
-    const { register, handleSubmit, formState: { isSubmitting, errors },
+    const { register, handleSubmit, formState: { isValid, isSubmitting, errors },
     } = useForm<IFormInput>({
         mode: 'all',
         defaultValues: {
@@ -45,7 +45,6 @@ export const FormInner = () => {
     const [loading, setLoading] = useState(false)
 
     return <form onSubmit={handleSubmit(onSubmit, onError)} >
-        <Search style={{ width: '1em', height: '1em', fill: 'currentcolor' }} />
         <Grid spacing={8}>
             <Grid.Item span={{ xs: 12, sm: 3 }} styleOverrides={{
                 sm: { textAlign: 'right' }
@@ -82,7 +81,9 @@ export const FormInner = () => {
                 </select>}
             </Grid.Item>
             <Grid.Item offset={{ xs: 0, sm: 3 }} span={{ xs: 12, sm: 9 }}>
-                <Input type='password' placeholder='password'
+                <Input type='password'
+                    placeholder='password'
+                    startDecorator={<Button size='xs'>Message</Button>}
                     {...register("password", {
                         required: 'Password Required'
                     })}
@@ -93,9 +94,9 @@ export const FormInner = () => {
             <Grid.Item offset={{ xs: 0, sm: 3 }} span={{ xs: 12, sm: 9 }}>
                 <Grid spacing={4}>
                     <Button type='submit' color='primary'
-                        loading={isSubmitting}
+                        loading={isValid && isSubmitting}
                         onClick={(e) => {
-                        }}>Submit</Button>
+                        }} endDecorator={<Search style={{ width: '1em', height: '1em', fill: 'currentcolor' }} />}>Submit</Button>
                     <Button type='button' variant='outlined' color='primary' onClick={() => {
                         //reset()
                         //setLoading(true)

@@ -65,11 +65,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, r
         loadingPosition,
     }
     const handleClick: React.MouseEventHandler<HTMLElement> = (event: any): void => {
+        event.stopPropagation()
+        event.preventDefault()
         if (loading || disabled) {
-            typeof event?.preventDefault === 'function' && event.preventDefault();
             return;
         }
-
         onClick && onClick(event);
         setClicked(true)
         if (timerRef) {
