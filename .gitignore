@@ -4,4 +4,4 @@ es
 lib
 **/.DS_Store
 dist
-./storybook-static
+storybook-static

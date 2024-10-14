@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import { ControlLabelProps, ControlLabelOptionsProps } from './Control.types'
 import styled, { css } from 'styled-components'
 import theme, { mergeStyleOverrides } from '@/style'
-import { ControlContext } from '../Control';
+import ControlContext from './ControlContext';
 import { mergeProps } from '@/helper/common';
 
 export const StyledControlLabel = styled.label<{ $options: ControlLabelOptionsProps }>`
