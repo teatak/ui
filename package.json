@@ -58,7 +58,6 @@
     "rimraf": "^6.0.1",
     "rollup": "^4.24.0",
     "rollup-plugin-dts": "^6.1.1",
-    "rollup-plugin-minification": "^0.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "storybook": "^8.3.5",
     "to-words": "^4.1.0",

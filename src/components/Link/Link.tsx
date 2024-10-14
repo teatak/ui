@@ -11,7 +11,7 @@ const StyledComponent = (props: any) => {
     return <Component {...rest} />
 }
 
-export const StyledLink = styled(StyledComponent) <{ $options: LinkOptionsProps }>`
+const StyledLink = styled(StyledComponent) <{ $options: LinkOptionsProps }>`
     ${props => {
         const options = props.$options
         const { prefixClass: _, color, size } = options

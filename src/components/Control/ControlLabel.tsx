@@ -6,7 +6,7 @@ import theme, { mergeStyleOverrides } from '@/style'
 import ControlContext from './ControlContext';
 import { mergeProps } from '@/helper/common';
 
-export const StyledControlLabel = styled.label<{ $options: ControlLabelOptionsProps }>`
+const StyledControlLabel = styled.label<{ $options: ControlLabelOptionsProps }>`
     ${props => {
         const options = props.$options
         const { prefixClass: _, size } = options
