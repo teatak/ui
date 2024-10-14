@@ -1,7 +1,0 @@
-.idea/
-node_modules
-es
-lib
-**/.DS_Store
-dist
-./storybook-static
