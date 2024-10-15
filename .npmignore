@@ -1,5 +1,14 @@
-# Created by .ignore support plugin (hsz.mobi)
-src
-site
-docs
-webpack.config.js
+node_modules/
+build/
+**/.DS_Store
+!build/
+src/
+test/
+site/
+docs/
+storybook-static/
+scripts/
+.storybook/
+rollup.config.js
+tsconfig.json
+tsconfig.build.json
