@@ -50,9 +50,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((inProps, ref) => {
 
     const buttonRef = useRef<HTMLButtonElement>(null)
     useImperativeHandle(ref, () => buttonRef.current!, [])
-    const timerRef = useRef<NodeJS.Timeout>()
+    const timerRef = useRef<NodeJS.Timeout>(null)
     useEffect(() => {
-        return () => clearTimeout(timerRef.current)
+        return () => clearTimeout(timerRef.current as ReturnType<typeof setTimeout>)
     }, [])
     const [clicked, setClicked] = useState(false)
 
