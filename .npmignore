@@ -6,7 +6,6 @@ src/
 test/
 site/
 docs/
-storybook-static/
 scripts/
 .storybook/
 rollup.config.js

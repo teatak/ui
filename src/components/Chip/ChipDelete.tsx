@@ -16,9 +16,9 @@ const ChipDelete = forwardRef<HTMLButtonElement, ChipProps>((props, ref) => {
     } = props
     const buttonRef = useRef<HTMLButtonElement>(null)
     useImperativeHandle(ref, () => buttonRef.current!, [])
-    const timerRef = useRef<NodeJS.Timeout>()
+    const timerRef = useRef<null | NodeJS.Timeout>(null)
     useEffect(() => {
-        return () => clearTimeout(timerRef.current)
+        return () => clearTimeout(timerRef.current as NodeJS.Timeout)
     }, [])
     const [clicked, setClicked] = useState(false)
 

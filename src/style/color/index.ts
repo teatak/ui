@@ -49,7 +49,7 @@ export const generateColor = (
 
 const sBezier = Bezier(0, 0, 1, 1) //线性
 const vBezier = Bezier(0, 0, 1, 1) //线性
-const colorPalette = (baseColor: Color | string, tone: number) => {
+const colorPalette = (baseColor: string, tone: number) => {
     let color = Color(baseColor)
     const h = color.hue()
     const s = color.saturationv()
@@ -122,7 +122,7 @@ const colorPalette = (baseColor: Color | string, tone: number) => {
     return rgb
 }
 
-const colorPaletteDark = (baseColor: Color | string, tone: number) => {
+const colorPaletteDark = (baseColor: string, tone: number) => {
     let color = Color(baseColor)
     let h = color.hue()
     let s = color.saturationv()
