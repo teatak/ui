@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-webpack5'
 import { Button, Grid, GridItem, ButtonGroup } from '@/components'
 import theme, { setMode, restoreMode, ColorTone, getMode, DefaultColorTones, DefaultColorTone, detectMode, ColorVariant, ColorName } from '@/style'
 import styled from 'styled-components'

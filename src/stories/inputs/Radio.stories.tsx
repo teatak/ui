@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-webpack5'
 import { Radio, ControlGroup, Grid } from '@/components'
 import { css } from 'styled-components'
 import theme from '@/style'

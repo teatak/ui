@@ -38,14 +38,9 @@
     "@rollup/plugin-commonjs": "^28.0.3",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.2",
-    "@storybook/addon-essentials": "^8.6.12",
-    "@storybook/addon-interactions": "^8.6.12",
-    "@storybook/addon-links": "^8.6.12",
+    "@storybook/addon-links": "^9.0.18",
     "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
-    "@storybook/blocks": "^8.6.12",
-    "@storybook/react": "^8.6.12",
-    "@storybook/react-webpack5": "^8.6.12",
-    "@storybook/test": "^8.6.12",
+    "@storybook/react-webpack5": "^9.0.18",
     "@teatak/icons": "^1.2.11",
     "@types/color": "^4.2.0",
     "@types/react": "^19.1.2",
@@ -60,8 +55,9 @@
     "rollup": "^4.40.0",
     "rollup-plugin-dts": "^6.2.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "storybook": "^8.6.12",
+    "storybook": "^9.0.18",
     "to-words": "^4.4.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "@storybook/addon-docs": "^9.0.18"
   }
 }
