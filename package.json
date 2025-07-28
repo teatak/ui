@@ -19,7 +19,7 @@
     "clean:storybook": "rimraf storybook-static",
     "build": "npm-run-all clean:** build:**",
     "build:rollup": "rollup -c --bundleConfigAsCjs",
-    "build:storybook": "storybook build",
+    "build:storybook": "storybook build -o docs",
     "ncu": "ncu -u",
     "storybook": "storybook dev -p 6006"
   },
