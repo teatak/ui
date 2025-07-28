@@ -60,7 +60,7 @@ export const StyledSwitch = styled.label<{ $options: SwitchOptionsProps }>`
                 handleForeColor = palette.main
                 handleForeColorChecked = palette.main
 
-                background = palette.container
+                background = palette.main
                 backgroundChecked = palette.main
                 backgroundRipple = palette.dark
 
